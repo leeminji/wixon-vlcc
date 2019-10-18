@@ -1,0 +1,394 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>VLCCLAB Dashboard - SELINE</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../_public/favicon.ico" />
+	<!-- stylesheet -->
+	<link href="../_public/vendor/scrollbar/scrollbar.css" rel="stylesheet" type="text/css" />
+	<link href="../_public/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div class="loading" id="loading"><div class="img"><span class="skip">Loading...</span></div></div>
+	<div class="Layout__Allwrap active_submenu" id="LayoutAllwrap">
+		<!-- Layout__menu -->
+		<div class="Layout__menu">
+			<div class="TotalMenu__tooltip" id="totalMenuTooltip"></div>
+			<!-- TotalMenu -->
+			<div class="TotalMenu" id="totalMenu">
+				<div class="js-scrollbar">
+					<div class="TotalMenu__top">				
+						<a href="javascript:;" class="TotalMenu__button_menu" id="totalMenuOpen"><span class="icon icon_menu"></span></a>
+						<div class="AdminState">
+							<a href="#" title="" class="AdminState__state">
+								<span class="icon icon_admin"></span> <span class="txt">ADMIN LOGOUT</span>
+							</a>
+						</div>
+						<a href="javascript:;" class="TotalMenu__button_close" title="close" id="totalMenuClose"><span class="icon icon_close"></span></a>
+					</div>
+					<!-- TotalMenu__listArea -->
+					<nav class="TotalMenu__listArea">
+						<h1 class="skip">전체메뉴</h1>
+						<ul class="clear TotalMenu__list" id="totalMenuList">
+							<li data-title="Setting">
+								<a href="#">
+									<span class="icon icon_setting on"></span>
+									<span class="txt">Setting</span>
+								</a>
+							</li>
+							<li data-title="Dashbaord">
+								<a href="#">
+									<span class="icon icon_moniter on"></span>
+									<span class="txt">Dashbaord</span>
+								</a>
+							</li>
+							<li data-title="Map">
+								<a href="#">
+									<span class="icon icon_location on"></span>
+									<span class="txt">Map</span>
+								</a>
+							</li>
+							<li data-title="Spot Charter">
+								<a href="#">
+									<span class="icon icon_compass on"></span>
+									<span class="txt">Spot Charter</span>
+								</a>
+								<ul class="clear TotalMenu__sublist">
+									<li><a href=""><span class="txt">Position list</span></a></li>
+									<li><a href=""><span class="txt">Nowcast</span></a></li>
+									<li><a href=""><span class="txt">Pattern</span></a></li>
+									<li><a href=""><span class="txt">Analysis</span></a></li>
+								</ul>
+							</li>
+							<li data-title="Tool">
+								<a href="#">
+									<span class="icon icon_ruler on"></span>
+									<span class="txt">Tool</span>
+								</a>
+								<ul class="clear TotalMenu__sublist">
+									<li><a href=""><span class="txt">TCE Estimation</span></a></li>
+									<li><a href=""><span class="txt">Distance</span></a></li>
+								</ul>					
+							</li>
+							<li data-title="Market Report">
+								<a href="#">
+									<span class="icon icon_doc on"></span>
+									<span class="txt">Market Report</span>
+								</a>
+								<ul class="clear TotalMenu__sublist">
+									<li><a href=""><span class="txt">Freight Assessment</span></a></li>
+									<li><a href=""><span class="txt">Tonne Miles</span></a></li>
+									<li><a href=""><span class="txt">Fleet Study</span></a></li>
+									<li><a href=""><span class="txt">Bunker</span></a></li>
+								</ul>					
+							</li>
+							<li data-title="OIL">
+								<a href="#">
+									<span class="icon icon_water on"></span>
+									<span class="txt">OIL</span>
+								</a>
+								<ul class="clear TotalMenu__sublist">
+									<li><a href=""><span class="txt">Flow</span></a></li>
+									<li><a href=""><span class="txt">Inventory</span></a></li>
+									<li><a href=""><span class="txt">Weekly Report</span></a></li>
+								</ul>					
+							</li>
+							<li data-title="My Fleet">
+								<a href="#">
+									<span class="icon icon_ship on"></span>
+									<span class="txt">My Fleet</span>
+								</a>
+								<ul class="clear TotalMenu__sublist">
+									<li><a href=""><span class="txt">Management</span></a></li>
+								</ul>		
+							</li>
+							<li data-title="Mailing" class="active">
+								<a href="9_mail.html">
+									<span class="icon icon_mail on"></span>
+									<span class="txt">Mailing</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<!-- //TotalMenu__listArea -->					
+				</div>
+			</div>
+			<!-- //TotalMenu -->
+			<!-- SideMenu -->
+			<div class="SideMenu">
+				<div class="SideMenu__top">
+					<div class="AdminState">
+						<a href="0_index.html" class="AdminState__state"><span class="icon icon_admin"></span><span class="txt">ADMIN LOGOUT</span></a>
+					</div>
+				</div>
+				<div class="SideMenu__inner">
+					<div class="js-scrollbar">
+						<div class="SideMenu__arrow">
+							<a href="#" class="SideMenu__button_close" id="sideMenuClose"><span class="icon icon_arrow02_prev"></span><span class="skip">닫기</span></a>
+						</div>
+						<!-- SideMenu__listArea : 메일서브메뉴 -->
+						<nav class="SideMenu__listArea" id="SideMenuList__mail">
+							<h1 class="skip">서브메뉴</h1>
+							<!-- SideMenu__list 리스트 -->
+							<ul class="clear SideMenu__list">
+								<li class="anime_link-3 active"><a href="#"><span class="txt">All Inbox</span> <span class="count">125</span></a></li>
+								<li class="anime_link-3"><a href="#"><span class="txt">Deleted</span> </a></li>
+								<li class="anime_link-3"><a href="#"><span class="txt">Junk</span> <span class="count">10</span></a></li>
+							</ul>
+							<!-- //SideMenu__list -->
+							<!-- Categories 카테고리 -->
+							<section class="Categories">
+								<h2 class="Categories__title"><span>Categories</span></h2>
+								<div class="Categories__item anime_link-2">
+									<a href="#" class="Categories__link active">
+										<span class="cate_type type_1"></span>
+										<span class="cate_txt">TERMINAL</span>
+									</a>
+								</div>
+								<div class="Categories__item anime_link-2">
+									<a href="#" class="Categories__link">
+										<span class="cate_type type_2"></span>
+										<span class="cate_txt">POSITION LIST</span>
+									</a>
+								</div>
+								<div class="Categories__item anime_link-2">
+									<a href="#" class="Categories__link">
+										<span class="cate_type type_3"></span>
+										<span class="cate_txt">NARKET REPOSRT</span>
+									</a>
+								</div>
+							</section>
+							<!-- //Categories -->						
+						</nav>
+						<!-- //SideMenu__listArea : 메일서브메뉴 -->
+					</div>
+				</div>
+			</div>
+			<!-- //SideMenu -->
+		</div>
+		<!-- //Layout__menu -->
+		<!-- Layout__container -->
+		<div class="Layout__container">
+			<div class="Layout__topContent">
+				<div class="TopSearch">
+					<div class="TopSearch__inner">
+						<input type="text" title="Search" id="top_stx" class="TopSearch__input" />
+						<label for="top_stx" class="TopSearch__label"><span>Search</span></label>
+					</div>
+				</div>
+				<div class="TopLogo"><a href="0_index.html" class="link">메인으로이동</a><h1 class="skip">VLCCLAB</h1></div>
+			</div>
+			<!-- MailArea 메일 -->
+			<section class="Layout__content MailArea">
+				<h1 class="skip">Mail Contents</h1>
+				<!-- MailArea__list 메일리스트 -->
+				<section class="MailArea__listArea" id="mailAreaListArea">
+					<div class="js-scrollbar">
+						<h2 class="skip">Mail Lists</h2>
+						<div class="MailArea__list">
+							<!-- MailArea__date -->
+							<div class="MailArea__date"><span>Sunday 15, December 2019</span></div>
+							<!-- //MailArea__date -->			
+							<div class="MailArea__item anime_link-4">
+								<a href="#" class="link"><span class="skip">링크</span></a>
+								<div class="top">
+									<div class="cate_type type_1"></div>
+									<div class="date">Dec 15</div>
+									<div class="address">daedongagent@damnu.net</div>
+								</div>
+								<div class="detail">
+									<div class="title">1. SEOSAN KNOC JETTY LINE UP - 19TH SEP. 2019</div>
+									<div class="cont">GOOD DAY SIR, PLS BE ADVISED OF THE SEOSAN KNOC JETTY LINE UP AS FLLWS;  </div>
+								</div>
+							</div>
+							<div class="MailArea__item anime_link-4">
+								<a href="#" class="link"><span class="skip">링크</span></a>
+								<div class="top">
+									<div class="cate_type type_2"></div>
+									<div class="date">Dec 15</div>
+									<div class="address">daedongagent@damnu.net</div>
+								</div>
+								<div class="detail">
+									<div class="title">2. SEOSAN KNOC JETTY LINE UP - 19TH SEP. 2019</div>
+									<div class="cont">GOOD DAY SIR, PLS BE ADVISED OF THE SEOSAN KNOC JETTY LINE UP AS FLLWS;  </div>
+								</div>
+							</div>
+							<div class="MailArea__item anime_link-4">
+								<a href="#" class="link"><span class="skip">링크</span></a>
+								<div class="top">
+									<div class="cate_type type_1"></div>
+									<div class="date">Tues 15</div>
+									<div class="address">daedongagent@damnu.net</div>
+								</div>
+								<div class="detail">
+									<div class="title">3. SEOSAN KNOC JETTY LINE UP - 19TH SEP. 2019</div>
+									<div class="cont">GOOD DAY SIR, PLS BE ADVISED OF THE SEOSAN KNOC JETTY LINE UP AS FLLWS;  </div>
+								</div>
+							</div>	
+						</div>
+						<div class="MailArea__list">
+							<!-- MailArea__date -->
+							<div class="MailArea__date"><span>Tuesday 17, December 2019</span></div>
+							<!-- //MailArea__date -->			
+
+							<div class="MailArea__item anime_link-4">
+								<a href="#" class="link"><span class="skip">링크</span></a>
+								<div class="top">
+									<div class="cate_type type_3"></div>
+									<div class="date">Tues 17</div>
+									<div class="address">daedongagent@damnu.net</div>
+								</div>
+								<div class="detail">
+									<div class="title">4. SEOSAN KNOC JETTY LINE UP - 19TH SEP. 2019</div>
+									<div class="cont">GOOD DAY SIR, PLS BE ADVISED OF THE SEOSAN KNOC JETTY LINE UP AS FLLWS;  </div>
+								</div>
+							</div>
+							<div class="MailArea__item anime_link-4">
+								<a href="#" class="link"><span class="skip">링크</span></a>
+								<div class="top">
+									<div class="cate_type type_3"></div>
+									<div class="date">Dec 17</div>
+									<div class="address">daedongagent@damnu.net</div>
+								</div>
+								<div class="detail">
+									<div class="title">5. SEOSAN KNOC JETTY LINE UP - 19TH SEP. 2019</div>
+									<div class="cont">GOOD DAY SIR, PLS BE ADVISED OF THE SEOSAN KNOC JETTY LINE UP AS FLLWS;  </div>
+								</div>
+							</div>
+						</div>
+						<div class="MailArea__empty"></div>
+					</div>
+				</section>
+				<!-- //MailArea__list -->
+				<div class="MailArea__split" id="mailAreaSplit"></div>
+				<!-- MailArea__content 메일 내용 -->
+				<div class="MailArea__body" id="mailAreaBody">	
+					<!-- 메일예시 :: active 클래스 추가시 화면보임 -->
+					<div class="MailArea__body_inner" id="mailAreaBodyInner">
+						<div class="MailArea__top">
+							<a href="#" class="Button__basic active"><span>Raw Data</span></a>
+							<a href="#" class="Button__basic"><span>Filtering Data</span></a>
+						</div>
+						<div class="MailArea__content">
+							<div class="js-scrollbar">
+								<div class="MailArea__content__inner">
+									<div class="MailArea__content__info">
+										<div class="titleArea">
+											<div class="title">BRS GENEVA - VLCC COB REPORT</div>
+											<div class="date"><span>25 Jun 2019 / 03:00PM</span></div>
+										</div>
+										<div class="addr_listArea"><a href="#" class="addr">Tankerdirty@brsbrokers.com</a>, <a href="#" class="addr">Tankerdirty2@brsbrokers.com</a></div>
+									</div>
+									<div class="MailArea__content__body">
+										<p style="font-size:20px">BRS GENEVA - VLCC COB REPORT</p>
+										<p style="font-size:18px">MEG/CHINA  : W67.5</p>
+										<br>
+										<p>COMMENT : brakes put on by charterers with very little actively traded today. rates improved once again however on an ex dd vessel and sentiment remains firm.</p>	
+										<p style="font-size:20px">BRS GENEVA - VLCC COB REPORT</p>
+										<p style="font-size:18px">MEG/CHINA  : W67.5</p>
+										<br>
+										<!-- 데이터 테이블 샘플 -->
+										<div class="DataTable__1">
+											<table>
+												<thead>
+													<tr>
+														<th colspan="col">sample text</th>
+														<th colspan="col">sample text</th>
+														<th colspan="col">sample text</th>
+														<th colspan="col">sample text</th>
+														<th colspan="col">sample text</th>
+														<th colspan="col">sample text</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>contents</td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>contents</td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>contents</td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>contents</td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>contents</td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>contents</td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<!-- //데이터 테이블 샘플 -->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="MailArea__bottom">
+							<a href="" class="ButtonIcon__prev"><span class="icon icon_arrow01_prev round"></span><span class="skip">이전</span></a>
+							<a href="" class="ButtonIcon__next"><span class="icon icon_arrow01_next round"></span><span class="skip">다음</span></a>
+							<a href="" class="ButtonIcon__del"><span class="icon icon_trash round blue"></span><span class="skip">삭제</span></a>
+						</div>
+					</div>
+					<!-- //메일예시 -->
+					<!-- 인트로 -->
+					<div class="MailArea__body_inner active MailArea__intro" id="mailAreaIntro">
+						<div class="MailArea__intro_img"></div>
+						<div class="MailArea__intro_title n-motion n-top">
+							<div class="logo">VLCCLAB</div>
+							<p class="txt font_noto"><span>VLCCLAB 메일링서비스입니다. <br> 메일을 선택해 주시기 바랍니다.</span></p>
+						</div>
+					</div>
+					<!-- //인트로 -->
+				</div>
+				<!-- //MailArea__content -->
+			</section>
+			<!-- //MailArea 메일 -->			
+		</div>
+		<!-- //Layout__container -->
+	</div>
+	<!-- javascript -->
+	<script type="text/javascript" src="../_public/js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="../_public/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../_public/vendor/scrollbar/jquery.scrollbar.js"></script>
+	<script type="text/javascript" src="../_public/js/ui.js"></script>
+
+</body>
+</html>

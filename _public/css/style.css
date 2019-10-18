@@ -1,5 +1,6 @@
 @charset 'utf-8';
 @import 'reset.css';
+@import 'animations.css';
 
 /* scrollbar */
 /* ::-webkit-scrollbar{height:.5em;width: .5em;background-color: #F5F5F5;}
@@ -342,17 +343,14 @@ body{min-height:40em}
 }
 
 /* PopupArea */
-.PopupArea{position: absolute;left:0;right:0;top:0;bottom:0;z-index:0;opacity: 0;height:0;
-    -webkit-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-}
+.PopupArea{position: absolute;left:0;right:0;top:0;bottom:0;z-index:0;opacity: 0;height:0;}
 .PopupArea.active{z-index:100;opacity: 1;height:auto}
-.PopupArea *{
-    -webkit-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
+.PopupArea, .PopupArea.active .PopupArea__inner{
+    -webkit-transition: opactiy .5s ease-in-out, transform .5s ease-in-out;
+    -o-transition: opactiy .5s ease-in-out, transform .5s ease-in-out;
+    transition: opactiy .5s ease-in-out, transform .5s ease-in-out;
 }
+
 .PopupArea .PopupArea__button_close{position: absolute;right:1em;top:1em;z-index:105;text-align:right;}
 .PopupArea .PopupArea__blind{position: absolute;left:0;right:0;top:0;bottom:0;z-index:101;background:rgba(0,0,0,0.8);opacity:0; }
 .PopupArea.active .PopupArea__blind{ opacity:1;}

@@ -165,7 +165,7 @@ var uiPopup = (function(){
             var blind = popup.find(".PopupArea__blind");
             inner.css({
                 'margin-top' : -(inner.height()/2)+"px"
-            })
+            });
             popup.addClass("active");
             blind.on('click', function(){
                 thisObj.close(_el);

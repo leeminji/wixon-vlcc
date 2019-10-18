@@ -34,24 +34,25 @@ a.icon[class*="icon_"], button.icon[class*="icon_"], span.icon[class*="icon_"], 
 .icon[class*="icon_"].on{background-position: 0 0;}
 
 /* button */
-a[class*="__button_"]{position: relative;height:2em;width:2em;}
+a[class*="__button_"]{position: relative;height:2em;width:2em;display:inline-block}
 a[class*="__button_"]:after{
-    content:'';opacity:0;display:block;width:1.2em;height:1.2em;background:rgba(0,0,0,0.2);border-radius: 1.2em;
-    position: absolute;z-index:1;left:50%;top:50%;margin-top:-.5em;margin-left:-0.54em;
-    -webkit-transition: all .5s;
-    -o-transition: all .5s;
-    transition: all .5s;
+    content:'';opacity:0;display:block;width:1.2em;height:1.2em;border-radius: 1.2em;background:rgba(0,0,0,0.2);
+    position: absolute;z-index:1;left:50%;top:50%;margin-top:-0.56em;margin-left:-0.6em;
+    -webkit-transition: transform .5s, opacity .5s;
+    -o-transition: transform .5s, opacity .5s;;
+    transition: transform .5s, opacity .5s;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
 }
-a[class*="__button_"]:hover::after{opacity: .8;
+a[class*="__button_"]:hover::after{
+    opacity: .8;
     -webkit-transform: scale(2);
     -ms-transform: scale(2);
     transform: scale(2);
-    -webkit-transition: all .5s;
-    -o-transition: all .5s;
-    transition: all .5s;
+    -webkit-transition: transform .5s, opacity .5s;
+    -o-transition: transform .5s, opacity .5s;;
+    transition: transform .5s, opacity .5s;
 }
 a[class*="__button_"]:focus:after{
     -webkit-animation-name : roundActive;
@@ -264,16 +265,23 @@ body{min-height:40em}
 /* TotalMenu */
 .TotalMenu{position: absolute;left:0;top:0;bottom:0;width:3.5em;max-height:100%;background:#0081da;overflow-y:auto;}
 .active_submenu .TotalMenu{background:#0b1728}
-.TotalMenu__button_close{display:none;}
-.TotalMenu__button_menu{display: block;position: absolute;left:.7em;top:1.6em}
+a[class*="__button_"].TotalMenu__button_close{position: absolute;display:none}
+a[class*="__button_"].TotalMenu__button_menu{
+    display: block;position: absolute;left:.7em;top:1.6em;opacity:0.7;
+    -webkit-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;    
+}
+a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .TotalMenu .AdminState{display: none}
 
 .TotalMenu.active{width:20em;z-index:50;background:#0b1728}
-.TotalMenu.active .TotalMenu__button_menu{display: none}
-.TotalMenu.active .TotalMenu__button_close{display: block;position: absolute;right:1em;top:1.6em}
+.TotalMenu.active a[class*="__button_"].TotalMenu__button_menu{display: none}
+.TotalMenu.active a[class*="__button_"].TotalMenu__button_close{display: block;right:1em;top:1.6em}
 .TotalMenu.active .AdminState{display: block;text-align: center;text-indent: 0em}
 
 .TotalMenu__top{height:5em;position: relative;}
+.TotalMenu__list{padding:1em 0}
 .TotalMenu__list li a{
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
 	filter: alpha(opacity=60);
@@ -375,7 +383,8 @@ body{min-height:40em}
 
 /* AdminState */
 .inactive .AdminState{text-align: center}
-.AdminState{padding:1.5em 0;background:#0b1728;}
+.TotalMenu.active .AdminState__state{margin-left:-2em}
+.AdminState{padding:1.5em 0;background:#0b1728;overflow:hidden}
 .AdminState__state{display:inline-block;color:#fff;font-weight: bold;width:10em;text-align: center;}
 .AdminState__state:hover{color:#fff}
 .AdminState__state .txt{font-size:0.875em}

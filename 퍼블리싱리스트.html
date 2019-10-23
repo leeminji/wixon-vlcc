@@ -17,15 +17,19 @@
 		.tbl-A{position:relative;overflow-x:auto}
 		.tbl-A thead th{border:1px solid #c2c2c2;background:#fff4e4;color:#000;padding:1em 0;}
 		.tbl-A tbody td, .tbl-A tbody th{border:1px solid #c2c2c2;padding:1em;line-height:1.4em;}
-        .tbl-A tbody tr.line td, .tbl-A tbody tr.line th{border-top-width:3px;}
+        .tbl-A tr.line td, .tbl-A tr.line th{border-top-width:3px;}
         .tbl-A tbody td p{font-size:0.9em;padding:.2em 0}
 		.tbl-A.c_blue thead th{background:#d9e8e8}
 		.tbl-A.c_red thead th{background:#ffe9e4}
+		.tbl-A .left{text-align: left;padding:1em}
+		.tbl-A .td_line{border-right:1px solid #c2c2c2}
+		.modify_area{max-height: 10em;overflow:auto;border:1px solid #efefef}
+		.modify_area p{padding:.5em 1em}
 	</style>
 </head>
 <body>
 	<div class="allwrap">
-		<div class="page-top"><span class="date">수정일 : 2019.10.18</span></div>
+		<div class="page-top"><span class="date">수정일 : 2019.10.23</span></div>
 		<h1 class="main-title"><span>서울라인 VLCC 퍼블리싱</span></h1>
 		<div class="content" style="padding-top:1em;padding-bottom: 10em">
 			<div class="tbl-A">
@@ -49,7 +53,19 @@
 								<p>Clone with HTTPS : <a href="https://github.com/leeminji/wixon-vlcc.git">https://github.com/leeminji/wixon-vlcc.git</a></p>
 							</th>
 						</tr>
-						<tr>
+						<tr class="line">
+							<th colspan="2">수정사항</th>
+							<td colspan="4" class="left td_line">
+								<div class="modify_area">
+									<p><strong>2019-10-23</strong><br>
+									1. layout - header, footer 표시 , incldue - header, footer HTML 파일 추가. <br>
+									2. mail filtering Data -  div 데이터 테이블 샘플 추가. <br>
+									3. mail row Data - 데이터 샘플 추가.
+									</p>
+								</div>
+							</td>
+						</tr>
+						<tr class="line">
                             <th>No</th>
 							<th colspan="2">메뉴명</th>
 							<th>링크</th>
@@ -59,7 +75,26 @@
 					</thead>
 					<tbody>
 						<tr class="line">
-                            <th rowspan="3">0</th>
+							<th></th>
+							<td>레이아웃</td>
+							<td>헤더(header)</td>
+							<td><a href="./html/0_header.html">./html/0_header.html</a></td>
+							<td></td>
+							<td>incldue header 영역입니다. (내용안 footer, header과는 다릅니다. 요청하신대로 표시해놓았습니다.)</td>							
+						</tr>
+						<tr>
+							<th></th>
+							<td>레이아웃</td>
+							<td>푸터(footer)</td>
+							<td><a href="./html/0_footer.html">./html/0_footer.html</a></td>
+							<td></td>
+							<td>
+								<p>incldue footer 영역입니다. (내용안 footer, header과는 다릅니다. 요청하신대로 표시해놓았습니다.)</p>
+								<p>자바스크립트 위치는 편한대로 조정하세요.</p>
+							</td>							
+						</tr>
+						<tr class="line">
+                            <th rowspan="1">0</th>
                             <td>로그인</td>
                             <td>기본로그인</td>
 							<td><a href="./html/0_index.html">./html/0_index.html</a></td>
@@ -67,6 +102,7 @@
 							<td></td>
 						</tr>
 						<tr>
+							<th rowspan="2">1</th>
                             <td>로그인</td>
                             <td>OTP</td>
 							<td><a href="./html/1_signIn_otp.html">./html/1_signIn_otp.html</a></td>
@@ -85,7 +121,9 @@
 							<td>메일</td>
 							<td>메일 - example</td>
 							<td><a href="./html/9_mail.html">./html/9_mail.html</a></td>
-							<td></td>
+							<td>
+								<p><strong>10/23</strong> :div 데이터 샘플 추가</p>
+							</td>
 							<td>
                                 <p>메일목록과 내용 사이 간격조절 스트립트 적용</p>
                                 <p>예시 자바스크립트 맨 아래부분에 작성</p>
@@ -102,15 +140,21 @@
 							<td>메일</td>
 							<td>메일 - 내용</td>
 							<td><a href="./html/9_mail_content.html">./html/9_mail_content.html</a></td>
-							<td></td>
+							<td>
+								<p><strong>10/23</strong> :div 데이터 샘플 추가</p>
+							</td>
 							<td></td>
 						</tr>
 						<tr>
 							<td>메일</td>
 							<td>메일 - 필터(데이터테이블)</td>
 							<td><a href="./html/9_mail_table.html">./html/9_mail_table.html</a></td>
-							<td></td>
-							<td></td>
+							<td>
+								<p><strong>10/23</strong> :div 데이터 샘플 추가</p>
+							</td>
+							<td>
+								<p></p>
+							</td>
 						</tr>
 					</tbody>
 				</table>

@@ -15,162 +15,166 @@
 <body>
 	<div class="loading" id="loading"><div class="img"><span class="skip">Loading...</span></div></div>
 	<div class="Layout__Allwrap active_submenu" id="LayoutAllwrap">
-		<!-- Layout__menu -->
-		<div class="Layout__menu">
-			<div class="TotalMenu__tooltip" id="totalMenuTooltip"></div>
-			<!-- TotalMenu -->
-			<div class="TotalMenu" id="totalMenu">
-				<div class="js-scrollbar">
-					<div class="TotalMenu__top">				
-						<a href="javascript:;" class="TotalMenu__button_menu" id="totalMenuOpen"><span class="icon icon_menu"></span></a>
-						<div class="AdminState">
-							<a href="#" title="" class="AdminState__state">
-								<span class="icon icon_admin"></span> <span class="txt">ADMIN LOGOUT</span>
-							</a>
-						</div>
-						<a href="javascript:;" class="TotalMenu__button_close" title="close" id="totalMenuClose"><span class="icon icon_close"></span></a>
-					</div>
-					<!-- TotalMenu__listArea -->
-					<nav class="TotalMenu__listArea">
-						<h1 class="skip">전체메뉴</h1>
-						<ul class="clear TotalMenu__list" id="totalMenuList">
-							<li data-title="Setting">
-								<a href="#">
-									<span class="icon icon_setting on"></span>
-									<span class="txt">Setting</span>
-								</a>
-							</li>
-							<li data-title="Dashbaord">
-								<a href="#">
-									<span class="icon icon_moniter on"></span>
-									<span class="txt">Dashbaord</span>
-								</a>
-							</li>
-							<li data-title="Map">
-								<a href="#">
-									<span class="icon icon_location on"></span>
-									<span class="txt">Map</span>
-								</a>
-							</li>
-							<li data-title="Spot Charter">
-								<a href="#">
-									<span class="icon icon_compass on"></span>
-									<span class="txt">Spot Charter</span>
-								</a>
-								<ul class="clear TotalMenu__sublist">
-									<li><a href=""><span class="txt">Position list</span></a></li>
-									<li><a href=""><span class="txt">Nowcast</span></a></li>
-									<li><a href=""><span class="txt">Pattern</span></a></li>
-									<li><a href=""><span class="txt">Analysis</span></a></li>
-								</ul>
-							</li>
-							<li data-title="Tool">
-								<a href="#">
-									<span class="icon icon_ruler on"></span>
-									<span class="txt">Tool</span>
-								</a>
-								<ul class="clear TotalMenu__sublist">
-									<li><a href=""><span class="txt">TCE Estimation</span></a></li>
-									<li><a href=""><span class="txt">Distance</span></a></li>
-								</ul>					
-							</li>
-							<li data-title="Market Report">
-								<a href="#">
-									<span class="icon icon_doc on"></span>
-									<span class="txt">Market Report</span>
-								</a>
-								<ul class="clear TotalMenu__sublist">
-									<li><a href=""><span class="txt">Freight Assessment</span></a></li>
-									<li><a href=""><span class="txt">Tonne Miles</span></a></li>
-									<li><a href=""><span class="txt">Fleet Study</span></a></li>
-									<li><a href=""><span class="txt">Bunker</span></a></li>
-								</ul>					
-							</li>
-							<li data-title="OIL">
-								<a href="#">
-									<span class="icon icon_water on"></span>
-									<span class="txt">OIL</span>
-								</a>
-								<ul class="clear TotalMenu__sublist">
-									<li><a href=""><span class="txt">Flow</span></a></li>
-									<li><a href=""><span class="txt">Inventory</span></a></li>
-									<li><a href=""><span class="txt">Weekly Report</span></a></li>
-								</ul>					
-							</li>
-							<li data-title="My Fleet">
-								<a href="#">
-									<span class="icon icon_ship on"></span>
-									<span class="txt">My Fleet</span>
-								</a>
-								<ul class="clear TotalMenu__sublist">
-									<li><a href=""><span class="txt">Management</span></a></li>
-								</ul>		
-							</li>
-							<li data-title="Mailing" class="active">
-								<a href="9_mail.html">
-									<span class="icon icon_mail on"></span>
-									<span class="txt">Mailing</span>
-								</a>
-							</li>
-						</ul>
-					</nav>
-					<!-- //TotalMenu__listArea -->					
-				</div>
-			</div>
-			<!-- //TotalMenu -->
-			<!-- SideMenu -->
-			<div class="SideMenu">
-				<div class="SideMenu__top">
-					<div class="AdminState">
-						<a href="0_index.html" class="AdminState__state"><span class="icon icon_admin"></span><span class="txt">ADMIN LOGOUT</span></a>
-					</div>
-				</div>
-				<div class="SideMenu__inner">
+		<!-- header -->
+		<header class="Layout__header">
+			<!-- Layout__menu -->
+			<div class="Layout__menu">
+				<div class="TotalMenu__tooltip" id="totalMenuTooltip"></div>
+				<!-- TotalMenu -->
+				<div class="TotalMenu" id="totalMenu">
 					<div class="js-scrollbar">
-						<div class="SideMenu__arrow">
-							<a href="#" class="SideMenu__button_close" id="sideMenuClose"><span class="icon icon_arrow02_prev"></span><span class="skip">닫기</span></a>
+						<div class="TotalMenu__top">				
+							<a href="javascript:;" class="TotalMenu__button_menu" id="totalMenuOpen"><span class="icon icon_menu"></span></a>
+							<div class="AdminState">
+								<a href="#" title="" class="AdminState__state">
+									<span class="icon icon_admin"></span> <span class="txt">ADMIN LOGOUT</span>
+								</a>
+							</div>
+							<a href="javascript:;" class="TotalMenu__button_close" title="close" id="totalMenuClose"><span class="icon icon_close"></span></a>
 						</div>
-						<!-- SideMenu__listArea : 메일서브메뉴 -->
-						<nav class="SideMenu__listArea" id="SideMenuList__mail">
-							<h1 class="skip">서브메뉴</h1>
-							<!-- SideMenu__list 리스트 -->
-							<ul class="clear SideMenu__list">
-								<li class="anime_link-3 active"><a href="#"><span class="txt">All Inbox</span> <span class="count">125</span></a></li>
-								<li class="anime_link-3"><a href="#"><span class="txt">Deleted</span> </a></li>
-								<li class="anime_link-3"><a href="#"><span class="txt">Junk</span> <span class="count">10</span></a></li>
+						<!-- TotalMenu__listArea -->
+						<nav class="TotalMenu__listArea">
+							<h1 class="skip">전체메뉴</h1>
+							<ul class="clear TotalMenu__list" id="totalMenuList">
+								<li data-title="Setting">
+									<a href="#">
+										<span class="icon icon_setting on"></span>
+										<span class="txt">Setting</span>
+									</a>
+								</li>
+								<li data-title="Dashbaord">
+									<a href="#">
+										<span class="icon icon_moniter on"></span>
+										<span class="txt">Dashbaord</span>
+									</a>
+								</li>
+								<li data-title="Map">
+									<a href="#">
+										<span class="icon icon_location on"></span>
+										<span class="txt">Map</span>
+									</a>
+								</li>
+								<li data-title="Spot Charter">
+									<a href="#">
+										<span class="icon icon_compass on"></span>
+										<span class="txt">Spot Charter</span>
+									</a>
+									<ul class="clear TotalMenu__sublist">
+										<li><a href=""><span class="txt">Position list</span></a></li>
+										<li><a href=""><span class="txt">Nowcast</span></a></li>
+										<li><a href=""><span class="txt">Pattern</span></a></li>
+										<li><a href=""><span class="txt">Analysis</span></a></li>
+									</ul>
+								</li>
+								<li data-title="Tool">
+									<a href="#">
+										<span class="icon icon_ruler on"></span>
+										<span class="txt">Tool</span>
+									</a>
+									<ul class="clear TotalMenu__sublist">
+										<li><a href=""><span class="txt">TCE Estimation</span></a></li>
+										<li><a href=""><span class="txt">Distance</span></a></li>
+									</ul>					
+								</li>
+								<li data-title="Market Report">
+									<a href="#">
+										<span class="icon icon_doc on"></span>
+										<span class="txt">Market Report</span>
+									</a>
+									<ul class="clear TotalMenu__sublist">
+										<li><a href=""><span class="txt">Freight Assessment</span></a></li>
+										<li><a href=""><span class="txt">Tonne Miles</span></a></li>
+										<li><a href=""><span class="txt">Fleet Study</span></a></li>
+										<li><a href=""><span class="txt">Bunker</span></a></li>
+									</ul>					
+								</li>
+								<li data-title="OIL">
+									<a href="#">
+										<span class="icon icon_water on"></span>
+										<span class="txt">OIL</span>
+									</a>
+									<ul class="clear TotalMenu__sublist">
+										<li><a href=""><span class="txt">Flow</span></a></li>
+										<li><a href=""><span class="txt">Inventory</span></a></li>
+										<li><a href=""><span class="txt">Weekly Report</span></a></li>
+									</ul>					
+								</li>
+								<li data-title="My Fleet">
+									<a href="#">
+										<span class="icon icon_ship on"></span>
+										<span class="txt">My Fleet</span>
+									</a>
+									<ul class="clear TotalMenu__sublist">
+										<li><a href=""><span class="txt">Management</span></a></li>
+									</ul>		
+								</li>
+								<li data-title="Mailing" class="active">
+									<a href="9_mail.html">
+										<span class="icon icon_mail on"></span>
+										<span class="txt">Mailing</span>
+									</a>
+								</li>
 							</ul>
-							<!-- //SideMenu__list -->
-							<!-- Categories 카테고리 -->
-							<section class="Categories">
-								<h2 class="Categories__title"><span>Categories</span></h2>
-								<div class="Categories__item anime_link-2">
-									<a href="#" class="Categories__link active">
-										<span class="cate_type type_1"></span>
-										<span class="cate_txt">TERMINAL</span>
-									</a>
-								</div>
-								<div class="Categories__item anime_link-2">
-									<a href="#" class="Categories__link">
-										<span class="cate_type type_2"></span>
-										<span class="cate_txt">POSITION LIST</span>
-									</a>
-								</div>
-								<div class="Categories__item anime_link-2">
-									<a href="#" class="Categories__link">
-										<span class="cate_type type_3"></span>
-										<span class="cate_txt">NARKET REPOSRT</span>
-									</a>
-								</div>
-							</section>
-							<!-- //Categories -->						
 						</nav>
-						<!-- //SideMenu__listArea : 메일서브메뉴 -->
+						<!-- //TotalMenu__listArea -->					
 					</div>
 				</div>
+				<!-- //TotalMenu -->
+				<!-- SideMenu -->
+				<div class="SideMenu">
+					<div class="SideMenu__top">
+						<div class="AdminState">
+							<a href="0_index.html" class="AdminState__state"><span class="icon icon_admin"></span><span class="txt">ADMIN LOGOUT</span></a>
+						</div>
+					</div>
+					<div class="SideMenu__inner">
+						<div class="js-scrollbar">
+							<div class="SideMenu__arrow">
+								<a href="#" class="SideMenu__button_close" id="sideMenuClose"><span class="icon icon_arrow02_prev"></span><span class="skip">닫기</span></a>
+							</div>
+							<!-- SideMenu__listArea : 메일서브메뉴 -->
+							<nav class="SideMenu__listArea" id="SideMenuList__mail">
+								<h1 class="skip">서브메뉴</h1>
+								<!-- SideMenu__list 리스트 -->
+								<ul class="clear SideMenu__list">
+									<li class="anime_link-3 active"><a href="#"><span class="txt">All Inbox</span> <span class="count">125</span></a></li>
+									<li class="anime_link-3"><a href="#"><span class="txt">Deleted</span> </a></li>
+									<li class="anime_link-3"><a href="#"><span class="txt">Junk</span> <span class="count">10</span></a></li>
+								</ul>
+								<!-- //SideMenu__list -->
+								<!-- Categories 카테고리 -->
+								<section class="Categories">
+									<h2 class="Categories__title"><span>Categories</span></h2>
+									<div class="Categories__item anime_link-2">
+										<a href="#" class="Categories__link active">
+											<span class="cate_type type_1"></span>
+											<span class="cate_txt">TERMINAL</span>
+										</a>
+									</div>
+									<div class="Categories__item anime_link-2">
+										<a href="#" class="Categories__link">
+											<span class="cate_type type_2"></span>
+											<span class="cate_txt">POSITION LIST</span>
+										</a>
+									</div>
+									<div class="Categories__item anime_link-2">
+										<a href="#" class="Categories__link">
+											<span class="cate_type type_3"></span>
+											<span class="cate_txt">NARKET REPOSRT</span>
+										</a>
+									</div>
+								</section>
+								<!-- //Categories -->						
+							</nav>
+							<!-- //SideMenu__listArea : 메일서브메뉴 -->
+						</div>
+					</div>
+				</div>
+				<!-- //SideMenu -->
 			</div>
-			<!-- //SideMenu -->
-		</div>
-		<!-- //Layout__menu -->
+			<!-- //Layout__menu -->
+		</header>
+		<!-- //header -->
 		<!-- Layout__container -->
 		<div class="Layout__container">
 			<div class="Layout__topContent">
@@ -350,6 +354,47 @@
 											</table>
 										</div>
 										<!-- //데이터 테이블 샘플 -->
+										<div></div>										
+										<!-- div 데이터 테이블 샘플 추가 -->
+										<div><span>SEP-19</span></div>
+										<div class="DataDivTable__1">
+											<div class="row thead"><span class="cell">sample text</span><span class="cell">sample text</span><span class="cell">sample text</span></div>
+											<div class="row"><span class="cell">TD1</span><span class="cell">280K MT MEG/USG</span><span class="cell">31.16 (+0.07)</span></div>
+											<div class="row"><span class="cell">TD2</span><span class="cell">270K MT MEG/SPORE</span><span class="cell">70.21 (+0.23)</span></div>
+											<div class="row"><span class="cell">TD3C</span><span class="cell">270K MT MEG/CHINA</span><span class="cell">69.38 (+0.21)</span></div>
+											<div class="row"><span class="cell">TD15</span><span class="cell">260K MT WAF/CHINA</span><span class="cell">71.13 (-0.20)</span></div>
+											<div class="row"><span class="cell">TD22</span><span class="cell">270K MT STS USG/NINGBO L/S USD </span><span class="cell">8,044,444(+36,111)</span></div>
+										</div>
+										<!-- //div 데이터 테이블 샘플 추가-->
+										<!-- div 데이터 테이블 샘플 추가-->
+										<div><span>SEP-19</span></div>
+										<div class="DataDivTable__1">
+											<div class="row thead">
+												<span class="cell">sample text</span>
+												<span class="cell">sample text</span>
+												<span class="cell">sample text</span>
+												<span class="cell">sample text</span>
+												<span class="cell">sample text</span>
+												<span class="cell">sample text</span>
+											</div>
+											<div class="row">
+												<span class="cell">TD1</span>
+												<span class="cell">280K MT MEG/USG</span>
+												<span class="cell">31.16 (+0.07)</span>
+												<span class="cell">31.16 (+0.07)</span>
+												<span class="cell">31.16 (+0.07)</span>
+												<span class="cell">31.16 (+0.07) </span>
+											</div>
+											<div class="row">
+												<span class="cell"></span>
+												<span class="cell"></span>
+												<span class="cell"></span>
+												<span class="cell"></span>
+												<span class="cell"></span>
+												<span class="cell"></span>
+											</div>
+										</div>
+										<!-- //div 데이터 테이블 샘플 추가-->
 									</div>
 								</div>
 							</div>
@@ -376,6 +421,9 @@
 			<!-- //MailArea 메일 -->			
 		</div>
 		<!-- //Layout__container -->
+		<!-- footer -->
+		<footer class="Layout__footer"></footer>
+		<!-- //footer -->		
 	</div>
 	<!-- javascript -->
 	<script type="text/javascript" src="../_public/js/jquery-1.12.4.js"></script>

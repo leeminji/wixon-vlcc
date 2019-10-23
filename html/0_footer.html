@@ -1,0 +1,65 @@
+		<!-- footer -->
+		<footer class="Layout__footer"></footer>
+		<!-- //footer -->			
+	</div>
+	<!-- javascript -->
+	<script type="text/javascript" src="../_public/js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="../_public/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../_public/vendor/scrollbar/jquery.scrollbar.js"></script>
+	<script type="text/javascript" src="../_public/js/ui.js"></script>
+	<!-- example -->
+	<script type="text/javascript">
+		// 아래스크립트는 예시를 위해 작성한 것입니다. 
+		// 개발작업시 삭제하셔도 무방합니다.
+		$(document).ready(function(){
+			exMail.init();
+		});
+		var exMail = {
+			scrollbar : null,
+			currentItem : null,
+			content : null,
+			init : function(){
+				var thisObj = this;
+
+				this.scrollbar = $(".js-scrollbar");
+				this.content = $("#mailAreaBodyInner");
+
+				//메일리스트 클릭시 해당 메일 오픈.
+				$(".MailArea__item").each(function(_index){
+					var item = $(this);
+					item.index = _index;
+					item.title = item.find(".detail .title").text();
+
+					$(this).children(".link").on("click", function(event){
+						event.preventDefault();		
+						if( thisObj.currentItem == item ||  item.hasClass("active")){
+							thisObj.close();
+						}else{
+							thisObj.open(event, item);
+						}
+					});
+				});
+			},
+			open : function(_event, _item){
+				var thisObj = this;
+				if( thisObj.currentItem != null ){
+					thisObj.currentItem.removeClass("active");
+				}
+				thisObj.currentItem = _item;
+				thisObj.content.addClass("active");
+				thisObj.currentItem.addClass("active");
+
+				//스크롤바 커스텀을 위해 ajax로 데이터 부르거나 할 경우 초기화 해줘야합니다. 
+				thisObj.scrollbar.scrollbar('init');
+				thisObj.content.find(".title").text( thisObj.currentItem.title );
+			},
+			close : function(){
+				var thisObj = this;
+				thisObj.currentItem.removeClass("active");
+				thisObj.currentItem = null;
+				thisObj.content.removeClass("active");
+			}
+		}
+	</script>
+</body>
+</html>

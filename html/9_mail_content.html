@@ -15,162 +15,166 @@
 <body>
 	<div class="loading" id="loading"><div class="img"><span class="skip">Loading...</span></div></div>
 	<div class="Layout__Allwrap active_submenu" id="LayoutAllwrap">
-		<!-- Layout__menu -->
-		<div class="Layout__menu">
-			<div class="TotalMenu__tooltip" id="totalMenuTooltip"></div>
-			<!-- TotalMenu -->
-			<div class="TotalMenu" id="totalMenu">
-				<div class="js-scrollbar">
-					<div class="TotalMenu__top">				
-						<a href="javascript:;" class="TotalMenu__button_menu" id="totalMenuOpen"><span class="icon icon_menu"></span></a>
-						<div class="AdminState">
-							<a href="#" title="" class="AdminState__state">
-								<span class="icon icon_admin"></span> <span class="txt">ADMIN LOGOUT</span>
-							</a>
-						</div>
-						<a href="javascript:;" class="TotalMenu__button_close" title="close" id="totalMenuClose"><span class="icon icon_close"></span></a>
-					</div>
-					<!-- TotalMenu__listArea -->
-					<nav class="TotalMenu__listArea">
-						<h1 class="skip">전체메뉴</h1>
-						<ul class="clear TotalMenu__list" id="totalMenuList">
-							<li data-title="Setting">
-								<a href="#">
-									<span class="icon icon_setting on"></span>
-									<span class="txt">Setting</span>
-								</a>
-							</li>
-							<li data-title="Dashbaord">
-								<a href="#">
-									<span class="icon icon_moniter on"></span>
-									<span class="txt">Dashbaord</span>
-								</a>
-							</li>
-							<li data-title="Map">
-								<a href="#">
-									<span class="icon icon_location on"></span>
-									<span class="txt">Map</span>
-								</a>
-							</li>
-							<li data-title="Spot Charter">
-								<a href="#">
-									<span class="icon icon_compass on"></span>
-									<span class="txt">Spot Charter</span>
-								</a>
-								<ul class="clear TotalMenu__sublist">
-									<li><a href=""><span class="txt">Position list</span></a></li>
-									<li><a href=""><span class="txt">Nowcast</span></a></li>
-									<li><a href=""><span class="txt">Pattern</span></a></li>
-									<li><a href=""><span class="txt">Analysis</span></a></li>
-								</ul>
-							</li>
-							<li data-title="Tool">
-								<a href="#">
-									<span class="icon icon_ruler on"></span>
-									<span class="txt">Tool</span>
-								</a>
-								<ul class="clear TotalMenu__sublist">
-									<li><a href=""><span class="txt">TCE Estimation</span></a></li>
-									<li><a href=""><span class="txt">Distance</span></a></li>
-								</ul>					
-							</li>
-							<li data-title="Market Report">
-								<a href="#">
-									<span class="icon icon_doc on"></span>
-									<span class="txt">Market Report</span>
-								</a>
-								<ul class="clear TotalMenu__sublist">
-									<li><a href=""><span class="txt">Freight Assessment</span></a></li>
-									<li><a href=""><span class="txt">Tonne Miles</span></a></li>
-									<li><a href=""><span class="txt">Fleet Study</span></a></li>
-									<li><a href=""><span class="txt">Bunker</span></a></li>
-								</ul>					
-							</li>
-							<li data-title="OIL">
-								<a href="#">
-									<span class="icon icon_water on"></span>
-									<span class="txt">OIL</span>
-								</a>
-								<ul class="clear TotalMenu__sublist">
-									<li><a href=""><span class="txt">Flow</span></a></li>
-									<li><a href=""><span class="txt">Inventory</span></a></li>
-									<li><a href=""><span class="txt">Weekly Report</span></a></li>
-								</ul>					
-							</li>
-							<li data-title="My Fleet">
-								<a href="#">
-									<span class="icon icon_ship on"></span>
-									<span class="txt">My Fleet</span>
-								</a>
-								<ul class="clear TotalMenu__sublist">
-									<li><a href=""><span class="txt">Management</span></a></li>
-								</ul>		
-							</li>
-							<li data-title="Mailing" class="active">
-								<a href="9_mail.html">
-									<span class="icon icon_mail on"></span>
-									<span class="txt">Mailing</span>
-								</a>
-							</li>
-						</ul>
-					</nav>
-					<!-- //TotalMenu__listArea -->					
-				</div>
-			</div>
-			<!-- //TotalMenu -->
-			<!-- SideMenu -->
-			<div class="SideMenu">
-				<div class="SideMenu__top">
-					<div class="AdminState">
-						<a href="0_index.html" class="AdminState__state"><span class="icon icon_admin"></span><span class="txt">ADMIN LOGOUT</span></a>
-					</div>
-				</div>
-				<div class="SideMenu__inner">
+		<!-- header -->
+		<header class="Layout__header">
+			<!-- Layout__menu -->
+			<div class="Layout__menu">
+				<div class="TotalMenu__tooltip" id="totalMenuTooltip"></div>
+				<!-- TotalMenu -->
+				<div class="TotalMenu" id="totalMenu">
 					<div class="js-scrollbar">
-						<div class="SideMenu__arrow">
-							<a href="#" class="SideMenu__button_close" id="sideMenuClose"><span class="icon icon_arrow02_prev"></span><span class="skip">닫기</span></a>
+						<div class="TotalMenu__top">				
+							<a href="javascript:;" class="TotalMenu__button_menu" id="totalMenuOpen"><span class="icon icon_menu"></span></a>
+							<div class="AdminState">
+								<a href="#" title="" class="AdminState__state">
+									<span class="icon icon_admin"></span> <span class="txt">ADMIN LOGOUT</span>
+								</a>
+							</div>
+							<a href="javascript:;" class="TotalMenu__button_close" title="close" id="totalMenuClose"><span class="icon icon_close"></span></a>
 						</div>
-						<!-- SideMenu__listArea : 메일서브메뉴 -->
-						<nav class="SideMenu__listArea" id="SideMenuList__mail">
-							<h1 class="skip">서브메뉴</h1>
-							<!-- SideMenu__list 리스트 -->
-							<ul class="clear SideMenu__list">
-								<li class="anime_link-3 active"><a href="#"><span class="txt">All Inbox</span> <span class="count">125</span></a></li>
-								<li class="anime_link-3"><a href="#"><span class="txt">Deleted</span> </a></li>
-								<li class="anime_link-3"><a href="#"><span class="txt">Junk</span> <span class="count">10</span></a></li>
+						<!-- TotalMenu__listArea -->
+						<nav class="TotalMenu__listArea">
+							<h1 class="skip">전체메뉴</h1>
+							<ul class="clear TotalMenu__list" id="totalMenuList">
+								<li data-title="Setting">
+									<a href="#">
+										<span class="icon icon_setting on"></span>
+										<span class="txt">Setting</span>
+									</a>
+								</li>
+								<li data-title="Dashbaord">
+									<a href="#">
+										<span class="icon icon_moniter on"></span>
+										<span class="txt">Dashbaord</span>
+									</a>
+								</li>
+								<li data-title="Map">
+									<a href="#">
+										<span class="icon icon_location on"></span>
+										<span class="txt">Map</span>
+									</a>
+								</li>
+								<li data-title="Spot Charter">
+									<a href="#">
+										<span class="icon icon_compass on"></span>
+										<span class="txt">Spot Charter</span>
+									</a>
+									<ul class="clear TotalMenu__sublist">
+										<li><a href=""><span class="txt">Position list</span></a></li>
+										<li><a href=""><span class="txt">Nowcast</span></a></li>
+										<li><a href=""><span class="txt">Pattern</span></a></li>
+										<li><a href=""><span class="txt">Analysis</span></a></li>
+									</ul>
+								</li>
+								<li data-title="Tool">
+									<a href="#">
+										<span class="icon icon_ruler on"></span>
+										<span class="txt">Tool</span>
+									</a>
+									<ul class="clear TotalMenu__sublist">
+										<li><a href=""><span class="txt">TCE Estimation</span></a></li>
+										<li><a href=""><span class="txt">Distance</span></a></li>
+									</ul>					
+								</li>
+								<li data-title="Market Report">
+									<a href="#">
+										<span class="icon icon_doc on"></span>
+										<span class="txt">Market Report</span>
+									</a>
+									<ul class="clear TotalMenu__sublist">
+										<li><a href=""><span class="txt">Freight Assessment</span></a></li>
+										<li><a href=""><span class="txt">Tonne Miles</span></a></li>
+										<li><a href=""><span class="txt">Fleet Study</span></a></li>
+										<li><a href=""><span class="txt">Bunker</span></a></li>
+									</ul>					
+								</li>
+								<li data-title="OIL">
+									<a href="#">
+										<span class="icon icon_water on"></span>
+										<span class="txt">OIL</span>
+									</a>
+									<ul class="clear TotalMenu__sublist">
+										<li><a href=""><span class="txt">Flow</span></a></li>
+										<li><a href=""><span class="txt">Inventory</span></a></li>
+										<li><a href=""><span class="txt">Weekly Report</span></a></li>
+									</ul>					
+								</li>
+								<li data-title="My Fleet">
+									<a href="#">
+										<span class="icon icon_ship on"></span>
+										<span class="txt">My Fleet</span>
+									</a>
+									<ul class="clear TotalMenu__sublist">
+										<li><a href=""><span class="txt">Management</span></a></li>
+									</ul>		
+								</li>
+								<li data-title="Mailing" class="active">
+									<a href="9_mail.html">
+										<span class="icon icon_mail on"></span>
+										<span class="txt">Mailing</span>
+									</a>
+								</li>
 							</ul>
-							<!-- //SideMenu__list -->
-							<!-- Categories 카테고리 -->
-							<section class="Categories">
-								<h2 class="Categories__title"><span>Categories</span></h2>
-								<div class="Categories__item anime_link-2">
-									<a href="#" class="Categories__link active">
-										<span class="cate_type type_1"></span>
-										<span class="cate_txt">TERMINAL</span>
-									</a>
-								</div>
-								<div class="Categories__item anime_link-2">
-									<a href="#" class="Categories__link">
-										<span class="cate_type type_2"></span>
-										<span class="cate_txt">POSITION LIST</span>
-									</a>
-								</div>
-								<div class="Categories__item anime_link-2">
-									<a href="#" class="Categories__link">
-										<span class="cate_type type_3"></span>
-										<span class="cate_txt">NARKET REPOSRT</span>
-									</a>
-								</div>
-							</section>
-							<!-- //Categories -->						
 						</nav>
-						<!-- //SideMenu__listArea : 메일서브메뉴 -->
+						<!-- //TotalMenu__listArea -->					
 					</div>
 				</div>
+				<!-- //TotalMenu -->
+				<!-- SideMenu -->
+				<div class="SideMenu">
+					<div class="SideMenu__top">
+						<div class="AdminState">
+							<a href="0_index.html" class="AdminState__state"><span class="icon icon_admin"></span><span class="txt">ADMIN LOGOUT</span></a>
+						</div>
+					</div>
+					<div class="SideMenu__inner">
+						<div class="js-scrollbar">
+							<div class="SideMenu__arrow">
+								<a href="#" class="SideMenu__button_close" id="sideMenuClose"><span class="icon icon_arrow02_prev"></span><span class="skip">닫기</span></a>
+							</div>
+							<!-- SideMenu__listArea : 메일서브메뉴 -->
+							<nav class="SideMenu__listArea" id="SideMenuList__mail">
+								<h1 class="skip">서브메뉴</h1>
+								<!-- SideMenu__list 리스트 -->
+								<ul class="clear SideMenu__list">
+									<li class="anime_link-3 active"><a href="#"><span class="txt">All Inbox</span> <span class="count">125</span></a></li>
+									<li class="anime_link-3"><a href="#"><span class="txt">Deleted</span> </a></li>
+									<li class="anime_link-3"><a href="#"><span class="txt">Junk</span> <span class="count">10</span></a></li>
+								</ul>
+								<!-- //SideMenu__list -->
+								<!-- Categories 카테고리 -->
+								<section class="Categories">
+									<h2 class="Categories__title"><span>Categories</span></h2>
+									<div class="Categories__item anime_link-2">
+										<a href="#" class="Categories__link active">
+											<span class="cate_type type_1"></span>
+											<span class="cate_txt">TERMINAL</span>
+										</a>
+									</div>
+									<div class="Categories__item anime_link-2">
+										<a href="#" class="Categories__link">
+											<span class="cate_type type_2"></span>
+											<span class="cate_txt">POSITION LIST</span>
+										</a>
+									</div>
+									<div class="Categories__item anime_link-2">
+										<a href="#" class="Categories__link">
+											<span class="cate_type type_3"></span>
+											<span class="cate_txt">NARKET REPOSRT</span>
+										</a>
+									</div>
+								</section>
+								<!-- //Categories -->						
+							</nav>
+							<!-- //SideMenu__listArea : 메일서브메뉴 -->
+						</div>
+					</div>
+				</div>
+				<!-- //SideMenu -->
 			</div>
-			<!-- //SideMenu -->
-		</div>
-		<!-- //Layout__menu -->
+			<!-- //Layout__menu -->
+		</header>
+		<!-- //header -->
 		<!-- Layout__container -->
 		<div class="Layout__container">
 			<div class="Layout__topContent">
@@ -284,13 +288,7 @@
 										<div class="addr_listArea"><a href="#" class="addr">Tankerdirty@brsbrokers.com</a>, <a href="#" class="addr">Tankerdirty2@brsbrokers.com</a></div>
 									</div>
 									<div class="MailArea__content__body">
-										<p style="font-size:20px">BRS GENEVA - VLCC COB REPORT</p>
-										<p style="font-size:18px">MEG/CHINA  : W67.5</p>
-										<br>
-										<p>COMMENT : brakes put on by charterers with very little actively traded today. rates improved once again however on an ex dd vessel and sentiment remains firm.</p>	
-										<p style="font-size:20px">BRS GENEVA - VLCC COB REPORT</p>
-										<p style="font-size:18px">MEG/CHINA  : W67.5</p>
-										<br>
+										<div><span>Description: Related image</span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span>ENCORE SHIPPING - VLCC REPORT</span></div><div><span></span></div><div><span>BDTI ROUTE</span></div><div><span>---------</span></div><div><span>SEP-19</span></div><div><span>TD1</span><span>280K MT MEG/USG</span><span>31.16 (+0.07)</span></div><div><span>TD2</span><span>270K MT MEG/SPORE</span><span>70.21 (+0.23)</span></div><div><span>TD3C</span><span>270K MT MEG/CHINA</span><span>69.38 (+0.21)</span></div><div><span>TD15</span><span>260K MT WAF/CHINA</span><span>71.13 (-0.20)</span></div><div><span>TD22</span><span>270K MT STS USG/NINGBO L/S USD 8,044,444(+36,111)</span></div><div><span></span></div><div><span>CRUDE & BUNKERS PRICE</span></div><div><span>----------------------</span></div><div><span>SEP-19</span></div><div><span>WTI</span><span>USD58.09 (- 0.04)</span><span>SPORE</span><span>USD 518.5 (+ 06.0)</span></div><div><span>BRENT</span><span>USD64.28 (- 0.12)</span><span>FJRH</span><span>USD 480.0 (+ 30.0)</span></div><div><span>DUBAI</span><span>USD64.28 (- 0.12)</span><span>RDAM</span><span>USD 386.5 (+ 12.5)</span></div><div><span></span></div><div><span></span></div><div><span>FIXTURES EX MEG/RSEA INCL COA</span></div><div><span></span></div><div><span>-----------------------------</span></div><div><span></span></div><div><span>MONTH</span><span>AUG</span><span>SEP</span><span>OCT</span><span>NOV</span><span>DEC</span><span>JAN</span><span>FEB</span><span>MAR</span><span>APR</span><span>MAY</span><span>JUN</span><span>JUL</span><span>AUG</span><span>SEP</span><span>OCT</span></div><div><span></span></div><div><span>-----</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span></div><div><span></span></div><div><span>DECADE</span></div><div><span></span></div><div><span>1</span><span>47</span><span>50</span><span>48</span><span>51</span><span>44</span><span>46</span><span>47</span><span>44</span><span>45</span><span>39</span><span>47</span><span>41</span><span>52</span><span>56</span><span>32</span></div><div><span></span></div><div><span>2</span><span>42</span><span>44</span><span>49</span><span>47</span><span>45</span><span>42</span><span>42</span><span>42</span><span>37</span><span>34</span><span>40</span><span>40</span><span>42</span><span>41</span><span>01</span></div><div><span></span></div><div><span>3</span><span>45</span><span>35</span><span>52</span><span>39</span><span>52</span><span>42</span><span>31</span><span>33</span><span>39</span><span>25</span><span>34</span><span>37</span><span>36</span><span>41</span></div><div><span></span></div><div><span>-</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span><span>---</span></div><div><span></span></div><div><span>TOTAL</span><span>115</span><span>129</span><span>149</span><span>137</span><span>136</span><span>130</span><span>118</span><span>119</span><span>121</span><span>98</span><span>121</span><span>118</span><span>130</span><span>138</span><span>33</span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span>MIDDLE EAST</span></div><div><span>CARGOES</span></div><div><span>--------</span></div><div><span></span></div><div><span>UNIPEC</span><span>270</span><span>AG/CHINA</span><span>08/10</span><span>RPTD STILL LOOKING</span></div><div><span></span></div><div><span>HOB</span><span>270</span><span>AG/DAESAN</span><span>10-12/10</span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span>FIXTURES</span></div><div><span>--------</span></div><div><span></span></div><div><span>EXXON</span><span>280</span><span>BOT/WEST</span><span>03/10</span><span>C</span><span>HINESE TBN</span><span>RNR</span><span></span><span></span></div><div><span></span></div><div><span>BPCL</span><span>265</span><span>RTAN/KOCHI</span><span>04/10</span><span>MARBELLA(ALTO-00)</span><span>WS 76 /DEM 21K</span></div><div><span></span></div><div><span>IDEMITSU</span><span>270</span><span>AG/JAPAN</span><span>05/10</span><span>ASIAN PROGRESS VI(ARAM-19)</span><span>RNR</span></div><div><span></span></div><div><span>FORMOSA</span><span>270</span><span>AG/MAILIAO</span><span>05/10</span><span>NAVE NEUTRINO(NPI -03)</span><span>RNR</span></div><div><span></span></div><div><span>GSCALTEX</span><span>270</span><span>AG/YOSU</span><span>10/10</span><span>AMORGOS(EMBI-04)</span><span>WS 63.25 /EX D/D</span></div><div><span></span></div><div><span>ON SUBS:</span></div><div><span></span></div><div><span>NOBLE (TI -08)</span><span>FUJA</span><span>29/09</span><span></span><span></span><span></span><span></span></div><div><span></span></div><div><span>SEAWAYS RAFFLES (TI -10)</span><span>FUJA</span><span>02/10</span><span></span><span></span><span></span><span></span></div><div><span></span></div><div><span>AQUITAINE (TI -17)</span><span>FUJA</span><span>08/10</span><span></span><span></span><span></span><span></span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span>PREVIOUS DAY FIXTURES</span></div><div><span>---------------------</span></div><div><span></span></div><div><span>IOC</span><span>265</span><span>BOT/VADINAR-MUNDRA</span><span>25/09</span><span>DESH VISHAL(SCI-09)</span><span>RNR /RPLC POSEIDON I WS 62.5-67.5</span></div><div><span></span></div><div><span>HENGLI</span><span>270</span><span>AG/CHINA</span><span>03/10</span><span>B</span><span>AHRI TBN(BAHR-</span><span>)</span><span>WS 66</span><span></span></div><div><span></span></div><div><span>SPC</span><span>270</span><span>AG/EAST</span><span>03/10</span><span>D</span><span>HT TBN (DHT -</span><span>)</span><span>WS 69.5</span><span></span></div><div><span></span></div><div><span>CPC</span><span>270</span><span>AG/TAIWAN</span><span>04/10</span><span>RENE (ALTO-02)</span><span>WS 60</span></div><div><span></span></div><div><span>GSCALTEX</span><span>270</span><span>AG/YOSU</span><span>10/10</span><span>SOLANA(CARD-10)</span><span>WS 62.5/EX D/D</span></div><div><span></span></div><div><span>EXXON</span><span>270</span><span>AG/SPORE</span><span>01-05/10</span><span>T</span><span>I TBN</span><span>RNR</span><span></span><span></span></div><div><span></span></div><div><span>DAY HARVEST</span><span>270</span><span>AG/CHINA</span><span>05/10</span><span>TBN</span><span>RNR</span></div><div><span></span></div><div><span>UNIPEC</span><span>270</span><span>AG/CHINA</span><span>06/10</span><span>AL YARMOUK(KPC -14)</span><span>WS 67</span></div><div><span></span></div><div><span>UNIPEC</span><span>270</span><span>AG/CHINA</span><span>08/10</span><span>ASTRO CHLOE(TRAF-09)</span><span>WS 68/DEM 46.25K</span></div><div><span></span></div><div><span>UNIPEC</span><span>270</span><span>AG/CHINA</span><span>08/10</span><span>DHT CONDOR(DHT -04)</span><span>WS 69.5</span></div><div><span></span></div><div><span>GSCALTEX</span><span>270</span><span>AG/YOSU</span><span>10/10</span><span>C.SPIRIT(SKSH-13)</span><span>WS 65</span></div><div><span></span></div><div><span>ON SUBS:</span></div><div><span></span></div><div><span>NEW KARPATHOS (NEWS-00)</span><span>FUJA PPT</span><span></span><span></span><span></span><span></span><span></span></div><div><span></span></div><div><span></span></div><div><span>WEST MARKET</span></div><div><span>CARGOES</span></div><div><span></span></div><div><span>------------</span></div><div><span>UML</span><span>260</span><span>CEYHAN/EAST</span><span>10-15/10</span></div><div><span></span></div><div><span>EQUINOR</span><span>260</span><span>WAFR/EAST</span><span>21-23/10</span><span>STILL?</span></div><div><span></span></div><div><span>LUKOIL</span><span>275</span><span>USG/INDIA</span><span>18-21/10</span></div><div><span></span></div><div><span>ST</span><span>275</span><span>COVENAS/EAST</span><span>26-27/10</span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span>FIXTURES</span></div><div><span>--------</span></div><div><span></span></div><div><span>PETROCHINA</span><span>260</span><span>BRAZIL/CHINA</span><span>15/10</span><span>WHITE NOVA(HEID-06)</span><span>WS 73/DEM 50K</span></div><div><span></span></div><div><span>CSSSA</span><span>260</span><span>WAFR/INDIA-EAST</span><span>18/10</span><span>OLYMPIC LOYALTY II(OLY-05)</span><span>WS 73.5-71</span></div><div><span></span></div><div><span>PETROBRAS</span><span>260</span><span>BRAZIL/CHINA</span><span>21/10</span><span>MARAN ANTARES(MARA-12)</span><span>WS 72.15</span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span>PREVIOUS DAY FIXTURES</span></div><div><span>---------------------</span></div><div><span></span></div><div><span>VITOL</span><span>260</span><span>WAFR/WCINDIA-CHINA</span><span>17/10</span><span>ARAL(TI -16)</span><span>WS 73.5-71</span></div><div><span></span></div><div><span>UNIPEC</span><span>260</span><span>WAFR/CHINA</span><span>18/10</span><span>DIJILAH(AISS-19)</span><span>WS 69.5</span></div><div><span></span></div><div><span>SHELL</span><span>270</span><span>H.POINT/SKOREA</span><span>20/10</span><span>MILTIADIS JUNIOR(CURZ-14)</span><span>RNR</span></div><div><span></span></div><div><span>IOC</span><span>260</span><span>CLOV+MALONGO/PARADIP</span><span>20/10</span><span>DESH VIBHOR(SCI-15)</span><span>USD 4.35 MILL /DEM 35K/EQUIV ABT WS 72</span></div><div><span></span></div><div><span>EQUINOR</span><span>260</span><span>WAFR/EAST</span><span>21/10</span><span>TBN</span><span>RNR</span></div><div><span></span></div><div><span>CHEVRON</span><span>270</span><span>USG/SPORE-CHINA</span><span>28/10</span><span>ARSAN(BAHR-10)</span><span>USD 7.05-8.05 MILL /FLD</span></div><div><span></span></div><div><span>EQUINOR</span><span>270</span><span>USG/CHINA</span><span>28/10</span><span>TBN</span><span>USD 8.10 MILL</span></div><div><span>KOCH</span><span>270</span><span>USG/SPORE</span><span>05/11</span><span>OLYMPIC LIFE(OLYM-19)</span><span>USD 7.05 MILL</span></div><div><span></span></div><div><span></span></div><div><span>PERIOD:</span></div><div><span>-------</span></div><div><span></span></div><div><span>GSCALTEX 2+1 YEAR T/C OF CVS DEL FEAST OCT/NOV - NEED SCRUBBER FITTED MODERN UNIT</span></div><div><span></span></div><div><span>BUNGA KASTURI LIMA(300/07) T/C</span><span>RNR</span><span>SHELL</span></div><div><span></span></div><div><span>ATHENIAN VICTORY(317/09) T/C</span><span>RNR</span><span>KOCH</span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span>S AND P:</span></div><div><span></span></div><div><span>ENERGY R</span><span>(319/03) SOLD AT</span><span>USD 28.50 MILL BNR</span></div><div><span></span></div><div><span>CERIGO</span><span>(299/00) SOLD FOR CONVERSION AT USD 25.00 MILL</span><span>BNR</span></div><div><span></span></div><div><span>KALYMNOS</span><span>(299/00) SOLD FOR CONVERSION AT USD 25.00 MILL</span><span>BNR</span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span>DEMOLITION:</span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span>..END MARKET REPORT.</span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span>** ABOVE MARKET INFORMATION IS TO THE BEST OF BROKERS KNOWLEDGE AND JUST FOR THE REFRENCE ONLY **</span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span>--</span></div><div><span></span></div><div><span>Description: Description: Description: Description: http://encoreshipping.in/images/signature-logo.png</span></div><div><span></span></div><div><span>ENCORE SHIPPING INDIA PVT LTD</span></div><div><span></span></div><div><span>Office No. 826</span></div><div><span></span></div><div><span>8th Floor, JMD MEGAPOLIS</span></div><div><span></span></div><div><span>Sector 48, Sohna Road</span></div><div><span></span></div><div><span>Gurgaon – Delhi NCR, INDIA 122018</span></div><div><span></span></div><div><span>T: +91 124 4821999</span></div><div><span>E:</span><span>brokers@encoreshipping.in</span></div><div><span>w:</span><span>www.encoreshipping.in</span></div><div><span></span></div><div><span>Chandanpreet Singh</span><span>ICE: cpreet</span><span>+91</span><span>99105 63689</span></div><div><span></span></div><div><span>Naveen Bhansali</span><span>ICE: nbhansali</span><span>+91</span><span>81309 21999</span></div><div><span></span></div><div><span>Maninder Rana</span><span>ICE: mrana</span><span>+91</span><span>88269 21999</span></div><div><span></span></div><div><span></span></div>
 
 									</div>
 								</div>
@@ -318,6 +316,9 @@
 			<!-- //MailArea 메일 -->			
 		</div>
 		<!-- //Layout__container -->
+		<!-- footer -->
+		<footer class="Layout__footer"></footer>
+		<!-- //footer -->		
 	</div>
 	<!-- javascript -->
 	<script type="text/javascript" src="../_public/js/jquery-1.12.4.js"></script>

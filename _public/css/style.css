@@ -1,6 +1,7 @@
 @charset 'utf-8';
 @import 'reset.css';
 @import 'animations.css';
+@import 'chartjs.css';
 
 /* scrollbar */
 /* ::-webkit-scrollbar{height:.5em;width: .5em;background-color: #F5F5F5;}
@@ -14,6 +15,7 @@ a.icon[class*="icon_"], button.icon[class*="icon_"], span.icon[class*="icon_"], 
 .icon.icon_location{background-image: url(../images/icon/icon_location.png)}
 .icon.icon_ruler{background-image: url(../images/icon/icon_ruler.png)}
 .icon.icon_admin{background-image: url(../images/icon/icon_admin.png)}
+.icon.icon_admin_black{background-image: url(../images/icon/icon_admin_black.png)}
 .icon.icon_doc{background-image: url(../images/icon/icon_doc.png)}
 .icon.icon_menu{background-image: url(../images/icon/icon_menu.png)}
 .icon.icon_ship{background-image: url(../images/icon/icon_ship.png)}
@@ -198,12 +200,16 @@ a[class*="ButtonIcon__"]:hover:after, button[class*="ButtonIcon__"]:hover:after{
 .loading > .img{opacity:0.6;position:absolute;z-index:1000;left:50%;top:50%;width:10em;height:10em;margin-top:-5em;margin-left:-5em;background:url(../images/common/ajax-loader-big.gif) center no-repeat;background-size:11em auto;border-radius: 10em;box-shadow:0 0 1em rgba(0,0,0,0.8);}
 
 
+/* background */
+.bgStyle_01{background:url(../images/common/bg_style_01.jpg);}
+.bgStyle_01:after{z-index:1;content:'';display:block;position:absolute;right:-10em;width:60%;top:-20em;bottom:-20em;background:rgba(255,255,255, 0.2);transform: rotate(20deg);}
+
 /* layout */
 html, body{width:100%;height:100%;position:relative;z-index:1;overflow-x: hidden;overflow-y:auto}
 body{min-height:40em}
 .Layout__Allwrap{width:100%;height:100%;position:relative;z-index:1;}
 .Layout__menu{
-    position: absolute;left:0;top:0;bottom:0;width:3.5em;
+    position: absolute;left:0;top:0;bottom:0;width:3.5em;z-index:100;
     -webkit-transition: left .8s ease-in-out;
     -webkit-transition: width .8s ease-in-out;
     -o-transition: width .8s ease-in-out;
@@ -218,10 +224,12 @@ body{min-height:40em}
     -o-transition: left .8s ease-in-out;
     transition: left .8s ease-in-out;
 }
-.Layout__topContent{height:5em;position: relative;padding-right:10em;}
+.Layout__topContent{height:5em;position: relative;padding-right:10em;z-index:50}
 .Layout__topContent:after{position: absolute;content:'';display: block;left:0;right:0;height:1px;bottom:0;background: #b9bec6}
+.Layout__topContent.noline:after{display:none}
 .Layout__topContent .TopLogo{position: absolute;right:0;top:0}
-.Layout__content{position: absolute;left:0;top:5em;right:0;bottom:0;}
+.Layout__content{position: absolute;left:0;top:5em;right:0;bottom:0;z-index:50}
+.Layout__content__inner{position:absolute;left:3em;right:3em;top:.5em;bottom:0em;}
 .inactive .Layout__menu{
     width:6em;
     -webkit-transition: width .6s ease-in-out;
@@ -262,9 +270,15 @@ body{min-height:40em}
 .TopSearch .TopSearch__label{display:block;position: absolute;top:50%;margin-top:-1.5em;left:5em;line-height:3em;}
 .TopSearch .TopSearch__label span{font-size:1.2em}
 
+.TopLogin{padding: 1.5em 0;}
+.TopLogin__state{display:inline-block;color:#0b1728;font-weight: bold;width:10em;text-align: center;}
+.TopLogin__state:hover{color:#0b1728}
+.TopLogin__state .txt{font-size:0.875em}
+
 /* TotalMenu */
 .TotalMenu{position: absolute;left:0;top:0;bottom:0;width:3.5em;max-height:100%;background:#0081da;overflow-y:auto;}
 .active_submenu .TotalMenu{background:#0b1728}
+.TotalMenu.black{background:#0b1728}
 a[class*="__button_"].TotalMenu__button_close{position: absolute;display:none}
 a[class*="__button_"].TotalMenu__button_menu{
     display: block;position: absolute;left:.7em;top:1.6em;opacity:0.7;
@@ -545,3 +559,33 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .LoginArea__bg #round-5{left:80%;top:50%;-webkit-animation : AniScale 5s, AniTrans1 18s;animation : AniScale 5s, AniTrans1 18s;}
 .LoginArea__bg #round-6{left:25%;bottom:10%;-webkit-animation : AniScale 3s, AniTrans2 28s, AniOpacity 3s;animation : AniScale 3s, AniTrans2 28s, AniOpacity 3s;}
 
+/* DashboardArea */
+.BoxArea_1{
+    padding:1.5em 2em 1.5em;
+    border-radius: .5em;
+    border:3px solid #a6d0c9;
+    background: #fff;
+    position: relative;
+}
+.BoxArea_1.dark{
+    background: #1e4161;
+    position: relative;
+    overflow: hidden;
+}
+.BoxArea_1.dark:after{
+    z-index:1;
+    content:'';
+    display:block;
+    position:absolute;
+    right:-10em;
+    width:60%;
+    top:-20em;
+    bottom:-20em;
+    background:rgba(0,0,0, 0.2);
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+.BoxArea_1.dark .inner{
+    position: relative;
+    z-index:100;
+}

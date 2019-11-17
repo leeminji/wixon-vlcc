@@ -1,0 +1,97 @@
+
+/*  chart */
+.chartjs-legend{
+    min-height: 22px;
+}
+.chartjs-legend ol, .chartjs-legend ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+    text-align:right;
+}
+.chartjs-legend li {
+    cursor:pointer;
+    display: inline-table;
+    margin: 0px 4px;
+    color:#595959;
+    font-size:12px;
+}
+.chartjs-legend li span{
+    display: inline-block;
+    line-height: 20px;
+    vertical-align: middle;
+    color:#222;
+}
+.chartjs-legend li span.bar{
+    position:relative;
+    padding: 0px 10px;
+    margin: 5px;
+    border-radius:100px;
+    color:white;
+}
+.chartjs-legend li.inactive span{
+    text-decoration: line-through;
+}
+.chartjs-legend li span.line{
+    position:relative;
+    width:16px;
+    height:16px;
+    margin: 0;
+    color:white;
+    border-radius:10px;
+    display:inline-block;
+    vertical-align: middle;
+    margin-right:5px;
+}
+.chartjs-legend.white li span{
+    color:#fff;
+}
+.chartjs-legend li div.line{
+    float:left;
+    height:2px;
+    background:#000;
+    font-size:0;
+    line-height:0;
+    width:25px;
+    padding:1px 0px;
+    border-radius:100px;
+    margin: 9px 5px;
+}
+.chartjs-title span{
+    color:#222;
+    font-weight:bold;
+}
+.chartjs-title.big span{
+    font-size:1.5em;
+}
+.chartjs-title.white span{
+    color:#fff
+}
+.chartjs-title.center{
+    text-align: center;
+}
+.chartjs-canvas{margin-top:-1em}
+
+.chartjs-tab{
+    position: absolute;
+    z-index:100;
+    left:1.5em;
+    top:.8em;
+}
+.chartjs-tab a{
+    float:left;
+    display: block;
+    font-size:0.8em;
+    line-height: 1.6em;
+    padding:0 1em;
+    border:1px solid #a6d0c9;
+    background:#fff;
+    margin:0 -1px;
+}
+.chartjs-tab a:hover{
+    background:#efefef;
+}
+.chartjs-tab a.active{
+    background:#1e4161;
+    color:#fff;
+}

@@ -20,7 +20,7 @@
     display: inline-block;
     line-height: 20px;
     vertical-align: middle;
-    color:#222;
+    color: #909090;
 }
 .chartjs-legend li span.bar{
     position:relative;
@@ -34,9 +34,9 @@
 }
 .chartjs-legend li span.line{
     position:relative;
-    width:16px;
-    height:16px;
-    margin: 0;
+    width:15px;
+    height:15px;
+    margin-top:-1px;
     color:white;
     border-radius:10px;
     display:inline-block;
@@ -44,7 +44,7 @@
     margin-right:5px;
 }
 .chartjs-legend.white li span{
-    color:#fff;
+    color:#909090;
 }
 .chartjs-legend li div.line{
     float:left;
@@ -57,15 +57,15 @@
     border-radius:100px;
     margin: 9px 5px;
 }
+.chartjs-title{padding-top:3px}
 .chartjs-title span{
-    color:#222;
+    color:#667688;
     font-weight:bold;
+    font-size:1.125em;
 }
 .chartjs-title.big span{
-    font-size:1.5em;
-}
-.chartjs-title.white span{
-    color:#fff
+    font-size:1.8em;
+    letter-spacing: 3px;
 }
 .chartjs-title.center{
     text-align: center;
@@ -75,8 +75,8 @@
 .chartjs-tab{
     position: absolute;
     z-index:100;
-    left:1.5em;
-    top:.8em;
+    left:0;
+    top:-.8em;
 }
 .chartjs-tab a{
     float:left;
@@ -84,14 +84,15 @@
     font-size:0.8em;
     line-height: 1.6em;
     padding:0 1em;
-    border:1px solid #a6d0c9;
-    background:#fff;
-    margin:0 -1px;
+    border: 1px solid #233748;
+    outline: 1px solid #000;
+    color: #667688;
+    letter-spacing: -1px;
 }
 .chartjs-tab a:hover{
-    background:#efefef;
+    background: rgba(0,0,0,0.5)
 }
 .chartjs-tab a.active{
-    background:#1e4161;
+    background:#000;
     color:#fff;
 }

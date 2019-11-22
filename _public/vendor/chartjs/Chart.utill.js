@@ -1,25 +1,27 @@
 var ChartUtil = (function(){
 	return {
+		font : "'Roboto Condensed' , 'Noto Sans KR', 'sans-serif'",
 		chartList : [],
 		colors : {
 			red: 'rgb(255, 99, 132)',
 			orange: 'rgb(255, 154, 99)',
 			yellow: 'rgb(255, 205, 86)',
-			green: 'rgb(0, 230, 169)',
-			green_op5: 'rgba(0, 230, 169, 0.5)',
+			green: 'rgb(65, 255, 204)',
+			green_op5: 'rgba(65, 255, 204, 0.5)',
 			yellowish : 'rgb(151,211,188)',
 			purple: 'rgb(153, 102, 255)',
 			grey: 'rgb(201, 203, 207)',
 			skyblue: 'rgb(23, 186, 205)',
 			skyblue_op5: 'rgba(23, 186, 205, 0.5)',
 			black : 'rgb(0,0,0)',
-			blue : 'rgb(105,176,255)',
-			blue_op5 : 'rgb(105,176,255,0.5)',
+			blue : 'rgb(0,119,230)',
+			blue_op5 : 'rgba(0,119,230,0.5)',
 			gray : 'rgb(190,190,190)',
 			darkgray : 'rgb(115,115,115)',
-			white : 'rgb(255,255,255)',
+			white : '#d0d0d0',
 			white_op8 : 'rgba(255,255,255, 0.8)',
 			white_op5 : 'rgba(255,255,255, 0.5)',
+			white_op2 : 'rgba(255,255,255, 0.2)',
 		},
 		randomData : function(min, max){
 			return Math.floor(Math.random() * (max-min+1)) + min;
@@ -44,6 +46,7 @@ var ChartUtil = (function(){
 					title: {
 						display: 'none'
 					},
+					defaultFontFamily : window.ChartUtil.font,
 					scales: {
 						xAxes: [{
 							display: true
@@ -94,12 +97,31 @@ var ChartUtil = (function(){
 							lineWidth: 1,
 							display : true,
 							borderDash: [2, 5],
-							color : window.ChartUtil.colors.gray,
-						}	
+							color : window.ChartUtil.colors.white_op2,
+						},
+						//글자
+						ticks: {
+							display : 'block',
+							fontColor : window.ChartUtil.colors.white,
+							fontFamily : window.ChartUtil.font,
+						},	
 					}],
 					yAxes: [{
 						display: true,
 						ticks : {},
+						//y축에 해당하는 모든선
+						gridLines : {
+							lineWidth: 1,
+							display : true,
+							borderDash: [2, 2],
+							color : window.ChartUtil.colors.white_op2,
+						},
+						//글자
+						ticks: {
+							display : 'block',
+							fontColor : window.ChartUtil.colors.white,
+							fontFamily : window.ChartUtil.font,
+						},	
 					}]
 				}
 			}
@@ -118,32 +140,6 @@ var ChartUtil = (function(){
 			}
 			this.addCustomLegend(_canvasId);
 		},
-		//데이터에서 카테고리로 해당 데이터 찾기
-		categoryDataFind : function(_dataList, _category){
-			var result = null;	
-			_dataList.datalist.forEach(function(item){
-				if( item.category == _category ){
-					result =  item;
-					return;
-				}
-			});
-			return result;
-		},
-		//탭클릭
-		addDataTab : function(_canvasId, _data){
-			var thisObj = this;
-			var tabList = $("#"+_canvasId+"_tab a");
-			tabList.on('click', function(e){
-				e.preventDefault();
-				var category = $(this).data('category');
-				var changeData = thisObj.categoryDataFind(_data, category);
-				if( !changeData ) return;
-				thisObj.chartList[_canvasId].data = changeData;
-				tabList.removeClass('active');
-				$(this).addClass('active');
-				thisObj.chartList[_canvasId].update();
-			});
-		},
 		initLineChartWhite : function(_canvasId, _data, _stepSize){
 			var thisObj =this;
 			var canvas = document.getElementById(_canvasId);
@@ -155,11 +151,13 @@ var ChartUtil = (function(){
 					return thisObj.drawCustomLegend(_chart);
 				},
 				responsive: true,
+				maintainAspectRatio: false,
 				hoverMode: 'index',
 				stacked: false,	
 				title: {
 					display: 'none'
-				},		
+				},
+				defaultFontFamily : window.ChartUtil.font,
 				scales: {
 					xAxes: [
 						{
@@ -186,7 +184,7 @@ var ChartUtil = (function(){
 								lineWidth: 1,
 								display : true,
 								borderDash: [2, 5],
-								color : window.ChartUtil.colors.white_op8,
+								color : window.ChartUtil.colors.white_op2,
 							}
 						}	
 					],
@@ -207,7 +205,7 @@ var ChartUtil = (function(){
 							gridLines : {
 								lineWidth: 1,
 								display : true,
-								color : window.ChartUtil.colors.white_op8,
+								color : window.ChartUtil.colors.white_op2,
 							}
 						}
 					]
@@ -240,25 +238,27 @@ var ChartUtil = (function(){
 				title: {
 					display: 'none'
 				},
+				defaultFontFamily : window.ChartUtil.font,
 				scales: {
 					xAxes : [
 						{
 							//글자
 							ticks: {
-								fontColor : window.ChartUtil.colors.darkgray,
+								fontColor : window.ChartUtil.colors.white,
 								beginAtZero:true,
 								userCallback: function(value, index, values) {
 									value = value.toString();
 									value = value.split(/(?=(?:...)*$)/);
 									value = value.join(',');
 									return value;
-								}			
+								},
+								fontFamily : window.ChartUtil.font,
 							},
 							//x축에 해당하는 모든선
 							gridLines : {
 								lineWidth: 1,
 								display : true,
-								color : window.ChartUtil.colors.gray
+								color : window.ChartUtil.colors.white_op2
 							}
 						}
 					],
@@ -266,12 +266,14 @@ var ChartUtil = (function(){
 						{
 							//글자
 							ticks: {
-								fontColor : window.ChartUtil.colors.darkgray,
+								fontColor : window.ChartUtil.colors.white,
+								fontFamily : window.ChartUtil.font,
 							},	
 							gridLines : {
 								display : true,
 								borderDash: [2, 5],
 								drawOnChartArea: true, 
+								color : window.ChartUtil.colors.white_op2
 							},								
 							type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
 							display: true,
@@ -281,7 +283,15 @@ var ChartUtil = (function(){
 						{	
 							//글자
 							ticks: {
-								fontColor : window.ChartUtil.colors.darkgray,
+								fontColor : window.ChartUtil.colors.white,
+								fontFamily : window.ChartUtil.font,
+								userCallback: function(value, index, values) {
+									value = value.toString();
+									value = value.split(/(?=(?:...)*$)/);
+									value = value.join(',');
+									return value;
+								},
+								fontWeight : 600
 							},																
 							type: 'linear', 
 							display: true,
@@ -292,6 +302,7 @@ var ChartUtil = (function(){
 							gridLines: {
 								display: true,
 								drawOnChartArea: false, 
+								color : window.ChartUtil.colors.white_op2
 							},
 						}
 					],
@@ -372,7 +383,33 @@ var ChartUtil = (function(){
 			}
 			text.push('</ul>');
 			return text.join("");
-		}
+		},
+		//데이터에서 카테고리로 해당 데이터 찾기
+		categoryDataFind : function(_dataList, _category){
+			var result = null;	
+			_dataList.datalist.forEach(function(item){
+				if( item.category == _category ){
+					result =  item;
+					return;
+				}
+			});
+			return result;
+		},
+		//탭클릭
+		addDataTab : function(_canvasId, _data){
+			var thisObj = this;
+			var tabList = $("#"+_canvasId+"_tab a");
+			tabList.on('click', function(e){
+				e.preventDefault();
+				var category = $(this).data('category');
+				var changeData = thisObj.categoryDataFind(_data, category);
+				if( !changeData ) return;
+				thisObj.chartList[_canvasId].data = changeData;
+				tabList.removeClass('active');
+				$(this).addClass('active');
+				thisObj.chartList[_canvasId].update();
+			});
+		},		
 	}
 })();
 

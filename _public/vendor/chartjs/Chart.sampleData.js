@@ -3,8 +3,8 @@ var lineChartData_0 = {
         {
             label: 'DATE',
             borderWidth : 3,
-            borderColor: ChartUtil.colors.white,
-            backgroundColor: ChartUtil.colors.white,
+            borderColor: ChartUtil.colors.skyblue,
+            backgroundColor: ChartUtil.colors.skyblue,
             pointRadius: 3,
             fill: false,
             data: [
@@ -127,9 +127,9 @@ var lineChartData_0 = {
         {
             label: 'MONTH',
             borderWidth : 2,
-            borderColor: ChartUtil.colors.green,
+            borderColor: ChartUtil.colors.white_op5,
             backgroundColor: ChartUtil.colors.white_op5,
-            pointRadius : 15,
+            pointRadius : 10,
             pointHoverRadius: 20,
             pointBorderWidth :1,
             fill: false,
@@ -170,9 +170,9 @@ var lineChartData_1 = {
     labels: ['oct', 'nov', 'jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'sep', 'aug'],
     datasets: [{
         label: 'in trade',
-        borderWidth : 3,
-        borderColor: ChartUtil.colors.orange,
-        backgroundColor: ChartUtil.colors.orange,
+        borderWidth : 2,
+        borderColor: ChartUtil.colors.white,
+        backgroundColor: ChartUtil.colors.white,
         pointRadius: 2,
         fill: false,
         data: [
@@ -192,7 +192,7 @@ var lineChartData_1 = {
         lineTension : 0,
     }, {
         label: 'TCE(RHS)',
-        borderWidth : 6,
+        borderWidth : 4,
         borderColor: ChartUtil.colors.skyblue,
         backgroundColor: ChartUtil.colors.skyblue,
         pointRadius: 2,
@@ -220,22 +220,20 @@ var lineChartData_2 = {
     datasets: [{
         label: 'Drydock',
         borderWidth : 3,
-        borderColor: ChartUtil.colors.blue,
-        backgroundColor: ChartUtil.colors.blue_op5,
+        borderColor: ChartUtil.colors.skyblue,
+        backgroundColor: ChartUtil.colors.skyblue_op5,
         pointRadius: 2,
         fill: true,
         data: [50,55,30,40,50,60,70,80,90,70,50],
-       
         lineTension : 0,
     }, {
         label: 'Floating Storage',
         borderWidth : 3,
-        borderColor: ChartUtil.colors.green,
-        backgroundColor: ChartUtil.colors.green_op5,
+        borderColor: ChartUtil.colors.white,
+        backgroundColor: ChartUtil.colors.white_op5,
         pointRadius: 2,
         fill: true,
         data: [20,30,50,60,45,30,20,10,20,10,22],
-        
         lineTension : 0,
     }]
 };
@@ -268,7 +266,7 @@ var lineChartData_3 = {
             }, {
                 label: '2019',
                 borderWidth : 2,
-                borderColor: ChartUtil.colors.red,
+                borderColor: ChartUtil.colors.green,
                 pointRadius: 2,
                 fill: false,
                 data: [
@@ -313,7 +311,7 @@ var lineChartData_3 = {
             }, {
                 label: '2019',
                 borderWidth : 2,
-                borderColor: ChartUtil.colors.red,
+                borderColor: ChartUtil.colors.green,
                 pointRadius: 2,
                 fill: false,
                 data: [
@@ -355,7 +353,7 @@ var lineChartData_3 = {
             }, {
                 label: '2019',
                 borderWidth : 2,
-                borderColor: ChartUtil.colors.red,
+                borderColor: ChartUtil.colors.green,
                 pointRadius: 2,
                 fill: false,
                 data: [
@@ -394,7 +392,7 @@ var lineChartData_3 = {
             }, {
                 label: '2019',
                 borderWidth : 2,
-                borderColor: ChartUtil.colors.red,
+                borderColor: ChartUtil.colors.green,
                 pointRadius: 2,
                 fill: false,
                 data: [
@@ -433,7 +431,7 @@ var lineChartData_3 = {
             }, {
                 label: '2019',
                 borderWidth : 2,
-                borderColor: ChartUtil.colors.red,
+                borderColor: ChartUtil.colors.green,
                 pointRadius: 2,
                 fill: false,
                 data: [
@@ -457,7 +455,7 @@ var lineChartData_4 = {
     datasets: [{
         label: 'CEST',
         borderWidth : 2,
-        borderColor: ChartUtil.colors.gray,
+        borderColor: ChartUtil.colors.white,
         pointRadius: 2,
         fill: false,
         data: [14,13.5,15,12,10,15,12,11,10,15],
@@ -465,7 +463,7 @@ var lineChartData_4 = {
     }, {
         label: 'CMES',
         borderWidth : 2,
-        borderColor: ChartUtil.colors.orange,
+        borderColor: ChartUtil.colors.blue,
         pointRadius: 2,
         fill: false,
         data: [14.2,13,15,12,11,12,13,14,10,15],
@@ -481,7 +479,7 @@ var lineChartData_4 = {
     },{
         label: 'CMES',
         borderWidth : 2,
-        borderColor: ChartUtil.colors.blue,
+        borderColor: ChartUtil.colors.skyblue,
         pointRadius: 2,
         fill: false,
         data: [11.2,12,14,13,12,12,13.2,14,10,15],

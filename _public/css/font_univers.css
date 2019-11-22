@@ -1,0 +1,21 @@
+
+@font-face {
+    font-family:'univers'; 
+    font-weight: normal; 
+    font-style: normal;   
+    src:url('../fonts/Univers-Medium.eot'); 
+    src:url('../fonts/Univers-Medium.eot?#iefix') format('embedded-opentype'), 
+        url('../fonts/Univers-Medium.woff') format('woff'), 
+        url('../fonts/Univers-Medium.ttf') format('truetype'), 
+        url('../fonts/Univers-Medium.svg') format('svg');
+  }
+  @font-face {
+    font-family:'univers'; 
+    font-weight: bold; 
+    font-style: normal;   
+    src:url('../fonts/Univers-Bold.eot'); 
+    src:url('../fonts/Univers-Bold.eot?#iefix') format('embedded-opentype'), 
+        url('../fonts/Univers-Bold.woff') format('woff'), 
+        url('../fonts/Univers-Bold.ttf') format('truetype'), 
+        url('../fonts/Univers-Bold.svg') format('svg');
+  }

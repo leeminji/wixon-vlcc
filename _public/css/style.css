@@ -4,9 +4,9 @@
 @import 'chartjs.css';
 
 /* scrollbar */
-/* ::-webkit-scrollbar{height:.5em;width: .5em;background-color: #F5F5F5;}
-::-webkit-scrollbar-track {box-shadow: inset 0 0 6px rgba(0,0,0,0.3);background-color: #F5F5F5;}
-::-webkit-scrollbar-thumb {background-color: #000000;} */
+::-webkit-scrollbar{height:.5em;width: .5em;background-color: rgba(255,255,255,0.2);}
+::-webkit-scrollbar-track {box-shadow: inset 0 0 6px rgba(0,0,0,0.3);background-color: rgba(0,0,0,0.2);}
+::-webkit-scrollbar-thumb {background-color: #000000;}
 
 /* icon */
 a.icon[class*="icon_"], button.icon[class*="icon_"], span.icon[class*="icon_"], i.icon[class*="icon_"]{display:inline-block;width:2em;height:2em;line-height: 2em;background-repeat: no-repeat;background-size:2em auto;background-position: center;background-size:2em auto;position: relative;z-index:10}
@@ -106,6 +106,7 @@ a[class*="Button__"].Button__login > span, button[class*="Button__"].Button__log
 a[class*="Button__"].Button__login.active, button[class*="Button__"].Button__login.active{background:#0081da}
 a[class*="Button__"].Button__login.active > span, button[class*="Button__"].Button__login.active > span{color:#fff;font-size:1.4em}
 
+
 a[class*="ButtonIcon__"], button[class*="ButtonIcon__"]{position:relative;display: inline-block;-webkit-box-sizing: border-box;box-sizing: border-box;outline: 0;border:0;width:3.4em;text-align: center;margin:0 2px;opacity:0.8}
 a[class*="ButtonIcon__"]:hover, button[class*="ButtonIcon__"]:hover{opacity: 1;}
 a[class*="ButtonIcon__"] > span, button[class*="ButtonIcon__"] > span{display:block;text-align: center;}
@@ -121,8 +122,7 @@ a[class*="ButtonIcon__"]:hover:after, button[class*="ButtonIcon__"]:hover:after{
     -o-transition: all .5s;
     transition: all .5s;
 }
-.dataSetting{display:block;overflow:hidden;text-indent:-999px;width:2.2em;height:2.2em;border-bottom:1px solid #233748;border-left:1px solid #233748;position:absolute;right:0;top:0;background:url(../images/icon/icon_chart_setting.png) center no-repeat;background-size:2em auto;opacity: 0.4;transition: all .5s;}
-.dataSetting:hover{opacity: 1;}
+
 /* animation */
 @-webkit-keyframes roundActive {
     0% { -webkit-transform: scale(0); transform: scale(0);opacity: 0; }
@@ -284,13 +284,15 @@ body{min-height:40em}
 /* TopTitle */
 .TopTitle{position: absolute;left:0;right:0;top:1em;text-align: center;line-height:4em}
 .TopTitle span{font-size:2.125em;color:rgba(140,193,231,0.4);text-transform: uppercase;letter-spacing:-0.5px;}
+.TopTitle strong{font-size:2.125em;color:#425458;vertical-align: middle;}
+.TopTitle .line{padding:0 .5em}
 
 /* TopSectionTab */
-.TopSectionTab{position: absolute;left:.5em;bottom:0;z-index:100}
-.TopSectionTab__item{float:left;margin-left:-1px;width:4em;padding:.5em 0em;font-weight:bold;color:#696969;background:#efefef;text-align: center;border:1px solid #25364b}
+.TopSectionTab{position: absolute;left:1em;bottom:0;z-index:100}
+.TopSectionTab__item{float:left;margin-left:-1px;width:4em;padding:.5em 0em;font-weight:bold;color:#596062;background:#2d343a;text-align: center;border:1px solid #04101a}
 .TopSectionTab__item span{font-size:0.875em;vertical-align: top;}
-.TopSectionTab__item.active{background:#25364b;color:#fff}
-.TopSectionTab__item:hover{background: #ddd;}
+.TopSectionTab__item.active{background:#04101a;color:#78919f}
+.TopSectionTab__item:hover{background: #000;}
 .TopSectionTab__item.active:hover{background:#25364b;}
 
 /* TotalMenu */
@@ -429,6 +431,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .PopupArea .PopupArea__content ol li{counter-increment: my-counter;position: relative;padding-left:1em;}
 .PopupArea .PopupArea__content ol li::before{content:counter(my-counter)". ";position: absolute;left:0;top:2px}
 
+
 /* AdminState */
 .inactive .AdminState{text-align: center}
 .TotalMenu.active .AdminState__state{margin-left:-2em}
@@ -482,18 +485,17 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
     border-top:1px solid #546371;border-bottom:1px solid #10181f;
     border-left:1px solid #3e4959;border-right:1px solid #060b13;
     word-break: break-all;
-    color:#479c9c;
+    color:#5891ae;
     padding:.5em;
     vertical-align:middle;
 }
-.DataDivTable__2 .row > div.type1{color:#ffffff}
-.DataDivTable__2 .row > div.type2{color:#ffd595}
+.DataDivTable__2 .row > div.type1{color:#cacaca}
+.DataDivTable__2 .row > div.type2{color:#60d5d1}
 .DataDivTable__2 .thead > div{
-    padding:.8em .5em;
+    padding:.5em .5em;
     border-left:1px solid #3e4959;border-right:1px solid #060b13;
-    background:#0e1c2f;
     font-weight: bold;
-    color:#ace6e6;
+    color:#829ba6;
     text-align: center;
     vertical-align:middle;
 }
@@ -503,15 +505,15 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .DataDivTable__2 .title span{padding: 0 5%}
 .DataDivTable__2 .line{border-top:1px solid #fff}
 .DataDivTable__2 .line > div{border-top:1px solid #fff}
-.DataDivTable__2 .tableInner{position:relative;padding-left:2em;border-top:1px solid #d6d6d6;border-bottom: 1px solid #d6d6d6;}
+.DataDivTable__2 .tableInner{position:relative;padding-left:2em;border-top:2px solid #607d8a;border-bottom: 2px solid #607d8a;}
 .DataDivTable__2 .tableInner:nth-child(1){border-bottom: 0;background: #0e1c2f;}
 
 /* DataArrow */
-.DataArrow{position:absolute;left:0.8em;top:0;bottom:0;width:5px;}
+.DataArrow{position:absolute;left:0.8em;top:0;bottom:0;width:3px;}
 .DataArrow .item{position:absolute;left:0;right:0;top:0}
 .DataArrow .item:after{content:'';display:block;}
 .DataArrow .item.type1{background:#ffffff;height:500px}
-.DataArrow .item.type2{background:#ffd595;top:500px;bottom:0;}
+.DataArrow .item.type2{background:#18293a;top:500px;bottom:0;}
 
 /* SpotDataTable */
 .SpotDataTable{padding:1em}
@@ -526,6 +528,145 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .SpotDataTable .row > div:nth-child(9){width:10%;text-align: center;}
 .SpotDataTable .row > div:nth-child(10){width:12%;text-align: center;}
 
+/* DataSetting */
+.DataSetting{position: absolute;left:0;right:0;top:0;bottom:0;z-index:0;opacity: 0;height:0;}
+.DataSetting.active{z-index:100;opacity: 1;height:auto}
+.DataSetting, .DataSetting__inner{
+    -webkit-transition: opactiy .5s ease-in-out, transform .5s ease-in-out;
+    -o-transition: opactiy .5s ease-in-out, transform .5s ease-in-out;
+    transition: opactiy .5s ease-in-out, transform .5s ease-in-out;
+}
+
+.DataSetting .DataSetting__button_close{position: absolute;right:1em;top:1.5em;z-index:105;text-align:right;}
+.DataSetting .DataSetting__blind{position: absolute;left:0;right:0;top:0;bottom:0;z-index:101;background:rgba(0,0,0,0.8);opacity:0; }
+.DataSetting.active .DataSetting__blind{ opacity:1;}
+.DataSetting .DataSetting__inner{
+    position: absolute;left:50%;top:4em;bottom:4em;width:40em;margin-left:-20em;z-index:102;
+    border:5px solid #000;
+    background:#13191e;
+}
+.DataSetting .DataSetting__content{position:absolute;left:0;right:0;top:5em;bottom:5em;overflow-y:auto;}
+.DataSetting__button{display:block;overflow:hidden;text-indent:-999px;width:2.2em;height:2.2em;border-bottom:1px solid #233748;border-left:1px solid #233748;position:absolute;right:0;top:0;background:url(../images/icon/icon_chart_setting.png) center no-repeat;background-size:2em auto;opacity: 0.4;transition: all .5s;}
+.DataSetting__button:hover{opacity: 1;}
+
+.DataSetting__title{padding:1.7em 3em 2em;border-bottom:1px solid #232b31;}
+.DataSetting__title span{color:#667688;font-size:2.25em;font-weight:bold;}
+.DataSetting__bottom{text-align: right;padding:1.3em 3em;position:absolute;right:0;left:0;bottom:0;border-top:1px solid #232b31;}
+
+.DataSetting__form{padding:2em 3em}
+.DataSetting__form .checkform{position: relative;min-height:2em;margin-bottom:-2px}
+.DataSetting__form .checkform.line{border-bottom:1px solid #000;}
+.DataSetting__form .checkform.line:after{content:'';display:block;position:absolute;left:0;right:0;bottom:0;height:1px;background: rgba(255, 255, 255, 0.11);}
+.DataSetting__form .checkform .text{padding:.8em 1em;color:#a8a8a8}
+.DataSetting__form .checkform .check{position: absolute;right:1em;top:50%;margin-top:-1em;}
+.DataSetting__form .textform{padding:.2em 0em}
+.DataSetting__form .textform input{background-color: #c7c7c7;border-radius: .2em;width:100%;text-indent:.5em;color:#000}
+.DataSetting__form .etcform{padding:.2em 0em}
+.DataSetting__form input[size="60"]{width:59%}
+.DataSetting__form input[size="50"]{width:49%}
+.DataSetting__form input[size="40"]{width:39%}
+.DataSetting__form input[size="30"]{width:29%}
+
+.DataSetting__form .row:after{content:'';display:block;clear:both}
+.DataSetting__form .row .col6{float:left;width:50%;}
+
+.DataSetting__form .DateInput.first{padding-left:0}
+.DataSetting__form .DateInput{position: relative;padding-left:1em;margin-right:1em;}
+.DataSetting__form .DateInput:after{content:'';display:block;position:absolute;right:-15px;bottom:-10px;width:1em;height:1em;background:url(../images/common/bg_input.png) center no-repeat;background-size:10px auto}
+.DataSetting__form .DateInput input[type="text"]{background:transparent;border:0;border-bottom:1px solid #fff;color:#a7a7a7;text-align:center;}
+.DataSetting__form .checkformText{margin:.2em 0}
+.DataSetting__form .divider{height:1.5em}
+.DataSetting__form .text{color:#a8a8a8;vertical-align: middle;padding:0 .5em}
+.DataSetting__basic_button{display:inline-block;padding:.5em 1em;background: #000;border-radius: 3px;}
+.DataSetting__basic_button > span{margin-top:-3px;color:#667688;font-weight:bold;font-size:1.1em;vertical-align: middle;line-height:1.2em}
+
+.CountButton{width:3em;line-height:2em;display:inline-block;border-radius: 3px;background:#272727;text-align:center;vertical-align: middle;}
+.CountButton > span{color:#fff;font-size:1.2em}
+.CountButton:hover{background: #000;}
+
+.SlideCheckbox{cursor:pointer;display:block;width:4em;height:2em}
+.SlideCheckbox input[type='checkbox']{display: none;}
+.SlideCheckbox input[type='checkbox'] + span{
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 2em;		
+    background-color: #c3c3c3;
+    border-radius:50px;
+    transition:all 0.2s ease-in-out;
+    box-shadow:inset 0 0 1px 3px rgba(255,255,255,.3);
+}
+.SlideCheckbox input[type='checkbox'] + span:after{
+    content:'OFF';
+    position: absolute;
+    left:2.6em;
+    top:50%;
+    line-height:1em;
+    margin-top:-.45em;
+    color:#eee;
+    font-size:0.8em;
+}
+.SlideCheckbox input[type='checkbox'] + span:before{
+    content:'';
+    position: absolute;
+    left:0.1em;
+    height:1.8em;
+    width:1.8em;
+    top:50%;
+    margin-top:-.9em;
+    background-color: #fefefe;
+    border-radius:2em;
+    transition:all 0.2s ease-in-out;
+    box-shadow:inset 0px 0px 3px 2px rgba(0,0,0,.3);
+}
+.SlideCheckbox input[type='checkbox']:checked + span{background-color: #0053a6;}
+.SlideCheckbox input[type='checkbox']:checked + span:before{left: 2.1em;}
+.SlideCheckbox input[type='checkbox']:checked + span:after{left: .9em;content:'ON'}
+
+.SlideCheckbox.answer{width:5em;display:inline-block;vertical-align: middle;}
+.SlideCheckbox.answer input[type='checkbox'] + span{background:#b31818;}
+.SlideCheckbox.answer input[type='checkbox'] + span:after{content:'NO';left:3.6em} 
+.SlideCheckbox.answer input[type='checkbox']:checked + span:after{content:'YES';left:1.65em;}
+.SlideCheckbox.answer input[type='checkbox']:checked + span{background-color: #1d9645;}
+.SlideCheckbox.answer input[type='checkbox']:checked + span:before {left: 3.4em;}
+
+.SquaredCheckbox{cursor:pointer;display:inline-block;font-size:0.8em;position: relative;}
+.SquaredCheckbox input[type='checkbox']{display:none}
+.SquaredCheckbox .blit{position:relative;}
+.SquaredCheckbox .txt{position:absolute;left:2.5em;top:50%;line-height:1em;margin-top:-.5em;color:#a8a8a8;font-size:1.2em}
+.SquaredCheckbox input[type='checkbox'] + .blit:before{
+    content:'';
+    height: 2em;
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    background-color: #c1c1c1;
+    color:#FEFEFE;
+    border-radius:5px;
+    transition: all 0.3s ease-in-out;
+    text-shadow:0 0 15px rgba(0,0,0,0.5);
+    box-shadow: inset 0 0 15px 0 rgba(0,0,0,0.5);
+}
+.SquaredCheckbox input[type='checkbox']:checked + .blit:before{content:'';background-color: #0051a3;}
+.SquaredCheckbox input[type='checkbox']:checked + .blit:after{border-color:#fff}
+.SquaredCheckbox .blit:after {
+    content: '';
+    width: 0.6em;
+    height: 0.8em;
+    position: absolute;
+    margin-top:.2em;
+    top: 50%;
+    left: -1.4em;
+    border: 4px solid #546371;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
 
 /* MailArea */
 .MailArea__split{position: absolute;left:30em;width:.4em;margin-left:-0.1em;top:0;bottom:0;cursor: ew-resize;z-index:100}
@@ -645,10 +786,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 @media (min-width: 1920px) { 
     .BoxArea01.fixed .inner{height:20em}
 }
-.BoxArea02{margin:.2em;position: absolute;left:0;right:0;bottom:0;top:0;border:3px solid #a6d0c9;border-radius: .5em;background:#e7f5f3}
-.BoxArea02.dark{background: #293c4e;}
-.BoxArea03{margin:.2em;border:3px solid #a6d0c9;border-radius: .5em;background:#e7f5f3}
-.BoxArea03 .inner{position: relative; z-index:100;margin:1.5em 1em}
+.BoxArea01.BoxFull{position: absolute;left:0;right:0;bottom:0;top:0;}
 
 /* layout_row */
 .Layout_row{margin-bottom:.6em;padding:0;}
@@ -666,14 +804,14 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 
 }
 /* SpotArea */
-.SpotArea__map{position: absolute;top:-.2em;left:0;right:0;bottom:20em;}
+.SpotArea__map{position: absolute;top:0;left:0;right:0;bottom:20em;}
 .SpotArea__map .MapTotalSize{border-radius: .3em;}
-.SpotArea__chart01{position: absolute;left:0;right:0;bottom:-.2em;height:20em}
+.SpotArea__chart01{position: absolute;left:0;right:0;bottom:0em;height:20em}
 .SpotArea__chart01 > .BoxArea01{position: absolute;left:0;right:0;bottom:0;top:0}
 .SpotArea__data .inner{height:60em;margin:0}
 
 /* SpotData */
-.SpotData{background:#293c4e;position: absolute;left:.5em;right:.5em;top:.5em;bottom:.5em;border-radius: .3em;}
+.SpotData{}
 .SpotData__top{position: absolute;left:0;right:0;top:0;height:10.5em;padding:0 1em;z-index: 110;}
 .SpotData__content{position: absolute;left:0;right:0;top:10.5em;bottom:0;z-index:100;border-top:1px solid #ffffff;}
 .SpotData__tab{padding-top:1em}
@@ -682,21 +820,21 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .SpotData__info .blit{display:inline-block;width:20px;height:5px;margin-top:2px}
 .SpotData__info .text{color:#fff;font-size:0.875em;display: inline-block;padding-left:.5em}
 .SpotData__info .type1{background:#ffffff;}
-.SpotData__info .type2{background:#ffd595;}
+.SpotData__info .type2{background:#4b667c;}
 
 /* SpotData__tab */
 .SpotData__tab{text-align: center;border-bottom: 1px solid #479c9c;}
-.SpotData__tab > a{display:inline-block;margin:0 -1px;color:#fff;padding:1em 0;width:8em;background:#386c75;}
+.SpotData__tab > a{display:inline-block;margin:0 -1px;color:#fff;padding:.4em 0;width:6em;background:#386c75;}
 .SpotData__tab > a.active{background:#479c9c}
 .SpotData__tab > a span{font-weight:bold}
 
 /* CheckArea */
-.CheckArea{position: relative;padding-left:1.5em;padding-right:1em;display:inline-block;font-family: 'Titillium Web', sans-serif;font-size:0.825em}
-.CheckArea .tit{cursor:pointer;color:#aaa}
+.CheckArea{position: relative;padding-left:1.5em;padding-right:1em;display:inline-block;font-size:0.825em}
+.CheckArea .tit{cursor:pointer;color:#a5b5ca}
 .CheckArea > input{width:0;height:0;overflow: hidden;}
 .CheckArea > input + label{position: absolute;left:0;right:0;top:0;bottom:0}
-.CheckArea > input + label .blit{display:block;border:1px solid #aaa;height:1em;width:1em;position: absolute;left:0;top:50%;margin-top:-.5em}
-.CheckArea > input:checked + label .blit{background:#ffd595}
+.CheckArea > input + label .blit{display:block;border:1px solid #495d78;height:1em;width:1em;position: absolute;left:0;top:50%;margin-top:-.5em}
+.CheckArea > input:checked + label .blit{background:#479c9c}
 
 /* MapArea */
 .MapTotalSize{position: absolute;left:0;right:0;top:0;bottom:0;background:#293646}

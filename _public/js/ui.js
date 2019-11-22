@@ -36,6 +36,11 @@ var ui = (function(){
 
             //svg이미지 아이콘 적용
             this.svgImage();
+
+            this.datepicker();
+        },
+        datepicker : function(){
+            $(".datepicker").datepicker();
         },
         loading : function(){
             var loading = $("#loading");
@@ -214,11 +219,13 @@ var uiPopup = (function(){
             
             //내용
             var inner = popup.find(".PopupArea__inner");
+
             //배경
             var blind = popup.find(".PopupArea__blind");
             inner.css({
                 'margin-top' : -(inner.height()/2)+"px"
             });
+
             popup.addClass("active");
             blind.on('click', function(){
                 thisObj.close(_el);
@@ -228,6 +235,31 @@ var uiPopup = (function(){
             var popup = _el == null ? null : $("#"+_el);
             if( popup == null ) return;
             popup.removeClass("active");
+        }
+    }
+})();
+
+
+//셋팅
+var uiSettingPopup = (function(){
+    return {
+        open : function(_el){
+            var thisObj = this;
+            var content = _el == null ? null : $("#"+_el);
+            if( content == null ) return;
+            
+            //배경
+            var blind = content.find("#"+_el+"__blind");
+  
+            content.addClass("active");
+            blind.on('click', function(){
+                thisObj.close(_el);
+            });
+        },
+        close : function(_el){
+            var content = _el == null ? null : $("#"+_el);
+            if( content == null ) return;
+            content.removeClass("active");
         }
     }
 })();

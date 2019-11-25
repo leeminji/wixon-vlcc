@@ -537,3 +537,222 @@ var lineChartData_6 = {
     }]
 };
 
+var lineChartData_7 = {
+    labels: ['PROMPT', '1-3', '4-6', '7-9', '10-12', '13-15', '16-18', '19-21'],
+    datasets: [
+        {
+            label: 'OPEN',
+            backgroundColor: ChartUtil.colors.darkblue,
+            data: [
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+            ]
+        }, 
+        {
+            label: 'OPEN(HANDICAP)',
+            borderColor: ChartUtil.colors.blue,
+            borderWidth : 2,
+            data: [
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+            ]
+        }, 
+        {
+            label: 'SUB',
+            backgroundColor: ChartUtil.colors.darkgray,
+            data: [
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+            ]
+        },
+        {
+            label: 'PROJECT',
+            backgroundColor: ChartUtil.colors.gray,
+            data: [
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+            ]
+        },
+        {
+            label: 'BALLASTING TO WEST',
+            backgroundColor: ChartUtil.colors.royalblue,
+            data: [
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 20),
+            ]
+        },
+    ]
+
+};
+
+var lineChartData_8 = {
+    labels: ['1-10 MAY', '11-20 MAY', '21-31 MAY', '1-10 JUN', '11-20 JUN', '21-30 JUN'],
+    datasets: [
+        {
+            label: 'Spot',
+            backgroundColor: ChartUtil.colors.navy,
+            data: [
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+            ]
+        }, 
+        {
+            label: 'Project',
+            backgroundColor: ChartUtil.colors.darkgray,
+            data: [
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+            ]
+        }, 
+    ]
+
+};
+
+var lineChartData_9 = {
+    datalist : [
+        {
+            category : 'ws',
+            labels: ['1-MAY', '11-MAY', '21-MAY', '01-JUN', '10-JUN', '20-JUN', '30-JUN'],
+            datasets: [{
+                label: 'AG/USG',
+                borderWidth : 3,
+                borderColor: ChartUtil.colors.white,
+                pointRadius: 2,
+                fill: false,
+                data: [
+                    ChartUtil.randomData(10,25),
+                    ChartUtil.randomData(10,25),
+                    ChartUtil.randomData(10,25),
+                    ChartUtil.randomData(10,25),
+                    ChartUtil.randomData(10,25),
+                    ChartUtil.randomData(10,25),
+                    ChartUtil.randomData(10,25),
+                ],
+                lineTension : 0,
+            }, {
+                label: 'AG/SPORE',
+                borderWidth : 3,
+                borderColor: ChartUtil.colors.darkgray,
+                pointRadius: 2,
+                fill: false,
+                data: [
+                    ChartUtil.randomData(35, 50),
+                    ChartUtil.randomData(35, 50),
+                    ChartUtil.randomData(35, 50),
+                    ChartUtil.randomData(35, 50),
+                    ChartUtil.randomData(35, 50),
+                    ChartUtil.randomData(35, 50),
+                    ChartUtil.randomData(35, 50),
+                ],
+                lineTension : 0,
+            }, {
+                label: 'AG/CHINA',
+                borderWidth : 3,
+                borderColor: ChartUtil.colors.royalblue,
+                pointRadius: 2,
+                fill: false,
+                data: [
+                    ChartUtil.randomData(40, 55),
+                    ChartUtil.randomData(40, 55),
+                    ChartUtil.randomData(40, 55),
+                    ChartUtil.randomData(40, 55),
+                    ChartUtil.randomData(40, 55),
+                    ChartUtil.randomData(40, 55),
+                    ChartUtil.randomData(40, 55),
+                ],
+                lineTension : 0,
+            }]
+        },
+        {
+            category : 'tce',
+            labels: ['1-MAY', '11-MAY', '21-MAY', '01-JUN', '10-JUN', '20-JUN', '30-JUN'],
+            datasets: [{
+                label: 'AG/USG',
+                borderWidth : 3,
+                borderColor: ChartUtil.colors.white,
+                pointRadius: 2,
+                fill: false,
+                data: [
+                    ChartUtil.randomData(10,25),
+                    ChartUtil.randomData(10,25),
+                    ChartUtil.randomData(10,25),
+                    ChartUtil.randomData(10,25),
+                    ChartUtil.randomData(10,25),
+                    ChartUtil.randomData(10,25),
+                    ChartUtil.randomData(10,25),
+                ],
+                lineTension : 0,
+            }, {
+                label: 'AG/SPORE',
+                borderWidth : 3,
+                borderColor: ChartUtil.colors.darkgray,
+                pointRadius: 2,
+                fill: false,
+                data: [
+                    ChartUtil.randomData(35, 50),
+                    ChartUtil.randomData(35, 50),
+                    ChartUtil.randomData(35, 50),
+                    ChartUtil.randomData(35, 50),
+                    ChartUtil.randomData(35, 50),
+                    ChartUtil.randomData(35, 50),
+                    ChartUtil.randomData(35, 50),
+                ],
+                lineTension : 0,
+            }, {
+                label: 'AG/CHINA',
+                borderWidth : 3,
+                borderColor: ChartUtil.colors.royalblue,
+                pointRadius: 2,
+                fill: false,
+                data: [
+                    ChartUtil.randomData(40, 55),
+                    ChartUtil.randomData(40, 55),
+                    ChartUtil.randomData(40, 55),
+                    ChartUtil.randomData(40, 55),
+                    ChartUtil.randomData(40, 55),
+                    ChartUtil.randomData(40, 55),
+                    ChartUtil.randomData(40, 55),
+                ],
+                lineTension : 0,
+            }]
+        },
+    ]
+};

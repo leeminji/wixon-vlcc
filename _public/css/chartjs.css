@@ -18,16 +18,18 @@
 }
 .chartjs-legend li span{
     display: inline-block;
-    line-height: 20px;
+    line-height: 14px;
+    height:14px;
     vertical-align: middle;
     color: #909090;
 }
 .chartjs-legend li span.bar{
     position:relative;
-    padding: 0px 10px;
     margin: 5px;
     border-radius:100px;
     color:white;
+    width:14px;
+    border-color: transparent;
 }
 .chartjs-legend li.inactive span{
     text-decoration: line-through;
@@ -63,6 +65,10 @@
     font-weight:bold;
     font-size:1.125em;
 }
+.chartjs-title.middle{padding:.5em 0;letter-spacing: 1px;}
+.chartjs-title.middle span{
+    font-size:1.3em;
+}
 .chartjs-title.big span{
     font-size:1.8em;
     letter-spacing: 3px;
@@ -78,6 +84,8 @@
     left:0;
     top:-.8em;
 }
+.chartjs-tab.middle{top:0.4em;}
+.chartjs-tab.middle a{line-height: 2em;padding:0 1.5em}
 .chartjs-tab a{
     float:left;
     display: block;

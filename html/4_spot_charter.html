@@ -160,37 +160,50 @@
 				<!-- TopTitle -->
 				<div class="TopTitle font_condensed"><span>POSTION LIST</span><span class="line">-</span><strong>AG</strong></div>
 				<!-- //TopTitle -->
-				<!-- TopSectionTab -->
-				<div class="TopSectionTab">
-					<a href="" class="TopSectionTab__item active"><span>AG</span></a>
-					<a href="" class="TopSectionTab__item"><span>WAF</span></a>
-					<a href="" class="TopSectionTab__item"><span>UKC</span></a>
-					<a href="" class="TopSectionTab__item"><span>USG</span></a>
-				</div>
-				<!-- //TopSectionTab -->
-	
 				<div class="TopLogo"><a href="0_index.html" class="link">메인으로이동</a><h1 class="skip">VLCCLAB</h1></div>
+
+				<!-- TopSearch -->
+				<div class="TopSearch white">
+					<div class="TopSearch__inner">
+						<input type="text" title="Search" id="top_stx" class="TopSearch__input">
+						<label for="top_stx" class="TopSearch__label"><span>Search</span></label>
+					</div>
+				</div>
+				<!-- //TopSearch -->				
 			</div>	
 			<!-- Spot Charte 대시보드 -->
 			<section class="Layout__content SpotArea font_condensed">
 				<h1 class="skip">Spot Charter Contents</h1>	
 				<div class="js-scrollbar">
-					<div class="Layout__content__inner">
+					<div class="Layout__content__inner padding10">
+						<!-- TopSectionTab -->
+						<div class="TopSectionTab">
+							<a href="" class="TopSectionTab__item active"><span>AG</span></a>
+							<a href="" class="TopSectionTab__item"><span>WAF</span></a>
+							<a href="" class="TopSectionTab__item"><span>UKC</span></a>
+							<a href="" class="TopSectionTab__item"><span>USG</span></a>
+						</div>
+						<!-- //TopSectionTab -->						
 						<div class="Layout_spotRow">
 							<div class="Layout_spotArea left">
 								<!-- 맵 -->
 								<div class="SpotArea__map">
 									<div class="BoxArea01 BoxFull">
 										<!-- 구글맵 영역 -->
-										<div id="totalMap" class="MapTotalSize"></div>
+										<div id="totalMap" class="MapTotalSize margin5"></div>
 										<!-- //구글맵 영역 -->
 									</div>
 								</div>
 								<!-- //맵 -->
 								<!-- 차트01 -->
 								<div class="SpotArea__chart01">
-									<div class="BoxArea01">
-										<div class="inner">11111</div>
+									<div class="BoxArea01 fixed2">
+										<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+										<div class="inner">
+											<div id="chart1_legend" class="chartjs-legend white"></div>
+											<div id="chart1_title" class="chartjs-title middle white center"><span>VLCC FLOW (BSS FUJAIRAH)</span></div>
+											<canvas id="chart1" class="chartjs-canvas"></canvas>
+										</div>
 									</div>
 								</div>
 								<!-- //차트01 -->
@@ -199,8 +212,9 @@
 								<!-- 데이터 -->
 								<div class="SpotArea__data">
 									<div class="BoxArea01">
+										<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
 										<div class="inner">
-											<div class="SpotData" id="SpotData"></div>
+											<div class="SpotData" id="SpotData01"></div>
 										</div>
 									</div>
 								</div>
@@ -210,29 +224,42 @@
 						<div class="Layout_row">
 							<div class="Layout_spotChartArea">
 								<div class="BoxArea01">
+									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
 									<div class="inner">
-										111
+										<div id="chart2_legend" class="chartjs-legend white"></div>
+										<div id="chart2_title" class="chartjs-title middle white center"><span>AG cargo counting</span></div>
+										<canvas id="chart2" class="chartjs-canvas"></canvas>
 									</div>
 								</div>
 							</div>
 							<div class="Layout_spotChartArea">
 								<div class="BoxArea01">
+									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
 									<div class="inner">
-										111
+
+										<div id="chart3_legend" class="chartjs-legend white"></div>
+										<div id="chart3_title" class="chartjs-title middle white center"><span>AG Freight assessment</span></div>
+										<div class="chartjs-tab middle" id="chart3_tab">
+											<a href="javascript:;" data-category='ws'>WS</a>
+											<a href="javascript:;" data-category='tce'>TCE</a>
+										</div>	
+										<canvas id="chart3" class="chartjs-canvas"></canvas>
 									</div>
 								</div>
 							</div>
 							<div class="Layout_spotChartArea">
 								<div class="BoxArea01">
+									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
 									<div class="inner">
-										111
+										<div id="SpotData02"></div>
 									</div>
 								</div>
 							</div>
 							<div class="Layout_spotChartArea">
 								<div class="BoxArea01">
+									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
 									<div class="inner">
-										111
+										<div id="SpotData03"></div>
 									</div>
 								</div>
 							</div>
@@ -264,12 +291,40 @@
 			//window.uiGooglMap.initGoogleMap("totalMap");
 
 			//너무 내용이 많아서 따로 만들었습니다.
-			$("#SpotData").load("4_spot_charter_datatable.html", function(){
+			$("#SpotData01").load("4_spot_charter_datatable_eta.html", function(){
 				$(".js-scrollbar").scrollbar();
 			});
 
+			//너무 내용이 많아서 따로 만들었습니다.
+			$("#SpotData02").load("4_spot_charter_datatable_fixture.html");
+
 			//사이드닫기
 			window.ui.sideMenu().close();
+		});
+	</script>
+	<!-- 차트js추가 -->
+	<script type="text/javascript" src="../_public/vendor/chartjs/moment.min.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/chartjs-plugin-datalabels.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.utill.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.sampleData.js"></script> <!-- Chart.sampleData.js 여기에 샘플데이터있습니다. -->
+	<!-- //차트js추가 -->
+	<script type="text/javascript" src="../_public/js/ui.js"></script>
+	<script>
+		$(window).load(function(){
+			//chart(canvasid, data, stepSize, tabCateogoryInit, ratio)
+			// stepSize : y축간격
+			// tabCateogoryInit : 카테고리로 탭있는경우 해당 index 
+			// ratio : 크기조절
+
+			//VLCC FLOW (BSS FUJAIRAH)
+			ChartUtil.initStackedChart('chart1', lineChartData_7, 10, false, true);
+
+			//AG cargo counting
+			ChartUtil.initHorizontalBarChart('chart2', lineChartData_8, 10, false, false);
+
+			//AG Freight assessment
+			ChartUtil.initLineChart('chart3', lineChartData_9, 5, 0);
 		});
 	</script>
 </body>

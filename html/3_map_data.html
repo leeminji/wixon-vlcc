@@ -1,0 +1,156 @@
+
+		<!-- 구글맵 영역 -->
+		<div id="totalMap" class="MapTotalSize"></div>
+		<!-- //구글맵 영역 -->
+		<!-- MapControl -->
+		<div class="MapControl">
+			<a href="#" class="move"><span>move</span></a>
+			<a href="#" class="ruler"><span>ruler</span></a>
+			<a href="#" class="camera"><span>camera</span></a>
+			<a href="#" class="marker"><span>marker</span></a>
+		</div>
+		<!-- //MapControl -->
+		<!-- MapZoomButton -->
+		<div class="MapZoomButton">
+			<a href="#" class="zoomIn"><span>Zoom In</span></a>
+			<a href="#" class="zoomOut"><span>Zoom Out</span></a>
+			<a href="#" class="mapView"><span>view</span></a>
+		</div>
+		<!-- //MapControl -->
+		<!-- MapButton -->
+		<div class="MapButton">
+			<div class="MapButton__item"><a href="javascript:;" onclick="window.uiGooglMap.state().open();"><span>vlcc status</span></a></div>
+			<div class="MapButton__item"><a href="javascript:;" onclick="window.uiGooglMap.menu().open();"><span>menu</span></a></div>
+		</div>
+		<!-- //MapButton -->
+		<!-- MapState -->
+		<div class="MapState active" id="MapState">
+			<a href="javascript:;" onclick="window.uiGooglMap.state().close();" class="MapState__button_close" id="MapStateClose"><span class="icon icon_close_thin"></span></a>
+			<div class="MapState__inner">
+				<div class="MapState__title"><span>VLCC STATUS</span></div>
+				<ul class="clear clearix MapState__list">
+					<li>
+						<div class="MapState__item">
+							<span class="js-svg iconShip" data-icon="ship_1"></span>
+							<span class="txt">On Sub / Fixed / Project</span>
+						</div>
+					</li>
+					<li class="narrow">
+						<div class="MapState__item">
+							<span class="js-svg iconShip" data-icon="ship_2"></span>
+							<span class="txt">Laden</span>
+						</div>
+					</li>
+					<li>
+						<div class="MapState__item">
+							<span class="js-svg iconShip" data-icon="ship_3"></span>
+							<span class="txt">Open soon</span>
+						</div>
+					</li>
+					<li>
+						<div class="MapState__item">
+							<span class="js-svg iconShip" data-icon="ship_4"></span>
+							<span class="txt">Open (Handicaped)</span>
+						</div>
+					</li>
+					<li>
+						<div class="MapState__item">
+							<span class="js-svg iconShip" data-icon="ship_5"></span>
+							<span class="txt">Drydock / Others</span>
+						</div>
+					</li>
+					<li class="narrow">
+						<div class="MapState__item">
+							<span class="js-svg iconShip" data-icon="ship_6"></span>
+							<span class="txt">Open </span>
+						</div>
+					</li>
+					<li>
+						<div class="MapState__item">
+							<span class="js-svg iconShip" data-icon="ship_7"></span>
+							<span class="txt">Floating Storag</span>
+						</div>
+					</li>
+					<li>
+						<div class="MapState__item">
+							<span class="js-svg iconShip" data-icon="ship_8"></span>
+							<span class="txt">Open soon (handicapped)</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //MapState -->
+		<!-- MapMenu -->
+		<div class="MapMenu active" id="MapMenu">
+			<a href="javascript:;" onclick="window.uiGooglMap.menu().close();" class="MapMenu__button_close" id="MapMenuClose"><span class="skip">닫기</span><span class="icon icon_arrow03_next"></span></a>
+			<div class="MapMenu__inner">
+				<div class="MapMenu__list">
+					<div class="title"><span>All Vessels</span></div>
+					<ul class="clear MapMenu__sublist">
+						<li><a href="">Ballast+Laden</a></li>
+						<li><a href="">Ballast</a></li>
+						<li class="active"><a href="">Laden</a></li>
+					</ul>
+				</div>
+				<div class="MapMenu__list">
+					<div class="title"><span>Ballast Only</span></div>
+					<ul class="clear MapMenu__sublist">
+						<li><a href="">On Sub / Fixed</a></li>
+						<li><a href="">Project</a></li>
+						<li><a href="">Open</a></li>
+						<li><a href="">Open Soon</a></li>
+						<li><a href="">Drydock</a></li>
+						<li><a href="">Others</a></li>
+					</ul>
+				</div>								
+				<div class="MapMenu__list">
+					<div class="title"><span>Laden Only</span></div>
+					<ul class="clear MapMenu__sublist">
+						<li><a href="">Loading</a></li>
+						<li><a href="">In Transit</a></li>
+						<li><a href="">Floating Storafge</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //MapMenu -->
+		<!-- MapShipInfo 클릭했을때 -->
+		<div class="MapShipInfo animated" id="MapShipInfo">
+			<div class="MapShipInfo__inner">
+				<a href="javascript:;" onclick="window.uiGooglMap.infoShipMarker().close();" class="MapShipInfo__close"><span>닫기</span></a>
+				<div class="MapShipInfo__title">
+					<div class="name">Yuan Qiu Hu</div>
+					<div class="date">Canaport 21 Sep 19</div>
+					<div class="etc"><span>308.371</span><span>2015</span></div>
+				</div>
+				<div class="MapShipInfo__content">
+					<ul class="clear MapShipInfo__list">
+						<li><span class="tit">Draft</span><span class="txt">11/ -9.4m(50% of max) 7d 58min ago</span></li>
+						<li><span class="tit">Speed</span><span class="txt">13.2 / +1.6 kts (9% of max) 15h 12min ago</span></li>
+						<li><span class="tit">Heading</span><span class="txt">83</span></li>
+						<li><span class="tit">Location</span><span class="txt">CAPE for 4d</span></li>
+						<li><span class="tit">Dest/ETA</span><span class="txt">Guangzhou / 03 Dec 19</span></li>
+						<li><span class="tit">Long/Lat</span><span class="txt">23,1888 / -34,9713</span></li>
+						<li class="signal"><span class="tit">Last signal</span><span class="txt">17min ago</span></li>
+						<li><span class="tit">Status</span><span class="txt">-</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //MapShipInfo 클릭했을때 -->
+		<!-- MapShipOver over했을때 -->
+		<div class="MapShipOver" id="MapShipOver">
+			<div class="MapShipOver__inner">
+				<div class="MapShipOver__title">
+					<span class="name">Yuan Qiu Hu</span>
+				</div>
+				<div class="MapShipOver__content">
+					<span>2015 BLT / 308,371 MT</span>
+				</div>
+			</div>
+		</div>
+		<!-- //MapShipOver over했을때 -->
+	</div>
+		
+

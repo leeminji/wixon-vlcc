@@ -16,12 +16,17 @@ var ChartUtil = (function(){
 			black : 'rgb(0,0,0)',
 			blue : 'rgb(0,119,230)',
 			blue_op5 : 'rgba(0,119,230,0.5)',
+			royalblue : 'rgb(23,80,163)',
+			royalblue_op5 : 'rgba(23,80,163,0.5)',
+			darkblue : 'rgb(0,98,132)',
+			darkblue_op5 : 'rgba(0,98,132,0.5)',
 			gray : 'rgb(190,190,190)',
 			darkgray : 'rgb(115,115,115)',
 			white : '#d0d0d0',
 			white_op8 : 'rgba(255,255,255, 0.8)',
 			white_op5 : 'rgba(255,255,255, 0.5)',
 			white_op2 : 'rgba(255,255,255, 0.2)',
+			navy : 'rgb(56,99,131)',
 		},
 		randomData : function(min, max){
 			return Math.floor(Math.random() * (max-min+1)) + min;
@@ -47,6 +52,13 @@ var ChartUtil = (function(){
 						display: 'none'
 					},
 					defaultFontFamily : window.ChartUtil.font,
+					plugins: {
+						datalabels: {
+							display: function(context) {
+								return ""
+							}
+						}
+					},
 					scales: {
 						xAxes: [{
 							display: true
@@ -89,6 +101,13 @@ var ChartUtil = (function(){
 				title: {
 					display: 'none'
 				},
+				plugins: {
+					datalabels: {
+						display: function(context) {
+							return ""
+						}
+					}
+				},	
 				scales: {
 					xAxes: [{
 						display: true,
@@ -158,6 +177,13 @@ var ChartUtil = (function(){
 					display: 'none'
 				},
 				defaultFontFamily : window.ChartUtil.font,
+				plugins: {
+					datalabels: {
+						display: function(context) {
+							return ""
+						}
+					}
+				},
 				scales: {
 					xAxes: [
 						{
@@ -239,6 +265,13 @@ var ChartUtil = (function(){
 					display: 'none'
 				},
 				defaultFontFamily : window.ChartUtil.font,
+				plugins: {
+					datalabels: {
+						display: function(context) {
+							return ""
+						}
+					}
+				},
 				scales: {
 					xAxes : [
 						{
@@ -321,6 +354,170 @@ var ChartUtil = (function(){
 			});
 			this.addCustomLegend(_canvasId);
 		},
+		initStackedChart : function(_canvasId, _data, _stepSize, _tabCateogoryInit, _ratio){
+			var thisObj =this;
+			var initData = _data;
+			var canvas = document.getElementById(_canvasId);
+			if( !canvas ) return;
+			var ctx = canvas.getContext('2d');
+			var _options = {
+				legend : false,
+				legendCallback : function(_chart){
+					return thisObj.drawCustomLegend(_chart);
+				},
+				responsive: true,
+				maintainAspectRatio: true,
+				hoverMode: 'index',
+				title: {
+					display: 'none'
+				},
+				tooltips: {
+					mode: 'index',
+					intersect: false
+				},
+				defaultFontFamily : window.ChartUtil.font,
+				responsive: true,
+				plugins: {
+					datalabels: {
+						color: 'white',
+						display: function(context) {
+							return context.dataset.data[context.dataIndex];
+						},
+						formatter: Math.round
+					}
+				},	
+				scales: {
+					xAxes: [{
+						stacked: true,						
+						//글자
+						ticks: {
+							fontColor : window.ChartUtil.colors.white_op5,
+							fontFamily : window.ChartUtil.font,
+						},	
+						gridLines : {
+							lineWidth: 1,
+							display : true,
+							borderDash: [1, 3],
+							drawOnChartArea: true, 
+							zeroLineColor:  window.ChartUtil.colors.white,
+							zeroLineWidth: 1,
+							color : window.ChartUtil.colors.white_op2
+						},	
+					}],
+					yAxes: [{
+						stacked: true,
+						gridLines : {
+							display : true,
+							borderDash: [1, 3],
+							drawOnChartArea: true, 
+							color : window.ChartUtil.colors.white_op2,
+							zeroLineColor:  window.ChartUtil.colors.white_op5,
+							zeroLineWidth: 1,
+							lineWidth: 1,
+						},							
+						ticks :{
+							stepSize : 10,
+							fontColor : window.ChartUtil.colors.white_op5,
+							fontFamily : window.ChartUtil.font,
+						}
+					}]
+				}
+			}
+			if( _stepSize ){
+				_options.scales.yAxes[0].ticks.stepSize = _stepSize;
+			}
+			if( _ratio ){
+				_options.maintainAspectRatio = _ratio;
+			}
+			thisObj.chartList[_canvasId] = new Chart(ctx, {
+				type : "bar",
+				data : initData,
+				options: _options
+			});
+
+			this.addCustomLegend(_canvasId);
+		},		
+		initHorizontalBarChart : function(_canvasId, _data, _stepSize, _tabCateogoryInit, _ratio){
+			var thisObj =this;
+			var initData = _data;
+			var canvas = document.getElementById(_canvasId);
+			if( !canvas ) return;
+			var ctx = canvas.getContext('2d');
+			var _options = {
+				legend : false,
+				legendCallback : function(_chart){
+					return thisObj.drawCustomLegend(_chart);
+				},
+				responsive: true,
+				maintainAspectRatio: true,
+				hoverMode: 'index',
+				title: {
+					display: 'none'
+				},
+				tooltips: {
+					mode: 'index',
+					intersect: false
+				},
+				defaultFontFamily : window.ChartUtil.font,
+				responsive: true,
+				plugins: {
+					datalabels: {
+						color: 'white',
+						display: function(context) {
+							return context.dataset.data[context.dataIndex];
+						},
+						formatter: Math.round
+					}
+				},	
+				scales: {
+					xAxes: [{
+						stacked: true,						
+						//글자
+						ticks: {
+							fontColor : window.ChartUtil.colors.white_op5,
+							fontFamily : window.ChartUtil.font,
+						},	
+						gridLines : {
+							display : true,
+							borderDash: [1, 3],
+							drawOnChartArea: true, 
+							zeroLineColor:  window.ChartUtil.colors.white,
+							zeroLineWidth: 1,
+							color : window.ChartUtil.colors.white_op2
+						},	
+					}],
+					yAxes: [{
+						stacked: true,
+						gridLines : {
+							display : true,
+							borderDash: [1, 3],
+							drawOnChartArea: true, 
+							color : window.ChartUtil.colors.white_op2,
+							zeroLineColor:  window.ChartUtil.colors.white_op5,
+							zeroLineWidth: 1,
+						},							
+						ticks :{
+							stepSize : 10,
+							fontColor : window.ChartUtil.colors.white_op5,
+							fontFamily : window.ChartUtil.font,
+						}
+					}]
+				}
+			}
+			if( _stepSize ){
+				_options.scales.yAxes[0].ticks.stepSize = _stepSize;
+			}
+			if( _ratio ){
+				_options.maintainAspectRatio = _ratio;
+			}
+			thisObj.chartList[_canvasId] = new Chart(ctx, {
+				type : "horizontalBar",
+				data : initData,
+				options: _options
+			});
+
+			this.addCustomLegend(_canvasId);
+		},		
 		upDateDataset : function(e, datasetIndex, chart){
             var index = datasetIndex;
             var meta = chart.getDatasetMeta(index);
@@ -347,7 +544,25 @@ var ChartUtil = (function(){
 			});
 		},
 		drawCustomLegend : function(chart){
+			var thisObj = this;
 			var text = [];
+			var getChartLabelStyle = function(_data, _type){
+				var cssStyleLine = "";
+				cssStyleLine += "border-width:2px;";
+				cssStyleLine += "border-style:solid;";
+				if( _type == 'line' ){
+					cssStyleLine += "border-color:"+_data.borderColor+";";
+					cssStyleLine += "background-color:"+_data.borderColor+";";
+				}else{
+					if( _data.borderColor ){
+						cssStyleLine += "border-color:"+_data.borderColor+";";
+					}
+					if( _data.backgroundColor ){
+						cssStyleLine += "background-color:"+_data.backgroundColor+";";
+					}
+				}
+				return cssStyleLine;
+			}	
 			text.push('<ul class="' + chart.id + '-legend">');
 			if(chart.config.type == 'bar'){//막대차트, 막대라인차트일 경우
 			  var barIndex = chart.data.datasets.length;
@@ -359,27 +574,36 @@ var ChartUtil = (function(){
 				}
 				for (i = barIndex; i <chart.data.datasets.length; i++) {
 				  if(!(chart.data.datasets[i].hideLegend) && chart.data.datasets[i].label){
-					text.push('<li data-index="'+i+'"><span class="bar" style="background-color:' + chart.data.datasets[i].backgroundColor + '" ></span>');
+					text.push('<li data-index="'+i+'"><span class="bar" style="'+getChartLabelStyle(chart.data.datasets[i], chart.config.type)+'" ></span>');
 					text.push('<span>'+chart.data.datasets[i].label+'</span>');
 					text.push('</li>');
 				  }
-				}//막대 형식 데이터셋의 범례를 먼저 그림
-				 
+				}
+				//막대 형식 데이터셋의 범례를 먼저 그림	 
 				for (i = 0; i <barIndex; i++) {
-				  if(!(chart.data.datasets[i].hideLegend) && chart.data.datasets[i].label){
-					text.push('<li data-index="'+i+'"><div class="line" style="background:' + chart.data.datasets[i].borderColor + '"></div>');
+				  if(!(chart.data.datasets[i].hideLegend) && chart.data.datasets[i].label){				  
+					text.push('<li data-index="'+i+'"><span class="bar" style="'+getChartLabelStyle(chart.data.datasets[i], chart.config.type)+'" ></span>');
 					text.push('<span>'+chart.data.datasets[i].label+'</span>');
 					text.push('</li>');
 				  }
-				}//막대 형식 데이터셋의 범례를 그린 후 라인 형식 데이터셋의 범례를 그림.
+				}
+			//막대 형식 데이터셋의 범례를 그린 후 라인 형식 데이터셋의 범례를 그림.
 			} else if(chart.config.type == 'line'){//라인 차트일 경우
 			  for (i = 0; i <chart.data.datasets.length; i++) {
 				  if(!(chart.data.datasets[i].hideLegend) && chart.data.datasets[i].label){
-					text.push('<li data-index="'+i+'"><span class="line" style="background-color:' + chart.data.datasets[i].borderColor + '"></span>');
+					text.push('<li data-index="'+i+'"><span class="bar" style="'+getChartLabelStyle(chart.data.datasets[i], chart.config.type)+'" ></span>');
 					text.push('<span>'+chart.data.datasets[i].label+'</span>');
 					text.push('</li>');
 				  }
 			  }
+			}else{
+				for (i = 0; i <chart.data.datasets.length; i++) {
+					if(!(chart.data.datasets[i].hideLegend) && chart.data.datasets[i].label){
+					  text.push('<li data-index="'+i+'"><span class="bar" style="'+getChartLabelStyle(chart.data.datasets[i], chart.config.type)+'" ></span>');
+					  text.push('<span>'+chart.data.datasets[i].label+'</span>');
+					  text.push('</li>');
+					}
+				}				
 			}
 			text.push('</ul>');
 			return text.join("");

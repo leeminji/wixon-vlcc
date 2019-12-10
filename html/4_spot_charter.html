@@ -15,7 +15,7 @@
 <body>
 	<div class="loading" id="loading"><div class="img"><span class="skip">Loading...</span></div></div>
 	<!-- Layout__Allwrap : class = active_submenu : SideMenu 있는경우에만 class 추가 -->
-	<div class="Layout__Allwrap active_submenu" id="LayoutAllwrap">
+	<div class="Layout__Allwrap" id="LayoutAllwrap">
 		<!-- header -->
 		<header class="Layout__header">
 			<!-- Layout__menu -->
@@ -121,35 +121,6 @@
 					</div>
 				</div>
 				<!-- //TotalMenu -->
-				<!-- SideMenu -->
-				<div class="SideMenu">
-					<div class="SideMenu__top">
-						<div class="AdminState">
-							<a href="0_index.html" class="AdminState__state"><span class="icon icon_admin"></span><span class="txt">ADMIN LOGOUT</span></a>
-						</div>
-					</div>
-					<div class="SideMenu__inner">
-						<div class="js-scrollbar">
-							<div class="SideMenu__arrow">
-								<a href="#" class="SideMenu__button_close" id="sideMenuClose"><span class="icon icon_arrow02_prev"></span><span class="skip">닫기</span></a>
-							</div>
-							<!-- SideMenu__listArea : 메일서브메뉴 -->
-							<nav class="SideMenu__listArea" id="SideMenuList__mail">
-								<h1 class="skip">서브메뉴</h1>
-								<!-- SideMenu__list 리스트 -->
-								<ul class="clear SideMenu__list">
-									<li class="anime_link-3 active"><a href="#"><span class="txt">Position List</span></a></li>
-									<li class="anime_link-3"><a href="#"><span class="txt">Nowcast</span> </a></li>
-									<li class="anime_link-3"><a href="#"><span class="txt">Pattern</span></a></li>
-									<li class="anime_link-3"><a href="#"><span class="txt">Analysis</span></a></li>
-								</ul>
-								<!-- //SideMenu__list -->					
-							</nav>
-							<!-- //SideMenu__listArea : 메일서브메뉴 -->
-						</div>
-					</div>
-				</div>
-				<!-- //SideMenu -->
 			</div>
 			<!-- //Layout__menu -->
 		</header>
@@ -298,8 +269,6 @@
 			//너무 내용이 많아서 따로 만들었습니다.
 			$("#SpotData02").load("4_spot_charter_datatable_fixture.html");
 
-			//사이드닫기
-			window.ui.sideMenu().close();
 		});
 	</script>
 	<!-- 차트js추가 -->

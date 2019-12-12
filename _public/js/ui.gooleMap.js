@@ -542,11 +542,11 @@ var uiGooglMap = (function(){
                         width : 10 * ratio,
                         height: 10 * ratio
                     }
-                    let  icon = {
+                    let icon = {
                         path : thisObj.PORT_PATH,
-                        strokeColor: "#1f84ff",
                         fillOpacity : 1,
-                        fillColor : "#FFFFFF",
+                        fillColor : "#3cb2a8",
+                        strokeWeight:0,
                         scale : 1,
                         anchor : new google.maps.Point(5,10),
                         labelOrigin : new google.maps.Point(opt.label.labelOffX||0, opt.label.labelOffY||20),

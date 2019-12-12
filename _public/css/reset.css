@@ -1,15 +1,17 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
-/* @import 'font_condensed.css'; */
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap');
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: normal;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: bold;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+
 
 /**** reset.css ****/
 	html,body, div,p,h1,h2,h3,h4,h5,h6,input,button,textarea,select,table,ul,ol,li,dl,dt,dd,label,a,strong, object, iframe, abbr, address, cite, code, article, aside, canvas, details, figcaption, figure, section, mark, audio, video{margin:0;padding:0;}
 	p, textarea{word-break: break-all}
 	span, a, input{vertical-align: middle}
 	article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display:block;}
-	body, a, input, button, select, p,h1,h2,h3,h4,h5,h6,textarea,select{font-size:16px;font-family: 'Titillium Web', sans-serif;line-height:1.2em;color:#444;font-weight: 400;}
+	body, a, input, button, select, p,h1,h2,h3,h4,h5,h6,textarea,select{font-size:16px;font-family: 'Roboto Condensed','Titillium Web', sans-serif;line-height:1.2em;color:#444;font-weight: 400;}
 	table{width:100%;table-layout:fixed;border-collapse: collapse;border-spacing: 0;}
 	caption, legend {width:0;height:0;font-size:0;line-height:0;overflow:hidden}
 	address,em{font-style:normal}
@@ -59,13 +61,15 @@
 	/*form&input base style*/
 	input{height:2em;font-size:1em;line-height:1em;padding:0.5em;border:1px solid #aaa;background:#fff;}
 	.ie8 input{height:1em;padding:.9em 0.5em}
-	input[size="100"]{width:98%}
+	input[size="100"]{width:100%}
+	input[size="90"]{width:90%}
 	input[size="80"]{width:80%}
-	input[size="30"]{width:28em}
-	input[size="20"]{width:18em}
-	input[size="15"]{width:12em}	
-	input[size="10"]{width:8em}
-	input[size="5"]{width:4em}
+	input[size="30"]{width:30em}
+	input[size="25"]{width:25em}
+	input[size="20"]{width:20em}
+	input[size="15"]{width:15em}	
+	input[size="10"]{width:10em}
+	input[size="5"]{width:5em}
 	input[type="file"]{padding:0}
 	input::-webkit-input-placeholder { color: #666666;}
 	input::-moz-placeholder { color: #666666;}

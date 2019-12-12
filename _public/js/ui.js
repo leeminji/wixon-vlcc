@@ -142,7 +142,7 @@ var ui = (function(){
                         item.on("mouseenter", function(event){
                             if( totalMenu.hasClass("active") ) return;
                             var str_title = item.attr("data-title");
-                            var str_width = str_title.length * 10;
+                            var str_width = str_title.length * 6.5;
                             totalMenuTooltip.empty().append("<span style='width:"+str_width+"px'>"+str_title+"</span>").css({                        
                                 left : item_offset.left + $(this).width()-12,
                                 top : item_offset.top-20

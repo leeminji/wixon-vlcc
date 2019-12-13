@@ -8,14 +8,16 @@ var ChartUtil = (function(){
 			yellow: 'rgb(255, 205, 86)',
 			green: 'rgb(65, 255, 204)',
 			green_op5: 'rgba(65, 255, 204, 0.5)',
+			green_op2: 'rgba(65, 255, 204, 0.2)',
 			yellowish : 'rgb(151,211,188)',
 			purple: 'rgb(153, 102, 255)',
 			grey: 'rgb(201, 203, 207)',
 			skyblue: 'rgb(23, 186, 205)',
 			skyblue_op5: 'rgba(23, 186, 205, 0.5)',
+			skyblue_op2: 'rgba(23, 186, 205, 0.2)',
 			black : 'rgb(0,0,0)',
-			blue : 'rgb(0,119,230)',
-			blue_op5 : 'rgba(0,119,230,0.5)',
+			blue : 'rgb(105,213,255)',
+			blue_op5 : 'rgba105,213,255,0.5)',
 			royalblue : 'rgb(23,80,163)',
 			royalblue_op5 : 'rgba(23,80,163,0.5)',
 			darkblue : 'rgb(0,98,132)',
@@ -79,10 +81,11 @@ var ChartUtil = (function(){
 			});
 			this.addCustomLegend(_canvasId);
 		},
-		initLineChart : function(_canvasId, _data, _stepSize, _tabCateogoryInit){
+		initLineChart : function(_canvasId, _data, _stepSize, _tabCateogoryInit, _ratio){
 			var thisObj =this;
 			var initData = _data;
-			if( _tabCateogoryInit > -1 ){
+
+			if( _tabCateogoryInit !== false && _tabCateogoryInit > -1 ){
 				var initCategory = $("#"+_canvasId+"_tab > a").eq(_tabCateogoryInit).addClass('active').data('category');
 				initData = this.categoryDataFind(_data, initCategory);
 			}
@@ -147,7 +150,9 @@ var ChartUtil = (function(){
 			if( _stepSize ){
 				_options.scales.yAxes[0].ticks.stepSize = _stepSize;
 			}
-
+			if( _ratio ){
+				_options.aspectRatio = _ratio;
+			}
 			thisObj.chartList[_canvasId] = new Chart(ctx, {
 				type : "line",
 				data : initData,
@@ -291,7 +296,8 @@ var ChartUtil = (function(){
 							gridLines : {
 								lineWidth: 1,
 								display : true,
-								color : window.ChartUtil.colors.white_op2
+								borderDash: [2, 5],
+								color : window.ChartUtil.colors.white_op2,
 							}
 						}
 					],
@@ -316,15 +322,17 @@ var ChartUtil = (function(){
 						{	
 							//글자
 							ticks: {
-								fontColor : window.ChartUtil.colors.white,
+								fontColor : window.ChartUtil.colors.darkgray,
 								fontFamily : window.ChartUtil.font,
 								userCallback: function(value, index, values) {
 									value = value.toString();
 									value = value.split(/(?=(?:...)*$)/);
 									value = value.join(',');
-									return value;
+									return value+" k";
 								},
-								fontWeight : 600
+								fontWeight : 600,
+								max:1500,
+								min:1300,
 							},																
 							type: 'linear', 
 							display: true,
@@ -517,7 +525,132 @@ var ChartUtil = (function(){
 			});
 
 			this.addCustomLegend(_canvasId);
-		},		
+		},
+		initVerticalBarChart : function(_canvasId, _data, _stepSize, _tabCateogoryInit, _ratio){
+			var thisObj =this;
+			var initData = _data;
+			var canvas = document.getElementById(_canvasId);
+			if( !canvas ) return;
+			var ctx = canvas.getContext('2d');
+			var _options = {
+				legend : false,
+				legendCallback : function(_chart){
+					return thisObj.drawCustomLegend(_chart);
+				},
+				responsive: true,
+				maintainAspectRatio: true,
+				hoverMode: 'index',
+				title: {
+					display: 'none'
+				},
+				tooltips: {
+					mode: 'index',
+					intersect: false
+				},
+				defaultFontFamily : window.ChartUtil.font,
+				responsive: true,
+				plugins: {
+					datalabels: {
+						color: 'white',
+						display: function(context) {
+							//return context.dataset.data[context.dataIndex];
+							return ''
+						},
+						formatter: Math.round
+					}
+				},	
+				scales: {
+					xAxes: [{						
+						//글자
+						ticks: {
+							fontColor : window.ChartUtil.colors.white_op5,
+							fontFamily : window.ChartUtil.font,
+						},	
+						gridLines : {
+							display : true,
+							borderDash: [1, 3],
+							drawOnChartArea: true, 
+							zeroLineColor:  window.ChartUtil.colors.white,
+							zeroLineWidth: 1,
+							color : window.ChartUtil.colors.white_op2
+						},	
+					}],
+					yAxes: [{
+						gridLines : {
+							display : true,
+							borderDash: [1, 3],
+							drawOnChartArea: true, 
+							color : window.ChartUtil.colors.white_op2,
+							zeroLineColor:  window.ChartUtil.colors.white_op5,
+							zeroLineWidth: 1,
+						},							
+						ticks :{
+							stepSize : 10,
+							fontColor : window.ChartUtil.colors.white_op5,
+							fontFamily : window.ChartUtil.font,
+						}
+					}]
+				}
+			}
+			if( _stepSize ){
+				_options.scales.yAxes[0].ticks.stepSize = _stepSize;
+			}
+			if( _ratio ){
+				_options.maintainAspectRatio = _ratio;
+			}
+			thisObj.chartList[_canvasId] = new Chart(ctx, {
+				type : "bar",
+				data : initData,
+				options: _options
+			});
+
+			this.addCustomLegend(_canvasId);
+		},
+		initDoughnutChart : function(_canvasId, _data, _tabCateogoryInit, _ratio){
+			var thisObj =this;
+			var initData = _data;
+			var canvas = document.getElementById(_canvasId);
+			if( !canvas ) return;
+			var ctx = canvas.getContext('2d');
+			var _options = {
+				legend : false,
+				legendCallback : function(_chart){
+					return thisObj.drawCustomLegend(_chart);
+				},
+				responsive: true,
+				aspectRatio : 2,
+				maintainAspectRatio: true,
+				hoverMode: 'index',
+				title: {
+					display: 'none'
+				},
+				tooltips: {
+					mode: 'index',
+					intersect: false
+				},			
+				defaultFontFamily : window.ChartUtil.font,
+				responsive: true,
+				plugins: {
+					datalabels: {
+						color: 'white',
+						display: function(context) {
+							return context.dataset.data[context.dataIndex];
+						},
+						formatter: Math.round
+					}
+				}
+			}
+			if( _ratio ){
+				_options.aspectRatio = _ratio;
+			}
+			thisObj.chartList[_canvasId] = new Chart(ctx, {
+				type : "doughnut",
+				data : initData,
+				options: _options
+			});
+
+			this.addCustomLegend(_canvasId);
+		},
 		upDateDataset : function(e, datasetIndex, chart){
             var index = datasetIndex;
             var meta = chart.getDatasetMeta(index);
@@ -563,7 +696,7 @@ var ChartUtil = (function(){
 				}
 				return cssStyleLine;
 			}	
-			text.push('<ul class="' + chart.id + '-legend">');
+			text.push('<ul class="'+chart.id+'-legend '+chart.config.type+'">');
 			if(chart.config.type == 'bar'){//막대차트, 막대라인차트일 경우
 			  var barIndex = chart.data.datasets.length;
 				for (var i = 0; i <chart.data.datasets.length; i++) {
@@ -589,13 +722,21 @@ var ChartUtil = (function(){
 				}
 			//막대 형식 데이터셋의 범례를 그린 후 라인 형식 데이터셋의 범례를 그림.
 			} else if(chart.config.type == 'line'){//라인 차트일 경우
-			  for (i = 0; i <chart.data.datasets.length; i++) {
+			    for (i = 0; i <chart.data.datasets.length; i++) {
 				  if(!(chart.data.datasets[i].hideLegend) && chart.data.datasets[i].label){
 					text.push('<li data-index="'+i+'"><span class="bar" style="'+getChartLabelStyle(chart.data.datasets[i], chart.config.type)+'" ></span>');
 					text.push('<span>'+chart.data.datasets[i].label+'</span>');
 					text.push('</li>');
 				  }
-			  }
+			    }
+			} else if(chart.config.type == 'doughnut'){//도넛 차트일 경우
+				for (i = 0; i <chart.data.labels.length; i++) {
+					if(chart.data.labels[i]){
+					  text.push('<li data-index="'+i+'"><span class="bar" style="border: 2px solid '+chart.data.datasets[0].backgroundColor[i]+';background-color:'+chart.data.datasets[0].backgroundColor[i]+'" ></span>');
+					  text.push('<span>'+chart.data.labels[i]+'</span>');
+					  text.push('</li>');
+					}
+				}
 			}else{
 				for (i = 0; i <chart.data.datasets.length; i++) {
 					if(!(chart.data.datasets[i].hideLegend) && chart.data.datasets[i].label){
@@ -637,3 +778,44 @@ var ChartUtil = (function(){
 	}
 })();
 
+Chart.pluginService.register({
+	beforeDraw: function (chart) {
+		if (chart.config.options.elements.center) {
+			//Get ctx from string
+			var ctx = chart.chart.ctx;
+			
+			//Get options from the center object in options
+			var centerConfig = chart.config.options.elements.center;
+			var fontStyle = centerConfig.fontStyle || 'Arial';
+			var txt = centerConfig.text;
+			var color = centerConfig.color || '#000';
+			var sidePadding = centerConfig.sidePadding || 20;
+			var sidePaddingCalculated = (sidePadding/100) * (chart.innerRadius * 2)
+			//Start with a base font of 30px
+			ctx.font = "30px " + fontStyle;
+			
+			//Get the width of the string and also the width of the element minus 10 to give it 5px side padding
+			var stringWidth = ctx.measureText(txt).width;
+			var elementWidth = (chart.innerRadius * 2) - sidePaddingCalculated;
+
+			// Find out how much the font can grow in width.
+			var widthRatio = elementWidth / stringWidth;
+			var newFontSize = Math.floor(30 * widthRatio);
+			var elementHeight = (chart.innerRadius * 2);
+
+			// Pick a new font size so it will not be larger than the height of label.
+			var fontSizeToUse = Math.min(newFontSize, elementHeight);
+
+			//Set font settings to draw it correctly.
+			ctx.textAlign = 'center';
+			ctx.textBaseline = 'middle';
+			var centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
+			var centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 2);
+			ctx.font = fontSizeToUse+"px " + fontStyle;
+			ctx.fillStyle = color;
+			
+			//Draw text in center
+			ctx.fillText(txt, centerX, centerY);
+		}
+	}
+});

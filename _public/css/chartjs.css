@@ -1,13 +1,20 @@
 
 /*  chart */
 .chartjs-legend{
-    min-height: 22px;
+    min-height: 1.75em;
+    position: absolute;
+    right: 0;
+    left:0;
+    bottom:0;
 }
+.chartjs-legend ul.doughnut{padding-top:1em}
+.chartjs-legend ul.doughnut li{cursor:default;}
 .chartjs-legend ol, .chartjs-legend ul {
     list-style: none;
     margin:0;
     padding:0;
     text-align:right;
+    text-align: center;
 }
 .chartjs-legend li {
     cursor:pointer;
@@ -18,17 +25,18 @@
 }
 .chartjs-legend li span{
     display: inline-block;
-    line-height: 14px;
-    height:14px;
+    line-height: 10px;
+    height:10px;
     vertical-align: middle;
     color: #909090;
+    letter-spacing: -1px;
 }
 .chartjs-legend li span.bar{
     position:relative;
-    margin: 5px;
+    margin: 0 3px;
     border-radius:100px;
     color:white;
-    width:14px;
+    width:10px;
     border-color: transparent;
 }
 .chartjs-legend li.inactive span{
@@ -59,11 +67,12 @@
     border-radius:100px;
     margin: 9px 5px;
 }
-.chartjs-title{padding-top:3px}
+.chartjs-title{padding-top:0.5em}
+.chartjs-title.center{text-align: center;}
 .chartjs-title span{
     color:#667688;
     font-weight:bold;
-    font-size:1.125em;
+    text-transform: uppercase;
 }
 .chartjs-title.middle{padding:.5em 0;letter-spacing: 1px;}
 .chartjs-title.middle span{
@@ -76,13 +85,13 @@
 .chartjs-title.center{
     text-align: center;
 }
-.chartjs-canvas{margin-top:-1em}
+.chartjs-canvas{margin-top:-1em;padding-bottom:1.6em;padding-top:.5em}
 
 .chartjs-tab{
     position: absolute;
     z-index:100;
-    left:0;
-    top:-.8em;
+    right:0;
+    top:.5em;
 }
 .chartjs-tab.middle{top:0.4em;}
 .chartjs-tab.middle a{line-height: 2em;padding:0 1.5em}
@@ -104,3 +113,10 @@
     background:#000;
     color:#fff;
 }
+
+.chartjs-info-legend{position: absolute;width:26%;top:35%}
+.chartjs-info-legend.left{left:0;text-align: right;}
+.chartjs-info-legend.right{right:0}
+.chartjs-info-legend dl{margin:0;padding:0;color:#667688;}
+.chartjs-info-legend dl dt{font-weight: bold;padding-bottom:1em}
+.chartjs-info-legend dl dd{font-size:1em}

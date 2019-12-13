@@ -122,7 +122,7 @@
 	opacity: 0.96;
 }
 .js-scrollbar > .scroll-element .scroll-element_track { background-color:rgba(0,0,0,0.1); }
-.js-scrollbar > .scroll-element .scroll-bar { background-color: #000; }
+.js-scrollbar > .scroll-element .scroll-bar { background-color:rgba(255, 255, 255, 0.15); }
 .js-scrollbar > .scroll-element:hover .scroll-bar { background-color: #000; }
 .js-scrollbar > .scroll-element.scroll-draggable .scroll-bar { background-color: #000; }
 

@@ -290,7 +290,7 @@ body{min-height:768px;min-width:1366px} /* 최소 : 1600X900 */
 .TopSearch.white .TopSearch__input{color:#d0d0d0}
 
 /* TopLogin */
-.TopLogin{padding: 1.5em 0;position: absolute;left:0;top:0;z-index: 100;}
+.TopLogin{padding: 1.5em 0;position: absolute;left:0;top:0;z-index: 105;}
 .TopLogin__state{display:inline-block;color:#0b1728;font-weight: bold;width:10em;text-align: center;}
 .TopLogin__state:hover{color:#0b1728}
 .TopLogin__state .txt{font-size:0.875em}
@@ -625,7 +625,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .DataDivTable__1 .row.thead .cell{padding:.8em .5em;border-bottom:1px solid #d6d6d6;border-left:1px solid #d6d6d6;background:#e3f2f8;font-weight: bold;color:#000;font-size:16px}
 
 .DataTable__move{position:absolute;right:0;top:1em;line-height:2em}
-.DataTable__move a{text-align:left;display:inline-block;width:1em;height:1em;text-indent:-999px;background-position: center;background-repeat: no-repeat;background-size: 1em auto;}
+.DataTable__move a{text-align:left;display:inline-block;width:1em;height:1em;text-indent:-9999999px;background-position: center;background-repeat: no-repeat;background-size: 1em auto;}
 .DataTable__move a.prev{background-image:url(../images/icon/icon_arrow04_prev.png)}
 .DataTable__move a.next{background-image:url(../images/icon/icon_arrow04_next.png)}
 .DataTable__move .text{display:inline-block;padding:0 1em;color:#fff;line-height:1em}
@@ -716,6 +716,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 
 .DataSetting__searchform .row{display: block;padding-top:0.25em}
 .DataSetting__searchform ._a_row{padding-bottom:4px;padding-right:4px;display: inline-block;}
+.DataSetting__searchform ._a_row input{width:15em}
 .DataSetting__searchform .row.on_label{position: relative;padding-left:6.7em}
 .DataSetting__searchform .row.on_label .label {position: absolute;left:0;top:0;line-height:2em}
 
@@ -1050,7 +1051,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 }
 
 /* SpotChartArea */
-.SpotChartArea__map{position: relative;height: 38em;}
+.SpotChartArea__map{position: relative;height: 35em;}
 .SpotChartArea__map .MapTotalSize{border-radius: .3em;}
 .SpotChartArea__data .inner{height:100%;margin:0 1em}
 .SpotChartArea__data{height:100%}

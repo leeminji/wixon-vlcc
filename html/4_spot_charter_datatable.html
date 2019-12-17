@@ -1,5 +1,5 @@
 
-
+<!-- 스크롤을 위해 테이블 분리 - 넓이는 CSS 로 조절 -->
 <div class="DataTable__top">
     <div class="SpotTableData__top">
         <!-- CheckBoxGroup -->
@@ -27,10 +27,14 @@
             <div class="CheckBox">
                 <input type="checkbox" id="chk_6" value="" /><label for="chk_6"><span class="blit"></span></label>
                 <span class="txt">FIXED</span>
-            </div>
+            </div> 
             <div class="CheckBox">
                 <input type="checkbox" id="chk_7" value="" /><label for="chk_7"><span class="blit"></span></label>
                 <span class="txt">PROJECT</span>
+            </div>
+            <div class="CheckBox">
+                <input type="checkbox" id="chk_8" value="" /><label for="chk_8"><span class="blit"></span></label>
+                <span class="txt">DRYDOCK / OTHERS</span>
             </div>
         </div>
         <!-- //CheckBoxGroup -->
@@ -48,14 +52,15 @@
                 <tr>
                     <th scope="col" class="col1">NO</th>
                     <th scope="col" class="col2">ETA FUJAIRAH</th>
-                    <th scope="col" class="col3">VESSEL</th>
-                    <th scope="col" class="col4">DWT</th>
-                    <th scope="col" class="col5">BUILD</th>
-                    <th scope="col" class="col6">S/C</th>
-                    <th scope="col" class="col7">OWNER</th>
-                    <th scope="col" class="col8">OPEN  PORT</th>
-                    <th scope="col" class="col9">OPEM  DATE</th>
-                    <th scope="col" class="col10">REMARK</th>
+                    <th scope="col" class="col3"></th>
+                    <th scope="col" class="col4">VESSEL</th>
+                    <th scope="col" class="col5">DWT</th>
+                    <th scope="col" class="col6">BUILD</th>
+                    <th scope="col" class="col7">S/C</th>
+                    <th scope="col" class="col8">OWNER</th>
+                    <th scope="col" class="col9">OPEN  PORT</th>
+                    <th scope="col" class="col10">OPEM  DATE</th>
+                    <th scope="col" class="col11">REMARK</th>
                 </tr>
             </thead>
         </table>
@@ -65,112 +70,504 @@
 
 <div class="DataTable__content">
     <div class="js-scrollbar">
+        <!-- 화살표부분 : top, height 로 조절필요 -->
         <div class="SpotTableData__arrow">
-            <div class="item type1" style="height:500px"></div>
-            <div class="item type2" style="top:500px;"></div>
+            <div class="item type1" style="height:252px;top:614px;"></div>
+            <div class="item type2 " style="height:167px;top:0px;"></div>
         </div>
-        
+        <!-- //화살표부분 : top, height 로 조절필요 -->
         <div class="SpotTableData__table">
             <!-- IDLING AT FUJAIRAH -->
             <div class="DataTable__4 c01_table">
-            <div class="SpotTableData__title"><span>IDLING AT FUJAIRAH</span></div>
-            <table>
-                <tbody>
-                    <tr>
-                        <td class="col1">1</td>
-                        <td class="col2">PROMPT</td>
-                        <td class="col3">MARBELLA</td>
-                        <td class="col4">281</td>
-                        <td class="col5 c03">00</td>
-                        <td class="col6"></td>
-                        <td class="col7">ALTOMARE</td>
-                        <td class="col8">MUNDRA</td>
-                        <td class="col9">20-FEB</td>
-                        <td class="col10"></td>
-                    </tr>
-                    <tr>
-                        <td class="col1">2</td>
-                        <td class="col2">PROMPT</td>
-                        <td class="col3">MARBELLA</td>
-                        <td class="col4">281</td>
-                        <td class="col5 c03">00</td>
-                        <td class="col6"></td>
-                        <td class="col7">ALTOMARE</td>
-                        <td class="col8">MUNDRA</td>
-                        <td class="col9">20-FEB</td>
-                        <td class="col10"></td>
-                    </tr>
-                    <tr>
-                        <td class="col1">3</td>
-                        <td class="col2">PROMPT</td>
-                        <td class="col3">MARBELLA</td>
-                        <td class="col4">281</td>
-                        <td class="col5 c03">00</td>
-                        <td class="col6"></td>
-                        <td class="col7">ALTOMARE</td>
-                        <td class="col8">MUNDRA</td>
-                        <td class="col9">20-FEB</td>
-                        <td class="col10"></td>
-                    </tr>
-                    <tr>
-                        <td class="col1">4</td>
-                        <td class="col2">PROMPT</td>
-                        <td class="col3">MARBELLA</td>
-                        <td class="col4">281</td>
-                        <td class="col5 c03">00</td>
-                        <td class="col6"></td>
-                        <td class="col7">ALTOMARE</td>
-                        <td class="col8">MUNDRA</td>
-                        <td class="col9">20-FEB</td>
-                        <td class="col10"></td>
-                    </tr>
-                    <tr>
-                        <td class="col1">5</td>
-                        <td class="col2">PROMPT</td>
-                        <td class="col3">MARBELLA</td>
-                        <td class="col4">281</td>
-                        <td class="col5 c03">00</td>
-                        <td class="col6"></td>
-                        <td class="col7">ALTOMARE</td>
-                        <td class="col8">MUNDRA</td>
-                        <td class="col9">20-FEB</td>
-                        <td class="col10"></td>
-                    </tr>
-                    <tr class="line">
-                        <td class="col1">6</td>
-                        <td class="col2">PROMPT</td>
-                        <td class="col3">MARBELLA</td>
-                        <td class="col4">281</td>
-                        <td class="col5 c03">00</td>
-                        <td class="col6"></td>
-                        <td class="col7">ALTOMARE</td>
-                        <td class="col8">MUNDRA</td>
-                        <td class="col9">20-FEB</td>
-                        <td class="col10"></td>
-                    </tr>
-                </tbody>
-            </table>
+                <div class="SpotTableData__title"><span>IDLING AT FUJAIRAH</span></div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="col1">1</td>
+                            <td class="col2 left">PROMPT</td>
+                            <td class="col3 left"></td>
+                            <td class="col4 left">MARBELLA</td>
+                            <td class="col5">281</td>
+                            <td class="col6 c03">00</td>
+                            <td class="col7"></td>
+                            <td class="col8">ALTOMARE</td>
+                            <td class="col9">MUNDRA</td>
+                            <td class="col10">20-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr>
+                            <td class="col1">2</td>
+                            <td class="col2 left">PROMPT</td>
+                            <td class="col3 left"></td>
+                            <td class="col4 left">MARBELLA</td>
+                            <td class="col5">281</td>
+                            <td class="col6 c03">00</td>
+                            <td class="col7"></td>
+                            <td class="col8">ALTOMARE</td>
+                            <td class="col9">MUNDRA</td>
+                            <td class="col10">20-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr>
+                            <td class="col1">3</td>
+                            <td class="col2 left ">PROMPT</td>
+                            <td class="col3 left"></td>
+                            <td class="col4 left">MARBELLA</td>
+                            <td class="col5">281</td>
+                            <td class="col6 c03">00</td>
+                            <td class="col7"></td>
+                            <td class="col8">ALTOMARE</td>
+                            <td class="col9">MUNDRA</td>
+                            <td class="col10">20-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr>
+                            <td class="col1">4</td>
+                            <td class="col2 left">PROMPT</td>
+                            <td class="col3 left"></td>
+                            <td class="col4 left">MARBELLA</td>
+                            <td class="col5">281</td>
+                            <td class="col6 c03">00</td>
+                            <td class="col7"></td>
+                            <td class="col8">ALTOMARE</td>
+                            <td class="col9">MUNDRA</td>
+                            <td class="col10">20-FEB</td>
+                            <td class="col11 c03">EX D/D</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">5</td>
+                            <td class="col2 left">PROMPT</td>
+                            <td class="col3 left"></td>
+                            <td class="col4 left">MARBELLA</td>
+                            <td class="col5">281</td>
+                            <td class="col6 c03">00</td>
+                            <td class="col7"></td>
+                            <td class="col8">ALTOMARE</td>
+                            <td class="col9">MUNDRA</td>
+                            <td class="col10">20-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr>
+                            <td class="col1">6</td>
+                            <td class="col2 left">PROMPT</td>
+                            <td class="col3 left"></td>
+                            <td class="col4 left">MARBELLA</td>
+                            <td class="col5">281</td>
+                            <td class="col6 c03">00</td>
+                            <td class="col7"></td>
+                            <td class="col8">ALTOMARE</td>
+                            <td class="col9">MUNDRA</td>
+                            <td class="col10">20-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr class="line"><td colspan="11"></td></tr>
+                    </tbody>
+                </table>
             </div>
             <!-- //IDLING AT FUJAIRAH -->
             <!-- BALLASTING FROM EAST -->
             <div class="DataTable__4 c01_table">
-            <div class="SpotTableData__title"><span>BALLASTING FROM EAST</span></div>
-            <table>
-                <tbody>
-                    <tr>        
-                        <td class="col1">7</td>
-                        <td class="col2">2-MAR</td>
-                        <td class="col3">FIXED</td>
-                        <td class="col4">DHT LAKE</td>
-                        <td class="col5 c03">298</td>
-                        <td class="col6">04</td>
-                        <td class="col7">DHT</td>
-                        <td class="col8">SPORE</td>
-                        <td class="col9">16-FEB</td>
-                        <td class="col10"></td>
-                    </tr>
-                </tbody>
-            </table>
+                <div class="SpotTableData__title"><span>BALLASTING FROM EAST</span></div>
+                <table>
+                    <tbody>
+                        <tr>        
+                            <td class="col1">7</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">FIXED</td>
+                            <td class="col4 left">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr>        
+                            <td class="col1">8</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">FIXED</td>
+                            <td class="col4 left">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr>        
+                            <td class="col1">9</td>
+                            <td class="col2 left">2-MAR</td>
+                            <td class="col3 c02 left"></td>
+                            <td class="col4 left">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8">DHT</td>
+                            <td class="col9">SPORE</td>
+                            <td class="col10">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr>        
+                            <td class="col1">10</td>
+                            <td class="col2 left">2-MAR</td>
+                            <td class="col3 c02 left"></td>
+                            <td class="col4 left">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8">DHT</td>
+                            <td class="col9">SPORE</td>
+                            <td class="col10">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr>        
+                            <td class="col1 c02">11</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">FIXED</td>
+                            <td class="col4 left">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr> 
+                        <tr>        
+                            <td class="col1 c02">12</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">FIXED</td>
+                            <td class="col4 left">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr> 
+                        <tr class="line"><td colspan="11"></td></tr>
+                        <tr>        
+                            <td class="col1">13</td>
+                            <td class="col2 left">2-MAR</td>
+                            <td class="col3 c02 left"></td>
+                            <td class="col4 left">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8">DHT</td>
+                            <td class="col9">SPORE</td>
+                            <td class="col10">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr>        
+                            <td class="col1 c02">14</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">FIXED</td>
+                            <td class="col4 left">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr> 
+                        <tr>        
+                            <td class="col1 c02">15</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">FIXED</td>
+                            <td class="col4 left">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr> 
+                        <tr class="line"><td colspan="11"></td></tr>
+                        <tr>        
+                            <td class="col1 c02">16</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr> 
+                        <tr>        
+                            <td class="col1 c02">17</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr> 
+                        <tr class="line"><td colspan="11"></td></tr>
+                        <tr>        
+                            <td class="col1 c02">18</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr> 
+                        <tr>        
+                            <td class="col1">19</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr> 
+                        <tr>        
+                            <td class="col1 c02">20</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr class="line"><td colspan="11"></td></tr>
+                        <tr>        
+                            <td class="col1 c02">21</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr> 
+                        <tr>        
+                            <td class="col1">22</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr> 
+                        <tr>        
+                            <td class="col1 c02">23</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr>        
+                            <td class="col1 c02">24</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr class="line"><td colspan="11"></td></tr>
+                        <tr class="b01">        
+                            <td class="col1 c02">25</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr> 
+                        <tr class="b01">        
+                            <td class="col1">26</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr> 
+                        <tr class="b01">        
+                            <td class="col1">27</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr class="b01">        
+                            <td class="col1">28</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr class="b01">        
+                            <td class="col1">29</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr class="b01">        
+                            <td class="col1">30</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr class="b01">        
+                            <td class="col1">31</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr class="line"><td colspan="11"></td></tr>
+                        <tr class="b01">        
+                            <td class="col1">32</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr class="b01">        
+                            <td class="col1">33</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr class="b01">        
+                            <td class="col1">34</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr class="b01">        
+                            <td class="col1">35</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                        <tr>        
+                            <td class="col1">36</td>
+                            <td class="col2 left c02">2-MAR</td>
+                            <td class="col3 c02 left">PROJECT</td>
+                            <td class="col4 left c02">DHT LAKE</td>
+                            <td class="col5">298</td>
+                            <td class="col6">298</td>
+                            <td class="col7">04</td>
+                            <td class="col8 c02">DHT</td>
+                            <td class="col9 c02">SPORE</td>
+                            <td class="col10 c02">16-FEB</td>
+                            <td class="col11"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <!-- //BALLASTING FROM EAST -->
         </div>

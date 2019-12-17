@@ -1,3 +1,5 @@
+
+//ChartUtil.initStackedChart
 var ChartUtil = (function(){
 	return {
 		font : "'Roboto Condensed' , 'Noto Sans KR', 'sans-serif'",
@@ -28,7 +30,11 @@ var ChartUtil = (function(){
 			white_op8 : 'rgba(255,255,255, 0.8)',
 			white_op5 : 'rgba(255,255,255, 0.5)',
 			white_op2 : 'rgba(255,255,255, 0.2)',
-			navy : 'rgb(56,99,131)',
+			navy : 'rgba(56,99,131,1)',
+			olive : 'rgba(108,111,54,1)',
+			olive_op5 : 'rgba(108,111,54,0.5)',
+			yellowgreen : 'rgba(136,190,0,1)',
+			yellowgreen_op5 : 'rgba(136,190,0,0.5)',
 		},
 		randomData : function(min, max){
 			return Math.floor(Math.random() * (max-min+1)) + min;
@@ -89,7 +95,7 @@ var ChartUtil = (function(){
 				var initCategory = $("#"+_canvasId+"_tab > a").eq(_tabCateogoryInit).addClass('active').data('category');
 				initData = this.categoryDataFind(_data, initCategory);
 			}
-			
+			console.log(initData);
 			var canvas = document.getElementById(_canvasId);
 			if( !canvas ) return;
 			var ctx = canvas.getContext('2d');
@@ -99,6 +105,7 @@ var ChartUtil = (function(){
 					return thisObj.drawCustomLegend(_chart);
 				},
 				responsive: true,
+				maintainAspectRatio: true,
 				hoverMode: 'index',
 				stacked: false,
 				title: {
@@ -435,7 +442,7 @@ var ChartUtil = (function(){
 				_options.scales.yAxes[0].ticks.stepSize = _stepSize;
 			}
 			if( _ratio ){
-				_options.maintainAspectRatio = _ratio;
+				_options.aspectRatio = _ratio;
 			}
 			thisObj.chartList[_canvasId] = new Chart(ctx, {
 				type : "bar",
@@ -516,7 +523,7 @@ var ChartUtil = (function(){
 				_options.scales.yAxes[0].ticks.stepSize = _stepSize;
 			}
 			if( _ratio ){
-				_options.maintainAspectRatio = _ratio;
+				_options.aspectRatio = _ratio;
 			}
 			thisObj.chartList[_canvasId] = new Chart(ctx, {
 				type : "horizontalBar",
@@ -596,7 +603,7 @@ var ChartUtil = (function(){
 				_options.scales.yAxes[0].ticks.stepSize = _stepSize;
 			}
 			if( _ratio ){
-				_options.maintainAspectRatio = _ratio;
+				_options.aspectRatio = _ratio;
 			}
 			thisObj.chartList[_canvasId] = new Chart(ctx, {
 				type : "bar",
@@ -753,7 +760,7 @@ var ChartUtil = (function(){
 		categoryDataFind : function(_dataList, _category){
 			var result = null;	
 			_dataList.datalist.forEach(function(item){
-				if( item.category == _category ){
+				if( item.category.toLowerCase() == _category.toLowerCase() ){
 					result =  item;
 					return;
 				}
@@ -778,6 +785,7 @@ var ChartUtil = (function(){
 	}
 })();
 
+//가운데 센터에 데이터 넣기
 Chart.pluginService.register({
 	beforeDraw: function (chart) {
 		if (chart.config.options.elements.center) {
@@ -816,6 +824,40 @@ Chart.pluginService.register({
 			
 			//Draw text in center
 			ctx.fillText(txt, centerX, centerY);
+		}
+	}
+});
+
+//마지막 라벨보이기
+Chart.plugins.register({
+	afterDraw: function (chart, easing) {
+		if (chart.config.data.showValue) {
+			var showValue = chart.config.data.showValue;
+			var width = showValue.valueWidth || 110 ;
+
+			var ctx = chart.chart.ctx;
+			var fontSize = showValue.fontSize || "9";
+			var fontStyle = showValue.fontStyle || "Arial";
+
+			ctx.font =  fontSize + "px " + fontStyle;
+			ctx.textAlign = showValue.textAlign || "left";
+			ctx.textBaseline = showValue.textAlign || "middle";
+			
+			chart.config.data.datasets.forEach(function (dataset, i) {
+				ctx.fillStyle = dataset.fontColor || chart.config.options.showValue.textColor || "#000";
+				var last = dataset.data.length;
+				var coordination = {
+					x : dataset._meta[chart.id].data[last-1]._model.x,
+					y : dataset._meta[chart.id].data[last-1]._model.y,
+				}
+				var lastText =  dataset.dataInfo;
+				
+				ctx.fillStyle = dataset.borderColor || "#000000";
+				ctx.fillRect(coordination.x, coordination.y-(fontSize), width, fontSize*2);
+				ctx.fillStyle = dataset.fontColor || "#ffffff";
+				ctx.fillText(lastText, coordination.x+5, coordination.y+1);
+				
+			});
 		}
 	}
 });

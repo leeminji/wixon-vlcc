@@ -543,72 +543,107 @@ var lineChartData_7 = {
         {
             label: 'OPEN',
             backgroundColor: ChartUtil.colors.darkblue,
+            borderColor: ChartUtil.colors.darkblue,
             data: [
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
             ]
         }, 
         {
             label: 'OPEN(HANDICAP)',
             borderColor: ChartUtil.colors.blue,
-            borderWidth : 2,
+            fillOpacity: 0,
+            borderWidth : 3,
             data: [
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
             ]
         }, 
         {
             label: 'SUB',
             backgroundColor: ChartUtil.colors.darkgray,
+            borderColor: ChartUtil.colors.darkgray,
             data: [
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
             ]
         },
         {
             label: 'PROJECT',
             backgroundColor: ChartUtil.colors.gray,
+            borderColor: ChartUtil.colors.gray,
             data: [
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
             ]
         },
         {
             label: 'BALLASTING TO WEST',
             backgroundColor: ChartUtil.colors.royalblue,
+            borderColor: ChartUtil.colors.royalblue,
             data: [
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
-                ChartUtil.randomData(-5, 20),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+            ]
+        },
+        {
+            label: 'OPEN SOON',
+            backgroundColor: ChartUtil.colors.yellowgreen,
+            borderColor: ChartUtil.colors.yellowgreen,
+            data: [
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+            ]
+        },
+        {
+            label: 'OPEN SOON(HANDICAP)',
+            borderColor: ChartUtil.colors.olive,
+            borderWidth : 3,
+            data: [
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
+                ChartUtil.randomData(-5, 12),
             ]
         },
     ]
@@ -621,6 +656,7 @@ var lineChartData_8 = {
         {
             label: 'Spot',
             backgroundColor: ChartUtil.colors.navy,
+            borderColor: ChartUtil.colors.navy,
             data: [
                 ChartUtil.randomData(0, 20),
                 ChartUtil.randomData(0, 20),
@@ -633,6 +669,7 @@ var lineChartData_8 = {
         {
             label: 'Project',
             backgroundColor: ChartUtil.colors.darkgray,
+            borderColor: ChartUtil.colors.darkgray,
             data: [
                 ChartUtil.randomData(0, 20),
                 ChartUtil.randomData(0, 20),
@@ -643,7 +680,6 @@ var lineChartData_8 = {
             ]
         }, 
     ]
-
 };
 
 var lineChartData_9 = {
@@ -1436,6 +1472,274 @@ var lineChartData_17 = {
 
 
 var lineChartData_18 = {
+    labels: ['JAN-17', '', 'MAR-17','',  'SEP-17', '', 'JAN-18','',  'MAY-18','',  'SEP-18'],
+    datasets: [{
+        label: 'Laden VLCCs Leaving US Gulf',
+        borderWidth : 0,
+        borderColor: ChartUtil.colors.blue,
+        backgroundColor: ChartUtil.colors.blue,
+        pointRadius: 0,
+        fill: true,
+        data: [
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(0, 25),
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(0, 25),            
+        ],
+        lineTension : 0,
+    }, {
+        label: 'Laden VLCCs Arriving US Gulf',
+        borderWidth : 0,
+        borderColor: ChartUtil.colors.white,
+        backgroundColor: ChartUtil.colors.white,
+        pointRadius: 0,
+        fill: true,
+        data: [
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),            
+        ],
+        lineTension : 0,
+    }]
+};
+
+
+
+var lineChartData_19 = {
+    labels: ['14-NOV', '','11-NOV', '','9-NOV', '','5-NOV', '','3-NOV', '','1-NOV',''],
+    datasets: [
+        {
+            label: 'MEG/CHINA',
+            backgroundColor: ChartUtil.colors.navy,
+            borderColor: ChartUtil.colors.navy,
+            data: [
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+            ]
+        }, 
+        {
+            label: 'OTHERS',
+            backgroundColor: ChartUtil.colors.darkgray,
+            borderColor: ChartUtil.colors.darkgray,
+            data: [
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+                ChartUtil.randomData(0, 20),
+            ]
+        }, 
+    ]
+};
+
+
+var lineChartData_20 = {
+    datalist : [
+        {
+            category : 'WS',
+            labels: ['1-MAY', '', '11-MAY', '','21-MAY', '','01-JUN', '', '10-JUN', '', '20-JUN', '', '30-JUN'],
+            datasets: [{
+                label: 'WAF/CHINA',
+                borderWidth : 3,
+                borderColor: ChartUtil.colors.navy,
+                backgroundColor: ChartUtil.colors.navy,
+                pointRadius: 2,
+                fill: false,
+                data: [40,45,50,47,46,45,40,35,45,40,35,45,50],
+                lineTension : 0,
+            },
+            {
+                label: 'MEG/CHINA',
+                borderWidth : 3,
+                borderColor: ChartUtil.colors.darkblue,
+                backgroundColor: ChartUtil.colors.darkblue,
+                pointRadius: 2,
+                fill: false,
+                data: [35,40,45,42,41,40,35,30,40,35,30,40,45],
+                lineTension : 0,
+            },
+            {
+                label: 'AG/USG',
+                borderWidth : 3,
+                borderColor: ChartUtil.colors.white,
+                backgroundColor: ChartUtil.colors.white,
+                pointRadius: 2,
+                fill: false,
+                data: [15,16,18,10,11,16,13,13,16,13,13,12,17],
+                lineTension : 0,
+            }]
+        },
+        {
+            category : 'TCE',
+            showValue : {
+                "fontSize" : 12,
+                "fontStyle" : "Roboto Condensed",
+                "valueWidth" : 110
+            },
+            labels: ['1-MAY', '', '11-MAY', '','21-MAY', '','01-JUN', '', '10-JUN', '', '20-JUN', '', '30-JUN'],
+            datasets: [{
+                label: 'AG/SPORE',
+                borderWidth : 3,
+                borderColor: ChartUtil.colors.navy,
+                fontColor: ChartUtil.colors.white,
+                backgroundColor : ChartUtil.colors.navy,
+                pointRadius: 2,
+                fill: false,
+                data: [
+                    36500,37000,35000,35500,35600,37000,35000,37500, 37000,35000,37500,36000,35500
+                ],
+                lineTension : 0,
+                dataInfo : 'SCRUBBER-FITTED'
+            },
+            {
+                label: 'MEG/CHINA',
+                borderWidth : 3,
+                borderColor: ChartUtil.colors.darkblue,
+                backgroundColor: ChartUtil.colors.darkblue,
+                fontColor: ChartUtil.colors.white,
+                pointRadius: 2,
+                fill: false,
+                data: [36400,36000,34000,34500,34600,35000,34000,36500, 35000,34000,36500,35000,32500 ],
+                lineTension : 0,
+                dataInfo : 'SCRUBBER FITTED',
+            },
+            {
+                label: 'AG/SPORE',
+                borderWidth : 3,
+                borderColor: ChartUtil.colors.navy,
+                backgroundColor: ChartUtil.colors.navy,
+                fontColor: ChartUtil.colors.white,
+                pointRadius: 2,
+                fill: false,
+                data: [33400,33000,32000,32500,32600,33000,33000,33500, 33000,33000,33500,32000,28500 ],
+                lineTension : 0,
+                dataInfo : 'NON SCRUBBER',
+                hideLegend : false,
+            },
+            {
+                label: 'MEG/CHINA',
+                borderWidth : 3,
+                borderColor: ChartUtil.colors.darkblue,
+                backgroundColor: ChartUtil.colors.darkblue,
+                fontColor: ChartUtil.colors.white,
+                pointRadius: 2,
+                fill: false,
+                data: [32400,32000,31000,31500,31600,32000,32000,32500, 32000,32000,32500, 31000,25500 ],
+                lineTension : 0,
+                dataInfo : 'NON SCRUBBER',
+                hideLegend : false,
+            },
+            {
+                label: 'AG/USG',
+                borderWidth : 3,
+                borderColor: ChartUtil.colors.white,
+                backgroundColor: ChartUtil.colors.white,
+                fontColor:ChartUtil.colors.black,
+                pointRadius: 2,
+                fill: false,
+                data: [10000,13000,12000,12500,12600,13000,13000,13500, 12000,13000,13500, 12000,12500 ],
+                lineTension : 0,
+                dataInfo : 'SCRUBBER-FITTED'
+            },
+            {
+                label: 'AG/USG',
+                borderWidth : 3,
+                borderColor: ChartUtil.colors.white,
+                backgroundColor: ChartUtil.colors.white,
+                fontColor: ChartUtil.colors.black,
+                pointRadius: 2,
+                fill: false,
+                data: [9000,11000,11000,11500,11600,12000,12500,12500, 11000,12500,12500, 11000, 9500 ],
+                lineTension : 0,
+                dataInfo : 'NON SCRUBBER',
+                hideLegend : false,
+            }]
+        }
+    ]
+ };
+
+
+ var lineChartData_21 = {
+    labels: ['JAN-17', '', 'MAR-17','',  'SEP-17', '', 'JAN-18','',  'MAY-18','',  'SEP-18'],
+    datasets: [{
+        label: 'Laden VLCCs Leaving UKC',
+        borderWidth : 0,
+        borderColor: ChartUtil.colors.blue,
+        backgroundColor: ChartUtil.colors.blue,
+        pointRadius: 0,
+        fill: true,
+        data: [
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(0, 25),
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(5, 25),
+            ChartUtil.randomData(0, 25),            
+        ],
+        lineTension : 0,
+    }, {
+        label: 'Laden VLCCs Arriving UKC',
+        borderWidth : 0,
+        borderColor: ChartUtil.colors.white,
+        backgroundColor: ChartUtil.colors.white,
+        pointRadius: 0,
+        fill: true,
+        data: [
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),
+            ChartUtil.randomData(2, 25),            
+        ],
+        lineTension : 0,
+    }]
+};
+
+
+var lineChartData_22 = {
     labels: ['JAN-17', '', 'MAR-17','',  'SEP-17', '', 'JAN-18','',  'MAY-18','',  'SEP-18'],
     datasets: [{
         label: 'Laden VLCCs Leaving US Gulf',

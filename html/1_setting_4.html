@@ -371,9 +371,9 @@
 									</table>
 								</div>
 								<div class="DataSetting__botton_area">
-									<a href="" class="DataSetting__sbutton cBlue">기능1</a>
-									<a href="" class="DataSetting__sbutton cBlue">기능1</a>
-									<a href="" class="DataSetting__sbutton cBlue">기능1</a>
+									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__sbutton cBlue">기능1</a>
+									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__sbutton cBlue">기능1</a>
+									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__sbutton cBlue">기능1</a>
 								</div>
 								<!-- Pagination -->
 								<div class="Pagination black">
@@ -396,7 +396,240 @@
 			<!-- //VLCC LAB SETTING 대시보드 -->
 		</div>
 		<!-- //Layout__container -->
-	
+		<!-- DataSetting : active 클래스로 on off 제어  / wide : 넓이 -->
+		<div class="DataSetting wide" id="DataSetting">
+			<div class="DataSetting__inner">
+				<a href="javascript:;" onclick="uiSettingPopup.close('DataSetting');" class="DataSetting__button_close"><span class="icon icon_close"></span><span class="skip">닫기</span></a>
+				<h2 class="DataSetting__title"><span>general setting</span></h2>
+				<div class="DataSetting__content">
+					<!-- 데이터폼 -->
+					<div class="DataSetting__form">
+						<!-- 데이터테이블 -->
+						<div class="DataTable__3 ">
+							<table>
+								<colgroup>
+									<col style="width:140px" />
+									<col style="width:170px" />
+									<col style="width:180px" />
+									<col style="width:290px" />
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">subject</th>
+										<th scope="col">name</th>
+										<th scope="col">date</th>
+										<th scope="col">setting</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>NEWTON</td>
+										<td>Sample Text</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>NEWTON</td>
+										<td>Sample Text</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>NEWTON</td>
+										<td>Sample Text</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>NEWTON</td>
+										<td>Sample Text</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>NEWTON</td>
+										<td>Sample Text</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>NEWTON</td>
+										<td>Sample Text</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>NEWTON</td>
+										<td>Sample Text</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>NEWTON</td>
+										<td>Sample Text</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>NEWTON</td>
+										<td>Sample Text</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>NEWTON</td>
+										<td>Sample Text</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>NEWTON</td>
+										<td>Sample Text</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>NEWTON</td>
+										<td>Sample Text</td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>		
+						</div>
+						<!-- //데이터테이블 -->	
+						<div class="checkform line">
+							<div class="text">111111</div>
+							<div class="check">
+								<label class="SlideCheckbox"><input type="checkbox"><span></span></label>
+							</div>
+						</div>
+						<div class="checkform line">
+							<div class="text">222222</div>
+							<div class="check">
+								<label class="SlideCheckbox"><input type="checkbox" checked=""><span></span></label>
+							</div>
+						</div>
+						<div class="checkform">
+							<div class="text">222222</div>
+							<div class="check">
+								<label class="SlideCheckbox"><input type="checkbox" checked=""><span></span></label>
+							</div>
+						</div>
+						<div class="line"></div>
+						<div class="row">
+							<label class="text" for="text">라벨</label>
+							<input type="text" class="textform"  id="text" placeholder="1111" style="width:410px">
+						</div>
+						<div class="row">
+							<input type="text" class="textform" placeholder="2222" style="width:120px"></span>
+							<input type="text" class="textform" placeholder="2222" style="width:120px"></span>
+							<span class="gap"></span>
+							<label class="text" for="date1">라벨</label>
+							<input type="text" id="date1" placeholder="2011-10-15" class="textform date datepicker" style="width:150px">
+							<label class="text" for="date2">라벨</label>
+							<input type="text" id="date2" placeholder="2011-11-12" class="textform date datepicker" style="width:150px">	
+						</div>
+						<div class="row">
+							<input type="text" class="textform" placeholder="2222" style="width:200px"></span>
+							<input type="text" class="textform" placeholder="2222" style="width:200px"></span>
+						</div>
+						<div class="row">
+							<input type="text"  placeholder="2011-10-15" class="textform date datepicker" style="width:200px">
+							<input type="text"  placeholder="2011-11-12" class="textform date datepicker" style="width:200px">
+						</div>
+						<div class="line"></div>
+						<div class="row">
+							<label class="text" for="text1">라벨</label>
+							<span class="SelectBox cBlue">
+								<select name="" id="" style="width:140px">
+									<option value="">pull down</option>
+									<option value="">1</option>
+								</select>
+							</span>
+							<span class="gap"></span>
+							<label class="text" for="text2">라벨</label>
+							<input type="text" class="textform" placeholder="1111" size="50" class="" id="text2">
+						</div>
+						<div class="row">
+							<span class="SelectBox cBlue">
+								<select name="" id="" style="width:200px">
+									<option value="">pull down</option>
+									<option value="">1</option>
+								</select>
+							</span>									
+						</div>
+						<div class="line"></div>
+						<div class="row">
+							<label class="CheckBox"><input type="checkbox"><span class="txt">체크박스1 체크하세요.</span></label>
+							<input type="text" class="textform" placeholder="1111" size="50" class="" id="text2">			
+						</div>
+						<div class="row">
+							<label class="CheckBox"><input type="checkbox"><span class="txt">체크박스1 체크하세요.</span></label>
+						</div>
+						<!-- 2등분 -->
+						<div class="row">
+							<div class="col6">
+								<label class="CheckBox"><input type="checkbox"><span class="txt">체크박스2</span></label>
+							</div>
+							<div class="col6">
+								<label class="CheckBox"><input type="checkbox"><span class="txt">체크박스2</span></label>
+							</div>
+						</div>
+						<!-- //2등분 -->	
+						<div class="line"></div>
+						<div class="row">
+							<span class="DateInput"><input type="text" value="29 November, 2019" style="width:200px" class="datepicker" id="dp1576112528368"></span>
+							<span class="DateInput"><input type="text" value="PM 15:30" style="width:150px" class=""></span>
+						</div>
+						<div class="divider"></div>
+
+						<!-- count -->
+						<div class="row">
+							<a href="#" class="CountButton"><span>+</span></a>
+							<a href="#" class="CountButton"><span>-</span></a>
+						</div>
+						<div class="row">
+							<a href="#" class="CountButton"><span>+</span></a>
+							<span class="text"> 151515 </span>
+							<a href="#" class="CountButton"><span>-</span></a>
+						</div>
+						<!-- //count -->
+						<div class="divider"></div>
+						<div class="row">
+							<spn class="text"> YES / NO </spn> <label class="SlideCheckbox answer"><input type="checkbox" checked=""><span></span></label>		
+						</div>
+						<div class="row">
+							<spn class="text"> YES / NO </spn> <label class="SlideCheckbox answer"><input type="checkbox"><span></span></label>
+						</div>
+						<!-- 2등분 -->
+						<div class="row">
+							<div class="col6">
+								<spn class="text">YES / NO</spn> <label class="SlideCheckbox answer"><input type="checkbox" checked=""><span></span></label>
+							</div>
+							<div class="col6">
+								<spn class="text">YES / NO </spn> <label class="SlideCheckbox answer"><input type="checkbox"><span></span></label>
+							</div>
+						</div>
+						<!-- //2등분 -->
+						<div class="divider"></div>
+						<div class="row">
+							<a href="#" class="FormButton"><span>버튼1</span></a>
+							<a href="#" class="FormButton cBlue"><span>button1</span></a>
+							<a href="#" class="FormButton cRed"><span>button1</span></a>
+						</div>
+						<div class="divider"></div>
+					</div>
+					<!-- //데이터폼 -->
+				</div>
+				<div class="DataSetting__bottom">
+					<a href="" class="DataSetting__basic_button"><span>cancle</span></a>
+					<a href="" class="DataSetting__basic_button"><span>confirm</span></a>
+				</div>
+			</div>
+			<div class="DataSetting__blind" id="DataSetting__blind"></div>
+		</div>
+		<!-- //DataSetting -->	
 		<!-- footer -->
 		<footer class="Layout__footer"></footer>
 		<!-- //footer -->

@@ -698,7 +698,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .DataSetting__form .row .col6{float:left;width:50%;}
 .DataSetting__form .gap{display: inline-block;width:1em}
 .DataSetting__form .line{margin:1.5em 0;border-top:1px solid #000000;border-bottom: 1px solid #2a3e4f;} 
-
+.DataSetting__form .etc01{display: inline-block;width:.5em;text-align: center;color:#a7a7a7;vertical-align: middle;}
 .DataSetting__form .DateInput{position: relative;margin-right:1em;}
 .DataSetting__form .DateInput:after{content:'';display:block;position:absolute;right:-15px;bottom:-10px;width:1em;height:1em;background:url(../images/common/bg_input.png) center no-repeat;background-size:10px auto}
 .DataSetting__form .DateInput input[type="text"]{background:transparent;border:0;border-bottom:1px solid #fff;color:#a7a7a7;text-align:center;}
@@ -875,6 +875,11 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
     border-color: #265379;
     color:#8a96a4;
     background: #0f202e url('../images/common/bg_select_arrow_blue.png') no-repeat 100% 50%;
+}
+.SelectBox.cWhite select{
+    border-color: #c7c7c7;
+    color:#000;
+    background: #c7c7c7 url('../images/common/bg_select_arrow.png') no-repeat 100% 50%;
 }
 
 /* MailArea */

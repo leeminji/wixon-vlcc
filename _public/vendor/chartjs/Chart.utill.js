@@ -95,7 +95,7 @@ var ChartUtil = (function(){
 				var initCategory = $("#"+_canvasId+"_tab > a").eq(_tabCateogoryInit).addClass('active').data('category');
 				initData = this.categoryDataFind(_data, initCategory);
 			}
-			console.log(initData);
+			//console.log(initData);
 			var canvas = document.getElementById(_canvasId);
 			if( !canvas ) return;
 			var ctx = canvas.getContext('2d');

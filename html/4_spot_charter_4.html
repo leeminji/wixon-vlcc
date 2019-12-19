@@ -208,28 +208,19 @@
 								<!-- //데이터 -->
 							</div>
 						</div>
-						<div class="Layout_spotChartRow">
-							<div class="BoxArea01">
-								<a href="javascript;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
-								<div class="inner">
-									<div id="chart2_legend" class="chartjs-legend white"></div>
-									<div id="chart2_title" class="chartjs-title middle white center"><span>Freight assessment</span></div>
-									<div class="chartjs-tab middle" id="chart2_tab">
-										<a href="javascript:;" data-category='ws'>WS</a>
-										<a href="javascript:;" data-category='tce'>TCE</a>
-									</div>	
-									<canvas id="chart2" class="chartjs-canvas"></canvas>
-								</div>
-							</div>
-						</div>
+
 						<div class="Layout_spotChartRow">
 							<div class="Layout_spotChartArea">
 								<div class="BoxArea01">
 									<a href="javascript;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
 									<div class="inner">
-										<div id="chart4_legend" class="chartjs-legend white"></div>
-										<div id="chart4_title" class="chartjs-title middle white center"><span>Fixture counting</span></div>
-										<canvas id="chart4" class="chartjs-canvas"></canvas>
+										<div id="chart2_legend" class="chartjs-legend white"></div>
+										<div id="chart2_title" class="chartjs-title middle white center"><span>Freight assessment</span></div>
+										<div class="chartjs-tab middle" id="chart2_tab">
+											<a href="javascript:;" data-category='ws'>WS</a>
+											<a href="javascript:;" data-category='tce'>TCE</a>
+										</div>	
+										<canvas id="chart2" class="chartjs-canvas"></canvas>
 									</div>
 								</div>
 							</div>
@@ -446,6 +437,7 @@
 							</div>
 						</div>
 						<div class="Layout_spotChartRow">
+
 							<div class="Layout_spotChartArea fluid_left">
 								<div class="BoxArea01 BoxFull">
 									<a href="javascript;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
@@ -586,7 +578,17 @@
 								</div>
 							</div>
 						</div>
-						<div class="Layout_spotChartRow">
+						<div class="Layout_spotChartRow col3">
+							<div class="Layout_spotChartArea">
+								<div class="BoxArea01">
+									<a href="javascript;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
+									<div class="inner">
+										<div id="chart4_legend" class="chartjs-legend white"></div>
+										<div id="chart4_title" class="chartjs-title middle white center"><span>Fixture counting</span></div>
+										<canvas id="chart4" class="chartjs-canvas"></canvas>			
+									</div>
+								</div>
+							</div>							
 							<div class="Layout_spotChartArea">
 								<div class="BoxArea01">
 									<a href="javascript;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
@@ -841,6 +843,7 @@
 				$(".js-scrollbar").scrollbar();
 				uxTableScroll($(".SpotTableData"));
 			});
+			uxTableScroll($(".SpotTableData"));
 
 		}).on("resize", function(){
 			uxTableScroll($(".SpotTableData"));
@@ -882,7 +885,7 @@
 			ChartUtil.initStackedChart('chart1', lineChartData_7, 10, false, 2.5);
 			
 			//FREIGHT ASSESSMENT
-			ChartUtil.initLineChart('chart2', lineChartData_20, false, 0, 4.5);
+			ChartUtil.initLineChart('chart2', lineChartData_20, false, 0, 2);
 			//마지막 꼬리 라벨 넣기( 데이터가 다른 곳이랑 다릅니다. 확인필요. )
 			var chart2 = ChartUtil.chartList['chart2'];
             chart2.options.showValue = true; 
@@ -893,10 +896,10 @@
 			ChartUtil.initHorizontalBarChart('chart3', lineChartData_8, 10, false, 2.5);
 
 			//FIXTURE COUNTING
-			ChartUtil.initStackedChart('chart4', lineChartData_19, 5, false, 2.5);
+			ChartUtil.initHorizontalBarChart('chart4', lineChartData_19, 5, false, 1.5);
 
 			//UKC Laden VLCC Traffic
-			ChartUtil.initVerticalBarChart('chart5', lineChartData_22, 5, false, 2.5);
+			ChartUtil.initVerticalBarChart('chart5', lineChartData_22, 5, false, 1.5);
 			var chart5 = ChartUtil.chartList['chart5'];
 			var scaleLabel = {
 				display : true,

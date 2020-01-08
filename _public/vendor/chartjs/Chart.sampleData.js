@@ -1785,3 +1785,106 @@ var lineChartData_22 = {
         lineTension : 0,
     }]
 };
+
+
+
+var lineChartData_23 = {
+    labels: ['JAN','','MAR','','MAY','','JUL','','SEP','','NOV',''],
+    datasets: [{
+        borderWidth : 0,
+        borderColor: ChartUtil.colors.darkblue,
+        backgroundColor: ChartUtil.colors.darkblue,
+        pointRadius: 0,
+        fill: true,
+        data: [
+            ChartUtil.randomData(0.5,4),
+            ChartUtil.randomData(0.5,4),
+            ChartUtil.randomData(0.5,4),
+            ChartUtil.randomData(0.5,4),
+            ChartUtil.randomData(0.5,4),
+            ChartUtil.randomData(0.5,4),
+            ChartUtil.randomData(0.5,4),
+            ChartUtil.randomData(0.5,4),
+            ChartUtil.randomData(0.5,4),
+            ChartUtil.randomData(0.5,4),
+            ChartUtil.randomData(0.5,4),            
+            ChartUtil.randomData(0.5,4),         
+        ],
+        lineTension : 0,
+    }]
+};
+
+var lineChartData_24 = {
+    labels: ['JAN','','MAR','','MAY','','JUL','','SEP','','NOV',''],
+    datasets: [{
+        label: 'UNIPEC',
+        borderWidth : 0,
+        borderColor: ChartUtil.colors.green_op5,
+        backgroundColor: ChartUtil.colors.green_op5,
+        pointRadius: 0,
+        fill: true,
+        data: [
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),            
+            ChartUtil.randomData(0,3),            
+        ],
+        lineTension : 0,
+    }, {
+        label: 'OTHERS',
+        borderWidth : 0,
+        borderColor: ChartUtil.colors.green_op2,
+        backgroundColor: ChartUtil.colors.green_op2,
+        pointRadius: 0,
+        fill: true,
+        data: [
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),
+            ChartUtil.randomData(0,3),            
+            ChartUtil.randomData(0,3),    
+        ],
+        lineTension : 0,
+    }]
+};
+
+var lineChartData_25 = {
+    labels: ['JAN','','MAR','','MAY','','JUL','','SEP','','NOV',''],
+    datasets: [{
+        borderWidth : 0,
+        borderColor: ChartUtil.colors.darkgray,
+        backgroundColor: ChartUtil.colors.darkgray,
+        pointRadius: 0,
+        fill: true,
+        data: [
+            ChartUtil.randomData(65, 80),
+            ChartUtil.randomData(65, 80),
+            ChartUtil.randomData(65, 80),
+            ChartUtil.randomData(65, 80),
+            ChartUtil.randomData(65, 80),
+            ChartUtil.randomData(65, 80),
+            ChartUtil.randomData(65, 80),
+            ChartUtil.randomData(65, 80),
+            ChartUtil.randomData(65, 80),
+            ChartUtil.randomData(65, 80),
+            ChartUtil.randomData(65, 80),            
+            ChartUtil.randomData(65, 80),         
+        ],
+        lineTension : 0,
+    }]
+};

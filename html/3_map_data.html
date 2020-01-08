@@ -120,9 +120,10 @@
 			<div class="MapShipInfo__inner">
 				<a href="javascript:;" onclick="window.uiGooglMap.infoShipMarker().close();" class="MapShipInfo__close"><span>닫기</span></a>
 				<div class="MapShipInfo__title">
+					<div class="mark"><span class="icon icon_marker"></span></div>
 					<div class="name">Yuan Qiu Hu</div>
 					<div class="date">Canaport 21 Sep 19</div>
-					<div class="etc"><span>308.371</span><span>2015</span></div>
+					<div class="etc"><span>308.371</span><span>2015</span><span>23.0</span><span>Scrubber fitted</span></div>
 				</div>
 				<div class="MapShipInfo__content">
 					<ul class="clear MapShipInfo__list">
@@ -146,11 +147,37 @@
 					<span class="name">Yuan Qiu Hu</span>
 				</div>
 				<div class="MapShipOver__content">
-					<span>2015 BLT / 308,371 MT</span>
+					<span>2015 BLT / 308,371 MT / MAX 23.0 MTR</span>
 				</div>
 			</div>
 		</div>
 		<!-- //MapShipOver over했을때 -->
+		<!-- MapDetail -->
+		<div class="MapDetail" id="MapDetail">
+			<div class="MapDetail__list">
+				<a href="#MapDetailMap"><span>Map</span></a>
+				<a href="#MapDetailWeather"><span>Weather</span></a>
+			</div>
+			<div class="MapDetail__content">
+				<div class="MapDetail__inner" id="MapDetailMap">
+					<div class="MapDetail__layers">
+						<div class="MapDetail__title"><span>Layers</span></div>
+						<ul class="clear">
+							<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox" checked><span></span></label> <span class="label">ECA</span></li>
+							<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox"><span></span></label> <span class="label">PIRACY</span></li>
+							<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox"><span></span></label> <span class="label">JWC</span></li>
+							<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox"><span></span></label> <span class="label">HIGH RISK PIRACY</span></li>
+							<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox"><span></span></label> <span class="label">TSS</span></li>
+							<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox"><span></span></label> <span class="label">TSS2</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="MapDetail__inner" id="MapDetailWeather">
+					weather...
+				</div>
+			</div>
+		</div>
+		<!-- //MapDetail -->
 	</div>
 		
 

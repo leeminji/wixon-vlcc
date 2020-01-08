@@ -117,7 +117,7 @@
 								</li>
 							</ul>
 						</nav>
-						<!-- //TotalMenu__listArea -->					
+						<!-- //TotalMenu__listArea -->				
 					</div>
 				</div>
 				<!-- //TotalMenu -->
@@ -166,12 +166,39 @@
 		$(document).ready(function(){
 			$("#MapContent").load("3_map_data.html", function(){
 				window.ui.init();
+				ui_mapDetail();
 			});
+
+			ui_window('./3_map_window_data.html', 1200, 700);
 		});	
 		/* onload initGoogleMap */ 
 		window.onload = function(){
 			window.uiGooglMap.initGoogleMap("totalMap");
 		};
+		
+		//map/weather 
+		function ui_mapDetail(){
+			var mapContent = $(".MapDetail__content");
+			var mapList = $(".MapDetail__list");
+			var onClassName = "active";
+			mapList.children("a").on('click', function(e){
+				e.preventDefault();
+				var href = $(this).attr('href');
+				if( $(this).hasClass(onClassName) ){
+					$(this).removeClass(onClassName);
+					$(href).removeClass(onClassName);			
+				}else{
+					$(this).addClass(onClassName);
+					$(href).addClass(onClassName);
+				}
+			});
+		}
+		function ui_window(_url, _width, _height, _left, _top){
+			var popupX = _left != null ? _left : (window.screen.width / 2) - (_width / 2);
+			var popupY = _top != null ? _top : (window.screen.height / 2) - (_height / 2);	
+			var option="resizable=no, scrollbas=yes,status=no,width="+_width+",height="+_height+",left="+popupX+",top="+popupY;
+			window.open(_url, 'portData', option);
+		}
 	</script>
 	<script type="text/javascript" src="../_public/js/ui.gooleMap.js"></script>
 	<script type="text/javascript" src="../_public/js/ui.googleMap.sampleData.js"></script>

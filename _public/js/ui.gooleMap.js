@@ -556,7 +556,8 @@ var uiGooglMap = (function(){
                 zIndex    : 1,
                 event     : {
                     click : function(event){
-                    
+                        //예제추가
+                        window.ui.windowPopup('./3_map_window_data.html', 1200, 700);
                     },
                     mouseover : function(event) {
 

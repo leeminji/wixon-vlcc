@@ -168,15 +168,16 @@
 				window.ui.init();
 				ui_mapDetail();
 			});
-
-			ui_window('./3_map_window_data.html', 1200, 700);
-		});	
+		});
+		
 		/* onload initGoogleMap */ 
 		window.onload = function(){
 			window.uiGooglMap.initGoogleMap("totalMap");
+			//윈도우팝업
+			ui_window('./3_map_window_data.html', 1200, 700);
 		};
 		
-		//map/weather 
+		//map / weather 
 		function ui_mapDetail(){
 			var mapContent = $(".MapDetail__content");
 			var mapList = $(".MapDetail__list");

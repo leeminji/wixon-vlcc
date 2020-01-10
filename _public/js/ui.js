@@ -205,6 +205,12 @@ var ui = (function(){
                     });
                 });
             }
+        },
+        windowPopup : function(_url, _width, _height, _left, _top){
+            var popupX = _left != null ? _left : (window.screen.width / 2) - (_width / 2);
+            var popupY = _top != null ? _top : (window.screen.height / 2) - (_height / 2);	
+            var option="resizable=no, scrollbas=yes,status=no,width="+_width+",height="+_height+",left="+popupX+",top="+popupY;
+            window.open(_url, 'portData', option);          
         }
     }
 })();

@@ -23,13 +23,14 @@
 		.tbl-A.c_red thead th{background:#ffe9e4}
 		.tbl-A .left{text-align: left;padding:1em}
 		.tbl-A .td_line{border-right:1px solid #c2c2c2}
-		.modify_area{max-height: 10em;overflow:auto;border:1px solid #efefef}
+		.modify_list{max-height: 20em;overflow:auto;}
+		.modify_area{border:1px solid #efefef}
 		.modify_area p{padding:.5em 1em}
 	</style>
 </head>
 <body>
 	<div class="allwrap">
-		<div class="page-top"><span class="date">수정일 : 2019.12.19</span></div>
+		<div class="page-top"><span class="date">수정일 : 2020.01.10</span></div>
 		<h1 class="main-title"><span>서울라인 VLCC 퍼블리싱</span></h1>
 		<div class="content" style="padding-top:1em;padding-bottom: 10em">
 			<div class="tbl-A">
@@ -57,46 +58,49 @@
 						<tr class="line">
 							<th colspan="2">수정사항</th>
 							<td colspan="4" class="left td_line">
-								<div class="modify_area">
-									<p><strong>2019-01-08</strong><br>
-									1. map - 배 상세정보 레이어팝업 수정, 포트 클릭시 오픈 팝업 추가, 오른쪽 상단위 map/weather추가.
-									</p>
-								</div>	
-								<div class="modify_area">
-									<p><strong>2019-12-19</strong><br>
-									1. spot charter - 추가.
-									2. setting - time 추가.
-									</p>
-								</div>	
-								<div class="modify_area">
-									<p><strong>2019-12-17</strong><br>
-									1. setting - 레이어팝업 추가. / 1_setting_3.html 별칭목록추가.
-									</p>
-								</div>	
-								<div class="modify_area">
-									<p><strong>2019-12-13</strong><br>
-									1. dashboard - 수정.<br>
-									</p>
-								</div>	
-								<div class="modify_area">
-									<p><strong>2019-12-12</strong><br>
-									1. header - 메뉴변경 수정.<br>
-									2. setting - 추가. <br>
-									</p>
-								</div>	
-								<div class="modify_area">
-									<p><strong>2019-11-22</strong><br>
-									1. dashboard, map 추가. <br>
-									2. 전체적인 디자인수정. <br>
-									</p>
-								</div>	
-								<div class="modify_area">
-									<p><strong>2019-10-23</strong><br>
-									1. layout - header, footer 표시 , incldue - header, footer HTML 파일 추가. <br>
-									2. mail filtering Data -  div 데이터 테이블 샘플 추가. <br>
-									3. mail row Data - 데이터 샘플 추가.<br>
-									4. mail - pagination(페이징) 추가.
-									</p>
+								<div class="modify_list">
+									<div class="modify_area">
+										<p><strong>2019-01-10</strong><br>
+										1. map - 배 상세정보 레이어팝업 수정, 포트 클릭시 오픈 팝업 추가, 오른쪽 상단위 map/weather추가.<br>
+										2. spot charter - nowcast 추가.
+										</p>
+									</div>	
+									<div class="modify_area">
+										<p><strong>2019-12-19</strong><br>
+										1. spot charter - 추가.
+										2. setting - time 추가.
+										</p>
+									</div>	
+									<div class="modify_area">
+										<p><strong>2019-12-17</strong><br>
+										1. setting - 레이어팝업 추가. / 1_setting_3.html 별칭목록추가.
+										</p>
+									</div>	
+									<div class="modify_area">
+										<p><strong>2019-12-13</strong><br>
+										1. dashboard - 수정.<br>
+										</p>
+									</div>	
+									<div class="modify_area">
+										<p><strong>2019-12-12</strong><br>
+										1. header - 메뉴변경 수정.<br>
+										2. setting - 추가. <br>
+										</p>
+									</div>	
+									<div class="modify_area">
+										<p><strong>2019-11-22</strong><br>
+										1. dashboard, map 추가. <br>
+										2. 전체적인 디자인수정. <br>
+										</p>
+									</div>	
+									<div class="modify_area">
+										<p><strong>2019-10-23</strong><br>
+										1. layout - header, footer 표시 , incldue - header, footer HTML 파일 추가. <br>
+										2. mail filtering Data -  div 데이터 테이블 샘플 추가. <br>
+										3. mail row Data - 데이터 샘플 추가.<br>
+										4. mail - pagination(페이징) 추가.
+										</p>
+									</div>
 								</div>
 							</td>
 						</tr>
@@ -126,6 +130,16 @@
 							<td>
 								<p>incldue footer 영역입니다. (내용안 footer, header과는 다릅니다. 요청하신대로 표시해놓았습니다.)</p>
 								<p>자바스크립트 위치는 편한대로 조정하세요.</p>
+							</td>							
+						</tr>
+						<tr>
+							<th></th>
+							<td>예제</td>
+							<td>charter</td>
+							<td><a href="./html/0_chart_ex01.html">./html/0_chart_ex01.html</a></td>
+							<td></td>
+							<td>
+								<p>문의사항 - 예제입니다.</p>
 							</td>							
 						</tr>
 						<tr class="line">
@@ -245,7 +259,7 @@
 							</td>
 						</tr>
 						<tr class="line">
-                            <th rowspan="5">4</th>
+                            <th rowspan="6">4</th>
 							<td>Spot Charter</td>
 							<td>MEG</td>
 							<td><a href="./html/4_spot_charter_1.html">./html/4_spot_charter_1.html</a></td>
@@ -280,7 +294,13 @@
 							<td><strong>12/19</strong> 완료</td>
 							<td></td>
 						</tr>
-
+						<tr>
+							<td>Spot Charter</td>
+							<td>NOWCAST</td>
+							<td><a href="./html/4_spot_charter_5.html">./html/4_spot_charter_5.html</a></td>
+							<td><strong>01/09</strong> 추가</td>
+							<td></td>
+						</tr>
 						<tr class="line">
                             <th rowspan="4">9</th>
 							<td>메일</td>

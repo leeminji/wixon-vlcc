@@ -5,7 +5,7 @@
     position: absolute;
     right: 0;
     left:0;
-    bottom:0;
+    bottom:-0.2em;
 }
 .chartjs-legend ul.doughnut{padding-top:1em}
 .chartjs-legend ul.doughnut li{cursor:default;}
@@ -125,3 +125,6 @@
 .chartjs-info-legend dl dd{font-size:1em}
 
 .chartjs-search{font-size:0.825em;text-align:right;padding-bottom:1em}
+.chartjs-search.fixed{position: absolute;right:0;top:.2em;padding-bottom: 0;}
+.chartjs-search .text{display: inline-block;padding:0 .2em;vertical-align: middle;color:#fff;}
+.chartjs-text{position: absolute;bottom:-2em;left:-2em;right:-2em;color:#909090;font-size:12px;text-align: center;line-height: 1.1em;}

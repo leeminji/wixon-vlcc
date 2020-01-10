@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>VLCCLAB Dashboard - SELINE</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../_public/favicon.ico" />
+	<!-- stylesheet -->
+	<link href="../_public/vendor/scrollbar/scrollbar.css" rel="stylesheet" type="text/css" />
+	<link href="../_public/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="noWidth">
+	<div class="loading" id="loading"><div class="img"><span class="skip">Loading...</span></div></div>
+	<!-- Layout__Allwrap -->
+	<div class="Layout__Allwrap" id="LayoutAllwrap">
+		<!-- Layout__container -->
+		<div class="Layout__container bgStyle_01 full">
+			<section class="Layout__content">
+				<div class="BoxArea01 BoxFull isScroll">
+					<div class="Layout_row">
+						<div class="Layout_chartArea col12">
+							<div class="BoxArea01">
+								<div class="inner">
+									<div id="chart3_search" class="chartjs-search">
+										<a href="#" class="DataSetting__sbutton cBlue"><span>TOTAL</span></a>
+										<span class="SelectBox">
+											<select name="sl_east" id="sl_east" width="10" class="chartSelect">
+												<option value="east">EAST</option>
+												<option value="total">TOTAL</option>
+												<option value="china">CHINA</option>
+												<option value="india">INDIA</option>
+												<option value="korea">KOREA</option>
+											</select>
+										</span>
+										<span class="SelectBox">
+											<select name="sl_west" id="sl_west" width="10">
+												<option value="">WEST</option>
+											</select>
+										</span>
+									</div>
+									<div id="chart3_legend" class="chartjs-legend white"></div>
+									<div id="chart3_title" class="chartjs-title middle white center"><span>Cargo counting</span></div>
+									<canvas id="chart3" class="chartjs-canvas"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- //Layout__container -->
+	</div>
+	<!-- //Layout__Allwrap -->
+	<!-- javascript -->
+	<script type="text/javascript" src="../_public/js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="../_public/vendor/scrollbar/jquery.scrollbar.js"></script>
+	<script type="text/javascript" src="../_public/js/jquery-ui.js"></script>
+	<!-- 차트js추가 -->
+	<script type="text/javascript" src="../_public/vendor/chartjs/moment.min.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/chartjs-plugin-datalabels.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.utill.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.sampleData.js"></script> <!-- Chart.sampleData.js 여기에 샘플데이터있습니다. -->
+	<!-- //차트js추가 -->	
+	<script type="text/javascript" src="../_public/js/ui.js"></script>
+	<!-- 맵 js 추가 -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			window.ui.init();
+		});
+
+		//초기 샘플데이터
+		var sampleChartData = {
+			labels: ['1-10 MAY', '11-20 MAY', '21-31 MAY', '1-10 JUN', '11-20 JUN', '21-30 JUN'],
+			datasets: [
+				{
+					label: 'Spot',
+					backgroundColor: "rgba(56,99,131,0.2)",
+					borderColor: "rgba(56,99,131,0.2)",
+					data: [30, 50, 60, 106, 20, 15]
+				}, 
+				{
+					label: 'Project',
+					backgroundColor: "rgba(115,115,115, 0.8)",
+					borderColor: "rgba(115,115,115, 0.8)",
+					data: [55, 69, 140, 15, 202, 30]
+				}, 
+			]
+		};
+		  
+		$(window).on('load', function(){
+			//차트적용
+			ChartUtil.initHorizontalBarChart('chart3', sampleChartData, 10, false, 3);
+			
+			//해당차트 가지고 옴
+			var chart3 = ChartUtil.chartList['chart3'];
+			
+			//셀렉트 선택시 맞는 데이터 찾아서 적용
+			$("#sl_east").on('change', function(e){
+				var value = $(this).val();
+				$.ajax({
+					type : 'get',
+					url : '../json/ex01.json',
+				}).done(function(data){
+					var dataList;
+					data.list.forEach(function(item){
+						if( item.category == value ){
+							dataList = item.datasets;
+							return;
+						}
+					});
+					chart3.data.datasets = dataList;
+					chart3.update(); //업데이트
+				});
+			});
+		});
+	</script>
+</body>
+</html>

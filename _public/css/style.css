@@ -1036,7 +1036,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .BoxArea01.fixed .inner{height:16em;margin-bottom:3em}
 .BoxArea01.fixed2 .inner{height:25em;margin-bottom:4.5em}
 
-.BoxArea01 .inner{position: relative; z-index:100;margin:1.5em 2.6em;box-sizing: border-box;}
+.BoxArea01 .inner{position: relative; z-index:100;margin:1.5em 2.6em 2em;box-sizing: border-box;}
 @media (min-width: 1920px) { 
     .BoxArea01.fixed .inner{height:20em}
 }
@@ -1065,6 +1065,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .Layout_row{padding:0;}
 .Layout_row:after{content:'';display:block;clear:both;}
 .Layout_chartArea{float:left;width:33.333%;position: relative;}
+.Layout_chartArea.col12{width:100%}
 .Layout_chartArea.col6{width:50%}
 .Layout_chartArea.col6{width:50%}
 .Layout_chartArea.col3{width:25%}

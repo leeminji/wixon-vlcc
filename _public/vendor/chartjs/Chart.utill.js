@@ -260,8 +260,14 @@ var ChartUtil = (function(){
 
 			this.addCustomLegend(_canvasId);
 		},
-		initLineChartMulti : function(_canvasId, _data, _stepSizeLeft, _stepSizeRight){
+		initLineChartMulti : function(_canvasId, _data, _stepSizeLeft, _stepSizeRight,  _tabCateogoryInit, _ratio){
 			var thisObj =this;
+			var initData = _data;
+
+			if( _tabCateogoryInit !== false && _tabCateogoryInit > -1 ){
+				var initCategory = $("#"+_canvasId+"_tab > a").eq(_tabCateogoryInit).addClass('active').data('category');
+				initData = this.categoryDataFind(_data, initCategory);
+			}	
 			var canvas = document.getElementById(_canvasId);
 			if( !canvas ) return;
 			var ctx = canvas.getContext('2d');
@@ -271,6 +277,7 @@ var ChartUtil = (function(){
 					return thisObj.drawCustomLegend(_chart);
 				},
 				responsive: true,
+				maintainAspectRatio: true,
 				hoverMode: 'index',
 				stacked: false,
 				title: {
@@ -291,12 +298,6 @@ var ChartUtil = (function(){
 							ticks: {
 								fontColor : window.ChartUtil.colors.white,
 								beginAtZero:true,
-								userCallback: function(value, index, values) {
-									value = value.toString();
-									value = value.split(/(?=(?:...)*$)/);
-									value = value.join(',');
-									return value;
-								},
 								fontFamily : window.ChartUtil.font,
 							},
 							//x축에 해당하는 모든선
@@ -361,12 +362,18 @@ var ChartUtil = (function(){
 			}			
 			if( _stepSizeRight ){
 				_options.scales.yAxes[1].ticks.stepSize = _stepSizeRight;
-			}			
+			}
+			if( _ratio ){
+				_options.aspectRatio = _ratio;
+			}		
 			thisObj.chartList[_canvasId] = new Chart(ctx, {
 				type : "line",
-				data : _data,
+				data : initData,
 				options: _options
 			});
+			if( _tabCateogoryInit > -1 ){
+				this.addDataTab(_canvasId, _data);
+			}	
 			this.addCustomLegend(_canvasId);
 		},
 		initStackedChart : function(_canvasId, _data, _stepSize, _tabCateogoryInit, _ratio){
@@ -858,6 +865,27 @@ Chart.plugins.register({
 				ctx.fillText(lastText, coordination.x+5, coordination.y+1);
 				
 			});
+		}
+		//x축에 맞춘 라인그리기
+		if(chart.config.options.showPointLine){
+			var pointLine = chart.config.data.pointLine;
+			var ctx = chart.chart.ctx;
+			var dataset = chart.config.data.datasets[0];
+			var coordination = {
+				x : dataset._meta[chart.id].data[pointLine.lineIndex]._model.x,
+				y : dataset._meta[chart.id].data[pointLine.lineIndex]._model.y,
+			}
+			ctx.beginPath();
+			ctx.moveTo(coordination.x, 10);
+			ctx.lineTo(coordination.x, chart.height-30);
+			ctx.strokeStyle = pointLine.borderColor || "#ff0000";
+			ctx.lineWidth = pointLine.borderWidth || 4;
+			if( pointLine.lineDashed ){
+				ctx.setLineDash([3, 10]);
+			}
+			ctx.stroke();
+			//초기화해줌 (다른 라인에 영향이 감.)
+			ctx.setLineDash([0, 0]);
 		}
 	}
 });

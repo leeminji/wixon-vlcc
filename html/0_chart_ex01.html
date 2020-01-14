@@ -103,7 +103,8 @@
 				var value = $(this).val();
 				$.ajax({
 					type : 'get',
-					url : '../json/ex01.json',
+					url : '../json/ex01.js',
+					dataType : "json",
 				}).done(function(data){
 					var dataList;
 					data.list.forEach(function(item){

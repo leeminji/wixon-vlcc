@@ -83,8 +83,8 @@
 									</a>
 									<ul class="clear TotalMenu__sublist">
 										<li><a href=""><span class="txt">Position list</span></a></li class="active">
-										<li class="active"><a href=""><span class="txt">Nowcast</span></a></li>
-										<li><a href=""><span class="txt">Pattern</span></a></li>
+										<li><a href=""><span class="txt">Nowcast</span></a></li>
+										<li class="active"><a href=""><span class="txt">Pattern</span></a></li>
 										<li><a href=""><span class="txt">Analysis</span></a></li>
 									</ul>
 								</li>
@@ -98,7 +98,7 @@
 										<li><a href=""><span class="txt">Fleet Study</span></a></li>
 										<li><a href=""><span class="txt">Fleet Study</span></a></li>
 										<li><a href=""><span class="txt">Tonne Miles</span></a></li>
-									</ul>
+									</ul>					
 								</li>
 								<li data-title="Oil">
 									<a href="#">
@@ -136,7 +136,7 @@
 				</div>	
 				<!-- //TopLogin -->
 				<!-- TopTitle -->
-				<div class="TopTitle font_condensed"><span>nowcast</span></div>
+				<div class="TopTitle font_condensed"><span>PATTERN</span><span class="line">-</span><strong>AG - JAPAN</strong></div>
 				<!-- //TopTitle -->
 				<div class="TopLogo"><a href="0_index.html" class="link">메인으로이동</a><h1 class="skip">VLCCLAB</h1></div>
 				<!-- TopClock -->
@@ -148,16 +148,31 @@
 				</div>
 				<!-- //TopClock -->				
 			</div>	
-			<!-- Spot Charter -->
-			<section class="Layout__content SpotChartArea ">
-				<h1 class="skip">Spot Charter - nowcast Contents</h1>	
+			<!-- Spot Charte 대시보드 -->
+			<section class="Layout__content SpotChartArea font_condensed">
+				<h1 class="skip">Spot Charter Contents</h1>	
 				<div class="js-scrollbar">
 					<div class="Layout__content__inner padding10">
+						<!-- TopSectionTab -->
+						<div class="TopSectionTab">
+							<a href="4_spot_charter_7.html" class="TopSectionTab__item active"><span>MEG</span></a>
+							<a href="4_spot_charter_8.html" class="TopSectionTab__item"><span>WAF</span></a>
+							<a href="4_spot_charter_9.html" class="TopSectionTab__item"><span>UKC/MED</span></a>
+							<a href="4_spot_charter_10.html" class="TopSectionTab__item"><span>AMERICA</span></a>
+						</div>
+						<!-- //TopSectionTab -->				
 						<div class="BoxArea01">
 							<div class="p5">
+								<span class="SelectBox__text">COUNTRY</span>
 								<span class="SelectBox">
 									<select name="" id="" style="width:200px">
-										<option value="">MEG (BSS Fujairah)</option>
+										<option value="CHINA" selected>CHINA</option>
+									</select>
+								</span>
+								<span class="SelectBox__text">CHARTERER</span>
+								<span class="SelectBox">
+									<select name="" id="" style="width:200px">
+										<option value="JXTG" selected>JXTG</option>
 									</select>
 								</span>
 							</div>
@@ -167,9 +182,22 @@
 								<div class="BoxArea01">
 									<a href="javascript;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
 									<div class="inner">
-										<div id="chart1_legend" class="chartjs-legend white"></div>
-										<div id="chart1_title" class="chartjs-title white"><span>ACTUAL</span></div>
+										<div class="chartjs-tab left" id="chart1_tab">
+											<span class="tab-item active" data-category='Fixture'>Fixture</span>
+											<span class="tab-item" data-category='Fleet'>Fleet</span>
+										</div>	
+										<div id="chart1_search" class="chartjs-search fixed">
+											<span class="SelectBox">
+												<select name="sel_1" id="sel_1" width="10">
+													<option value="">5 Days</option>
+													<option value="">10 Days</option>
+													<option value="">Monthly</option>
+												</select>
+											</span>
+										</div>
+										<div id="chart1_title" class="chartjs-title white middle middle center"><span>Cargo statistics basis laycan</span></div>
 										<canvas id="chart1" class="chartjs-canvas"></canvas>
+										<div id="chart1_legend" class="chartjs-legend white"></div>
 									</div>
 								</div>
 							</div>
@@ -178,84 +206,53 @@
 									<a href="javascript;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
 									<div class="inner">
 										<div id="chart2_legend" class="chartjs-legend white"></div>
-										<div id="chart2_search" class="chartjs-search fixed">
-											<label for="sel_1" class="text">Available within</label>
+										<div id="chart2_title" class="chartjs-title white middle center"><span>Cargo counting by ship quality</span></div>
+										<canvas id="chart2" class="chartjs-canvas"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="Layout_row">
+							<div class="Layout_chartArea col6">
+
+								<div class="BoxArea01">
+									<a href="javascript;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
+									<div class="inner">
+										<div class="chartjs-tab left" id="chart4_tab">
+											<span class="tab-item" data-category='Fixture'>Fixture</span>
+											<span class="tab-item active" data-category='Fleet'>Fleet</span>
+										</div>	
+										<div id="chart4_search" class="chartjs-search fixed">
 											<span class="SelectBox">
 												<select name="sel_1" id="sel_1" width="10">
 													<option value="">5 Days</option>
+													<option value="">10 Days</option>
+													<option value="">Monthly</option>
 												</select>
 											</span>
-										</div>		
-										<div id="chart2_title" class="chartjs-title white"><span>PREDICTIVE</span></div>
-										<canvas id="chart2" class="chartjs-canvas"></canvas>
-										<div class="chartjs-text">*Above data targets only actual-laden ships heading/staying for/in disport now. So it may miss capturing ships calling WCI.</div>
+										</div>
+										<div id="chart4_title" class="chartjs-title white middle middle center"><span>Cargo statistics basis laycan</span></div>
+										<canvas id="chart4" class="chartjs-canvas"></canvas>
+										<div id="chart4_legend" class="chartjs-legend white"></div>
 									</div>
-								</div>
-							</div>
-						</div>
-						<div class="Layout_row">
-							<div class="BoxArea01">
-								<a href="javascript;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
-								<div class="inner">
-									<div id="chart3_legend" class="chartjs-legend white"></div>
-									<div id="chart3_search" class="chartjs-search fixed">
-										<label for="sel_2" class="text">Available within</label>
-										<span class="SelectBox">
-											<select name="sel_2" id="sel_2" width="10">
-												<option value="">5 Days</option>
-											</select>
-										</span>
-									</div>		
-									<div id="chart3_title" class="chartjs-title white"><span>INTERGRATED</span></div>
-									<canvas id="chart3" class="chartjs-canvas"></canvas>
-								</div>
-							</div>
-						</div>
-						<div class="Layout_row">
-							<div class="BoxArea01">
-								<a href="javascript;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
-								<div class="inner">
-									<div id="chart4_legend" class="chartjs-legend white"></div>
-									<div id="chart4_search" class="chartjs-search fixed">
-										<label for="sel_3" class="text">Available within</label>
-										<span class="SelectBox">
-											<select name="sel_3" id="sel_3" width="10">
-												<option value="">5 Days</option>
-											</select>
-										</span>
-									</div>
-									<div id="chart4_title" class="chartjs-title white"><span>Ship no. in trading window (10~20 days) & MEG/China WS</span></div>
-									<canvas id="chart4" class="chartjs-canvas"></canvas>
-								</div>
-							</div>
-						</div>
-						<div class="Layout_row">
-							<div class="Layout_chartArea col6">
-								<div class="BoxArea01">
-									<a href="javascript;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
-									<div class="inner">
-										<div id="chart5_legend" class="chartjs-legend white"></div>
-										<div id="chart5_title" class="chartjs-title white"><span>Overhang ship no. (1~ 9 days) & MEG/China WS</span></div>
-										<canvas id="chart5" class="chartjs-canvas"></canvas>
-									</div>
-								</div>
+								</div>	
 							</div>
 							<div class="Layout_chartArea col6">
 								<div class="BoxArea01">
 									<a href="javascript;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
 									<div class="inner">
-										<div id="chart6_legend" class="chartjs-legend white"></div>	
-										<div id="chart6_title" class="chartjs-title white"><span>Idling ship no. at Fujairah (Prompt) & MEG/China WS</span></div>
-										<canvas id="chart6" class="chartjs-canvas"></canvas>
+										<div id="chart3_legend" class="chartjs-legend white"></div>
+										<div id="chart3_title" class="chartjs-title white middle center"><span>Cargo counting by loading area</span></div>
+										<canvas id="chart3" class="chartjs-canvas"></canvas>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="pt10"></div>
+						</div>						
+						<div class="pt10"></div>	
 					</div>
 				</div>
 			</section>
-			<!-- //Spot Charter -->
+			<!-- //Spot Charte 대시보드 -->
 		</div>
 		<!-- //Layout__container -->
 
@@ -349,7 +346,7 @@
 	<script type="text/javascript" src="../_public/js/jquery-ui.js"></script>
 	<script type="text/javascript" src="../_public/vendor/scrollbar/jquery.scrollbar.js"></script>
 	<script type="text/javascript" src="../_public/js/ui.js"></script>
-	
+
 	<!-- 차트js추가 -->
 	<script type="text/javascript" src="../_public/vendor/chartjs/moment.min.js"></script>
 	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.js"></script>
@@ -365,65 +362,15 @@
 			// tabCateogoryInit : 카테고리로 탭있는경우 해당 index 
 			// ratio : 크기조절
 
-			//ACTUAL 
-			//200113 Chart.sampleData.js 에 있는 lineChartData_26에 데이터 수정,
-			ChartUtil.initStackedChart('chart1', lineChartData_26, 5, false, 1.5);
-			var chart1 = ChartUtil.chartList['chart1'];
-			chart1.options.tooltips.position = "nearest";
-			chart1.options.tooltips.yAlign = "top";
-			chart1.options.tooltips.callbacks.label = function(tooltipItem, data){
-				var label = data.datasets[tooltipItem.datasetIndex].label;
-				var dataShip = data.datasets[tooltipItem.datasetIndex].detailedData[tooltipItem.index].ship;
-				return [label +" : "+ Number(tooltipItem.yLabel) ," "+dataShip.join(", ")];
-			}
-			chart1.update();
+			//CARGO STATISTICS BASIS LAYCAN
+			ChartUtil.initBarChartMulti('chart1', lineChartData_47, 3, 22.5, false, 2.5);
+			ChartUtil.initBarChartMulti('chart4', lineChartData_47_3, 3, 22.5, false, 2.5);
 
-			//PREDICTIVE
-			ChartUtil.initStackedChart('chart2', lineChartData_27, 5, false, 1.5);
+			//Cargo counting by ship quality
+			ChartUtil.initStackedChart('chart2', lineChartData_48, 22.5, false, 2.5);
 
-			//INTERGRATED
-			ChartUtil.initStackedChart('chart3', lineChartData_29, 5, false, 5);
-			
-			//Ship no. in trading window (10~20 days) & MEG/China WS
-			ChartUtil.initLineChartMulti('chart4', lineChartData_28, 10, 20, false, 6);
-			var chart4 = ChartUtil.chartList['chart4'];
-			
-			//라인을 그릴 x선 인덱스 보이기 - lineChartData_28 에는 pointLine 데이터가 존재.
-			chart4.options.showPointLine = true;
-
-			//y축 오른쪽 변경
-			var chart_ticks = chart4.options.scales.yAxes[1].ticks;
-			chart_ticks.max = 100;
-			chart_ticks.min = 0;
-            chart_ticks.userCallback = function(value, index, values) {
-				return value;
-			};
-			chart4.update();
-
-			//Overhang ship no. (1~ 9 days) & MEG/China WS
-			ChartUtil.initLineChartMulti('chart5', lineChartData_30, 10, 10, false, 3);
-			var chart5 = ChartUtil.chartList['chart5'];
-
-			//y축 오른쪽 변경
-			chart_ticks = chart5.options.scales.yAxes[1].ticks;
-			chart_ticks.max = 50;
-			chart_ticks.min = 0;
-            chart_ticks.userCallback = function(value, index, values) {
-				return value;
-			};
-			chart5.update();
-
-			//Idling ship no. at Fujairah (Prompt) & MEG/China WS
-			ChartUtil.initLineChartMulti('chart6', lineChartData_31, 3, 10, false, 3);
-			var chart6 = ChartUtil.chartList['chart6'];
-			//y축 오른쪽 변경
-			chart_ticks = chart6.options.scales.yAxes[1].ticks;
-			chart_ticks.max = 50;
-			chart_ticks.min = 0;
-            chart_ticks.userCallback = function(value, index, values) {
-				return value;
-			};
-			chart6.update();
+			//Cargo counting by loading area
+			ChartUtil.initStackedChart('chart3', lineChartData_49, 15, false, 2.5);
 		});
 	</script>
 	<script>
@@ -445,6 +392,7 @@
 				
 				//배경
 				var blind = content.find("#"+_el+"__blind");
+	
 				content.addClass("active");
 				blind.on('click', function(){
 					settingPopup_close(_el);
@@ -456,6 +404,6 @@
 				content.removeClass("active");
 			}			
 		});
-	</script>		
+	</script>	
 </body>
 </html>

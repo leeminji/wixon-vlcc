@@ -928,6 +928,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
     color:#000;
     background: #c7c7c7 url('../images/common/bg_select_arrow.png') no-repeat 100% 50%;
 }
+.SelectBox__text{color:#fff;display: inline-block;padding:0 .5em;}
 
 /* MailArea */
 .MailArea__split{position: absolute;left:30em;width:.4em;margin-left:-0.1em;top:0;bottom:0;cursor: ew-resize;z-index:100}

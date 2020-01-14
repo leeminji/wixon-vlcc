@@ -96,9 +96,10 @@
     right:0;
     top:.5em;
 }
+.chartjs-tab.left{left:0;right:inherit}
 .chartjs-tab.middle{top:0.4em;}
-.chartjs-tab.middle a{line-height: 2em;padding:0 1.5em}
-.chartjs-tab a{
+.chartjs-tab.middle a, .chartjs-tab .tab-item{line-height: 2em;padding:0 1.5em}
+.chartjs-tab a, .chartjs-tab .tab-item{
     float:left;
     display: block;
     font-size:0.8em;
@@ -107,12 +108,11 @@
     border: 1px solid #233748;
     outline: 1px solid #000;
     color: #667688;
-    letter-spacing: -1px;
 }
 .chartjs-tab a:hover{
     background: rgba(0,0,0,0.5)
 }
-.chartjs-tab a.active{
+.chartjs-tab a.active, .chartjs-tab .tab-item.active{
     background:#000;
     color:#fff;
 }
@@ -126,5 +126,11 @@
 
 .chartjs-search{font-size:0.825em;text-align:right;padding-bottom:1em}
 .chartjs-search.fixed{position: absolute;right:0;top:.2em;padding-bottom: 0;}
+.chartjs-search.bottom{top:2.6em}
 .chartjs-search .text{display: inline-block;padding:0 .2em;vertical-align: middle;color:#fff;}
 .chartjs-text{position: absolute;bottom:-2em;left:-2em;right:-2em;color:#909090;font-size:12px;text-align: center;line-height: 1.1em;}
+
+.chartjs-yAxes-label{position: absolute;top:50%;}
+.chartjs-yAxes-label span{color:#76828f;font-size: 0.8em;}
+.chartjs-yAxes-label.left{left:-1em;transform: rotate(270deg);}
+.chartjs-yAxes-label.right{right:-5em;transform: rotate(90deg);}

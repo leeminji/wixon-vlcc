@@ -376,6 +376,118 @@ var ChartUtil = (function(){
 			}	
 			this.addCustomLegend(_canvasId);
 		},
+		initBarChartMulti : function(_canvasId, _data, _stepSizeLeft, _stepSizeRight,  _tabCateogoryInit, _ratio){
+			var thisObj =this;
+			var initData = _data;
+
+			if( _tabCateogoryInit !== false && _tabCateogoryInit > -1 ){
+				var initCategory = $("#"+_canvasId+"_tab > a").eq(_tabCateogoryInit).addClass('active').data('category');
+				initData = this.categoryDataFind(_data, initCategory);
+			}	
+			var canvas = document.getElementById(_canvasId);
+			if( !canvas ) return;
+			var ctx = canvas.getContext('2d');
+			var _options = {
+				legend : false,
+				legendCallback : function(_chart){
+					return thisObj.drawCustomLegend(_chart);
+				},
+				responsive: true,
+				maintainAspectRatio: true,
+				hoverMode: 'index',
+				stacked: false,
+				title: {
+					display: 'none'
+				},
+				defaultFontFamily : window.ChartUtil.font,
+				plugins: {
+					datalabels: {
+						display: function(context) {
+							return ""
+						}
+					}
+				},
+				scales: {
+					xAxes : [
+						{
+							stacked : true,
+							//글자
+							ticks: {
+								fontColor : window.ChartUtil.colors.white,
+								beginAtZero:true,
+								fontFamily : window.ChartUtil.font,
+							},
+							//x축에 해당하는 모든선
+							gridLines : {
+								lineWidth: 1,
+								display : true,
+								borderDash: [2, 5],
+								color : window.ChartUtil.colors.white_op2,
+							}
+						}
+					],
+					yAxes: [
+						{
+							stacked : true,
+							//글자
+							ticks: {
+								fontColor : window.ChartUtil.colors.white,
+								fontFamily : window.ChartUtil.font,
+							},	
+							gridLines : {
+								display : true,
+								borderDash: [2, 5],
+								drawOnChartArea: true, 
+								color : window.ChartUtil.colors.white_op2
+							},								
+							type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+							display: true,
+							position: 'left',
+							id: 'y-axis-1',
+						}, 
+						{	
+							//글자
+							ticks: {
+								fontColor : window.ChartUtil.colors.white,
+								fontFamily : window.ChartUtil.font,
+								fontWeight : 600,
+								max:100,
+								min:0,
+							},																
+							type: 'linear', 
+							display: true,
+							position: 'right',
+							id: 'y-axis-2',
+
+							// grid line settings
+							gridLines: {
+								display: true,
+								drawOnChartArea: false, 
+								color : window.ChartUtil.colors.white_op2
+							},
+						}
+					],
+				}
+			}
+			if( _stepSizeLeft ){
+				_options.scales.yAxes[0].ticks.stepSize = _stepSizeLeft;
+			}			
+			if( _stepSizeRight ){
+				_options.scales.yAxes[1].ticks.stepSize = _stepSizeRight;
+			}
+			if( _ratio ){
+				_options.aspectRatio = _ratio;
+			}		
+			thisObj.chartList[_canvasId] = new Chart(ctx, {
+				type : "bar",
+				data : initData,
+				options: _options
+			});
+			if( _tabCateogoryInit > -1 ){
+				this.addDataTab(_canvasId, _data);
+			}	
+			this.addCustomLegend(_canvasId);
+		},
 		initStackedChart : function(_canvasId, _data, _stepSize, _tabCateogoryInit, _ratio){
 			var thisObj =this;
 			var initData = _data;
@@ -403,7 +515,11 @@ var ChartUtil = (function(){
 					datalabels: {
 						color: 'white',
 						display: function(context) {
-							return context.dataset.data[context.dataIndex];
+							if(context.chart.data.hideDataLabel){
+								return "";
+							}else{
+								return context.dataset.data[context.dataIndex];
+							}
 						},
 						formatter: Math.round
 					}
@@ -681,7 +797,7 @@ var ChartUtil = (function(){
 
 			var legendList = $("#"+_canvasId+"_legend li");
 			if( legendList.size() <= 0 ) return;
-			legendList.on('click', function(){
+			legendList.off("click").on('click', function(){
 				thisObj.upDateDataset(event, $(this).attr("data-index"), window.ChartUtil.chartList[_canvasId]);
 				if( $(this).hasClass('inactive')){
 					$(this).removeClass("inactive");
@@ -786,7 +902,13 @@ var ChartUtil = (function(){
 				thisObj.chartList[_canvasId].data = changeData;
 				tabList.removeClass('active');
 				$(this).addClass('active');
-				thisObj.chartList[_canvasId].update();
+
+				//변환시 라벨클릭 안되는것, 제대로 변환 안되는것 수정.
+				var chart = thisObj.chartList[_canvasId];
+				$("#"+_canvasId+"_legend").empty().html(thisObj.drawCustomLegend(chart));
+
+				thisObj.addCustomLegend(_canvasId);
+				chart.update();
 			});
 		},		
 	}

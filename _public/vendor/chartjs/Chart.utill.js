@@ -330,14 +330,8 @@ var ChartUtil = (function(){
 						{	
 							//글자
 							ticks: {
-								fontColor : window.ChartUtil.colors.darkgray,
+								fontColor : window.ChartUtil.colors.white,
 								fontFamily : window.ChartUtil.font,
-								userCallback: function(value, index, values) {
-									value = value.toString();
-									value = value.split(/(?=(?:...)*$)/);
-									value = value.join(',');
-									return value+" k";
-								},
 								fontWeight : 600,
 								max:1500,
 								min:1300,

@@ -31,7 +31,13 @@
                     "backgroundColor": "rgb(115,115,115)",
                     "borderColor": "rgb(115,115,115)",
                     "data": [5, 19, 14, 5, 22, 3]
-                } 
+                },
+                {
+                    "label": "Project2",
+                    "backgroundColor": "rgb(0,0,115)",
+                    "borderColor": "rgb(0,0,115)",
+                    "data": [5, 19, 14, 5, 22, 3]
+                }  
             ]
         },
         {

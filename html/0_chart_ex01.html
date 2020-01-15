@@ -46,6 +46,13 @@
 									<canvas id="chart3" class="chartjs-canvas"></canvas>
 								</div>
 							</div>
+							<div class="BoxArea01">
+								<div class="inner">
+									<div id="chart4_legend" class="chartjs-legend white"></div>
+									<div id="chart4_title" class="chartjs-title middle white center"><span>Cargo counting</span></div>
+									<canvas id="chart4" class="chartjs-canvas"></canvas>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -90,6 +97,30 @@
 				}, 
 			]
 		};
+		//초기 샘플데이터
+		var sampleChartData2 = {
+			labels: ['1-10 MAY', '11-20 MAY', '21-31 MAY', '1-10 JUN', '11-20 JUN', '21-30 JUN'],
+			datasets: [
+				{
+					label: 'Spot-left',
+					yAxisID: 'y-axis-1',
+					backgroundColor: "rgba(56,99,131,0.2)",
+					borderColor: "rgba(56,99,131,0.2)",
+					fill : false,
+					data: [30, 50, 60, 106, 20, 15]
+				}, 
+				{
+					label: 'Project-right',
+					yAxisID: 'y-axis-2',
+					yAxisMinMax : { 'min': 0, 'max': 300 },
+					backgroundColor: "rgba(115,115,115, 0.8)",
+					borderColor: "rgba(115,115,115, 0.8)",
+					borderWidth : 5,
+					fill : false,
+					data: [55, 69, 140, 15, 202, 30]
+				}, 
+			]
+		};
 		  
 		$(window).on('load', function(){
 			//차트적용
@@ -114,9 +145,25 @@
 						}
 					});
 					chart3.data.datasets = dataList;
+					//Legend 라벨변경
+					$("#chart3_legend").empty().append(ChartUtil.drawCustomLegend(chart3));
+					//Legned 클릭 이벤트연결
+					ChartUtil.addCustomLegend('chart3');
 					chart3.update(); //업데이트
 				});
 			});
+
+			//initLineChartMulti(chart id값, 데이터, 왼쪽차트 데이터 분배 값, 오른쪽차트 데이터 분배값, 탭(카테고리)사용시 인덱스번호, 스케일(사이즈) )
+			ChartUtil.initLineChartMulti('chart4', sampleChartData2, 10, 50, false, 3);
+			var chart4 = ChartUtil.chartList['chart4'];
+			//y축 오른쪽 변경 (max, min 수동으로 변경필요) - json 데이터에서 받아서 처리하거나 수동으로설정.
+			var chart_ticks = chart4.options.scales.yAxes[1].ticks;
+			chart_ticks.max = sampleChartData2.datasets[1].yAxisMinMax.max;
+			chart_ticks.min = sampleChartData2.datasets[1].yAxisMinMax.min;
+            chart_ticks.userCallback = function(value, index, values) {
+				return value;
+			};
+			chart4.update();			
 		});
 	</script>
 </body>

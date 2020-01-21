@@ -1,0 +1,448 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>VLCCLAB Dashboard - SELINE</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../_public/favicon.ico" />
+	<!-- stylesheet -->
+	<link href="../_public/vendor/scrollbar/scrollbar.css" rel="stylesheet" type="text/css" />
+	<link href="../_public/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div class="loading" id="loading"><div class="img"><span class="skip">Loading...</span></div></div>
+	<!-- Layout__Allwrap : class = active_submenu : SideMenu 있는경우에만 class 추가 -->
+	<div class="Layout__Allwrap" id="LayoutAllwrap">
+		<!-- header -->
+		<header class="Layout__header">
+			<!-- Layout__menu -->
+			<div class="Layout__menu">
+				<div class="TotalMenu__tooltip" id="totalMenuTooltip"></div>
+				<!-- TotalMenu -->
+				<div class="TotalMenu black" id="totalMenu">
+					<div class="js-scrollbar">
+						<div class="TotalMenu__top">				
+							<a href="javascript:;" class="TotalMenu__button_menu" id="totalMenuOpen"><span class="icon icon_menu"></span></a>
+							<div class="AdminState">
+								<a href="#" title="" class="AdminState__state">
+									<span class="icon icon_admin"></span> <span class="txt">ADMIN LOGOUT</span>
+								</a>
+							</div>
+							<a href="javascript:;" class="TotalMenu__button_close" title="close" id="totalMenuClose"><span class="icon icon_close"></span></a>
+						</div>
+						<!-- TotalMenu__listArea -->
+						<nav class="TotalMenu__listArea">
+							<h1 class="skip">전체메뉴</h1>
+							<ul class="clear TotalMenu__list" id="totalMenuList">
+								<li data-title="Setting">
+									<a href="#">
+										<span class="icon icon_setting on"></span>
+										<span class="txt">Setting</span>
+									</a>
+								</li>
+								<li data-title="Dashbaord">
+									<a href="#">
+										<span class="icon icon_moniter on"></span>
+										<span class="txt">Dashbaord</span>
+									</a>
+									<ul class="clear TotalMenu__sublist">
+										<li><a href="#"><span class="txt">Vessel movement</span></a></li>
+										<li><a href="#"><span class="txt">ship register</span></a></li>
+										<li><a href="#"><span class="txt">port register</span></a></li>
+										<li><a href="#"><span class="txt">another name management</span></a></li>
+										<li><a href="#"><span class="txt">general setting</span></a></li>
+									</ul>                
+								</li>
+								<li data-title="Map">
+									<a href="3_map.html">
+										<span class="icon icon_location on"></span>
+										<span class="txt">Map</span>
+									</a>
+								</li>
+                                <li data-title="Tools" class="active">
+									<a href="#">
+										<span class="icon icon_ruler on"></span>
+										<span class="txt">Tools</span>
+									</a>
+									<ul class="clear TotalMenu__sublist">
+										<li><a href=""><span class="txt">Vessel</span></a></li>
+										<li class="active"><a href=""><span class="txt">Distance</span></a></li>
+										<li><a href=""><span class="txt">TCE CALCULATOR</span></a></li>
+										<li><a href=""><span class="txt">FLEET LIBRARY</span></a></li>
+										<li><a href=""><span class="txt">RESEARCH</span></a></li>
+										<li><a href=""><span class="txt">MY FLEET</span></a></li>
+									</ul>					
+								</li>
+								<li data-title="Spot Charter">
+									<a href="4_spot_charter.html">
+										<span class="icon icon_compass on"></span>
+										<span class="txt">Spot Charter</span>
+									</a>
+									<ul class="clear TotalMenu__sublist">
+										<li><a href=""><span class="txt">Position list</span></a></li class="active">
+										<li><a href=""><span class="txt">Nowcast</span></a></li>
+										<li><a href=""><span class="txt">Pattern</span></a></li>
+										<li><a href=""><span class="txt">Analysis</span></a></li>
+									</ul>
+								</li>
+								<li data-title="Market Report">
+									<a href="#">
+										<span class="icon icon_doc on"></span>
+										<span class="txt">Market Report</span>
+									</a>
+									<ul class="clear TotalMenu__sublist">
+										<li><a href=""><span class="txt">Freight Assessment</span></a></li>
+										<li><a href=""><span class="txt">Fleet Study</span></a></li>
+										<li><a href=""><span class="txt">Fleet Study</span></a></li>
+										<li><a href=""><span class="txt">Tonne Miles</span></a></li>
+									</ul>					
+								</li>
+								<li data-title="Oil">
+									<a href="#">
+										<span class="icon icon_water on"></span>
+										<span class="txt">OIL</span>
+									</a>
+									<ul class="clear TotalMenu__sublist">
+										<li><a href=""><span class="txt">Flow</span></a></li>
+										<li><a href=""><span class="txt">Inventory</span></a></li>
+										<li><a href=""><span class="txt">Refinery</span></a></li>
+									</ul>					
+								</li>
+								<li data-title="Mailing">
+									<a href="9_mail.html">
+										<span class="icon icon_mail on"></span>
+										<span class="txt">Mailing</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<!-- //TotalMenu__listArea -->					
+					</div>
+				</div>
+				<!-- //TotalMenu -->
+			</div>
+			<!-- //Layout__menu -->
+		</header>
+		<!-- //header -->
+		<!-- Layout__container -->
+		<div class="Layout__container bgStyle_01">
+			<div class="Layout__topContent">
+				<!-- TopLogin -->
+				<div class="TopLogin white">
+					<a href="0_index.html" class="TopLogin__state"><span class="icon icon_admin"></span><span class="txt ">ADMIN LOGOUT</span></a>
+				</div>	
+				<!-- //TopLogin -->
+				<!-- TopTitle -->
+				<div class="TopTitle"><span>DISTANCE</span></div>
+				<!-- //TopTitle -->
+				<div class="TopLogo"><a href="0_index.html" class="link">메인으로이동</a><h1 class="skip">VLCCLAB</h1></div>
+				<!-- TopClock -->
+				<div class="TopClock">
+					<div class="TopClock__inner">
+						<div class="time"><span>04:07 UTC</span></div>
+						<div class="date"><span>13 May</span></div>
+					</div>
+				</div>
+				<!-- //TopClock -->				
+			</div>	
+			<!-- Spot Charte 대시보드 -->
+			<section class="Layout__content ToolsArea">
+				<h1 class="skip">tools Contents</h1>	
+				<div class="js-scrollbar">
+					<div class="Layout__content__inner padding10">
+						<div class="Layout__tools isLogo">
+							<div class="Layout__toolsMap">
+								<div class="BoxArea01 BoxFull">
+									<!-- 구글맵 영역 -->
+									<div id="totalMap" class="MapTotalSize no">지도영역</div>
+									<!-- //구글맵 영역 -->
+									<!-- MapShipInfo  -->
+									<div class="MapShipInfo animated" id="MapShipInfo">
+										<div class="MapShipInfo__inner">
+											<a href="javascript:;" onclick="window.uiGooglMap.infoShipMarker().close();" class="MapShipInfo__close"><span>닫기</span></a>
+											<div class="MapShipInfo__title noMark">
+												<div class="name noImg">New Harmony (2014, 320k)</div>
+												<div class="cate">Hyundai Oilbank</div>
+											</div>
+											<div class="MapShipInfo__data">
+												<span class="data left">24 May 09:58</span>
+												<span class="data right">3,511NM</span>
+											</div>
+											<div class="MapShipInfo__content">
+												<ul class="clear MapShipInfo__list big">
+													<li><span class="tit">DRAFT</span><span class="txt">20.8m</span></li>
+													<li><span class="tit">SPEED</span><span class="txt">12.8kts</span></li>
+													<li><span class="tit">DIRECTION</span><span class="txt">90˚</span></li>
+													<li><span class="tit">DESTINATION</span><span class="txt">DAESAN^@CKOREA</span></li>
+													<li><span class="tit">LASTEST AIS</span><span class="txt">12 May 20:10</span></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<!-- //MapShipInfo  -->	
+									<!-- MapShipOver over했을때 -->
+									<div class="MapShipOver" id="MapShipOver">
+										<div class="MapShipOver__inner">
+											<div class="MapShipOver__title">
+												<span class="name noImg">Kiire</span>
+											</div>
+											<div class="MapShipOver__content">
+												<span>13 May 03:55</span>
+												<span class="right">Start</span>
+											</div>
+										</div>
+									</div>
+									<!-- //MapShipOver over했을때 -->								
+									<!-- VesselNotice -->
+									<div class="VesselNotice" id="VesselNotice">
+										<div class="VesselNotice__item">
+											<div class="VesselNotice__info"><a href="">Dragon (2002, 300k)  /  VLCC  /  Dynacom Tankers</a></div>
+											<a href="#" class="VesselNotice__close"><span class="skip">close</span></a>
+										</div>
+									</div>
+									<!-- //VesselNotice -->
+								</div>
+							</div>
+							<!-- ToolsInfo -->
+							<div class="Layout__toolsInfo ToolsInfo">
+								<div class="BoxArea01 BoxFull dark">
+									<!-- Distance : DURATION -->
+									<div class="Distance">
+										<h2 class="Distance__title"><span>DURATION</span></h2>
+										<div class="Distance__data"><span>11d 06h</span></div>
+									</div>
+									<!-- //Distance : DURATION  -->
+									<!-- Distance : DISTANCE-->
+									<div class="Distance">
+										<h2 class="Distance__title"><span>DISTANCE</span></h2>
+										<div class="Distance__data"><span>3,511NM</span></div>
+									</div>
+									<!-- //Distance : DISTANCE-->
+									<!-- Distance : SPEED -->
+									<div class="Distance">
+										<h2 class="Distance__title"><span>SPEED</span></h2>
+										<div class="Distance__speed">
+											<span class="CountInput">
+												<input type="text" value="13.0" />
+												<span class="unit">kts</span>
+											</span>
+											<a href="#" class="CountButton cBlack"><span>+</span></a>
+											<a href="#" class="CountButton cBlack"><span>-</span></a>
+										</div>
+									</div>
+									<!-- //Distance : SPEED-->
+									<!-- Distance__schedule -->
+									<div class="Distance__schedule">
+										<h2 class="Distance__title"><span>SCHEDULE</span></h2>
+										<div class="Distance__path">
+											<!-- VoyagesPath -->
+											<div class="VoyagesPath simpleType">
+												<div class="clear VoyagesPath__list">
+													<!-- VoyagesPath__path : style="height:값" 스크립트로 제어 -->
+													<div class="VoyagesPath__line" style="height: 48px;"></div>
+													<!-- VoyagesPath__item : point -->
+													<div class="VoyagesPath__item">
+														<div class="icon icon_point"><span class="skip">point</span></div>
+														<div class="info">
+															<div class="title"><span>Kiire</span></div>
+															<div class="date"><span>13 May 03:55</span></div>
+														</div>
+														<div class="state">Start</div>
+													</div>
+													<!-- //VoyagesPath__item : point -->
+													<!-- VoyagesPath__item : point -->
+													<div class="VoyagesPath__item">
+														<div class="icon icon_port"><span class="skip">point</span></div>
+														<div class="info">
+															<div class="title"><span>Singapore</span></div>
+															<div class="date"><span>13 May 03:55</span></div>
+														</div>
+														<div class="state">1,511NM</div>
+													</div>
+													<!-- //VoyagesPath__item : point -->
+													<!-- VoyagesPath__item : latest -->
+													<div class="VoyagesPath__item latest">
+														<div class="icon icon_latest"></div>
+														<div class="info">
+															<div class="title"><span>New Harmony</span></div>
+															<div class="date"><span>24 May 09:58</span></div>
+														</div>
+														<div class="state">3,511NM</div>
+													</div>
+													<!-- //VoyagesPath__item : latest -->
+												</div>
+											</div>
+											<!-- //VoyagesPath -->
+										</div>
+									</div>
+									<!-- //Distance__schedule  -->
+								</div>
+							</div>
+							<!-- //ToolsInfo -->
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //Spot Charte 대시보드 -->
+		</div>
+		<!-- //Layout__container -->
+		<!-- footer -->
+		<footer class="Layout__footer"></footer>
+		<!-- //footer -->
+	</div>
+	<!-- javascript -->
+	<script type="text/javascript" src="../_public/js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="../_public/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../_public/vendor/scrollbar/jquery.scrollbar.js"></script>
+	<script type="text/javascript" src="../_public/js/ui.js"></script>
+	<!-- 맵 js 추가 -->
+	<script type="text/javascript" src="../_public/js/ui.gooleMap.js"></script>
+	<script type="text/javascript" src="../_public/js/ui.googleMap.sampleData.js"></script>
+	<script type="text/javascript" src="../_public/js/sv.map.controller.min.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&region=KR&language=en&key=AIzaSyCQ8LK-VtL1tudKfKMUo-Br9bQNt5u7Cc0&callback=initMap" async defer></script>
+	<!-- //맵 js 추가 -->	
+	<script type="text/javascript">
+		var voyagesSampleData = {
+			"geometry":{
+				"coordinates": [
+					{lat : 8.181327, lng : 87.384032}, 
+					{lat : 4.863576, lng : 99.337157},
+					{lat : 1.705113, lng : 104.698485},
+					{lat : 20.336654, lng : 119.815673},
+					{lat : 32.671585, lng : 130.796522}
+				]
+			},
+			"markers" : [
+				{
+					"state" : "latest",
+					"position" : {lat : 8.181327, lng : 87.384032}
+				},
+				{
+					"state" : "port",
+					"port_name":"Singapore",
+					"position" : {lat : 1.705113, lng : 104.698485}
+				},
+				{
+					"state" : "point",
+					"port_name":"Kiire",
+					"position" : {lat : 32.671585, lng : 130.796522}
+				},
+			]
+		};
+
+		var _map;
+		function initMap(){
+			_map = new google.maps.Map(document.getElementById('totalMap'), {
+				center: {lat: 36.705106, lng: 127},
+				zoom: 3,
+				styles : window.uiGooglMap.googleMapStyle
+			});
+			var _lineData = voyagesSampleData.geometry.coordinates;
+			var _markerData = voyagesSampleData.markers;
+			createLine(_map, _lineData);
+			createMarker(_map, _markerData);
+		}
+
+		function createLine(_map, _data){
+			var path = new google.maps.Polyline({
+				path: _data,
+				geodesic: true,
+				strokeWidth : 0,
+				strokeOpacity : 1,
+				strokeColor : "#FFFFFF",
+			});
+			path.setMap(_map);
+		}
+		//마커셋팅
+		function getImageIcon(_data){
+			var imgPath = '/_public/images/map/icon/';
+			var imgExt = ".png";
+			switch(_data){
+				case "load" :
+					return  imgPath + "icon_path_load"+imgExt;
+					break;
+				case "stop" :
+					return  imgPath + "icon_path_stop"+imgExt;
+					break;
+				case "start" :
+					return  imgPath + "icon_path_start"+imgExt;
+					break;
+				case "discharge" :
+					return  imgPath + "icon_path_discharge"+imgExt;
+					break;
+				case "point" :
+					return  imgPath + "icon_path_point"+imgExt;
+					break;
+				case "latest" :
+					return  imgPath + "icon_path_latest"+imgExt;
+					break;
+				case "port" :
+					return  imgPath + "icon_path_port"+imgExt;
+					break;
+			}
+		}
+		function createMarker(_map, _data){
+			for (var i = 0; i < _data.length; i++) {
+				var data = _data[i];
+
+				var bounds = new google.maps.LatLngBounds();
+				var imageUrl = getImageIcon(data.state);
+				var image = {
+					url: imageUrl,
+					size: new google.maps.Size(38, 38),
+					scaledSize: new google.maps.Size(24, 24), // scaled size
+					origin: new google.maps.Point(0, 0),
+					anchor: new google.maps.Point(24/2, 24/2)
+				};
+				var marker = new google.maps.Marker({
+					position: data.position,
+					map: _map,
+					icon: image,
+					title: data.port_name ? data.port_name : "",
+					zIndex: (i+1)
+				});
+				bounds.extend(marker.position);
+				
+				if( data.state == 'latest' ){
+					var clickInfo = window.uiGooglMap.infoShipMarker();
+					marker.addListener('click', function(event) {
+						clickInfo.open(event.pixel);
+					});
+				}else{
+					var overInfo = window.uiGooglMap.overShipMarker();
+					marker.addListener('mouseover', function(event) {
+						overInfo.open(event.pixel);
+					});			
+					marker.addListener('mouseout', function(event) {
+						overInfo.close();
+					});			
+				}
+			}
+		}
+	</script>
+	<!-- 차트js추가 -->
+	<script type="text/javascript" src="../_public/vendor/chartjs/moment.min.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/chartjs-plugin-datalabels.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.utill.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.sampleData.js"></script> <!-- Chart.sampleData.js 여기에 샘플데이터있습니다. -->
+	<!-- //차트js추가 -->
+	<script type="text/javascript" src="../_public/js/ui.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			ui_voyagesPath();
+		})
+		function ui_voyagesPath(){
+			var path = $(".VoyagesPath__line");
+			//latest 찾아서 top 얻기.
+			var latest = $(".VoyagesPath__item.latest");
+			if( latest.length > 0 ){
+				path.css('height', latest.position().top);
+			}
+		}
+	</script>
+</body>
+</html>

@@ -135,19 +135,18 @@
 				<!-- TopTitle -->
 				<div class="TopTitle font_condensed"><span>vlcclab dashboard</span></div>
 				<!-- //TopTitle -->				
-			</div>			
+			</div>
 			<!-- DashboardArea 대시보드 -->
-			<section class="Layout__content DashboardArea font_condensed">
+			<section class="Layout__content DashboardArea">
 				<h1 class="skip">Dashboard Contents</h1>	
 				<div class="js-scrollbar">
 					<div class="Layout__content__inner">
-						<div class="BoxArea01 fixed">
+						<div class="BoxArea01 ">
 							<a href="javascript:uiSettingPopup.open('DataSetting');"   class="DataSetting__button"><span>관리자수정</span></a>
 							<div class="inner">
 							<div id="chart0_legend" class="chartjs-legend white"></div>
 							<div id="chart0_title" class="chartjs-title big white center"><span>SPOT MARKET ASSESSMENT</span></div>
 							<canvas id="chart0" class="chartjs-canvas"></canvas>
-							</div>		
 						</div>
 						<div class="Layout_row">
 							<div class="Layout_chartArea">
@@ -329,7 +328,7 @@
 			//tabCateogoryInit : 카테고리로 탭있는경우 해당 index 
 
 			//SPOT MARKET ASSESSMENT
-			ChartUtil.initLineChartWhite('chart0', lineChartData_0, 15000);		
+			ChartUtil.initLineChartWhite('chart0', lineChartData_0, 15000, false, 6);		
 
 			//FLEET NO.IN TRADE
 			ChartUtil.initLineChartMulti('chart1', lineChartData_1, 10, 5000);

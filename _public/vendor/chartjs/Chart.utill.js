@@ -8,6 +8,7 @@ var ChartUtil = (function(){
 			red: 'rgb(255, 99, 132)',
 			orange: 'rgb(255, 154, 99)',
 			yellow: 'rgb(255, 205, 86)',
+			darkgreen: 'rgb(65, 134, 113)',
 			green: 'rgb(65, 255, 204)',
 			green_op5: 'rgba(65, 255, 204, 0.5)',
 			green_op2: 'rgba(65, 255, 204, 0.2)',
@@ -171,8 +172,12 @@ var ChartUtil = (function(){
 			}
 			this.addCustomLegend(_canvasId);
 		},
-		initLineChartWhite : function(_canvasId, _data, _stepSize){
+		initLineChartWhite : function(_canvasId, _data, _stepSize, _tabCateogoryInit, _ratio){
 			var thisObj =this;
+			if( _tabCateogoryInit !== false && _tabCateogoryInit > -1 ){
+				var initCategory = $("#"+_canvasId+"_tab > a").eq(_tabCateogoryInit).addClass('active').data('category');
+				initData = this.categoryDataFind(_data, initCategory);
+			}
 			var canvas = document.getElementById(_canvasId);
 			if( !canvas ) return;
 			var ctx = canvas.getContext('2d');
@@ -182,7 +187,7 @@ var ChartUtil = (function(){
 					return thisObj.drawCustomLegend(_chart);
 				},
 				responsive: true,
-				maintainAspectRatio: false,
+				maintainAspectRatio: true,
 				hoverMode: 'index',
 				stacked: false,	
 				title: {
@@ -251,6 +256,9 @@ var ChartUtil = (function(){
 			}
 			if( _stepSize ){
 				_options.scales.yAxes[0].ticks.stepSize = _stepSize;
+			}
+			if( _ratio ){
+				_options.aspectRatio = _ratio;
 			}
 			thisObj.chartList[_canvasId] = new Chart(ctx, {
 				type : "line",
@@ -353,7 +361,7 @@ var ChartUtil = (function(){
 			}
 			if( _stepSizeLeft ){
 				_options.scales.yAxes[0].ticks.stepSize = _stepSizeLeft;
-			}			
+			}
 			if( _stepSizeRight ){
 				_options.scales.yAxes[1].ticks.stepSize = _stepSizeRight;
 			}

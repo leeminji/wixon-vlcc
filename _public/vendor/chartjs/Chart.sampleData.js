@@ -3901,3 +3901,50 @@ var lineChartData_49 = {
         lineTension : 0,
     }]
 };
+
+var lineChartData_50 = {
+    hideDataLabel : true,
+    labels:['AMCL/MING WAH', 'BAHRI', 'MARAN TANKERS', 'COSCO', 'EURONAV', 'NITC', 'MOSK', 'DHT', 'NYK', 'SK', 'FRONTLINE', 'OLYMPIC', 'DYNACOM', 'OMAN SHIP', 'OTC', 'International', 'NAV1OS', 'AET/MISC', 'SINOKOR', 'KOTC', 'PANTHEON TANKERS'],
+    datasets: [{
+        label: 'Existing',
+        borderWidth : 0,
+        borderColor: ChartUtil.colors.darkgreen,
+        backgroundColor: ChartUtil.colors.darkgreen,
+        pointRadius: 0,
+        fill: true,
+        data: [46,45,36,41,37,35,32,37,20,18,16,14,16,16,15,13,13,12,8,10,9 ],
+        lineTension : 0,
+    }, {
+        label: 'On order',
+        borderWidth : 0,
+        borderColor: ChartUtil.colors.royalblue,
+        backgroundColor: ChartUtil.colors.royalblue,
+        pointRadius: 0,
+        fill: true,
+        data: [7,0,5,0,0,0,2,0,7,0,2,3,0,0,0,0,0,0,4,1,2],
+        lineTension : 0,
+    }]
+}
+var lineChartData_51 = {
+    hideDataLabel : true,
+    labels:['TIPOOL', 'CSET', 'BAHRI', 'CMES', 'NTC', 'MARAN TANKERS', 'VLS', 'FRONTLINE', 'CHT', 'SHELL', 'IK OCEAN', 'KOCH', 'DYNACOM', 'SK', 'OTC', 'RELIANCE', 'OMAN SHIPPING', 'OLYMPIC', 'NEW SHIPPING', 'EAST MED'],
+    datasets: [{
+        label: 'Existing',
+        borderWidth : 0,
+        borderColor: ChartUtil.colors.darkgreen,
+        backgroundColor: ChartUtil.colors.darkgreen,
+        pointRadius: 0,
+        fill: true,
+        data: [46,45,36,41,37,35,32,37,20,18,16,14,16,16,15,13,13,12,8,10,9 ],
+        lineTension : 0,
+    }, {
+        label: 'On order',
+        borderWidth : 0,
+        borderColor: ChartUtil.colors.royalblue,
+        backgroundColor: ChartUtil.colors.royalblue,
+        pointRadius: 0,
+        fill: true,
+        data: [7,0,5,0,0,0,2,0,7,0,2,3,0,0,0,0,0,0,4,1,2],
+        lineTension : 0,
+    }]
+}

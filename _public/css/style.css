@@ -1439,9 +1439,15 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .VesselNotice.noFixed{position: relative;left:0;right:0;padding:0 4px 4px;border:1px solid #233748;outline:1px solid #000;}
 .VesselNotice.noFixed.empty{padding:0;border:0;outline:0}
 .VesselNotice__item{position: relative;margin-top:4px;padding:4px 3em;border-radius:3px;background:rgba(0,0,0,0.5) url(../images/map/icon/icon_plane.png) .5em center no-repeat;}
-.VesselNotice__info{}
+.VesselNotice__info{position: relative;margin-right: 10em;}
 .VesselNotice__info a{display:inline-block;line-height:2em;color:#fff}
+.VesselNotice__info input{display:inline-block;line-height:2em;color:#fff;background:transparent;border:0;width:100%;}
 .VesselNotice__close{position: absolute;right:4px;top:4px;width:2em;height:2em;border-radius:3px;background:#000 url(../images/icon/icon_close_thin.png) center no-repeat;background-size:2em auto;}
+.VesselNotice__list{position: absolute;left:0;right:0;top:2.25em;z-index:1000;list-style: none;margin:0;padding:0;border:1px solid rgba(105,125,148,0.3);border-top:0}
+.VesselNotice__list li{background:rgba(0,0,0,0.3);border-top:1px solid rgba(105,125,148,0.3);}
+.VesselNotice__list li:first-child{border-top:0}
+.VesselNotice__list li a{display: block;color:#fff;padding:.2em .5em}
+.VesselNotice__list li:hover{background:rgba(0,0,0,0.5)}
 
 /* SettingArea */
 .SettingArea{}

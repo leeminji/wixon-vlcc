@@ -85,9 +85,7 @@
 .chartjs-title.center{
     text-align: center;
 }
-@media (max-width: 1440px) { 
-    .chartjs-title{font-size:0.8em}
-}
+
 .chartjs-canvas{margin-top:-1em;padding-bottom:1.6em;padding-top:.5em}
 
 .chartjs-tab{

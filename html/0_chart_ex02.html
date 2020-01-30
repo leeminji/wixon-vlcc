@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>VLCCLAB Dashboard - SELINE</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../_public/favicon.ico" />
+	<!-- stylesheet -->
+	<link href="../_public/vendor/scrollbar/scrollbar.css" rel="stylesheet" type="text/css" />
+	<link href="../_public/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="noWidth">
+	<div class="loading" id="loading"><div class="img"><span class="skip">Loading...</span></div></div>
+	<!-- Layout__Allwrap -->
+	<div class="Layout__Allwrap" id="LayoutAllwrap">
+		<!-- Layout__container -->
+		<div class="Layout__container bgStyle_01 full">
+			<section class="Layout__content">
+				<div class="BoxArea01 BoxFull isScroll">
+					<div class="Layout_row">
+						<div class="Layout_chartArea col12">
+							<div class="BoxArea01">
+								<div class="inner">
+									<div id="chart3_search" class="chartjs-search">
+										<span class="SelectBox">
+											<select name="sl_east" id="chart3_select" width="10" class="chartSelect">
+												<option value="5 Days">5 Days</option>
+												<option value="10 Days">10 Days</option>
+											</select>
+										</span>
+									</div>
+									<div id="chart3_legend" class="chartjs-legend white"></div>
+									<div id="chart3_title" class="chartjs-title middle white center"><span>PREDICTIVE</span></div>
+									<canvas id="chart3" class="chartjs-canvas"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- //Layout__container -->
+	</div>
+	<!-- //Layout__Allwrap -->
+	<!-- javascript -->
+	<script type="text/javascript" src="../_public/js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="../_public/vendor/scrollbar/jquery.scrollbar.js"></script>
+	<script type="text/javascript" src="../_public/js/jquery-ui.js"></script>
+	<!-- 차트js추가 -->
+	<script type="text/javascript" src="../_public/vendor/chartjs/moment.min.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/chartjs-plugin-datalabels.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.utill.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.sampleData.js"></script> <!-- Chart.sampleData.js 여기에 샘플데이터있습니다. -->
+	<!-- //차트js추가 -->	
+	<script type="text/javascript" src="../_public/js/ui.js"></script>
+	<!-- 맵 js 추가 -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			window.ui.init();
+		});
+
+		var sampleChartData = {
+			isSelect : true, //isSelect 작성시 적용
+			datalist : [
+				{
+					category : '5 days',
+					labels: ['1', '2', '3', '4', '5'],
+					datasets: [{
+						label: 'SPORE RANGE',
+						borderWidth : 1,
+						borderColor: ChartUtil.colors.green,
+						backgroundColor: ChartUtil.colors.green,
+						pointRadius: 1,
+						fill: true,
+						data: [
+							ChartUtil.randomData(18, 27),
+							ChartUtil.randomData(18, 27),
+							ChartUtil.randomData(18, 27),
+							ChartUtil.randomData(18, 27),
+							ChartUtil.randomData(18, 27),
+						],
+						lineTension : 0,
+					}, {
+						label: 'OTHERS',
+						borderWidth : 1,
+						borderColor: ChartUtil.colors.royalblue,
+						backgroundColor: ChartUtil.colors.royalblue,
+						pointRadius: 1,
+						fill: true,
+						data: [
+							ChartUtil.randomData(18, 36),
+							ChartUtil.randomData(18, 36),
+							ChartUtil.randomData(18, 36),
+							ChartUtil.randomData(18, 36),
+							ChartUtil.randomData(18, 36),
+						],
+						lineTension : 0,
+					}]
+				},
+				{
+					category : '10 days',
+					labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+					datasets: [{
+						label: '10 days',
+						borderWidth : 1,
+						borderColor: ChartUtil.colors.green,
+						backgroundColor: ChartUtil.colors.green,
+						pointRadius: 1,
+						fill: true,
+						data: [
+							ChartUtil.randomData(6, 7.5),
+							ChartUtil.randomData(6, 7.5),
+							ChartUtil.randomData(6, 7.5),
+							ChartUtil.randomData(6, 7.5),
+							ChartUtil.randomData(6, 7.5),
+							ChartUtil.randomData(6, 7.5),
+							ChartUtil.randomData(6, 7.5),
+							ChartUtil.randomData(6, 7.5),
+							ChartUtil.randomData(6, 7.5),
+							ChartUtil.randomData(6, 7.5),
+						],
+						lineTension : 0,
+					}, {
+						label: 'DPP',
+						borderWidth : 1,
+						borderColor: ChartUtil.colors.royalblue,
+						backgroundColor: ChartUtil.colors.royalblue,
+						pointRadius: 1,
+						fill: true,
+						data: [
+							ChartUtil.randomData(7.5, 25),
+							ChartUtil.randomData(7.5, 25),
+							ChartUtil.randomData(7.5, 25),
+							ChartUtil.randomData(7.5, 25),
+							ChartUtil.randomData(7.5, 25),
+							ChartUtil.randomData(7.5, 25),
+							ChartUtil.randomData(7.5, 25),
+							ChartUtil.randomData(7.5, 25),
+							ChartUtil.randomData(7.5, 25),
+							ChartUtil.randomData(7.5, 25),
+						],
+						lineTension : 0,
+					},{
+						label: 'CPP',
+						borderWidth : 1,
+						borderColor: ChartUtil.colors.skyblue,
+						backgroundColor: ChartUtil.colors.skyblue,
+						pointRadius: 1,
+						fill: true,
+						data: [
+							ChartUtil.randomData(8, 30),
+							ChartUtil.randomData(8, 30),
+							ChartUtil.randomData(8, 30),
+							ChartUtil.randomData(8, 30),
+							ChartUtil.randomData(8, 30),
+							ChartUtil.randomData(8, 30),
+							ChartUtil.randomData(8, 30),
+							ChartUtil.randomData(8, 30),
+							ChartUtil.randomData(8, 30),
+							ChartUtil.randomData(8, 30),
+						],
+						lineTension : 0,
+					}]
+				}
+			]
+		};
+
+		$(window).on('load', function(){
+			//차트적용
+			ChartUtil.initStackedChart('chart3', sampleChartData, 10, false, 3);
+		});
+	</script>
+</body>
+</html>

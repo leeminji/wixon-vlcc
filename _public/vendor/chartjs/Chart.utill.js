@@ -783,6 +783,15 @@ var ChartUtil = (function(){
 
 			this.addCustomLegend(_canvasId);
 		},
+		resetDataset : function(e, chart){
+			//라벨 클릭 이벤트 전체리셋
+			var total = chart.data.datasets.length;
+			for( var i =0;i<total;i++ ){
+				var meta = chart.getDatasetMeta(i);
+				meta.hidden = null;
+			}
+			chart.update();
+		},
 		upDateDataset : function(e, datasetIndex, chart){
             var index = datasetIndex;
             var meta = chart.getDatasetMeta(index);
@@ -961,7 +970,52 @@ Chart.pluginService.register({
 
 //마지막 라벨보이기
 Chart.plugins.register({
+	afterDatasetsUpdate : function(chart, easing){
+		//셀렉트박스 change 데이터 적용.
+		if (chart.config.data.isSelect) {
+			var chart_id = chart.ctx.canvas.id;
+			var select_el = $("#"+chart_id+"_select");
+			
+			if(select_el.size() == 0) return;
+
+			var data_list = chart.config.data;
+			var select_data = select_el.val();
+			selectChartData(select_data);
+
+			select_el.on("change", function(){
+				selectChartData($(this).val());
+			});
+
+			//선택시 이벤트
+			function selectChartData(_select_data){
+				var initData = ChartUtil.categoryDataFind(data_list, _select_data);
+				chart.config.data = initData;
+				var legend = $("#"+chart_id+"_legend");
+				if( legend.size() == 0 ) return;
+				legend.empty().append(ChartUtil.drawCustomLegend(chart));
+				
+				//Legned 클릭 이벤트연결
+				var legendList = $("#"+chart_id+"_legend li");
+				
+				if( legendList.size() == 0 ) return;
+				legendList.removeClass('inactvie');
+				ChartUtil.resetDataset(event, chart);
+				
+				legendList.off("click").on('click', function(event){
+					ChartUtil.upDateDataset(event, $(this).attr("data-index"), chart);
+					if( $(this).hasClass('inactive')){
+						$(this).removeClass("inactive");
+					}else{
+						$(this).addClass("inactive");
+					}
+				});	
+				chart.update();
+			}
+		}
+	},
 	afterDraw: function (chart, easing) {
+
+
 		if (chart.config.data.showValue) {
 			var showValue = chart.config.data.showValue;
 			var width = showValue.valueWidth || 110 ;
@@ -1010,6 +1064,6 @@ Chart.plugins.register({
 			ctx.stroke();
 			//초기화해줌 (다른 라인에 영향이 감.)
 			ctx.setLineDash([0, 0]);
-		}
+		}		
 	}
 });

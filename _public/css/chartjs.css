@@ -67,9 +67,16 @@
     border-radius:100px;
     margin: 9px 5px;
 }
-.chartjs-title{padding-top:0.5em}
+.chartjs-title{padding-top:0.5em;box-sizing: border-box;height:2.5em;}
+.chartjs-title > .small{font-size:0.8em;line-height: 1em;text-transform: capitalize;position: relative;top:-0.3em}
 .chartjs-title.center{text-align: center;}
 .chartjs-title span{
+    color:#667688;
+    font-weight:bold;
+    text-transform: uppercase;
+}
+.chartjs-title .sub{
+    display:block;
     color:#667688;
     font-weight:bold;
     text-transform: uppercase;
@@ -82,11 +89,14 @@
     font-size:1.8em;
     letter-spacing: 3px;
 }
-.chartjs-title.center{
-    text-align: center;
-}
+.chartjs-etc{position: absolute;left:0;top:2.8em;}
+.chartjs-etc.white span{color:#fff}
+.chartjs-etc span{font-size:0.825em; color:#667688;}
+.chartjs-etc.right{right:-2em;left:initial}
+.chartjs-etc.bottom{bottom:4em;top:initial;}
+.chartjs-arrow-up{display:block;background:url(../images/common/arrow_up.png) no-repeat center;background-size:1em auto;height:3em;}
 
-.chartjs-canvas{margin-top:-1em;padding-bottom:1.6em;padding-top:.5em}
+.chartjs-canvas{margin-top:-1em;padding-bottom:1.6em;padding-top:1em}
 
 .chartjs-tab{
     position: absolute;

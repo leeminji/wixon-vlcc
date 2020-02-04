@@ -808,6 +808,11 @@ var ChartUtil = (function(){
 
 			var legendList = $("#"+_canvasId+"_legend li");
 			if( legendList.size() <= 0 ) return;
+			
+			//리셋
+			legendList.removeClass('inactvie');
+			ChartUtil.resetDataset(null, window.ChartUtil.chartList[_canvasId]);
+
 			legendList.off("click").on('click', function(){
 				thisObj.upDateDataset(event, $(this).attr("data-index"), window.ChartUtil.chartList[_canvasId]);
 				if( $(this).hasClass('inactive')){
@@ -1014,8 +1019,31 @@ Chart.plugins.register({
 		}
 	},
 	afterDraw: function (chart, easing) {
+		//showDataLabel 가 있을시 해당 label data 보여줌.
+		if( chart.config.data.showData ){
+			var showData = chart.config.data.showData;
+			var ctx = chart.chart.ctx;
+			var fontSize = showData.fontSize || "12";
+			var fontStyle = showData.fontStyle || "Arial";
 
+			ctx.font = fontSize + "px " + fontStyle;
+			ctx.textAlign = "center";
+			ctx.fillStyle = showData.fillStyle || "#ffffff";
 
+			chart.config.data.datasets.forEach(function (dataset, i) {
+				if( dataset.label == showData.label ){
+					var points = dataset._meta[chart.id].data;
+					for(var i =0;i<points.length;i++){
+						var coordination = {
+							x : points[i]._model.x,
+							y : points[i]._model.y,
+						}
+						var datatext = dataset.data[i];
+						ctx.fillText(datatext, coordination.x, coordination.y-15);	
+					}
+				}
+			});
+		}		
 		if (chart.config.data.showValue) {
 			var showValue = chart.config.data.showValue;
 			var width = showValue.valueWidth || 110 ;

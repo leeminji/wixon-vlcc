@@ -105,9 +105,9 @@
 										<span class="txt">OIL</span>
 									</a>
 									<ul class="clear TotalMenu__sublist">
-										<li class="active"><a href=""><span class="txt">Flow</span></a></li>
+										<li><a href=""><span class="txt">Flow</span></a></li>
 										<li><a href=""><span class="txt">Inventory</span></a></li>
-										<li><a href=""><span class="txt">Refinery</span></a></li>
+										<li class="active"><a href=""><span class="txt">Refinery</span></a></li>
 									</ul>					
 								</li>
 								<li data-title="Mailing">
@@ -142,7 +142,7 @@
 				</div>
 				<!-- //TopClock -->				
 				<!-- TopTitle -->
-				<div class="TopTitle"><span>OIL-Flow</span></div>
+				<div class="TopTitle"><span>OIL-Refinery</span></div>
 				<!-- //TopTitle -->				
 			</div>			
 			<!-- OilArea -->
@@ -151,118 +151,49 @@
 				<div class="js-scrollbar">
 					<div class="Layout__content__inner pb10">
 						<div class="Layout_row">
-							<div class="BoxArea01">
-								<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
-								<div class="inner">
-									<div id="chart1_legend" class="chartjs-legend"></div>
-									<div id="chart1_title" class="chartjs-title center middle"><span>CRUDE OIL SUPPLY</span></div>
-									<canvas id="chart1" class="chartjs-canvas"></canvas>
-									<div class="chartjs-tab" id="chart1_tab">
-										<a href="javascript:;" data-category="WORLD" class="active">WORLD</a>
-										<a href="javascript:;" data-category="OPEC">OPEC</a>
-										<a href="javascript:;" data-category="USA">USA</a>
-										<a href="javascript:;" data-category="OTHERS">OTHERS</a>
-									</div>
-									<div class="chartjs-bottom"><span>Source: EIA</span></div>
-								</div>
-							</div>
-						</div>
-						<!-- EXPORT -->
-						<div class="Layout_row">
-							<div class="BoxArea01">
-								<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
-								<div class="inner">
-									<div class="chartjs-tab left">
-										<span class="tab-item active">COUNTY</span>
-										<span class="tab-item">SHIP TYPE</span>
-									</div>
-									<div id="chart2_search" class="chartjs-search fixed">
-										<span class="SelectBox">
-											<select id="chart2_select" width="10">
-												<option value="WORLD" selected>WORLD</option>
-												<option value="MEG">MEG</option>
-											</select>
-										</span>
-									</div>
-									<div id="chart2_legend" class="chartjs-legend"></div>
-									<div id="chart2_title" class="chartjs-title center middle"><span>SEABORNE OIL EXPORT FLOW</span></div>
-									<canvas id="chart2" class="chartjs-canvas"></canvas>
-									<div class="chartjs-bottom"><span>Source: Kpler, Reuter</span></div>
-								</div>
-							</div>
+                            <div class="Layout_chartArea col6">
+                                <div class="BoxArea01">
+                                    <a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+                                    <div class="inner">
+                                        <div id="chart1_legend" class="chartjs-legend"></div>
+                                        <div id="chart1_title" class="chartjs-title center middle"><span>REFINERY RUN</span></div>
+                                        <canvas id="chart1" class="chartjs-canvas"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Layout_chartArea col6">
+                                <div class="BoxArea01">
+                                    <a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+                                    <div class="inner">
+                                        <div id="chart2_legend" class="chartjs-legend"></div>
+                                        <div id="chart2_title" class="chartjs-title center middle"><span>REFINING CAPACITY ADDITIONS</span></div>
+                                        <canvas id="chart2" class="chartjs-canvas"></canvas>
+                                    </div>
+                                </div>
+                            </div>
 						</div>
 						<div class="Layout_row">
-							<div class="BoxArea01">
-								<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
-								<div class="inner">
-									<div class="chartjs-tab left">
-										<span class="tab-item">COUNTY</span>
-										<span class="tab-item active">SHIP TYPE</span>
-									</div>
-									<div id="chart3_search" class="chartjs-search fixed">
-										<span class="SelectBox">
-											<select id="chart3_select" width="10">
-												<option value="WORLD" selected>WORLD</option>
-												<option value="MEG">MEG</option>
-											</select>
-										</span>
-									</div>
-									<div id="chart3_legend" class="chartjs-legend"></div>
-									<div id="chart3_title" class="chartjs-title center middle"><span>SEABORNE OIL EXPORT FLOW</span></div>
-									<canvas id="chart3" class="chartjs-canvas"></canvas>
-									<div class="chartjs-bottom"><span>Source: Kpler, Reuter</span></div>
-								</div>
-							</div>
+                            <div class="Layout_chartArea col6">
+                                <div class="BoxArea01">
+                                    <a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+                                    <div class="inner">
+                                        <div id="chart3_legend" class="chartjs-legend"></div>
+                                        <div id="chart3_title" class="chartjs-title center middle"><span>REFINERY RUN</span></div>
+                                        <canvas id="chart3" class="chartjs-canvas"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Layout_chartArea col6">
+                                <div class="BoxArea01">
+                                    <a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+                                    <div class="inner">
+                                        <div id="chart4_legend" class="chartjs-legend"></div>
+                                        <div id="chart4_title" class="chartjs-title center middle"><span>WORLD REFINERY OUTAGE</span></div>
+                                        <canvas id="chart4" class="chartjs-canvas"></canvas>
+                                    </div>
+                                </div>
+                            </div>
 						</div>
-						<!-- //EXPORT -->
-						<!-- IMPORT -->
-						<div class="Layout_row">
-							<div class="BoxArea01">
-								<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
-								<div class="inner">
-									<div class="chartjs-tab left">
-										<span class="tab-item active">COUNTY</span>
-										<span class="tab-item">SHIP TYPE</span>
-									</div>
-									<div id="chart4_search" class="chartjs-search fixed">
-										<span class="SelectBox">
-											<select id="chart4_select" width="10">
-												<option value="WORLD" selected>WORLD</option>
-												<option value="CHINA">CHINA</option>
-											</select>
-										</span>
-									</div>
-									<div id="chart4_legend" class="chartjs-legend"></div>
-									<div id="chart4_title" class="chartjs-title center middle"><span>SEABORNE OIL IMPORT FLOW</span></div>
-									<canvas id="chart4" class="chartjs-canvas"></canvas>
-									<div class="chartjs-bottom"><span>Source: Kpler, Reuter</span></div>
-								</div>
-							</div>
-						</div>
-						<div class="Layout_row">
-							<div class="BoxArea01">
-								<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
-								<div class="inner">
-									<div class="chartjs-tab left">
-										<span class="tab-item">COUNTY</span>
-										<span class="tab-item active">SHIP TYPE</span>
-									</div>
-									<div id="chart5_search" class="chartjs-search fixed">
-										<span class="SelectBox">
-											<select id="chart5_select" width="10">
-												<option value="WORLD" selected>WORLD</option>
-												<option value="CHINA">CHINA</option>
-											</select>
-										</span>
-									</div>
-									<div id="chart5_legend" class="chartjs-legend"></div>
-									<div id="chart5_title" class="chartjs-title center middle"><span>SEABORNE OIL IMPORT FLOW</span></div>
-									<canvas id="chart5" class="chartjs-canvas"></canvas>
-									<div class="chartjs-bottom"><span>Source: Kpler, Reuter</span></div>
-								</div>
-							</div>
-						</div>
-						<!-- //IMPORT -->
 						<div class="pt5"></div>
 					</div>
 				</div>
@@ -373,73 +304,72 @@
 		$(window).load(function(){
 			//chart(canvas id, chart data, chart stepSize, tabCateogoryInit)
 			//tabCateogoryInit : 카테고리로 탭있는경우 해당 index 
-	
-			//CRUDE OIL SUPPLY
-			ChartUtil.initLineChart('chart1', lineChartData_70, 1, 0, 4);
-			var chart1 = window.ChartUtil.chartList['chart1'];
+
+			//REFINERY RUN
+			ChartUtil.initLineChart('chart1', lineChartData_76, 1, false, 2);
+            var chart1 = window.ChartUtil.chartList['chart1'];
+            
 			var chart1_scaleLabel = {
 				display : true,
-				labelString : 'Million bpd',
+				labelString : 'Milion barrels',
 				fontColor : ChartUtil.colors.white_op5,
 				fontFamily : ChartUtil.font,
 				fontSize : 16
 			}		
 			chart1.config.options.scales.yAxes[0].scaleLabel = chart1_scaleLabel;
-			chart1.options.showPointLine = true;
-			chart1.update();
+            chart1.update();
 
-			//SEABORNE OIL EXPORT FLOW - country
-			ChartUtil.initStackedChart('chart2', lineChartData_71, 10000, false, 4);
+			//REFINING CAPACITY ADDITIONS
+			ChartUtil.initStackedChart('chart2', lineChartData_77, 500, false, 2);
 			var chart2 = window.ChartUtil.chartList['chart2'];
 			var chart2_scaleLabel = {
 				display : true,
-				labelString : 'KB per day',
+				labelString : 'KB',
 				fontColor : ChartUtil.colors.white_op5,
 				fontFamily : ChartUtil.font,
 				fontSize : 16
 			}		
 			chart2.config.options.scales.yAxes[0].scaleLabel = chart2_scaleLabel;
-			chart2.update();
-
-			//SEABORNE OIL EXPORT FLOW - ship type
-			ChartUtil.initStackedChart('chart3', lineChartData_72, 1000, false, 4);
+            chart2.update();
+            
+			//SEABORNE TRADE AREA ONLY
+			ChartUtil.initStackedChart('chart3', lineChartData_78, 300, false, 1.8);
 			var chart3 = window.ChartUtil.chartList['chart3'];
 			var chart3_scaleLabel = {
 				display : true,
-				labelString : 'KB per day',
+				labelString : 'KB',
 				fontColor : ChartUtil.colors.white_op5,
 				fontFamily : ChartUtil.font,
 				fontSize : 16
 			}		
 			chart3.config.options.scales.yAxes[0].scaleLabel = chart3_scaleLabel;
-			chart3.update();
-
-			//SEABORNE OIL IMPORT FLOW - country
-			ChartUtil.initStackedChart('chart4', lineChartData_73, 10000, false, 4);
-			var chart4 = window.ChartUtil.chartList['chart4'];
-			var chart4_scaleLabel = {
+            chart3.update();
+            
+            //WORLD REFINERY OUTAGE
+            ChartUtil.initLineChart('chart4', lineChartData_79, 3000000, false, 1.8);
+           	//마지막 꼬리 라벨 넣기( 데이터가 다른 곳이랑 다릅니다. 확인필요. )
+            var chart4 = ChartUtil.chartList['chart4'];
+            chart4.options.showPointLine = true;
+            var chart4_scaleLabel = {
 				display : true,
-				labelString : 'KB per day',
+				labelString : 'Barrel per day',
 				fontColor : ChartUtil.colors.white_op5,
 				fontFamily : ChartUtil.font,
 				fontSize : 16
 			}		
-			chart4.config.options.scales.yAxes[0].scaleLabel = chart4_scaleLabel;
-			chart4.update();
-
-			//SEABORNE OIL IMPORT FLOW - ship type
-			ChartUtil.initStackedChart('chart5', lineChartData_74, 1000, false, 4);
-			var chart5 = window.ChartUtil.chartList['chart5'];
-			var chart5_scaleLabel = {
-				display : true,
-				labelString : 'KB per day',
-				fontColor : ChartUtil.colors.white_op5,
-				fontFamily : ChartUtil.font,
-				fontSize : 16
-			}		
-			chart5.config.options.scales.yAxes[0].scaleLabel = chart5_scaleLabel;
-			chart5.update();
-
+            chart4.config.options.scales.yAxes[0].scaleLabel = chart4_scaleLabel; 
+         	//y축 왼쪽 변경
+			var chart4_ticks = chart4.options.scales.yAxes[0].ticks;
+		
+            chart4_ticks.userCallback = function(value, index, values) {
+                value = value.toString();
+                value = value.split(/(?=(?:...)*$)/);
+                value = value.join(',');
+                return value;
+			}             
+            chart4.options.showValue = true; 
+            chart4.options.layout.padding.right = 120;
+			chart4.update(); 
 		});
 	</script>
 </body>

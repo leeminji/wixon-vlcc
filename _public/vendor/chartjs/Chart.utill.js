@@ -9,9 +9,9 @@ var ChartUtil = (function(){
 			orange: 'rgb(255, 154, 99)',
 			yellow: 'rgb(255, 205, 86)',
 			darkgreen: 'rgb(65, 134, 113)',
-			green: 'rgb(65, 255, 204)',
-			green_op5: 'rgba(65, 255, 204, 0.5)',
-			green_op2: 'rgba(65, 255, 204, 0.2)',
+			green: 'rgb(25, 167, 112)',
+			green_op5: 'rgba(5, 167, 112, 0.5)',
+			green_op2: 'rgba(5, 167, 112, 0.2)',
 			yellowish : 'rgb(151,211,188)',
 			purple: 'rgb(153, 102, 255)',
 			grey: 'rgb(201, 203, 207)',
@@ -36,6 +36,7 @@ var ChartUtil = (function(){
 			olive_op5 : 'rgba(108,111,54,0.5)',
 			yellowgreen : 'rgba(136,190,0,1)',
 			yellowgreen_op5 : 'rgba(136,190,0,0.5)',
+			pink : 'rgb(203,107,107)',
 		},
 		randomData : function(min, max){
 			return Math.floor(Math.random() * (max-min+1)) + min;
@@ -1019,6 +1020,18 @@ Chart.plugins.register({
 		}
 	},
 	afterDraw: function (chart, easing) {
+		//chartText
+		if( chart.config.data.chartText ){
+			var ctx = chart.chart.ctx;
+			var chartText = chart.config.data.chartText;
+			var fillStyle = chartText.fillStyle || "#ffffff";
+			ctx.fillStyle = fillStyle;
+			var fontSize = chartText.fontSize || "12";
+			var fontStyle = chartText.fontStyle || "Arial";		
+			ctx.font = fontSize+"px " + fontStyle;
+			ctx.textAlign = chartText.textAlign || "right";
+			ctx.fillText(chartText.text, chart.width, fontSize);
+		}		
 		//showDataLabel 가 있을시 해당 label data 보여줌.
 		if( chart.config.data.showData ){
 			var showData = chart.config.data.showData;
@@ -1064,11 +1077,14 @@ Chart.plugins.register({
 					y : dataset._meta[chart.id].data[last-1]._model.y,
 				}
 				var lastText =  dataset.dataInfo;
-				
+				var lines = lastText.split('\n');
 				ctx.fillStyle = dataset.borderColor || "#000000";
-				ctx.fillRect(coordination.x, coordination.y-(fontSize), width, fontSize*2);
+				ctx.fillRect(coordination.x, coordination.y-(fontSize), width, fontSize*1.8);
 				ctx.fillStyle = dataset.fontColor || "#ffffff";
-				ctx.fillText(lastText, coordination.x+5, coordination.y+1);
+				
+				for( var i=0;i<lines.length;i++){
+					ctx.fillText(lines[i], coordination.x+5, (i*(fontSize*1.8)) + coordination.y);
+				}
 				
 			});
 		}

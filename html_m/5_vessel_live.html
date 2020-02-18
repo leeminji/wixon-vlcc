@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>LIVE POSITION > VESSEL > VLCC LAB</title>
+	<link rel="stylesheet" href="../_public_m/css/style_m.css" />
+	
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="../_public_m/favicon/favicon.ico" /> <!-- Chrome, Safari, IE -->
+	<link rel="icon" href="../_public_m/favicon/favicon.png"><!-- Firefox, Opera (Chrome and Safari say thanks but no thanks) -->
+	<link rel="icon" href="../_public_m/favicon/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" href="../_public_m/favicon/favicon-64x64.png" sizes="64x64" />
+	<link rel="apple-touch-icon-precomposed" href="../_public_m/favicon/favicon-152x152.png" />  <!-- iOS와 Android -->
+	<meta name="msapplication-TileImage" content="../_public_m/favicon/favicon-144x144.png" />
+	<!-- //favicon -->
+</head>
+<body>
+	<div id="app" class="App">
+		<!-- TotalMenu 메뉴부분 -->
+		<div class="TotalMenu" id="TotalMenu">
+			<div class="TotalMenu__inner">
+				<div class="TotalMenu__top">
+					<div class="TotalMenu__btnStart">
+						<a href="" class="TotalMenu__button join"><span>MEMBER JOIN</span></a>
+						<a href="" class="TotalMenu__button login"><span>LOGIN</span></a>
+					</div>
+					<div class="TotalMenu__btnLast">
+						<a href="#" class="TotalMenu__button close TotalMenu__close"><span class="skip">close</span></a>
+					</div>
+				</div>
+				<div class="TotalMenu__content">
+					<nav class="TotalMenu__listArea">
+						<h2 class="TotalMenu__title"><span>VLCCLAB</span><span class="skip">MENU</span></h2>
+						<ul class="clear clearfix TotalMenu__list">
+							<li><a href="./1_setting_notice.html"><span>SETTING</span></a></li>
+							<li><a href="./2_dashboard.html"><span>Dashboard</span></a></li>
+							<li><a href="./3_fixtures.html"><span>fixture</span></a></li>
+							<li><a href="#"><span>Map</span></a></li>
+							<li class="active"><a href="./5_vessel.html"><span>VESSEL</span></a></li>
+							<li><a href="#"><span>DISTANCE</span></a></li>
+							<li><a href="#"><span>TCE CALCULATOR</span></a></li>
+							<li><a href="#"><span>FLEET LIBRARY</span></a></li>
+							<li><a href="#"><span>RESEARCH</span></a></li>
+							<li><a href="#"><span>MY FLEET</span></a></li>
+						</ul>
+						<div class="DashClock">
+							<div class="DashClock__inner">
+								<div class="time"><span>04:07 UTC</span></div>
+								<div class="date"><span>13 May</span></div>
+							</div>
+						</div>
+					</nav>
+					<div class="TotalMenu__logo">
+						<div class="logo"><img src="../_public_m/images/common/bottom_logo.png" alt="vlcclab"></div>
+						<span class="text">VLCC Vessel Total Information Platform</span>
+						<span class="text">Platform Version 1.0</span>
+					</div>
+				</div>
+			</div>
+			<div class="blind TotalMenu__blind"></div>
+		</div>
+		<!-- //TotalMenu 메뉴부분 -->		
+		<div class="Page">			
+			<!-- Page__header -->
+			<div class="Page__header">
+				<div class="PageHeader">
+                    <div class="PageHeader__logo">VLCCLAB</div>
+					<div class="PageHeader__btnLast">
+						<a href="#" class="icon icon-logout"><span class="skip">LOGOUT</span></a>
+						<a href="#" class="icon icon-menu TotalMenu__open"><span class="skip">MENU</span></a>
+					</div>
+				</div>
+			</div>
+			<!-- //Page__header -->
+			<!-- Page__inner -->
+			<div class="Page__inner">
+                <div class="Page__navigation">
+                    <!-- Navigation -->
+                    <div class="Navigation">
+                        <h1 class="Navigation__title"><span>VESSEL</span></h1>
+                        <div class="Navigation__list">
+                            <div class="Navigation__item active"><a href="./5_vessel_live.html" class="link"><span>LIVE POSITION</span></a></div>
+                            <div class="Navigation__item"><a href="./5_vessel_voyages.html" class="link"><span>VOYAGES</span></a></div>
+                            <div class="Navigation__item"><a href="./5_vessel_parti.html" class="link"><span>PARTICULARS</span></a></div>
+                        </div> 
+                    </div>
+                    <!-- //Navigation -->
+                </div>
+                <div class="TotalMapArea">
+                    <!-- 구글맵 영역 -->
+                    <div id="TotalMap" class="TotalMap">지도영역</div>
+                    <!-- //구글맵 영역 -->                       
+                </div>
+                <!-- ToolsInfo -->
+                <div class="ToolsInfo">
+                    <div class="ToolsInfo__inner">
+                        <div class="ToolsInfo__title">
+                            <h2 class="title"><span>Dragon</span></h2>
+                            <div class="info"><span>Dynacom Tankers</span></div>
+                            <div class="number"><span>IMO : 9244635</span></div>
+                        </div>
+                        <!-- Voyages -->
+                        <div class="Voyages">
+                            <div class="Voyages__title"><span>Voyages</span></div>
+                            <div class="Voyages__inner">
+                                <div class="Voyages__list" id="VoyagesList">
+                                    <div class="Voyages__item active">
+                                        <a href="#" class="titleLink">
+                                            <span class="num">56</span>
+                                            <span class="text">Southworld-Nacala</span>
+                                            <span class="date">30 Jun 2019(CNR, RNR)</span>
+                                        </a>
+                                        <div class="infoContent">
+                                            <!-- VoyagesPath -->
+                                            <div class="VoyagesPath">
+                                                <div class="clear VoyagesPath__list">
+                                                    <!-- VoyagesPath__path : style="height:값" 스크립트로 제어 -->
+                                                    <div class="VoyagesPath__line"></div>
+                                                    <!-- VoyagesPath__item : Start -->
+                                                    <div class="VoyagesPath__item">
+                                                        <div class="icon icon_start"><span class="skip">Start</span></div>
+                                                        <div class="name"><span>Start</span></div>
+                                                        <div class="info">
+                                                            <div class="title"><span>Southworld</span></div>
+                                                            <div class="date"><span>04 Jun 15:52</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //VoyagesPath__item : Start -->
+                                                    <!-- VoyagesPath__item : Stop -->
+                                                    <div class="VoyagesPath__item">
+                                                        <div class="icon icon_stop"><span class="skip">Stop</span></div>
+                                                        <div class="name"><span>Stop</span></div>
+                                                        <div class="info">
+                                                            <div class="title"><span>Falmouth</span></div>
+                                                            <div class="date"><span>06 Jun 21:33-27 Jun 18:17</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //VoyagesPath__item : Stop -->
+                                                    <!-- VoyagesPath__item : Load -->
+                                                    <div class="VoyagesPath__item">
+                                                        <div class="icon icon_load"><span class="skip">Load</span></div>
+                                                        <div class="name"><span>Load</span></div>
+                                                        <div class="info">
+                                                            <div class="title"><span>Southworld</span></div>
+                                                            <div class="date"><span>30 Jun 03:53-14 Jul 07:32</span></div>
+                                                        </div>
+                                                        <div class="ShipPath">
+                                                            <div class="ShipPath__item">
+                                                                <div class="cate"><span>Ship to Ship</span></div>
+                                                                <div class="type"><span>sts</span></div>
+                                                                <div class="info_title"><span>From Chlos 1</span></div>
+                                                                <div class="info">
+                                                                    <div class="date"><span>30 Jun 03:53-14 Jul 07:32</span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ShipPath__item">
+                                                                <div class="cate"><span>Ship to Ship</span></div>
+                                                                <div class="type"><span>sts</span></div>
+                                                                <div class="info_title"><span>From Chlos 1</span></div>
+                                                                <div class="info">
+                                                                    <div class="date"><span>30 Jun 03:53-14 Jul 07:32</span></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //VoyagesPath__item : Load -->
+                                                    <!-- VoyagesPath__item : latest -->
+                                                    <div class="VoyagesPath__item latest">
+                                                        <div class="icon icon_latest"></div>
+                                                        <div class="detail"><span>Latest AIS : 09/04 06:52</span></div>
+                                                    </div>
+                                                    <!-- //VoyagesPath__item : latest -->
+                                                    <!-- VoyagesPath__item : discharge -->
+                                                    <div class="VoyagesPath__item">
+                                                        <div class="icon icon_discharge"><span class="skip">discharge</span></div>
+                                                        <div class="name"><span>discharge</span></div>
+                                                        <div class="info">
+                                                            <div class="title"><span>Falmouth</span></div>
+                                                            <div class="date"><span>06 Jun 21:33-27 Jun 18:17</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //VoyagesPath__item : discharge -->
+                                                </div>
+                                            </div>
+                                            <!-- //VoyagesPath -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Voyages__link"><a href="#"><span>Voyages &gt;</span></a></div>
+                        </div>
+                        <!-- //Voyages -->
+                        <!-- Particulars -->
+                        <div class="Particulars">
+                            <div class="Particulars__title"><span>Particulars</span></div>
+                            <ul class="clearfix clear Particulars__list">
+                                <li>
+                                    <div class="tit">SDWT</div>
+                                    <div class="txt">308,456</div>
+                                </li>
+                                <li>
+                                    <div class="tit">LOA</div>
+                                    <div class="txt">350</div>
+                                </li>
+                                <li>
+                                    <div class="tit">DRAFT</div>
+                                    <div class="txt">23.0</div>
+                                </li>
+                                <li>
+                                    <div class="tit">SCRUBBER</div>
+                                    <div class="txt">FITTED</div>
+                                </li>
+                                <li>
+                                    <div class="tit">LAST HULL SURVEY</div>
+                                    <div class="txt">2019.12.01</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //Particulars -->
+                        <!-- EstimationsToReach -->
+                        <div class="EstimationsToReach">
+                            <div class="EstimationsToReach__title">
+                                <span>Estimations to reach</span>
+                            </div>
+                            <div class="EstimationsToReach__search">
+                                <span class="SelectBox">
+                                    <select name="sel_1" id="sel_1" width="10">
+                                        <option value="">Rizhao</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="EstimationsToReach__info">
+                                <div class="text"><span>Vessel is <strong>4,810 Nm</strong> away from destination.</span></div>
+                                <div class="Estimation">
+                                    <div class="Estimation__input left">
+                                        <div class="innerInput">
+                                            <input type="text" name="stx1" id="stx1">
+                                            <label for="stx1">Speed (kts/h)</label>
+                                        </div>
+                                    </div>
+                                    <div class="Estimation__input arrow"></div>
+                                    <div class="Estimation__input right">
+                                        <div class="innerInput">
+                                            <input type="date" name="stx2" id="stx2">
+                                            <label for="stx2">ETA (date)</label>
+                                        </div>
+                                        <span class="etc">OR</span>
+                                        <div class="innerInput">
+                                            <input type="text" name="stx3" id="stx3">
+                                            <label for="stx3">Duration (days)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="notice"><span>Edit either Speed or Eta or Trip Duration. System will recalculate corresponding values.</span></div>
+                            </div>
+                        </div>
+                        <!-- //EstimationsToReach -->
+                    </div>
+                </div>
+                <!-- //ToolsInfo -->       
+			</div>
+			<!-- //Page__inner -->
+		</div>
+    </div>
+    
+	<!-- javascript -->
+	<script src="../_public_m/js/jquery-1.12.4.js"></script>
+	<script src="../_public_m/js/slick.js"></script>
+	<script src="../_public_m/js/jquery-ui.js"></script>
+    <script src="../_public_m/js/ui.moblie.js"></script>
+    <!-- //javascript -->
+    
+	<!-- 차트js추가 -->
+	<script type="text/javascript" src="../_public/vendor/chartjs/moment.min.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/chartjs-plugin-datalabels.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.utill.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.sampleData.js"></script> <!-- Chart.sampleData.js 여기에 샘플데이터있습니다. -->
+    <!-- //차트js추가 -->
+    <script type="text/javascript">
+		$(window).load(function(){
+
+
+        });
+    </script>
+
+	<!-- 맵 js 추가 -->
+	<script type="text/javascript" src="../_public/js/ui.gooleMap.js"></script>
+	<script type="text/javascript" src="../_public/js/ui.googleMap.sampleData.js"></script>
+	<script type="text/javascript" src="../_public/js/sv.map.controller.min.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&region=KR&language=en&key=AIzaSyCQ8LK-VtL1tudKfKMUo-Br9bQNt5u7Cc0&callback=initMap" async defer></script>
+    <!-- //맵 js 추가 -->
+    <script type="text/javascript">
+		var voyagesSampleData = {
+			"geometry":{
+				"coordinates": [
+					{lat: 15.933509, lng: 81.705314}, 
+					{lat : 19.160335, lng : 88.916407},
+					{lat: 15.091604, lng: 96.180620}, 
+					{lat: 0.704153, lng: 104.684426},
+					{lat : 12.834711, lng : 111.434909},
+					{lat: 21.280128, lng:  114.058712},
+					{lat : 22.665475, lng : 117.492517},
+					{lat: 27.201494, lng :122.496629},
+					{lat: 36.051769, lng: 120.342220},
+				]
+			},
+			"markers" : [
+				{
+					"state" : "start",
+					"port_name":"Yuan Qiu Hu",
+					"position" : {lat: 15.933509, lng: 81.705314}
+				},
+				{
+					"state" : "latest",
+					"position" : {lat : 19.160335, lng : 88.916407}
+				},
+				{
+					"state" : "stop",
+					"port_name":"Falmouth",
+					"position" : {lat : 22.665475, lng : 117.492517}
+				},
+				{
+					"state" : "load",
+					"port_name":"Southworld",
+					"position" : {lat: 0.704153, lng: 104.684426}
+				},
+				{
+					"state" : "discharge",
+					"port_name":"Qingdao",
+					"position" : {lat: 36.051769, lng: 120.342220}
+				},
+			]
+		};
+
+		var _map;
+		function initMap(){
+			_map = new google.maps.Map(document.getElementById('TotalMap'), {
+				center: {lat: 36.705106, lng: 127},
+				zoom: 3,
+				styles : window.uiGooglMap.googleMapStyle
+			});
+			var _lineData = voyagesSampleData.geometry.coordinates;
+			var _markerData = voyagesSampleData.markers;
+			createLine(_map, _lineData);
+			createMarker(_map, _markerData);
+		}
+
+		function createLine(_map, _data){
+			var path = new google.maps.Polyline({
+				path: _data,
+				geodesic: true,
+				strokeWidth : 0,
+				strokeOpacity : 0,
+				strokeColor : "#FFFFFF",
+				icons : [
+					{
+						icon: {
+							path: 'M 0,-.1 0,.1',
+							strokeOpacity: 1,
+							scale: 2
+						},
+						offset: '0',
+						repeat: '8px'
+					}
+				]
+			});
+			path.setMap(_map);
+		}
+		//마커셋팅
+		function getImageIcon(_data){
+			var imgPath = '/_public_m/images/map/icon/';
+			var imgExt = ".png";
+			switch(_data){
+				case "load" :
+					return  imgPath + "icon_path_load"+imgExt;
+					break;
+				case "stop" :
+					return  imgPath + "icon_path_stop"+imgExt;
+					break;
+				case "start" :
+					return  imgPath + "icon_path_start"+imgExt;
+					break;
+				case "discharge" :
+					return  imgPath + "icon_path_discharge"+imgExt;
+					break;
+				case "point" :
+					return  imgPath + "icon_path_point"+imgExt;
+					break;
+				case "latest" :
+					return  imgPath + "icon_path_latest"+imgExt;
+					break;
+			}
+		}
+		function createMarker(_map, _data){
+			for (var i = 0; i < _data.length; i++) {
+				var data = _data[i];
+				var bounds = new google.maps.LatLngBounds();
+				var imageUrl = getImageIcon(data.state);
+				var image = {
+                    url: imageUrl,
+                    scaledSize: new google.maps.Size(26, 26),
+					size: new google.maps.Size(26, 26),
+					origin: new google.maps.Point(0, 0),
+					anchor: new google.maps.Point(26/2, 26/2)
+				};
+				var marker = new google.maps.Marker({
+					position: data.position,
+					map: _map,
+					icon: image,
+					title: data.port_name ? data.port_name : "",
+					zIndex: (i+1)
+				});
+				bounds.extend(marker.position);
+				var info = window.uiGooglMap.infoShipMarker();
+				if( data.state == 'latest' ){
+					marker.addListener('click', function(event) {
+						info.open(event.pixel);
+					});
+				}
+			}
+		}
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+			ui_voyages();
+		})
+		function ui_voyages(){
+			var item = $(".Voyages__item");
+			
+			//Voyages 클릭
+			item.each(function(){
+				var path = $(this).find(".VoyagesPath__line");
+				
+				//latest 찾아서 top 얻기.
+				var latest = $(this).find(".VoyagesPath__item.latest");
+				$(this).children(".titleLink").on("click", function(e){
+					e.preventDefault();
+					if( !$(this).parent().hasClass("active") ){
+						item.removeClass("active");
+						$(this).parent().addClass("active");
+						if( latest.length > 0 ){
+							path.css('height', latest.position().top);
+						}	
+					}else{
+						$(this).parent().removeClass("active");
+						if( latest.length > 0 ){
+							path.css("height", 0);
+						}
+					}
+				})
+			});
+		}
+    </script>
+</body>
+</html>

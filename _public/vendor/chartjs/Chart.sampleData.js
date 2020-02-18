@@ -803,8 +803,20 @@ var lineChartData_10 = {
         backgroundColor: ChartUtil.colors.white,
         pointRadius: 2,
         fill: false,
-		data: [ 80, 100, 20, 30, 60, 60, 70, 70, 88,90, 85],
-        yAxisID: 'y-axis-1',
+		data: [
+            ChartUtil.randomData(1300, 1500),
+            ChartUtil.randomData(1300, 1500),
+            ChartUtil.randomData(1300, 1500),
+            ChartUtil.randomData(1300, 1500),
+            ChartUtil.randomData(1300, 1500),
+            ChartUtil.randomData(1300, 1500),
+            ChartUtil.randomData(1300, 1500),
+            ChartUtil.randomData(1300, 1500),
+            ChartUtil.randomData(1300, 1500),
+            ChartUtil.randomData(1300, 1500),
+            ChartUtil.randomData(1300, 1500),
+        ],
+        yAxisID: 'y-axis-2',
         lineTension : 0,
     },
     {
@@ -815,7 +827,7 @@ var lineChartData_10 = {
         pointRadius: 2,
         fill: false,
 		data: [
-            ChartUtil.randomData(80, 100),
+            ChartUtil.randomData(90, 105),
             ChartUtil.randomData(90, 105),
             ChartUtil.randomData(10, 25),
             ChartUtil.randomData(20, 35),
@@ -1433,7 +1445,7 @@ var lineChartData_15 = {
 var lineChartData_16 = {
     datasets: [{
         borderWidth : [3,3],
-        borderColor : ChartUtil.colors.green,
+        borderColor : "#75fff0",
         data: [
             ChartUtil.randomData(1, 100),
             ChartUtil.randomData(1, 100),

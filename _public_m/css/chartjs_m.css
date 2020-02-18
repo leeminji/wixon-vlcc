@@ -1,0 +1,144 @@
+
+/*  chart */
+.chartjs-legend{
+    min-height: 1.75em;
+    position: absolute;
+    right: 0;
+    left:0;
+    bottom:-0.2em;
+}
+.chartjs-legend ul.doughnut{padding-top:1em;padding-bottom:.5em}
+.chartjs-legend ul.doughnut li{cursor:default;}
+.chartjs-legend ol, .chartjs-legend ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+    text-align:right;
+    text-align: center;
+}
+.chartjs-legend li {
+    cursor:pointer;
+    display: inline-block;
+    margin: 0px 2px;
+    color:#595959;
+    font-size:12px;
+}
+.chartjs-legend li span{
+    display: inline-block;
+    line-height: 6px;
+    height:6px;
+    vertical-align: middle;
+    color: #909090;
+    letter-spacing: -0.5px;
+}
+.chartjs-legend li span.bar{
+    position:relative;
+    margin: 0 3px;
+    border-radius:100px;
+    color:white;
+    width:6px;
+    border-color: transparent;
+}
+.chartjs-legend li.inactive span{
+    text-decoration: line-through;
+}
+.chartjs-legend li span.line{
+    position:relative;
+    width:15px;
+    height:15px;
+    margin-top:-1px;
+    color:white;
+    border-radius:10px;
+    display:inline-block;
+    vertical-align: middle;
+    margin-right:5px;
+}
+.chartjs-legend.white li span{
+    color:#909090;
+}
+.chartjs-legend li div.line{
+    float:left;
+    height:2px;
+    background:#000;
+    font-size:0;
+    line-height:0;
+    width:25px;
+    padding:1px 0px;
+    border-radius:100px;
+    margin: 9px 5px;
+}
+.chartjs-title{padding-top:.6em}
+.chartjs-title.center{text-align: center;}
+.chartjs-title span{
+    color:#667688;
+    font-weight:bold;
+    text-transform: uppercase;
+}
+.chartjs-title .sub{
+    display:block;
+    color:#667688;
+    font-weight:bold;
+    text-transform: uppercase;
+}
+.chartjs-title.middle{padding:.5em 0;letter-spacing: 1px;}
+.chartjs-title.middle span{
+    font-size:1.3em;
+}
+.chartjs-title.big span{
+    font-size:1.8em;
+    letter-spacing: 3px;
+}
+.chartjs-etc{position: absolute;left:0;top:2.8em;}
+.chartjs-etc.white span{color:#fff}
+.chartjs-etc span{font-size:0.825em; color:#667688;}
+.chartjs-etc.right{right:-2em;left:initial}
+.chartjs-etc.bottom{bottom:4em;top:initial;}
+.chartjs-arrow-up{display:block;background:url(../images/common/arrow_up.png) no-repeat center;background-size:1em auto;height:3em;}
+.chartjs-bottom{position: absolute;right:0;bottom:0}
+.chartjs-bottom span{font-size:1.2em;color:#fff;font-weight: bold;}
+.chartjs-canvas{margin-top:-.5em;padding-bottom:1.6em;}
+
+.chartjs-tab{
+    position: absolute;
+    z-index:100;
+    right:0;
+    top:.5em;
+}
+.chartjs-tab.left{left:0;right:inherit}
+.chartjs-tab.middle{top:0.4em;}
+.chartjs-tab.middle a, .chartjs-tab .tab-item{line-height: 2em;padding:0 1.5em}
+.chartjs-tab a, .chartjs-tab .tab-item{
+    float:left;
+    display: block;
+    font-size:0.8em;
+    line-height: 1.6em;
+    padding:0 1em;
+    border: 1px solid #233748;
+    outline: 1px solid #000;
+    color: #667688;
+}
+.chartjs-tab a:hover{
+    background: rgba(0,0,0,0.5)
+}
+.chartjs-tab a.active, .chartjs-tab .tab-item.active{
+    background:#000;
+    color:#fff;
+}
+
+.chartjs-info-legend{position: absolute;width:26%;top:35%;font-size:0.8em}
+.chartjs-info-legend.left{left:0;text-align: right;}
+.chartjs-info-legend.right{right:0}
+.chartjs-info-legend dl{margin:0;padding:0;color:#667688;}
+.chartjs-info-legend dl dt{font-weight: bold;padding-bottom:1em}
+.chartjs-info-legend dl dd{font-size:1em}
+
+.chartjs-search{font-size:0.825em;text-align:right;padding-bottom:1em}
+.chartjs-search.fixed{position: absolute;right:0;top:.2em;padding-bottom: 0;}
+.chartjs-search.bottom{top:2.6em}
+.chartjs-search .text{display: inline-block;padding:0 .2em;vertical-align: middle;color:#fff;}
+.chartjs-text{position: absolute;bottom:-2em;left:-2em;right:-2em;color:#909090;font-size:12px;text-align: center;line-height: 1.1em;}
+
+.chartjs-yAxes-label{position: absolute;top:50%;}
+.chartjs-yAxes-label span{color:#76828f;font-size: 0.8em;}
+.chartjs-yAxes-label.left{left:-1em;transform: rotate(270deg);}
+.chartjs-yAxes-label.right{right:-5em;transform: rotate(90deg);}

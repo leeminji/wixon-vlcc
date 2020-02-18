@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73.12 69.5">
+<defs>
+	<style>
+	.bell{fill:#fff}
+	.line1,.line2{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;}
+	.line1{stroke-width:6px;}
+	.line2{stroke-width:7px;}
+	</style>
+</defs>
+	<title>icon_alarm</title>
+	<g>
+		<g>
+		<path class="bell" d="M30.06,62.5h13s1,7-7,7C29.06,69.5,30.06,62.5,30.06,62.5Z"/>
+		<path class="line1" d="M47.5,13.23A15.75,15.75,0,0,1,59.88,26.5"/>
+		<path class="line2" d="M51,3.5S67.85,4.38,69.62,23"/>
+		<path class="line1" d="M25.62,13.23A15.77,15.77,0,0,0,13.23,26.5"/>
+		<path class="line2" d="M22.08,3.5S5.27,4.38,3.5,23"/>
+		<path class="bell" d="M55.44,50l-2.1-13.63C52.29,25.89,40.75,20.65,40.75,20.65V19.5h0a2,2,0,0,0-2-2H34.36a2,2,0,0,0-2,2h0v1.15S20.83,25.89,19.78,36.38L17.68,50s-4.2,1.05-4.2,5.25,1,5.24,4.2,5.24H55.44c3.14,0,4.19-1,4.19-5.24S55.44,50,55.44,50Z"/>
+		</g>
+	</g>
+</svg>

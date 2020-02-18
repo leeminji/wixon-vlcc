@@ -46,7 +46,6 @@
 	a:selected, a:visited {outline: none}
 	a:active, a:focus {}
 
-
 	/* hidden contents */
 	.skip, .hidden, .commonH{position:absolute; width:0; height:0; font-size:0; line-height:0; overflow:hidden; visibility:hidden; z-index:-1;}
 
@@ -62,6 +61,53 @@
 
 	/*ellipsis*/
 	.ellipsis{display:block;width:100%;white-space: nowrap;overflow:hidden;text-overflow:ellipsis;}
+	.ellipsis-2{display:-webkit-box;white-space: normal;line-height:1.2em;height:2.4em;-webkit-line-clamp: 2;-webkit-box-orient:vertical;word-wrap:break-word;}
+
+	/* skipToContent */
+	#skipToContent {position:absolute;top:0;height:0px;width:100%;z-index:30;}
+	#skipToContent a {display:block; height:1px; width:1px; margin-bottom:-1px; overflow:hidden; text-align:center;color:#fff;white-space:nowrap;;}
+	#skipToContent a:focus, #skipToContent a:active {display:block;top:0;width:100%;height:30px;line-height:30px;background:#555;color:#eee;}
+
+	/*form&input base style*/
+	input{height:2em;font-size:1em;line-height:1em;padding:0.5em;border:1px solid #aaa;background:#fff;box-sizing: border-box;}
+	.ie8 input{height:1em;padding:.9em 0.5em}
+	input[size="100"]{width:100%}
+	input[size="90"]{width:90%}
+	input[size="80"]{width:80%}
+	input[size="30"]{width:30em}
+	input[size="25"]{width:25em}
+	input[size="20"]{width:20em}
+	input[size="15"]{width:15em}	
+	input[size="10"]{width:10em}
+	input[size="8"]{width:8em}
+	input[size="5"]{width:5em}
+	input[type="file"]{padding:0}
+	input::-webkit-input-placeholder { color: #666666;}
+	input::-moz-placeholder { color: #666666;}
+	input:-ms-input-placeholder { color: #666666;}
+	input:-moz-placeholder { color: #666666;}
+	input[type="submit"], input[type="reset"], input[type="button"], input[type="text"], input[type="password"]{-webkit-appearance: none;-moz-appearance: none;appearance: none;border-radius: 0px;} /* 모바일 라운드 제거 */
+	
+	/* Change the white to any color ;) */
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover, 
+	input:-webkit-autofill:focus, 
+	input:-webkit-autofill:active  {
+		-webkit-box-shadow: 0 0 1em rgba(0,0,0,0.2) inset !important;
+		background-color: transparent !important;
+	}
+	textarea{display:block;border:1px solid #e5e5e5;padding:.5em .3em}
+	textarea[size="100"]{width:99%}
+	select{font-size:1em;height:2em;line-height:1em;padding:0.5em;margin:0;border:1px solid #aaa;color:#666666;background:transparent;}
+	.ie8 select{height:1.8em}
+	select[width="5"]{width:5em}
+	select[width="6"]{width:6em}
+	select[width="8"]{width:8em}
+	select[width="10"]{width:10em}
+	select[width="15"]{width:15em}	
+	select[width="20"]{width:20em}
+	select[width="30"]{width:30em}
+	select[width="100"]{width:100%}
 
 	/* padding & margin */
 	.pt5{padding-top:0.3125rem;}

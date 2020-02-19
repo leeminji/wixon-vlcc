@@ -308,15 +308,38 @@
 	<!-- //차트js추가 -->
 	<script type="text/javascript" src="../_public/js/ui.js"></script>
 	<script>
+
+		//툴팁 누적수치값 노출 함수
+		function getDataGap(tooltipItem, data){
+			if( tooltipItem.datasetIndex != 0 ){
+				var x1 = data.datasets[tooltipItem.datasetIndex];
+				var x1_data = parseInt(x1.data[tooltipItem.index]);
+				var x2 = data.datasets[tooltipItem.datasetIndex-1];
+				var x2_data = parseInt(x2.data[tooltipItem.index]);
+
+				//툴팁변경시 아래 값 변경하세요.
+				return x1.label+"("+x1_data+")"+"-"+x2.label+"("+x2_data+")"+" : "+(x1_data-x2_data);
+			}else{
+				var item = data.datasets[tooltipItem.datasetIndex];
+				return item.label +" : "+ item.data[tooltipItem.index];
+			}
+		}
+
 		$(window).load(function(){
 			//chart(canvas id, chart data, chart stepSize, tabCateogoryInit)
 			//tabCateogoryInit : 카테고리로 탭있는경우 해당 index 
 
 			//Total volume demand (Mn MT)
 			ChartUtil.initLineChart('chart1', lineChartData_66, 20, false, 2.5);
+			var chart1 = ChartUtil.chartList['chart1'];
+			chart1.options.tooltips.callbacks.label = getDataGap;
+			chart1.update();
 
 			//Total tonne miles demand (Bn TM)
-			ChartUtil.initLineChart('chart2', lineChartData_67, 100, false, 2.5);
+			ChartUtil.initLineChart('chart2', lineChartData_67, 50, false, 2.5);
+			var chart2 = ChartUtil.chartList['chart2'];
+			chart2.options.tooltips.callbacks.label = getDataGap;
+			chart2.update();
 
 			//Tonne miles demand by export area
 			ChartUtil.initLineChart('chart3', lineChartData_68, 10, 0, 2.5);

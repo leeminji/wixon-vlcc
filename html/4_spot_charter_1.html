@@ -995,18 +995,18 @@
 			ChartUtil.initStackedChart('chart1', lineChartData_7, 10, false, 2.5);
 			
 			//FREIGHT ASSESSMENT
-			ChartUtil.initLineChart('chart2', lineChartData_20, false, 0, 2);
+			ChartUtil.initLineChart('chart2', lineChartData_20, false, 0, 2.5);
 			//마지막 꼬리 라벨 넣기( 데이터가 다른 곳이랑 다릅니다. 확인필요. )
 			var chart2 = ChartUtil.chartList['chart2'];
             chart2.options.showValue = true; 
             chart2.options.layout.padding.right = 120;
 			chart2.update();
 
-			//CARGO COUNTING
-			ChartUtil.initHorizontalBarChart('chart3', lineChartData_8, 10, false, 2.5);
+			//CARGO COUNTING - 차트세로수정
+			ChartUtil.initStackedChart('chart3', lineChartData_8, 10, false, 3);
 
-			//Fixture counting
-			ChartUtil.initHorizontalBarChart('chart4', lineChartData_19, 5, false, 2);
+			//Fixture counting - 차트세로수정
+			ChartUtil.initStackedChart('chart4', lineChartData_19, 5, false, 2);
 		});
 	</script>
 	<script>

@@ -4,7 +4,7 @@ var uiGooglMap = (function(){
         PORT_PATH : "M12,2 C8.13,2 5,5.13 5,9 C5,13.17 9.42,18.92 11.24,21.11 C11.64,21.59 12.37,21.59 12.77,21.11 C14.58,18.92 19,13.17 19,9 C19,5.13 15.87,2 12,2 Z M12,11.5 C10.62,11.5 9.5,10.38 9.5,9 C9.5,7.62 10.62,6.5 12,6.5 C13.38,6.5 14.5,7.62 14.5,9 C14.5,10.38 13.38,11.5 12,11.5 Z",
         SHIP_PATH : "M0.1,26.9L9.5,0l9.6,26.9C12.6,20.8,6.3,20.8,0.1,26.9",
         IMG_DIR : "/_public/images/map/",
-        //구글맵 스타일
+        //구글맵 스타일 - 200219 변경
         googleMapStyle : [
             {elementType: 'geometry', stylers: [{color: '#232f3f'}]},
             {elementType: 'labels.text.stroke', stylers: [{color: '#232f3f'}]},
@@ -22,57 +22,57 @@ var uiGooglMap = (function(){
             {
             featureType: 'poi',
             elementType: 'labels.text.fill',
-            stylers: [{color: '#d59563'}]
+            stylers: [{color: '#232f3f'}]
             },
             {
             featureType: 'poi.park',
             elementType: 'geometry',
-            stylers: [{color: '#263c3f'}]
+            stylers: [{color: '#232f3f'}]
             },
             {
             featureType: 'poi.park',
             elementType: 'labels.text.fill',
-            stylers: [{color: '#6b9a76'}]
+            stylers: [{color: '#232f3f'}]
             },
             {
             featureType: 'road',
             elementType: 'geometry',
-            stylers: [{color: '#141b24'}]
+            stylers: [{color: '#232f3f'}]
             },
             {
             featureType: 'road',
             elementType: 'geometry.stroke',
-            stylers: [{color: '#141b24'}]
+            stylers: [{color: '#232f3f'}]
             },
             {
             featureType: 'road',
             elementType: 'labels.text.fill',
-            stylers: [{color: '#141b24'}]
+            stylers: [{color: '#232f3f'}]
             },
             {
             featureType: 'road.highway',
             elementType: 'geometry',
-            stylers: [{color: '#141b24'}]
+            stylers: [{color: '#232f3f'}]
             },
             {
             featureType: 'road.highway',
             elementType: 'geometry.stroke',
-            stylers: [{color: '#141b24'}]
+            stylers: [{color: '#232f3f'}]
             },
             {
             featureType: 'road.highway',
             elementType: 'labels.text.fill',
-            stylers: [{color: '#f3d19c'}]
+            stylers: [{color: '#232f3f'}]
             },
             {
             featureType: 'transit',
             elementType: 'geometry',
-            stylers: [{color: '#141b24'}]
+            stylers: [{color: '#232f3f'}]
             },
             {
             featureType: 'transit.station',
             elementType: 'labels.text.fill',
-            stylers: [{color: '#d59563'}]
+            stylers: [{color: '#232f3f'}]
             },
             {
             featureType: 'water',
@@ -113,7 +113,7 @@ var uiGooglMap = (function(){
                             fillOpacity: 0,
                             strokeColor: "#FFFFFF",
                             strokeOpacity: 1,
-                            strokeWeight : 2
+                            strokeWeight : 1
                         }
                     },
                     //Open soon
@@ -135,7 +135,7 @@ var uiGooglMap = (function(){
                             fillOpacity: 0,
                             strokeColor: "#00a1bc",
                             strokeOpacity: 1,
-                            strokeWeight : 2
+                            strokeWeight : 1
                         }
                     },
                     //Drydock / Others
@@ -176,7 +176,7 @@ var uiGooglMap = (function(){
                             fillOpacity: 0,
                             strokeColor: "#999a05",
                             strokeOpacity: 1,
-                            strokeWeight : 2
+                            strokeWeight : 1
                         }
                     },
                 ]
@@ -284,7 +284,7 @@ var uiGooglMap = (function(){
 					style : google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
 					position : google.maps.ControlPosition.BOTTOM_LEFT
 				}
-                ,zoom : 2,
+                ,zoom : 10,
                 zoomControl: true,
                 zoomControlOptions: {
                     position: google.maps.ControlPosition.LEFT_BOTTOM

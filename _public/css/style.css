@@ -40,6 +40,9 @@ a.icon.small[class*="icon_"], button.icon.small[class*="icon_"], span.icon.small
 .icon.icon_setting{background-image: url(../images/icon/icon_setting.png)}
 .icon.icon_location{background-image: url(../images/icon/icon_location.png)}
 .icon.icon_marker{background-image: url(../images/map/icon/icon_marker.png)}
+.icon.icon_star{background-image: url(../images/map/icon/icon_star.png)}
+.icon.icon_star.on{background-image: url(../images/map/icon/icon_star_on.png)}
+
 .icon.icon_ruler{background-image: url(../images/icon/icon_ruler.png)}
 .icon.icon_admin{background-image: url(../images/icon/icon_admin.png)}
 .icon.icon_admin_black{background-image: url(../images/icon/icon_admin_black.png)}
@@ -53,6 +56,7 @@ a.icon.small[class*="icon_"], button.icon.small[class*="icon_"], span.icon.small
 .icon.icon_moniter{background-image: url(../images/icon/icon_moniter.png)}
 .icon.icon_close{background-image: url(../images/icon/icon_close.png)}
 .icon.icon_close_thin{background-image: url(../images/icon/icon_close_thin.png)}
+.icon.icon_close_black{background-image: url(../images/icon/icon_close_black.png)}
 .icon.icon_filter{background-image: url(../images/icon/icon_filter.png)}
 .icon.icon_list{background-image: url(../images/icon/icon_list.png)}
 .icon.icon_reload_small{background-image: url(../images/icon/icon_reload_small.png)}
@@ -266,7 +270,7 @@ body.noWidth{min-width: inherit;overflow-y: auto;min-height: inherit;}
 }
 .Layout__container.full{left:0}
 .Layout__container__inner{position: absolute;right:0;top:0;bottom:0;left:0}
-.Layout__topContent{height:5em;position: relative;padding-right:10em;z-index:50}
+.Layout__topContent{height:5em;position: relative;padding-right:10em;z-index:100}
 .Layout__topContent:after{position: absolute;content:'';display: block;left:0;right:0;height:1px;bottom:0;background:rgba(255,255,255,0.1);border-bottom:1px solid #000}
 .Layout__topContent.noline:after{display:none}
 .Layout__topContent .TopLogo{position: absolute;right:0;top:0;z-index: 100;}
@@ -327,6 +331,11 @@ body.noWidth{min-width: inherit;overflow-y: auto;min-height: inherit;}
 .TopSearch.white .TopSearch__label span{color:rgba(255,255,255,.3)}
 .TopSearch.white .TopSearch__inner{background-image: url(../images/icon/icon_search_white.png);}
 .TopSearch.white .TopSearch__input{color:#d0d0d0}
+
+.TopSearch__list{position: absolute;left:5em;right:0;top:4em;z-index:1000;list-style: none;margin:0;padding:0;border:1px solid rgba(105,125,148,0.3);border-top:0}
+.TopSearch__list li{background:rgba(0,0,0,0.6);border-top:1px solid rgba(105,125,148,0.3);}
+.TopSearch__list li a{display: block;color:#fff;padding:.5em 1em}
+.TopSearch__list li:hover{background:rgba(0,0,0,0.7)}
 
 /* TopLogin */
 .TopLogin{padding: 1.5em 0;position: absolute;left:0;top:0;z-index: 105;}
@@ -768,6 +777,25 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 /* fixtrue */
 .FixtureDataTable{}
 .FixtureDataTable .row > div:nth-child(1){width:10%}
+
+/* ToolsView */
+.ToolsView{position: absolute;left:0;right:0;top:0;bottom:0;z-index:0;opacity: 0;height:0;}
+.ToolsView.active{z-index:100;opacity: 1;height:auto}
+.ToolsView.active .ToolsView__blind{ opacity:1;}
+.ToolsView .ToolsView__blind{position: absolute;left:0;right:0;top:0;bottom:0;z-index:101;background:rgba(0,0,0,0.8);opacity:0; }
+.ToolsView .ToolsView__button_close{position: absolute;right:1em;top:1.5em;z-index:105;text-align:right;}
+.ToolsView .ToolsView__inner{
+    position: absolute;left:50%;top:6em;bottom:6em;width:40em;margin-left:-20em;z-index:102;
+    border:5px solid #000;
+    background:#ffffff;
+    border-radius: 1em;
+}
+.ToolsView__top{box-sizing:border-box;height:9em;margin:0 1em;padding:1em 0;color:#162942;padding-top:3em;line-height: 1.5em;border-bottom: 2px solid #162942;}
+.ToolsView__content{position: absolute;left:0;right:0;top:9em;bottom:0em;overflow-y: auto;margin:1em}
+.ToolsView__content__inner p{padding-bottom:1em}
+.ToolsView__top .title{font-size:1.5em;font-weight: bold;}
+.ToolsView__top .info{font-size:1.2em}
+.ToolsView__top .date{font-size:1.2em;}
 
 /* DataSetting */
 .DataSetting{position: absolute;left:0;right:0;top:0;bottom:0;z-index:0;opacity: 0;height:0;}

@@ -2,10 +2,11 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>LIVE POSITION > VESSEL > VLCC LAB</title>
 	<link rel="stylesheet" href="../_public_m/css/style_m.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 	
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/x-icon" href="../_public_m/favicon/favicon.ico" /> <!-- Chrome, Safari, IE -->
@@ -37,13 +38,13 @@
 							<li><a href="./1_setting_notice.html"><span>SETTING</span></a></li>
 							<li><a href="./2_dashboard.html"><span>Dashboard</span></a></li>
 							<li><a href="./3_fixtures.html"><span>fixture</span></a></li>
-							<li><a href="#"><span>Map</span></a></li>
-							<li class="active"><a href="./5_vessel.html"><span>VESSEL</span></a></li>
-							<li><a href="#"><span>DISTANCE</span></a></li>
-							<li><a href="#"><span>TCE CALCULATOR</span></a></li>
-							<li><a href="#"><span>FLEET LIBRARY</span></a></li>
-							<li><a href="#"><span>RESEARCH</span></a></li>
-							<li><a href="#"><span>MY FLEET</span></a></li>
+							<li><a href="./4_map.html"><span>Map</span></a></li>
+							<li class="active"><a href="./5_vessel_live.html"><span>VESSEL</span></a></li>
+							<li><a href="./6_distance.html"><span>DISTANCE</span></a></li>
+							<li><a href="./7_tce_calulator.html"><span>TCE CALCULATOR</span></a></li>
+							<li><a href="./8_fleet.html"><span>FLEET LIBRARY</span></a></li>
+							<li><a href="./9_myfleet.html"><span>MY FLEET</span></a></li>
+							<li><a href="./10_research_weekly.html"><span>RESEARCH</span></a></li>
 						</ul>
 						<div class="DashClock">
 							<div class="DashClock__inner">
@@ -66,11 +67,25 @@
 			<!-- Page__header -->
 			<div class="Page__header">
 				<div class="PageHeader">
-                    <div class="PageHeader__logo">VLCCLAB</div>
+                    <a href="./0_login.html" class="PageHeader__logo">VLCCLAB</a>
 					<div class="PageHeader__btnLast">
+						<a href="javascript:;" onclick="uiMobile.pageSearch.open();" class="icon icon-search"><span class="skip">Search</span></a>
 						<a href="#" class="icon icon-logout"><span class="skip">LOGOUT</span></a>
 						<a href="#" class="icon icon-menu TotalMenu__open"><span class="skip">MENU</span></a>
 					</div>
+					<!-- PageSearch -->
+					<div class="PageSearch" id="PageSearch">
+						<a href="javascript:;" onclick="uiMobile.pageSearch.close();" class="PageSearch__close"><i class="material-icons">clear</i></a>
+						<div class="PageSearch__inner">
+							<input type="text" class="PageSearch__input" placeholder="Search" />
+							<a href="#" class="PageSearch__search"><span>search</span></a>
+							<ul class="PageSearch__list">
+								<li><a href="">MAP SERECH RESULT - 1</a></li>
+								<li><a href="">MAP SERECH RESULT - 2</a></li>
+							</ul>	
+						</div>
+					</div>
+					<!-- PageSearch -->
 				</div>
 			</div>
 			<!-- //Page__header -->
@@ -81,9 +96,11 @@
                     <div class="Navigation">
                         <h1 class="Navigation__title"><span>VESSEL</span></h1>
                         <div class="Navigation__list">
-                            <div class="Navigation__item active"><a href="./5_vessel_live.html" class="link"><span>LIVE POSITION</span></a></div>
-                            <div class="Navigation__item"><a href="./5_vessel_voyages.html" class="link"><span>VOYAGES</span></a></div>
-                            <div class="Navigation__item"><a href="./5_vessel_parti.html" class="link"><span>PARTICULARS</span></a></div>
+							<div class="Navigation__list__inner">
+								<div class="Navigation__item active"><a href="./5_vessel_live.html" class="link"><span>LIVE POSITION</span></a></div>
+								<div class="Navigation__item"><a href="./5_vessel_voyages.html" class="link"><span>VOYAGES</span></a></div>
+								<div class="Navigation__item"><a href="./5_vessel_parti.html" class="link"><span>PARTICULARS</span></a></div>
+							</div>
                         </div> 
                     </div>
                     <!-- //Navigation -->
@@ -91,11 +108,42 @@
                 <div class="TotalMapArea">
                     <!-- 구글맵 영역 -->
                     <div id="TotalMap" class="TotalMap">지도영역</div>
-                    <!-- //구글맵 영역 -->                       
+					<!-- //구글맵 영역 -->
+					<div id="MapContent" class="MapContent">
+						<!-- MapShipInfo  -->
+						<div class="MapShipInfo" id="MapShipInfo">
+							<div class="MapShipInfo__inner">
+								<a href="javascript:;" onclick="window.uiGooglMap.infoShipMarker().close();" class="MapShipInfo__close"><i class="material-icons">close</i></a>
+								<div class="MapShipInfo__title noMark">
+									<div class="name noImg">Yuan Qiu Hu</div>
+									<div class="cate">CME</div>
+									<div class="etc"><span>308.371</span><span>2015</span><span>23.0</span><span>Scrubber fitted</span></div>
+								</div>
+								<div class="MapShipInfo__content">
+									<ul class="clear MapShipInfo__list">
+										<li><span class="tit">Draft</span><span class="txt">11</span><span class="txt right">7d 58 min ago</span></li>
+										<li><span class="tit">Speed</span><span class="txt">13.2</span><span class="txt right">15h 12min ago</span></li>
+										<li><span class="tit">Heading</span><span class="txt">83</span></li>
+										<li><span class="tit">Location</span><span class="txt">CAPE for 4d</span></li>
+										<li><span class="tit">Dest/ETA</span><span class="txt">Guangzhou / 03 Dec 19</span></li>
+										<li><span class="tit">Long/Lat</span><span class="txt">23,1888 / -34,9713</span></li>
+										<li class="signal cWhite"><span class="tit">Last signal</span><span class="txt">17min ago</span></li>
+										<li><span class="tit">Status</span><span class="txt">-</span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- //MapShipInfo  -->
+					</div>			                       
                 </div>
                 <!-- ToolsInfo -->
-                <div class="ToolsInfo">
+                <div class="ToolsInfo" id="ToolsInfo">
+					<div class="ToolsInfo__button">
+						<a href="javascript:;" onclick="toolsInfo.open();" class="ToolsInfo__on"><i class="material-icons">chevron_left</i></a>
+						<a href="javascript:;" onclick="toolsInfo.close();" class="ToolsInfo__off"><i class="material-icons">chevron_right</i></a>
+					</div>
                     <div class="ToolsInfo__inner">
+						<div class="ToolsInfo__logo"><span class="equals">Equals</span></div>
                         <div class="ToolsInfo__title">
                             <h2 class="title"><span>Dragon</span></h2>
                             <div class="info"><span>Dynacom Tankers</span></div>
@@ -106,7 +154,7 @@
                             <div class="Voyages__title"><span>Voyages</span></div>
                             <div class="Voyages__inner">
                                 <div class="Voyages__list" id="VoyagesList">
-                                    <div class="Voyages__item active">
+                                    <div class="Voyages__item">
                                         <a href="#" class="titleLink">
                                             <span class="num">56</span>
                                             <span class="text">Southworld-Nacala</span>
@@ -243,7 +291,7 @@
                                     <div class="Estimation__input arrow"></div>
                                     <div class="Estimation__input right">
                                         <div class="innerInput">
-                                            <input type="date" name="stx2" id="stx2">
+                                            <input type="text" name="stx2" id="stx2" class="datepicker" />
                                             <label for="stx2">ETA (date)</label>
                                         </div>
                                         <span class="etc">OR</span>
@@ -262,13 +310,15 @@
                 <!-- //ToolsInfo -->       
 			</div>
 			<!-- //Page__inner -->
+			<div class="Page__loading" id="loading"><span>loading...</span></div>
 		</div>
     </div>
     
 	<!-- javascript -->
 	<script src="../_public_m/js/jquery-1.12.4.js"></script>
-	<script src="../_public_m/js/slick.js"></script>
-	<script src="../_public_m/js/jquery-ui.js"></script>
+	<script src="../_public_m/js/moment-with-locales.js"></script>
+	<script src="../_public_m/js/bootstrap-material-datetimepicker.min.js"></script>
+	
     <script src="../_public_m/js/ui.moblie.js"></script>
     <!-- //javascript -->
     
@@ -281,8 +331,6 @@
     <!-- //차트js추가 -->
     <script type="text/javascript">
 		$(window).load(function(){
-
-
         });
     </script>
 
@@ -292,7 +340,7 @@
 	<script type="text/javascript" src="../_public/js/sv.map.controller.min.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&region=KR&language=en&key=AIzaSyCQ8LK-VtL1tudKfKMUo-Br9bQNt5u7Cc0&callback=initMap" async defer></script>
     <!-- //맵 js 추가 -->
-    <script type="text/javascript">
+	<script type="text/javascript">
 		var voyagesSampleData = {
 			"geometry":{
 				"coordinates": [
@@ -340,8 +388,16 @@
 			_map = new google.maps.Map(document.getElementById('TotalMap'), {
 				center: {lat: 36.705106, lng: 127},
 				zoom: 3,
-				styles : window.uiGooglMap.googleMapStyle
+				styles : window.uiGooglMap.googleMapStyle,
+				disableDefaultUI : true
 			});
+			
+			//맵이동시 인포삭제, 인포위치이동
+			_map.addListener('center_changed', function() {
+				var info = window.uiGooglMap.infoShipMarker();
+				info.close();
+			});
+
 			var _lineData = voyagesSampleData.geometry.coordinates;
 			var _markerData = voyagesSampleData.markers;
 			createLine(_map, _lineData);
@@ -414,6 +470,7 @@
 					zIndex: (i+1)
 				});
 				bounds.extend(marker.position);
+				
 				var info = window.uiGooglMap.infoShipMarker();
 				if( data.state == 'latest' ){
 					marker.addListener('click', function(event) {
@@ -422,14 +479,15 @@
 				}
 			}
 		}
+
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
 			ui_voyages();
 		})
+
 		function ui_voyages(){
-			var item = $(".Voyages__item");
-			
+			var item = $(".Voyages__item");			
 			//Voyages 클릭
 			item.each(function(){
 				var path = $(this).find(".VoyagesPath__line");
@@ -453,6 +511,21 @@
 				})
 			});
 		}
+
+		//toolsInfo 관련함수
+		var toolsInfo = (function(){
+			var _el = $("#ToolsInfo");
+			return {
+				open : function(){
+					if( _el == null || _el.size() == 0 ) return;
+					_el.addClass('active');
+				},
+				close : function(){
+					if( _el == null || _el.size() == 0 ) return;
+					_el.removeClass('active');
+				}
+			}
+		})();		
     </script>
 </body>
 </html>

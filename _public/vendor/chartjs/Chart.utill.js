@@ -1018,8 +1018,28 @@ Chart.plugins.register({
 				chart.update();
 			}
 		}
+
+		//200226 defaultFontSize 추가 
+		if( chart.config.data.defaultFontSize ){
+			var fontsize = chart.config.data.defaultFontSize;
+			chart.config.options.defaultFontSize = fontsize;
+			if( chart.config.type != 'doughnut' ){
+		
+				if( chart.options.scales.xAxes || chart.options.scales.xAxes[0] ){
+					chart.options.scales.xAxes[0].ticks.fontSize = fontsize;
+				}
+				chart.options.scales.yAxes[0].ticks.fontSize = fontsize;
+				if(chart.options.scales.yAxes[1]){
+					chart.options.scales.yAxes[1].ticks.fontSize = fontsize;
+				}
+				chart.options.plugins.datalabels.font = {
+					size : fontsize
+				}				
+			}
+		}
 	},
 	afterDraw: function (chart, easing) {
+
 		//chartText
 		if( chart.config.data.chartText ){
 			var ctx = chart.chart.ctx;

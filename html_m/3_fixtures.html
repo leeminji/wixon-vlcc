@@ -2,10 +2,11 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>fixtures > VLCC LAB</title>
 	<link rel="stylesheet" href="../_public_m/css/style_m.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 	
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/x-icon" href="../_public_m/favicon/favicon.ico" /> <!-- Chrome, Safari, IE -->
@@ -37,13 +38,13 @@
 							<li><a href="./1_setting_notice.html"><span>SETTING</span></a></li>
 							<li><a href="./2_dashboard.html"><span>Dashboard</span></a></li>
 							<li class="active"><a href="./3_fixtures.html"><span>fixture</span></a></li>
-							<li><a href="#"><span>Map</span></a></li>
-							<li><a href="#"><span>VESSEL</span></a></li>
-							<li><a href="#"><span>DISTANCE</span></a></li>
-							<li><a href="#"><span>TCE CALCULATOR</span></a></li>
-							<li><a href="#"><span>FLEET LIBRARY</span></a></li>
-							<li><a href="#"><span>RESEARCH</span></a></li>
-							<li><a href="#"><span>MY FLEET</span></a></li>
+							<li><a href="./4_map.html"><span>Map</span></a></li>
+							<li><a href="./5_vessel_live.html"><span>VESSEL</span></a></li>
+							<li><a href="./6_distance.html"><span>DISTANCE</span></a></li>
+							<li><a href="./7_tce_calulator.html"><span>TCE CALCULATOR</span></a></li>
+							<li><a href="./8_fleet.html"><span>FLEET LIBRARY</span></a></li>
+							<li><a href="./9_myfleet.html"><span>MY FLEET</span></a></li>
+							<li><a href="./10_research_weekly.html"><span>RESEARCH</span></a></li>
 						</ul>
 						<div class="DashClock">
 							<div class="DashClock__inner">
@@ -66,7 +67,7 @@
 			<!-- Page__header -->
 			<div class="Page__header">
 				<div class="PageHeader">
-                    <div class="PageHeader__logo">VLCCLAB</div>
+                    <a href="./0_login.html" class="PageHeader__logo">VLCCLAB</a>
 					<div class="PageHeader__btnLast">
 						<a href="#" class="icon icon-logout"><span class="skip">LOGOUT</span></a>
 						<a href="#" class="icon icon-menu TotalMenu__open"><span class="skip">MENU</span></a>
@@ -364,13 +365,14 @@
                 </div>
                 <!-- //ChartArea -->
 			</div>
-			<!-- //Page__inner -->
+            <!-- //Page__inner -->
+            <div class="Page__loading" id="loading"><span>loading...</span></div>
 		</div>
 	</div>
 	<!-- javascript -->
-	<script src="../_public_m/js/jquery-1.12.4.js"></script>
-	<script src="../_public_m/js/slick.js"></script>
-	<script src="../_public_m/js/jquery-ui.js"></script>
+    <script src="../_public_m/js/jquery-1.12.4.js"></script>
+    <script src="../_public_m/js/moment-with-locales.js"></script>
+	<script src="../_public_m/js/bootstrap-material-datetimepicker.min.js"></script>
     <script src="../_public_m/js/ui.moblie.js"></script>
     <!-- //javascript -->
     
@@ -384,8 +386,14 @@
 
     <script type="text/javascript">
 		$(window).load(function(){
-
-
+            var COL_WIDTH = 80;
+            $(".ChartData__data").each(function(){
+                var tbody = $(this).children(".table_tbody");
+                var cols = tbody.children(".table_col");
+                tbody.css({
+                    'width' : cols.size() * COL_WIDTH
+                })
+            });
         });
     </script>
     

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Weekly Report > RESERCH > VLCC LAB</title>
+	<link rel="stylesheet" href="../_public_m/css/style_m.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+	
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="../_public_m/favicon/favicon.ico" /> <!-- Chrome, Safari, IE -->
+	<link rel="icon" href="../_public_m/favicon/favicon.png"><!-- Firefox, Opera (Chrome and Safari say thanks but no thanks) -->
+	<link rel="icon" href="../_public_m/favicon/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" href="../_public_m/favicon/favicon-64x64.png" sizes="64x64" />
+	<link rel="apple-touch-icon-precomposed" href="../_public_m/favicon/favicon-152x152.png" />  <!-- iOS와 Android -->
+	<meta name="msapplication-TileImage" content="../_public_m/favicon/favicon-144x144.png" />
+	<!-- //favicon -->
+</head>
+<body>
+	<div id="app" class="App">
+		<!-- TotalMenu 메뉴부분 -->
+		<div class="TotalMenu" id="TotalMenu">
+			<div class="TotalMenu__inner">
+				<div class="TotalMenu__top">
+					<div class="TotalMenu__btnStart">
+						<a href="" class="TotalMenu__button join"><span>MEMBER JOIN</span></a>
+						<a href="" class="TotalMenu__button login"><span>LOGIN</span></a>
+					</div>
+					<div class="TotalMenu__btnLast">
+						<a href="#" class="TotalMenu__button close TotalMenu__close"><span class="skip">close</span></a>
+					</div>
+				</div>
+				<div class="TotalMenu__content">
+					<nav class="TotalMenu__listArea">
+						<h2 class="TotalMenu__title"><span>VLCCLAB</span><span class="skip">MENU</span></h2>
+						<ul class="clear clearfix TotalMenu__list">
+							<li><a href="./1_setting_notice.html"><span>SETTING</span></a></li>
+							<li><a href="./2_dashboard.html"><span>Dashboard</span></a></li>
+							<li><a href="./3_fixtures.html"><span>fixture</span></a></li>
+							<li><a href="./4_map.html"><span>Map</span></a></li>
+							<li><a href="./5_vessel_live.html"><span>VESSEL</span></a></li>
+							<li><a href="./6_distance.html"><span>DISTANCE</span></a></li>
+							<li><a href="./7_tce_calulator.html"><span>TCE CALCULATOR</span></a></li>
+							<li><a href="./8_fleet.html"><span>FLEET LIBRARY</span></a></li>
+							<li><a href="./9_myfleet.html"><span>MY FLEET</span></a></li>
+							<li class="active"><a href="10_research_weekly.html"><span>RESEARCH</span></a></li>
+						</ul>
+						<div class="DashClock">
+							<div class="DashClock__inner">
+								<div class="time"><span>04:07 UTC</span></div>
+								<div class="date"><span>13 May</span></div>
+							</div>
+						</div>
+					</nav>
+					<div class="TotalMenu__logo">
+						<div class="logo"><img src="../_public_m/images/common/bottom_logo.png" alt="vlcclab"></div>
+						<span class="text">VLCC Vessel Total Information Platform</span>
+						<span class="text">Platform Version 1.0</span>
+					</div>
+				</div>
+			</div>
+			<div class="blind TotalMenu__blind"></div>
+		</div>
+		<!-- //TotalMenu 메뉴부분 -->		
+		<div class="Page">			
+			<!-- Page__header -->
+			<div class="Page__header">
+				<div class="PageHeader">
+                    <a href="./0_login.html" class="PageHeader__logo">VLCCLAB</a>
+					<div class="PageHeader__btnLast">
+                        <a href="javascript:;" onclick="uiMobile.pageSearch.open();" class="icon icon-search"><span class="skip">Search</span></a>
+						<a href="#" class="icon icon-logout"><span class="skip">LOGOUT</span></a>
+						<a href="#" class="icon icon-menu TotalMenu__open"><span class="skip">MENU</span></a>
+                    </div>
+                   	<!-- PageSearch -->
+					<div class="PageSearch" id="PageSearch">
+						<a href="javascript:;" onclick="uiMobile.pageSearch.close();" class="PageSearch__close"><i class="material-icons">clear</i></a>
+						<div class="PageSearch__inner">
+							<input type="text" class="PageSearch__input" placeholder="Search" />
+							<a href="#" class="PageSearch__search"><span>search</span></a>
+							<ul class="PageSearch__list">
+								<li><a href="">MAP SERECH RESULT - 1</a></li>
+								<li><a href="">MAP SERECH RESULT - 2</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //PageSearch -->	 
+				</div>
+			</div>
+			<!-- //Page__header -->
+			<!-- Page__inner -->
+			<div class="Page__inner">
+                <div class="Page__navigation">
+                    <!-- Navigation -->
+                    <div class="Navigation">
+                        <h1 class="Navigation__title"><span>RESERCH</span></h1>
+                        <div class="Navigation__list">
+							<div class="Navigation__list__inner">
+								<div class="Navigation__item active"><a href="./10_research_weekly.html" class="link"><span>WEEKLY REPORT</span></a></div>
+								<div class="Navigation__item"><a href="./10_research_monthly.html" class="link"><span>MONTHLY REPORT</span></a></div>
+								<div class="Navigation__item"><a href="./10_research_position.html" class="link"><span>POSITION LIST</span></a></div>
+								<div class="Navigation__item"><a href="./10_research_event.html" class="link"><span>EVENT BRIEF</span></a></div>
+							</div>
+                        </div> 
+                    </div>
+                    <!-- //Navigation -->
+                </div>
+                <!-- ChartArea -->
+                <div class="ChartArea">
+                    <!-- Spot Freight -->
+                    <div class="ChartBox">
+                        <div class="ChartBox__inner">
+                            <div id="chart1_title" class="chartjs-title"><span>Spot Freight</span></div>
+                            <canvas id="chart1" class="chartjs-canvas"></canvas>
+                            <div id="chart1_legend" class="chartjs-legend"></div>
+                        </div>
+                    </div>
+                    <!-- //Spot Freight -->
+                    <!-- TD3 FFA -->
+                    <div class="ChartBox">
+                        <div class="ChartBox__inner">
+                            <div id="chart2_title" class="chartjs-title"><span>TD3 FFA</span></div>
+                            <canvas id="chart2" class="chartjs-canvas"></canvas>
+                            <div id="chart2_legend" class="chartjs-legend"></div>
+                        </div>
+                    </div>
+                    <!-- //TD3 FFA -->
+                    <!-- Bunker Price -->
+                    <div class="ChartBox">
+                        <div class="ChartBox__inner">
+                            <div id="chart3_title" class="chartjs-title"><span>Bunker Price</span></div>
+                            <canvas id="chart3" class="chartjs-canvas"></canvas>
+                            <div id="chart3_legend" class="chartjs-legend"></div>
+                        </div>
+                    </div>
+                    <!-- //Bunker Price -->
+                </div>
+                <!-- //ChartArea -->
+			</div>
+			<!-- //Page__inner -->
+			<div class="Page__loading" id="loading"><span>loading...</span></div>
+		</div>
+	</div>
+	<!-- javascript -->
+    <script src="../_public_m/js/jquery-1.12.4.js"></script>
+    <script src="../_public_m/js/moment-with-locales.js"></script>
+	<script src="../_public_m/js/bootstrap-material-datetimepicker.min.js"></script>
+    <script src="../_public_m/js/ui.moblie.js"></script>
+    <!-- //javascript -->
+    
+	<!-- 차트js추가 -->
+	<script type="text/javascript" src="../_public/vendor/chartjs/moment.min.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/chartjs-plugin-datalabels.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.utill.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.sampleData.js"></script> <!-- Chart.sampleData.js 여기에 샘플데이터있습니다. -->
+    <!-- //차트js추가 -->
+
+    <script type="text/javascript">
+		$(window).load(function(){
+			//chart(canvas id, chart data, chart stepSize, tabCateogoryInit)
+			//tabCateogoryInit : 카테고리로 탭있는경우 해당 index 
+
+			//Spot Freight
+			//데이터에 defaultFontSize : 9 값 넣으면 폰트사이즈조절 합니다.( PC 데이터와 같은걸 써서 따로 추가해주었습니다. )
+			lineChartData_52.defaultFontSize = 9;
+			ChartUtil.initLineChartMulti('chart1', lineChartData_52, 20, 100, false, 1.5);
+			var chart1 = window.ChartUtil.chartList['chart1'];
+			//y축 오른쪽 변경 (max, min 수동으로 변경필요) - json 데이터에서 받아서 처리하거나 수동으로설정.
+			var chart_ticks = chart1.options.scales.yAxes[1].ticks;
+			chart_ticks.max = 1500;
+			chart_ticks.min = 900;
+            chart_ticks.userCallback = function(value, index, values) {
+				return value + "K";
+			};
+			chart1.update();
+
+            //TD3 FFA
+            lineChartData_53.defaultFontSize = 9;
+            ChartUtil.initLineChart('chart2', lineChartData_53, 10, false, 1.5);
+
+            //Time charter rate
+            lineChartData_54.defaultFontSize = 9;
+			ChartUtil.initLineChart('chart3', lineChartData_54, 2500, false, 1.5);
+			var chart3 = ChartUtil.chartList['chart3'];
+			var chart3_scaleLabel = {
+				display : true,
+				labelString : '$/day',
+				fontColor : ChartUtil.colors.white_op5,
+				fontFamily : ChartUtil.font,
+				fontSize : 9
+			}
+			chart3.config.options.scales.yAxes[0].scaleLabel = chart3_scaleLabel;
+            chart3.update();
+            
+        });
+    </script>
+    
+</body>
+</html>

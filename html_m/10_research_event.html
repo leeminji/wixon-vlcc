@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Event Brief > RESERCH > VLCC LAB</title>
+	<link rel="stylesheet" href="../_public_m/css/style_m.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+	
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="../_public_m/favicon/favicon.ico" /> <!-- Chrome, Safari, IE -->
+	<link rel="icon" href="../_public_m/favicon/favicon.png"><!-- Firefox, Opera (Chrome and Safari say thanks but no thanks) -->
+	<link rel="icon" href="../_public_m/favicon/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" href="../_public_m/favicon/favicon-64x64.png" sizes="64x64" />
+	<link rel="apple-touch-icon-precomposed" href="../_public_m/favicon/favicon-152x152.png" />  <!-- iOS와 Android -->
+	<meta name="msapplication-TileImage" content="../_public_m/favicon/favicon-144x144.png" />
+	<!-- //favicon -->
+</head>
+<body>
+	<div id="app" class="App">
+		<!-- TotalMenu 메뉴부분 -->
+		<div class="TotalMenu" id="TotalMenu">
+			<div class="TotalMenu__inner">
+				<div class="TotalMenu__top">
+					<div class="TotalMenu__btnStart">
+						<a href="" class="TotalMenu__button join"><span>MEMBER JOIN</span></a>
+						<a href="" class="TotalMenu__button login"><span>LOGIN</span></a>
+					</div>
+					<div class="TotalMenu__btnLast">
+						<a href="#" class="TotalMenu__button close TotalMenu__close"><span class="skip">close</span></a>
+					</div>
+				</div>
+				<div class="TotalMenu__content">
+					<nav class="TotalMenu__listArea">
+						<h2 class="TotalMenu__title"><span>VLCCLAB</span><span class="skip">MENU</span></h2>
+						<ul class="clear clearfix TotalMenu__list">
+							<li><a href="./1_setting_notice.html"><span>SETTING</span></a></li>
+							<li><a href="./2_dashboard.html"><span>Dashboard</span></a></li>
+							<li><a href="./3_fixtures.html"><span>fixture</span></a></li>
+							<li><a href="./4_map.html"><span>Map</span></a></li>
+							<li><a href="./5_vessel_live.html"><span>VESSEL</span></a></li>
+							<li><a href="./6_distance.html"><span>DISTANCE</span></a></li>
+							<li><a href="./7_tce_calulator.html"><span>TCE CALCULATOR</span></a></li>
+							<li><a href="./8_fleet.html"><span>FLEET LIBRARY</span></a></li>
+							<li><a href="./9_myfleet.html"><span>MY FLEET</span></a></li>
+							<li class="active"><a href="10_research_weekly.html"><span>RESEARCH</span></a></li>
+						</ul>
+						<div class="DashClock">
+							<div class="DashClock__inner">
+								<div class="time"><span>04:07 UTC</span></div>
+								<div class="date"><span>13 May</span></div>
+							</div>
+						</div>
+					</nav>
+					<div class="TotalMenu__logo">
+						<div class="logo"><img src="../_public_m/images/common/bottom_logo.png" alt="vlcclab"></div>
+						<span class="text">VLCC Vessel Total Information Platform</span>
+						<span class="text">Platform Version 1.0</span>
+					</div>
+				</div>
+			</div>
+			<div class="blind TotalMenu__blind"></div>
+		</div>
+		<!-- //TotalMenu 메뉴부분 -->		
+		<div class="Page">			
+			<!-- Page__header -->
+			<div class="Page__header">
+				<div class="PageHeader">
+                    <a href="./0_login.html" class="PageHeader__logo">VLCCLAB</a>
+					<div class="PageHeader__btnLast">
+                        <a href="javascript:;" onclick="uiMobile.pageSearch.open();" class="icon icon-search"><span class="skip">Search</span></a>
+						<a href="#" class="icon icon-logout"><span class="skip">LOGOUT</span></a>
+						<a href="#" class="icon icon-menu TotalMenu__open"><span class="skip">MENU</span></a>
+                    </div>
+                   	<!-- PageSearch -->
+					<div class="PageSearch" id="PageSearch">
+						<a href="javascript:;" onclick="uiMobile.pageSearch.close();" class="PageSearch__close"><i class="material-icons">clear</i></a>
+						<div class="PageSearch__inner">
+							<input type="text" class="PageSearch__input" placeholder="Search" />
+							<a href="#" class="PageSearch__search"><span>search</span></a>
+							<ul class="PageSearch__list">
+								<li><a href="">MAP SERECH RESULT - 1</a></li>
+								<li><a href="">MAP SERECH RESULT - 2</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //PageSearch -->
+				</div>
+			</div>
+			<!-- //Page__header -->
+			<!-- Page__inner -->
+			<div class="Page__inner">
+                <div class="Page__navigation">
+                    <!-- Navigation -->
+                    <div class="Navigation">
+                        <h1 class="Navigation__title"><span>RESERCH</span></h1>
+                        <div class="Navigation__list">
+							<div class="Navigation__list__inner">
+								<div class="Navigation__item"><a href="./10_research_weekly.html" class="link"><span>WEEKLY REPORT</span></a></div>
+								<div class="Navigation__item"><a href="./10_research_monthly.html" class="link"><span>MONTHLY REPORT</span></a></div>
+								<div class="Navigation__item"><a href="./10_research_position.html" class="link"><span>POSITION LIST</span></a></div>
+								<div class="Navigation__item active"><a href="./10_research_event.html" class="link"><span>EVENT BRIEF</span></a></div>
+							</div>
+                        </div> 
+                    </div>
+					<!-- //Navigation -->
+				</div>
+				<div class="TitleArea"><span>EVENT BRIEF</span></div>
+				<div class="ResearchList">
+					<div class="ResearchList__list">
+						<ul class="clear clearfix">
+							<li class="ResearchList__item">
+								<a href="javascript:uiMobile.popup.open('ToolsView');" class="link"><span class="skip">링크</span></a>
+								<div class="title small ellipsis"><span>India's gasoilne exports rise as domestic demand falls</span></div>
+								<div class="date"><span>November 25th 2019 - Tankers</span></div>
+							</li>
+							<li class="ResearchList__item">
+								<a href="javascript:uiMobile.popup.open('ToolsView');" class="link"><span class="skip">링크</span></a>
+								<div class="title small ellipsis"><span>China's gasoline exports hit record high</span></div>
+								<div class="date"><span>November 25th 2019 - Tankers</span></div>
+							</li>
+							<li class="ResearchList__item">
+								<a href="javascript:uiMobile.popup.open('ToolsView');" class="link"><span class="skip">링크</span></a>
+								<div class="title small ellipsis"><span>VLSFO sales surge in Singapore</span></div>
+								<div class="date"><span>November 25th 2019 - Tankers</span></div>
+							</li>
+							<li class="ResearchList__item">
+								<a href="javascript:uiMobile.popup.open('ToolsView');" class="link"><span class="skip">링크</span></a>
+								<div class="title small ellipsis"><span>China's industrial production growth rate slows in</span></div>
+								<div class="date"><span>November 25th 2019 - Tankers</span></div>
+							</li>
+							<li class="ResearchList__item">
+								<a href="javascript:uiMobile.popup.open('ToolsView');" class="link"><span class="skip">링크</span></a>
+								<div class="title small ellipsis"><span>India's gasoilne exports rise as domestic demand falls</span></div>
+								<div class="date"><span>November 25th 2019 - Tankers</span></div>
+							</li>
+							<li class="ResearchList__item">
+								<a href="javascript:uiMobile.popup.open('ToolsView');" class="link"><span class="skip">링크</span></a>
+								<div class="title small ellipsis"><span>China's gasoline exports hit record high</span></div>
+								<div class="date"><span>November 25th 2019 - Tankers</span></div>
+							</li>
+							<li class="ResearchList__item">
+								<a href="#" class="link"><span class="skip">링크</span></a>
+								<div class="title small ellipsis"><span>VLSFO sales surge in Singapore</span></div>
+								<div class="date"><span>November 25th 2019 - Tankers</span></div>
+							</li>
+							<li class="ResearchList__item">
+								<a href="#" class="link"><span class="skip">링크</span></a>
+								<div class="title small ellipsis"><span>China's industrial production growth rate slows in</span></div>
+								<div class="date"><span>November 25th 2019 - Tankers</span></div>
+							</li>
+						</ul>
+					</div>
+					<div class="ResearchList__bottom">
+						<a href="#" class="ResearchList__button prev"><i class="material-icons">arrow_back</i><span>Older posts</span></a>
+						<a href="#" class="ResearchList__button next"><i class="material-icons">arrow_forward</i><span>Newer posts</span></a>
+					</div>
+				</div>
+				<div class="ToolsView active" id="ToolsView">
+					<div class="ToolsView__inner">
+						<a href="javascript:;" onclick="javascript:uiMobile.popup.close('ToolsView');" class="ToolsView__button_close"><i class="material-icons">close</i></a>
+						<div class="ToolsView__top">
+							<div class="date">25 June 2019</div>
+							<div class="title">BRS GENEVA - VLCC COB REPORT</div>
+							<div class="info">Tankerdirty@brsbrokers.com</div>
+						</div>
+						<div class="ToolsView__content">
+							<div class="ToolsView__content__inner">
+								<p><strong>BRS GENEVA - VLCC COB REPORT</strong></p>
+								<p>MEG/CHINA    : W67.5</p>
+								<p>COMMENT      : brakes put on by charterers with very little actively traded today. <br>rates improved once again however on an ex dd vessel</p>
+								<p>MEG/CHINA    : W67.5</p>
+								<p>COMMENT      : brakes put on by charterers with very little actively traded today. <br>rates improved once again however on an ex dd vessel</p>
+								<p>MEG/CHINA    : W67.5</p>
+								<p>COMMENT      : brakes put on by charterers with very little actively traded today. <br>rates improved once again however on an ex dd vessel</p>
+								<p>MEG/CHINA    : W67.5</p>
+								<p>COMMENT      : brakes put on by charterers with very little actively traded today. <br>rates improved once again however on an ex dd vessel</p>
+								<p>MEG/CHINA    : W67.5</p>
+								<p>COMMENT      : brakes put on by charterers with very little actively traded today. <br>rates improved once again however on an ex dd vessel</p>
+							</div>
+						</div>
+					</div>
+					<div class="ToolsView__blind" id="ToolsView__blind"></div>
+				</div>				
+			</div>
+			<!-- //Page__inner -->
+			<div class="Page__loading" id="loading"><span>loading...</span></div>
+		</div>
+	</div>
+	<!-- javascript -->
+    <script src="../_public_m/js/jquery-1.12.4.js"></script>
+    <script src="../_public_m/js/moment-with-locales.js"></script>
+	<script src="../_public_m/js/bootstrap-material-datetimepicker.min.js"></script>
+    <script src="../_public_m/js/ui.moblie.js"></script>
+    <!-- //javascript -->
+</body>
+</html>

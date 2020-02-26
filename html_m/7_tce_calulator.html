@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>DISTANCE > VLCC LAB</title>
+	<link rel="stylesheet" href="../_public_m/css/style_m.css?v=2" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+	
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="../_public_m/favicon/favicon.ico" /> <!-- Chrome, Safari, IE -->
+	<link rel="icon" href="../_public_m/favicon/favicon.png"><!-- Firefox, Opera (Chrome and Safari say thanks but no thanks) -->
+	<link rel="icon" href="../_public_m/favicon/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" href="../_public_m/favicon/favicon-64x64.png" sizes="64x64" />
+	<link rel="apple-touch-icon-precomposed" href="../_public_m/favicon/favicon-152x152.png" />  <!-- iOS와 Android -->
+	<meta name="msapplication-TileImage" content="../_public_m/favicon/favicon-144x144.png" />
+	<!-- //favicon -->
+</head>
+<body>
+	<div id="app" class="App">
+		<!-- TotalMenu 메뉴부분 -->
+		<div class="TotalMenu" id="TotalMenu">
+			<div class="TotalMenu__inner">
+				<div class="TotalMenu__top">
+					<div class="TotalMenu__btnStart">
+						<a href="" class="TotalMenu__button join"><span>MEMBER JOIN</span></a>
+						<a href="" class="TotalMenu__button login"><span>LOGIN</span></a>
+					</div>
+					<div class="TotalMenu__btnLast">
+						<a href="#" class="TotalMenu__button close TotalMenu__close"><span class="skip">close</span></a>
+					</div>
+				</div>
+				<div class="TotalMenu__content">
+					<nav class="TotalMenu__listArea">
+						<h2 class="TotalMenu__title"><span>VLCCLAB</span><span class="skip">MENU</span></h2>
+						<ul class="clear clearfix TotalMenu__list">
+							<li><a href="./1_setting_notice.html"><span>SETTING</span></a></li>
+							<li><a href="./2_dashboard.html"><span>Dashboard</span></a></li>
+							<li><a href="./3_fixtures.html"><span>fixture</span></a></li>
+							<li><a href="./4_map.html"><span>Map</span></a></li>
+							<li><a href="./5_vessel_live.html"><span>VESSEL</span></a></li>
+							<li><a href="./6_distance.html"><span>DISTANCE</span></a></li>
+							<li class="active"><a href="./7_tce_calulator.html"><span>TCE CALCULATOR</span></a></li>
+							<li><a href="./8_fleet.html"><span>FLEET LIBRARY</span></a></li>
+							<li><a href="./9_myfleet.html"><span>MY FLEET</span></a></li>
+							<li><a href="./10_research_weekly.html"><span>RESEARCH</span></a></li>
+						</ul>
+						<div class="DashClock">
+							<div class="DashClock__inner">
+								<div class="time"><span>04:07 UTC</span></div>
+								<div class="date"><span>13 May</span></div>
+							</div>
+						</div>
+					</nav>
+					<div class="TotalMenu__logo">
+						<div class="logo"><img src="../_public_m/images/common/bottom_logo.png" alt="vlcclab"></div>
+						<span class="text">VLCC Vessel Total Information Platform</span>
+						<span class="text">Platform Version 1.0</span>
+					</div>
+				</div>
+			</div>
+			<div class="blind TotalMenu__blind"></div>
+		</div>
+		<!-- //TotalMenu 메뉴부분 -->		
+		<div class="Page">
+			<!-- Page__header -->
+			<div class="Page__header">
+				<div class="PageHeader">
+                    <a href="./0_login.html" class="PageHeader__logo">VLCCLAB</a>
+					<div class="PageHeader__btnLast">
+						<a href="javascript:;" onclick="uiMobile.pageSearch.open();" class="icon icon-search"><span class="skip">Search</span></a>
+						<a href="#" class="icon icon-logout"><span class="skip">LOGOUT</span></a>
+						<a href="#" class="icon icon-menu TotalMenu__open"><span class="skip">MENU</span></a>
+					</div>
+					<!-- PageSearch -->
+					<div class="PageSearch" id="PageSearch">
+						<a href="javascript:;" onclick="uiMobile.pageSearch.close();" class="PageSearch__close"><i class="material-icons">clear</i></a>
+						<div class="PageSearch__inner">
+							<input type="text" class="PageSearch__input" placeholder="Search" />
+							<a href="#" class="PageSearch__search"><span>search</span></a>
+							<ul class="PageSearch__list">
+								<li><a href="">MAP SERECH RESULT - 1</a></li>
+								<li><a href="">MAP SERECH RESULT - 2</a></li>
+							</ul>	
+						</div>
+					</div>
+					<!-- PageSearch -->	
+				</div>
+			</div>
+			<!-- //Page__header -->
+			<!-- Page__inner -->
+			<div class="Page__inner isFooter">
+                <div class="Page__navigation">
+                    <!-- Navigation -->
+                    <div class="Navigation">
+                        <h1 class="Navigation__title"><span>TCE CALCULATOR</span></h1>
+                    </div>
+                    <!-- //Navigation -->
+				</div>
+				<!-- ToolsBox -->
+				<div class="ToolsBoxArea active" id="ToolsMap">
+					<div class="ToolsBoxArea__inner">
+						<div class="ToolsBox__title small">
+							<h2 class="title"><span>Singapore &gt; Qintao</span> <span>$ 27,3K</span></h2>
+							<div class="info"><span>Distance  :  15d OOh</span></div>
+						</div>
+						<div class="ToolsBox__map">
+							<div id="TotalMap" class="TotalMap">지도영역</div>
+							<div id="MapContent" class="MapContent">
+								<!-- MapShipInfo  -->
+								<div class="MapShipInfo" id="MapShipInfo">
+									<div class="MapShipInfo__inner">
+										<a href="javascript:;" onclick="window.uiGooglMap.infoShipMarker().close();" class="MapShipInfo__close"><i class="material-icons">close</i></a>
+										<div class="MapShipInfo__title noMark">
+											<div class="name noImg">Yuan Qiu Hu</div>
+											<div class="cate">CME</div>
+											<div class="etc"><span>308.371</span><span>2015</span><span>23.0</span><span>Scrubber fitted</span></div>
+										</div>
+										<div class="MapShipInfo__content">
+											<ul class="clear MapShipInfo__list">
+												<li><span class="tit">Draft</span><span class="txt">11</span><span class="txt right">7d 58 min ago</span></li>
+												<li><span class="tit">Speed</span><span class="txt">13.2</span><span class="txt right">15h 12min ago</span></li>
+												<li><span class="tit">Heading</span><span class="txt">83</span></li>
+												<li><span class="tit">Location</span><span class="txt">CAPE for 4d</span></li>
+												<li><span class="tit">Dest/ETA</span><span class="txt">Guangzhou / 03 Dec 19</span></li>
+												<li><span class="tit">Long/Lat</span><span class="txt">23,1888 / -34,9713</span></li>
+												<li class="signal cWhite"><span class="tit">Last signal</span><span class="txt">17min ago</span></li>
+												<li><span class="tit">Status</span><span class="txt">-</span></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!-- //MapShipInfo  -->
+							</div>
+						</div>
+						<div class="ToolsBox__schedule">
+							<div class="ToolsTitle pt10"><span>SCHEDULE</span></div>
+							<!-- VoyagesPath -->
+							<div class="VoyagesPath isLine isMove" id="VoyagesPath">
+								<div class="VoyagesPath__infoArea">
+									<div class="VoyagesPath__info cGreen">
+										<div class="row">
+											<div class="data data_left">(S)ECA</div>
+										</div>
+										<div class="row">
+											<div class="data data_left">0d 00h</div>
+											<div class="data data_right">366NM</div>
+										</div>
+									</div>
+								</div>
+								<div class="clear VoyagesPath__list">
+									<!-- VoyagesPath__path : style="height:값" 스크립트로 제어 -->
+									<div class="VoyagesPath__line line"></div>
+
+									<!-- VoyagesPath__item : latest css top값으로 이동가능 -->
+									<div class="VoyagesPath__item latest" style="top:100px">
+										<div class="icon icon_latest"></div>
+										<div class="detail"><span>Latest AIS <br> 09/04 06:52</span></div>
+									</div>
+									<!-- //VoyagesPath__item : latest -->	
+
+									<!-- VoyagesPath__item : Start -->
+									<div class="VoyagesPath__item">
+										<div class="icon icon_start"><span class="skip">Start</span></div>
+										<div class="name"><span>Start</span></div>
+										<div class="info">
+											<div class="title"><span>Southworld</span></div>
+											<div class="date"><span>04 Jun 15:52</span></div>
+										</div>
+										<!-- VoyagesPath__infoArea -->
+										<div class="VoyagesPath__infoArea">
+											<div class="VoyagesPath__info">
+												<div class="info">
+													<div class="title"><span>SPEED</span></div>
+													<span class="CountInput">
+														<input type="text" value="12.0">
+														<span class="unit">kts</span>
+													</span>
+													<a href="#" class="CountButton cBlack"><span>+</span></a>
+													<a href="#" class="CountButton cBlack"><span>-</span></a>
+												</div>
+												<div class="info">
+													<div class="title"><span>DISTANCE</span></div>
+													<div class="number"><span>0 NM</span></div>
+												</div>
+												<div class="info">
+													<div class="title"><span>CONSUMPTION</span></div>
+													<div class="number"><span>28.2 tons/day</span></div>
+												</div>
+											</div>
+										</div>
+										<!-- //VoyagesPath__infoArea -->																
+									</div>
+									<!-- //VoyagesPath__item : Start -->
+																			
+									<!-- VoyagesPath__item : Stop -->
+									<div class="VoyagesPath__item">
+										<div class="icon icon_stop"><span class="skip">Stop</span></div>
+										<div class="name"><span>Stop</span></div>
+										<div class="info">
+											<div class="title"><span>Falmouth</span></div>
+											<div class="date"><span>06 Jun 21:33-27 Jun 18:17</span></div>
+										</div>
+										<!-- VoyagesPath__infoArea -->
+										<div class="VoyagesPath__infoArea">
+											<div class="VoyagesPath__info">
+												<div class="info">
+													<div class="title"><span>SPEED</span></div>
+													<span class="CountInput">
+														<input type="text" value="12.0">
+														<span class="unit">kts</span>
+													</span>
+													<a href="#" class="CountButton cBlack"><span>+</span></a>
+													<a href="#" class="CountButton cBlack"><span>-</span></a>
+												</div>
+												<div class="info">
+													<div class="title"><span>DISTANCE</span></div>
+													<div class="number"><span>2,476NM</span></div>
+												</div>
+												<div class="info">
+													<div class="title"><span>CONSUMPTION</span></div>
+													<div class="number"><span>41,11 tons/day</span></div>
+												</div>
+											</div>
+										</div>
+										<!-- //VoyagesPath__infoArea -->														
+									</div>
+									<!-- //VoyagesPath__item : Stop -->
+									<!-- VoyagesPath__item : Load -->
+									<div class="VoyagesPath__item">
+										<div class="icon icon_load"><span class="skip">Load</span></div>
+										<div class="name"><span>Load</span></div>
+										<div class="info">
+											<div class="title"><span>Singapore</span></div>
+											<div class="date"><span>25 Nov 00:01</span></div>
+										</div>		
+										<!-- VoyagesPath__infoArea -->
+										<div class="VoyagesPath__infoArea">
+											<div class="VoyagesPath__info">
+												<div class="info">
+													<div class="title"><span>SPEED</span></div>
+													<span class="CountInput">
+														<input type="text" value="12.0">
+														<span class="unit">kts</span>
+													</span>
+													<a href="#" class="CountButton cBlack"><span>+</span></a>
+													<a href="#" class="CountButton cBlack"><span>-</span></a>
+												</div>
+												<div class="info">
+													<div class="title"><span>DISTANCE</span></div>
+													<div class="number"><span>ONM</span></div>
+												</div>
+												<div class="info">
+													<div class="title"><span>CONSUMPTION</span></div>
+													<div class="number"><span>28.2 tons/day</span></div>
+												</div>
+											</div>
+										</div>
+										<!-- //VoyagesPath__infoArea -->														
+									</div>
+									<!-- //VoyagesPath__item : Load -->
+
+									<!-- VoyagesPath__item : discharge -->
+									<div class="VoyagesPath__item">
+										<div class="icon icon_discharge"><span class="skip">Discharge</span></div>
+										<div class="name"><span>Discharge</span></div>
+										<div class="info">
+											<div class="title"><span>Falmouth</span></div>
+											<div class="date"><span>06 Jun 21:33-27 Jun 18:17</span></div>
+										</div>
+										<!-- VoyagesPath__infoArea -->
+										<div class="VoyagesPath__infoArea">
+											<div class="VoyagesPath__info">
+												<div class="info">
+													<div class="title"><span>SPEED</span></div>
+													<span class="CountInput">
+														<input type="text" value="12.0">
+														<span class="unit">kts</span>
+													</span>
+													<a href="#" class="CountButton cBlack"><span>+</span></a>
+													<a href="#" class="CountButton cBlack"><span>-</span></a>
+												</div>
+												<div class="info">
+													<div class="title"><span>DISTANCE</span></div>
+													<div class="number"><span>ONM</span></div>
+												</div>
+												<div class="info">
+													<div class="title"><span>CONSUMPTION</span></div>
+													<div class="number"><span>28.2 tons/day</span></div>
+												</div>
+											</div>
+										</div>
+										<!-- //VoyagesPath__infoArea -->														
+									</div>
+									<!-- //VoyagesPath__item : discharge -->
+								</div>
+							</div>
+							<!-- VoyagesPath -->
+						</div>
+					</div>
+				</div>
+				<!-- //ToolsBox -->
+				<!-- ToolsData -->
+				<div class="ToolsData" id="ToolsData">
+					<div class="ToolsData__inner">
+						<div class="ToolsData__inbox">
+							<!-- POSITION -->
+							<div class="Position ToolsBox line">
+								<div class="inner p10 m0">
+									<h2 class="ToolsTitle"><span>POSITION</span></h2>
+									<div class="ToolsRow">
+										<label for="txt1" class="ToolsLabel"><span>Open Port</span></label>
+										<span class="ToolsSearch">
+											<input type="text" name="txt1" id="txt1" value="SINGAPORE">
+											<a href="#" class="button"><span>search</span></a>
+										</span>
+									</div>
+									<div class="ToolsRow">
+										<label for="txt2" class="ToolsLabel"><span>Open Date</span></label>
+										<input type="text" name="txt2" id="txt2" value="" class="datepicker hasDatepicker" placeholder="mm/dd/yy" size="8">
+									</div>
+								</div>
+							</div>
+							<!-- //POSITION -->
+							<!-- ENQUIRY -->
+							<div class="Enquiry ToolsBox line">
+								<div class="inner p10 m0">
+									<h2 class="ToolsTitle"><span>ENQUIRY</span></h2>
+									<div class="ToolsRow">
+										<div class="ToolsInline">
+											<label for="txt3" class="ToolsLabel"><span>Laycan Start</span></label>
+											<input type="text" name="txt3" id="txt3" value="" class="datepicker hasDatepicker" placeholder="mm/dd/yy" size="8">
+										</div>
+										<div class="ToolsInline">
+											<label for="txt5" class="ToolsLabel"><span>Idle Days</span></label>
+											<input type="text" name="txt5" id="txt5" value="" class="datepicker hasDatepicker" placeholder="mm/dd/yy" size="8">
+										</div>
+									</div>
+									<div class="ToolsRow">
+										<span class="SelectBox small mb5">
+											<select name="" id="" width="10">
+												<option value="">Load Port</option>
+											</select>
+										</span>
+										<span class="ToolsSearch">
+											<input type="text" name="txt4" id="txt4" value="">
+											<a href="#" class="button"><span>search</span></a>
+										</span>	
+									</div>
+									<div class="ToolsRow">
+										<span class="SelectBox small mb5">
+											<select name="" id="" width="10">
+												<option value="">Discharge Port</option>
+											</select>
+										</span>
+										<span class="ToolsSearch">
+											<input type="text" value="">
+											<a href="#" class="button"><span>search</span></a>
+										</span>	
+									</div>
+									<div class="ToolsRow">
+										<label for="txt4" class="ToolsLabel"><span>Ballast to</span></label>
+										<span class="ToolsSearch">
+											<input type="text" value="">
+											<a href="#" class="button"><span>search</span></a>
+										</span>
+									</div>
+								</div>
+							</div>
+							<!-- //ENQUIRY -->
+							<!-- BUNKER -->
+							<div class="Bunker ToolsBox">
+								<div class="inner p10 m0">
+									<h2 class="ToolsTitle"><span>BUNKER</span></h2>
+									<div class="ToolsRow">
+										<span class="SelectBox block cBlue">
+											<select name="" id="" width="100">
+												<option value="">HSFO</option>
+											</select>
+										</span>
+										<div class="text">(HSFO OR LSFO OR  VLSGO)</div>
+									</div>
+									<h2 class="ToolsTitle pt20"><span>Bunker</span></h2>
+									<div class="ToolsRow">
+										<div class="text2">Price</div>
+										<div class="text">HSFO 431 $/ton I LSFO 570 $/ton I VLSGO 600 $/ton I MGO 645 $/ton</div>
+									</div>
+									<div class="ToolsRow ToolsRow__label">
+										<label for="bunker1"><span>Ballast</span></label>
+										<input type="text" id="bunker1" value="$ 80,000">
+									</div>
+									<div class="ToolsRow ToolsRow__label">
+										<label for="bunker2"><span>Laden </span></label>
+										<input type="text" id="bunker2" value="$ 248,000">
+									</div>
+									<div class="ToolsRow ToolsRow__label">
+										<label for="bunker3"><span>Idle </span></label>
+										<input type="text" id="bunker3" value="$ 22,000">
+									</div>
+									<div class="ToolsRow ToolsRow__label">
+										<label for="bunker4"><span>Load Port (HSFO or  LSFO or</span></label>
+										<input type="text" id="bunker4" value="$ 8,600">
+									</div>
+									<div class="ToolsRow ToolsRow__label">
+										<label for="bunker5"><span>Dischare Port (MGO)</span></label>
+										<input type="text" id="bunker5" value="$ 51,000">
+									</div>
+									<div class="ToolsRow ToolsRow__label">
+										<label for="bunker6"><span>Others (HSFO)</span></label>
+										<input type="text" id="bunker6" value="$ 0">
+									</div>
+									<div class="ToolsRow ToolsRow__label">
+										<label for="bunker7"><span>Others (LSFO)</span></label>
+										<input type="text" id="bunker7" value="$ 0">
+									</div>
+									<div class="ToolsRow ToolsRow__label">
+										<label for="bunker8"><span>Others (VLSGO)</span></label>
+										<input type="text" id="bunker8" value="$ 0">
+									</div>
+									<div class="ToolsRow ToolsRow__label">
+										<label for="bunker9"><span>Others (MGO)</span></label>
+										<input type="text" id="bunker9" value="$ 0">
+									</div>
+									<div class="pt20 pb20">
+										<div class="DataTable__3 data dark">
+											<table>
+												<thead>
+													<tr>
+														<th scope="col" style="width:55px">Fuel</th>
+														<th scope="col">Singapore</th>
+														<th scope="col">Fujairah</th>
+														<th scope="col">Rotterdam</th>
+														<th scope="col">Houston</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>LSFO</td>
+														<td>579</td>
+														<td>579</td>
+														<td>579</td>
+														<td>579</td>
+													</tr>
+													<tr>
+														<td>HSFO</td>
+														<td>579</td>
+														<td>579</td>
+														<td>579</td>
+														<td>579</td>
+													</tr>
+													<tr>
+														<td>VLMGO</td>
+														<td>579</td>
+														<td>579</td>
+														<td>579</td>
+														<td>579</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //BUNKER -->
+						</div>
+						<div class="ToolsData__inbox">
+							<!-- NETINCOME  -->
+							<div class="NetIncome ToolsBox line">
+								<div class="inner p10 m0">
+									<h2 class="ToolsTitle pb5"><span>NET INCOME</span></h2>
+									<br class="ToolsRow__line">
+									<div class="ToolsRow ToolsRow__division">
+										<div class="data data_left"><span>FREIGHT</span></div>
+										<div class="data data_right"><span>$ 754,260</span></div>
+									</div>
+									<div class="ToolsRow">
+										<label for="net1" class="ToolsLabel"><span>Cargo Quantiry</span></label>
+										<span class="InputUnit">
+											<input type="text" id="net1" value="260,000" size="15">
+											<span class="unit">mt</span>
+										</span>
+									</div>
+									<div class="ToolsRow">
+										<label for="net2" class="ToolsLabel"><span>Flat Rate</span></label>
+										<span class="InputUnit">
+											<input type="text" id="net2" value="" size="15">
+											<span class="unit">$/ton</span>
+										</span>
+									</div>
+									<br class="ToolsRow__line">
+									<div class="ToolsRow">
+										<div class="text2"><span>Freight Rate </span></div>
+									</div>
+									<div class="ToolsRow">
+										<span class="SelectBox small">
+											<select name="" id="" width="10">
+												<option value="">WS</option>
+											</select>
+										</span>
+										<span class="text">(WS OR LUMPSUM)</span>
+										<div class="pt5">
+											<input type="text" value="45" size="15">
+										</div>											
+									</div>
+									<br class="ToolsRow__line">
+									<div class="ToolsRow ToolsRow__division">
+										<div class="data data_left"><span>+ Canal demurrage</span></div>
+										<div class="data data_right"><span>$ 40,000</span></div>
+									</div>
+									<div class="pt10"></div>
+									<div class="ToolsRow ToolsRow__label2">
+										<label for="net3"><span>Demurrage rate</span></label>
+										<input type="text" id="net3" value="$ 20,000">
+										<div class="last"></div>
+									</div>												
+									<div class="ToolsRow ToolsRow__label2">
+										<label><span>Canal days (charterer’s account)</span></label>
+										<div class="middle"><span>2 days</span></div>
+									</div>												
+									<div class="ToolsRow ToolsRow__label2">
+										<label><span>Others</span></label>
+									</div>												
+									<div class="ToolsRow ToolsRow__label2">
+										<label for="net4"><span>Commission</span></label>
+										<input type="text" id="net4" value="3.75%">
+										<div class="last"><span>$ 28,284</span></div>
+									</div>
+									<br class="ToolsRow__line mt10">
+									<div class="ToolsRow__cost">
+										<span class="title">NET INCOME</span>
+										<span class="data">$ 725,975</span>
+									</div>											
+								</div>
+							</div>
+							<!-- //NETINCOME -->
+							<!-- COSTS -->
+							<div class="Cost ToolsBox line">
+								<div class="inner p10 m0">
+									<h2 class="ToolsTitle pb5"><span>COSTS</span></h2>
+									<div class="ToolsRow ToolsRow__label">
+										<label for="cost1"><span>Loading Port</span></label>
+										<input type="text" id="cost1" value="$ 25,000">
+									</div>
+									<div class="ToolsRow ToolsRow__label">
+										<label for="cost2"><span>Discharge Port </span></label>
+										<input type="text" id="cost2" value="$ 65,000">
+									</div>
+									<div class="ToolsRow ToolsRow__label">
+										<label for="cost3"><span>Canal </span></label>
+										<input type="text" id="cost3" value="$ 0">
+									</div>
+									<div class="ToolsRow ToolsRow__label">
+										<label for="cost4"><span>Bunker </span></label>
+										<input type="text" id="cost4" value="$ 415,000">
+									</div>
+									<div class="ToolsRow ToolsRow__label">
+										<label for="cost5"><span>Others </span></label>
+										<input type="text" id="cost5" value="$ 0">
+									</div>
+									<br class="ToolsRow__line mt10">
+									<div class="ToolsRow__cost ">
+										<span class="title">COST - </span>
+										<span class="data">$ 550,975</span>
+									</div>											
+								</div>
+							</div>
+							<!-- //COSTS -->
+							<!-- DURATION -->
+							<div class="Duration ToolsBox">
+								<div class="inner p10 m0">
+									<h2 class="ToolsTitle pb5"><span>DURATION</span></h2>
+									<div class="ToolsRow ToolsRow__division">
+										<div class="data data_left"><span>+ Ballast days</span></div>
+										<div class="data data_right"><span>6d 19h</span></div>
+									</div>											
+									<div class="ToolsRow ToolsRow__label2">
+										<label for="duration1"><span>Speed</span></label>
+										<input type="text" id="duration1" value="$ 25,000">
+									</div>
+									<div class="ToolsRow ToolsRow__label2">
+										<label for="duration2"><span>Distance </span></label>
+										<input type="text" id="duration2" value="1,952 NM">
+									</div>
+									<br class="ToolsRow__line mt10">
+									<div class="ToolsRow ToolsRow__division">
+										<div class="data data_left"><span>+ Laden days </span></div>
+										<div class="data data_right"><span>20d 10h</span></div>
+									</div>											
+									<div class="ToolsRow ToolsRow__label2">
+										<label for="duration7"><span>Speed</span></label>
+										<input type="text" id="duration7" value="13 its">
+									</div>
+									<div class="ToolsRow ToolsRow__label2">
+										<label for="duration8"><span>Distance </span></label>
+										<input type="text" id="duration8" value="3,435 NM">
+									</div>
+									<div class="ToolsRow ToolsRow__label2">
+										<label for="duration9"><span>Idle days</span></label>
+										<input type="text" id="duration9" value="">
+									</div>
+									<div class="ToolsRow ToolsRow__label2">
+										<label for="duration10"><span>Port days</span></label>
+										<input type="text" id="duration10" value="2 days">
+										<div class="last"><span>- $ 415,000</span></div>
+									</div>
+									<br class="ToolsRow__line mt10">
+									<div class="ToolsRow ToolsRow__division">
+										<div class="data data_left"><span>+ Others </span></div>
+									</div>											
+									<div class="ToolsRow ToolsRow__label2">
+										<label for="duration3"><span>Weather Allowance (Laden) 10%</span></label>
+										<input type="text" id="duration3" value="05d 04h">
+									</div>
+									<div class="ToolsRow ToolsRow__label2">
+										<label for="duration4"><span>CANAL DAYS</span></label>
+										<input type="text" id="duration4" value="">
+									</div>
+									<div class="ToolsRow ToolsRow__label2">
+										<label for="duration5"><span>Owner's account</span></label>
+										<input type="text" id="duration5" value="1d 04h">
+									</div>
+									<div class="ToolsRow ToolsRow__label2">
+										<label for="duration6"><span>Chartere’s account</span></label>
+										<input type="text" id="duration6" value="4d 00h">
+									</div>
+									<br class="ToolsRow__line mt10">
+									<div class="ToolsRow__cost">
+										<div class="data_left">
+											<span class="title">Duration : </span>
+											<span class="data">30d 00h</span>
+										</div>
+										<div class="data_right">
+											<span class="title">TCE : </span>
+											<span class="data">$ 26,975</span>
+										</div>
+									</div>											
+								</div>
+							</div>
+							<!-- //COSTS -->
+						</div>		
+					</div>
+				</div>
+				<!-- //ToolsData -->
+			</div>
+			<!-- //Page__inner -->
+			<div class="Page__footer">
+				<a href="javascript:;" class="Page__button__up" id="ToolsButton"><i class="material-icons">keyboard_arrow_up</i></a>
+			</div>
+			<div class="Page__loading" id="loading"><span>loading...</span></div>
+		</div>
+    </div>
+    
+	<!-- javascript -->
+	<script src="../_public_m/js/jquery-1.12.4.js"></script>
+	<script src="../_public_m/js/moment-with-locales.js"></script>
+	<script src="../_public_m/js/bootstrap-material-datetimepicker.min.js"></script>
+	
+    <script src="../_public_m/js/ui.moblie.js"></script>
+	<!-- //javascript -->
+	
+	<!-- 맵 js 추가 -->
+	<script type="text/javascript" src="../_public/js/ui.gooleMap.js"></script>
+	<script type="text/javascript" src="../_public/js/ui.googleMap.sampleData.js"></script>
+	<script type="text/javascript" src="../_public/js/sv.map.controller.min.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&region=KR&language=en&key=AIzaSyCQ8LK-VtL1tudKfKMUo-Br9bQNt5u7Cc0&callback=initMap" async defer></script>
+    <!-- //맵 js 추가 -->
+	<script type="text/javascript">
+		var voyagesSampleData = {
+			"geometry":{
+				"coordinates": [
+					{lat: 15.933509, lng: 81.705314}, 
+					{lat : 19.160335, lng : 88.916407},
+					{lat: 15.091604, lng: 96.180620}, 
+					{lat: 0.704153, lng: 104.684426},
+					{lat : 12.834711, lng : 111.434909},
+					{lat: 21.280128, lng:  114.058712},
+					{lat : 22.665475, lng : 117.492517},
+					{lat: 27.201494, lng :122.496629},
+					{lat: 36.051769, lng: 120.342220},
+				]
+			},
+			"markers" : [
+				{
+					"state" : "start",
+					"port_name":"Yuan Qiu Hu",
+					"position" : {lat: 15.933509, lng: 81.705314}
+				},
+				{
+					"state" : "latest",
+					"position" : {lat : 19.160335, lng : 88.916407}
+				},
+				{
+					"state" : "stop",
+					"port_name":"Falmouth",
+					"position" : {lat : 22.665475, lng : 117.492517}
+				},
+				{
+					"state" : "load",
+					"port_name":"Southworld",
+					"position" : {lat: 0.704153, lng: 104.684426}
+				},
+				{
+					"state" : "discharge",
+					"port_name":"Qingdao",
+					"position" : {lat: 36.051769, lng: 120.342220}
+				},
+			]
+		};
+
+		var _map;
+		function initMap(){
+			_map = new google.maps.Map(document.getElementById('TotalMap'), {
+				center: {lat: 36.705106, lng: 127},
+				zoom: 3,
+				styles : window.uiGooglMap.googleMapStyle,
+				disableDefaultUI : true
+			});
+			//맵이동시 인포삭제, 인포위치이동
+			_map.addListener('center_changed', function() {
+				var info = window.uiGooglMap.infoShipMarker();
+				info.close();
+			});				
+			var _lineData = voyagesSampleData.geometry.coordinates;
+			var _markerData = voyagesSampleData.markers;
+			createLine(_map, _lineData);
+			createMarker(_map, _markerData);
+		}
+
+		function createLine(_map, _data){
+			var path = new google.maps.Polyline({
+				path: _data,
+				geodesic: true,
+				strokeWidth : 0,
+				strokeOpacity : 0,
+				strokeColor : "#FFFFFF",
+				icons : [
+					{
+						icon: {
+							path: 'M 0,-.1 0,.1',
+							strokeOpacity: 1,
+							scale: 2
+						},
+						offset: '0',
+						repeat: '8px'
+					}
+				]
+			});
+			path.setMap(_map);
+		}
+		
+		//마커셋팅
+		function getImageIcon(_data){
+			var imgPath = '/_public/images/map/icon/';
+			var imgExt = ".png";
+			switch(_data){
+				case "load" :
+					return  imgPath + "icon_path_load"+imgExt;
+					break;
+				case "stop" :
+					return  imgPath + "icon_path_stop"+imgExt;
+					break;
+				case "start" :
+					return  imgPath + "icon_path_start"+imgExt;
+					break;
+				case "discharge" :
+					return  imgPath + "icon_path_discharge"+imgExt;
+					break;
+				case "point" :
+					return  imgPath + "icon_path_point"+imgExt;
+					break;
+				case "latest" :
+					return  imgPath + "icon_path_latest"+imgExt;
+					break;
+			}
+		}
+		function createMarker(_map, _data){
+			for (var i = 0; i < _data.length; i++) {
+				var data = _data[i];
+
+				var bounds = new google.maps.LatLngBounds();
+				var imageUrl = getImageIcon(data.state);
+				var image = {
+					url: imageUrl,
+					scaledSize: new google.maps.Size(26, 26),
+					size: new google.maps.Size(26, 26),
+					origin: new google.maps.Point(0, 0),
+					anchor: new google.maps.Point(26/2, 26/2)
+				};
+				var marker = new google.maps.Marker({
+					position: data.position,
+					map: _map,
+					icon: image,
+					title: data.port_name ? data.port_name : "",
+					zIndex: (i+1)
+				});
+				bounds.extend(marker.position);
+				var info = window.uiGooglMap.infoShipMarker();
+				if( data.state == 'latest' ){
+					marker.addListener('click', function(event) {
+						info.open(event.pixel);
+					});
+				}
+			}
+		}	
+	
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			ui_voyages_line();
+			
+			var _isData = false;
+			var _toolsMap = $("#ToolsMap");
+			var _toolsData = $("#ToolsData");
+			
+			//버튼클릭 
+			$("#ToolsButton").on('click', function(e){
+				e.preventDefault();
+				console.log(_isData);
+				if(!_isData){
+					_toolsMap.removeClass("active");
+					_toolsData.addClass("active");
+					$(this).addClass("down");
+					_isData = true;
+				}else{
+					_toolsMap.addClass("active");
+					_toolsData.removeClass("active");
+					$(this).removeClass("down");
+					_isData = false;
+				}
+			})
+		})
+		function ui_voyages_line(){
+			var item = $("#VoyagesPath");
+			var line =item.find(".line");
+			//latest 찾아서 top 얻기.
+			var latest = item.find(".latest");
+			if( latest.length > 0 ){
+				line.css('height', latest.position().top);
+			}	
+		}
+	</script>
+</body>
+</html>

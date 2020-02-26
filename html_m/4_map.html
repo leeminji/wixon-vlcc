@@ -2,10 +2,11 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<title>vessel > VLCC LAB</title>
+	<title>LIVE POSITION > VESSEL > VLCC LAB</title>
 	<link rel="stylesheet" href="../_public_m/css/style_m.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 	
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/x-icon" href="../_public_m/favicon/favicon.ico" /> <!-- Chrome, Safari, IE -->
@@ -37,13 +38,13 @@
 							<li><a href="./1_setting_notice.html"><span>SETTING</span></a></li>
 							<li><a href="./2_dashboard.html"><span>Dashboard</span></a></li>
 							<li><a href="./3_fixtures.html"><span>fixture</span></a></li>
-							<li><a href="./4_map.html"><span>Map</span></a></li>
-							<li class="active"><a href="./5_vessel.html"><span>VESSEL</span></a></li>
-							<li><a href="#"><span>DISTANCE</span></a></li>
-							<li><a href="#"><span>TCE CALCULATOR</span></a></li>
-							<li><a href="#"><span>FLEET LIBRARY</span></a></li>
-							<li><a href="#"><span>RESEARCH</span></a></li>
-							<li><a href="#"><span>MY FLEET</span></a></li>
+							<li class="active"><a href="./4_map.html"><span>Map</span></a></li>
+							<li><a href="./5_vessel_live.html"><span>VESSEL</span></a></li>
+							<li><a href="./6_distance.html"><span>DISTANCE</span></a></li>
+							<li><a href="./7_tce_calulator.html"><span>TCE CALCULATOR</span></a></li>
+							<li><a href="./8_fleet.html"><span>FLEET LIBRARY</span></a></li>
+							<li><a href="./9_myfleet.html"><span>MY FLEET</span></a></li>
+							<li><a href="./10_research_weekly.html"><span>RESEARCH</span></a></li>
 						</ul>
 						<div class="DashClock">
 							<div class="DashClock__inner">
@@ -66,12 +67,26 @@
 			<!-- Page__header -->
 			<div class="Page__header">
 				<div class="PageHeader">
-                    <div class="PageHeader__logo">VLCCLAB</div>
+                    <a href="./0_login.html" class="PageHeader__logo">VLCCLAB</a>
 					<div class="PageHeader__btnLast">
+						<a href="javascript:;" onclick="uiMobile.pageSearch.open();" class="icon icon-search"><span class="skip">Search</span></a>
 						<a href="#" class="icon icon-logout"><span class="skip">LOGOUT</span></a>
 						<a href="#" class="icon icon-menu TotalMenu__open"><span class="skip">MENU</span></a>
 					</div>
 				</div>
+				<!-- PageSearch -->
+				<div class="PageSearch" id="PageSearch">
+					<a href="javascript:;" onclick="uiMobile.pageSearch.close();" class="PageSearch__close"><i class="material-icons">clear</i></a>
+					<div class="PageSearch__inner">
+						<input type="text" class="PageSearch__input" placeholder="Search" />
+						<a href="#" class="PageSearch__search"><span>search</span></a>
+						<ul class="PageSearch__list">
+							<li><a href="">MAP SERECH RESULT - 1</a></li>
+							<li><a href="">MAP SERECH RESULT - 2</a></li>
+						</ul>	
+					</div>
+				</div>
+				<!-- PageSearch -->	
 			</div>
 			<!-- //Page__header -->
 			<!-- Page__inner -->
@@ -79,315 +94,549 @@
                 <div class="Page__navigation">
                     <!-- Navigation -->
                     <div class="Navigation">
-                        <h1 class="Navigation__title"><span>FIXTURES</span></h1>
+                        <h1 class="Navigation__title"><span>MAP</span></h1>
                     </div>
                     <!-- //Navigation -->
                 </div>
-                <!-- ChartArea -->
-                <div class="ChartArea">
-                    <!-- Fixture -->
-                    <div class="ChartBox">
-                        <div class="ChartData__title"><span>Fixture</span></div>
-                        <div class="ChartData__tab">
-                            <div class="ChartData_tablist">
-                                <a href="javascript:;" class="active">MEG</a>
-                                <a href="javascript:;">WAF</a>
-                                <a href="javascript:;">UKC/MED</a>
-                                <a href="javascript:;">AMERICAS</a>
-                            </div>
-                        </div>                       
-                        <div class="ChartData">
-                            <div class="ChartData__fixed">
-                                <div class="inner table_thead">
-                                    <div class="table_col">
-                                        <div class="table_cell">Reported</div>
-                                        <div class="table_cell">Vessel</div>
-                                        <div class="table_cell">Built</div>
-                                        <div class="table_cell">Status</div>
-                                        <div class="table_cell">LOAD</div>
-                                        <div class="table_cell">DISCHARGE</div>
-                                        <div class="table_cell">Rate</div>
-                                        <div class="table_cell">Charterer</div>
-                                        <div class="table_cell">Laycan</div>
-                                        <div class="table_cell">Quantity</div>
-                                        <div class="table_cell">Operator</div>
-                                        <div class="table_cell">TCE</div>
-                                        <div class="table_cell">Remark</div>
-                                    </div>
-                                </div>            
-                            </div>
-                            <div class="ChartData__data">
-                                <div class="inner table_tbody" style="width:70em">
-                                    <div class="table_col">
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell">Eagle Varna</div>
-                                        <div class="table_cell">20-Jul</div>
-                                        <div class="table_cell">Fully Fixed</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">WS 33</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell">15</div>
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell cBlue"></div>
-                                    </div>
-                                    <div class="table_col">
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell">Eagle Varna </div>
-                                        <div class="table_cell">20-Jul</div>
-                                        <div class="table_cell">Fully Fixed</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">WS 33</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell">10</div>
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell cBlue">Ex D/D</div>
-                                    </div>
-                                    <div class="table_col">
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell">Eagle Varna </div>
-                                        <div class="table_cell">20-Jul</div>
-                                        <div class="table_cell">Fully Fixed</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">WS 33</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell cBlue">03</div>
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell">Ex D/D</div>
-                                    </div>
-                                    <div class="table_col">
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell">Eagle Varna </div>
-                                        <div class="table_cell">20-Jul</div>
-                                        <div class="table_cell">Fully Fixed</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">WS 33</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell">15</div>
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell">Ex D/D</div>
-                                    </div>
-                                    <div class="table_col">
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell">Eagle Varna </div>
-                                        <div class="table_cell">20-Jul</div>
-                                        <div class="table_cell">Fully Fixed</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">WS 33</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell">15</div>
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell">Ex D/D</div>
-                                    </div>
-                                    <div class="table_col">
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell">Eagle Varna </div>
-                                        <div class="table_cell">20-Jul</div>
-                                        <div class="table_cell">Fully Fixed</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">WS 33</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell">15</div>
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell">Ex D/D</div>
-                                    </div>
-                                    <div class="table_col">
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell">Eagle Varna </div>
-                                        <div class="table_cell">20-Jul</div>
-                                        <div class="table_cell">Fully Fixed</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">WS 33</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell">15</div>
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell">Ex D/D</div>
-                                    </div>
-                                    <div class="table_col">
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell">Eagle Varna </div>
-                                        <div class="table_cell">20-Jul</div>
-                                        <div class="table_cell">Fully Fixed</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">WS 33</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell">15</div>
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell">Ex D/D</div>
-                                    </div>
-                                    <div class="table_col">
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell">Eagle Varna </div>
-                                        <div class="table_cell">20-Jul</div>
-                                        <div class="table_cell">Fully Fixed</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">WS 33</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell">15</div>
-                                        <div class="table_cell"></div>
-                                        <div class="table_cell">Ex D/D</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- //Fixture -->
-                    <!-- frash cargo -->
-                    <div class="ChartBox">
-                        <div class="ChartData__title"><span>frash cargo</span></div>
-                        <div class="ChartData__tab">
-                            <div class="ChartData_tablist">
-                                <a href="javascript:;" class="active">MEG</a>
-                                <a href="javascript:;">WAF</a>
-                                <a href="javascript:;">UKC/MED</a>
-                                <a href="javascript:;">AMERICAS</a>
-                            </div>
-                        </div>                       
-                        <div class="ChartData">
-                            <div class="ChartData__fixed">
-                                <div class="inner table_thead">
-                                    <div class="table_col">
-                                        <div class="table_cell">CHARTERER</div>
-                                        <div class="table_cell">LAYCAN</div>
-                                        <div class="table_cell">LOAD</div>
-                                        <div class="table_cell">DISCHARGE</div>
-                                        <div class="table_cell">QUANTITY</div>
-                                        <div class="table_cell">REMARK</div>
-                                    </div>
-                                </div>            
-                            </div>
-                            <div class="ChartData__data">
-                                <div class="inner table_tbody" style="width:60em">
-                                    <div class="table_col">
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell cBlue"></div>
-                                    </div>
-                                    <div class="table_col">
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell cBlue"></div>
-                                    </div>
-                                    <div class="table_col">
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell cBlue">Ex D/D</div>
-                                    </div>
-                                    <div class="table_col">
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell cBlue"></div>
-                                    </div>
-                                    <div class="table_col">
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell cBlue"></div>
-                                    </div>
-                                    <div class="table_col">
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell cBlue">Ex D/D</div>
-                                    </div>
-                                    <div class="table_col">
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell cBlue"></div>
-                                    </div>
-                                    <div class="table_col">
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell cBlue"></div>
-                                    </div>
-                                    <div class="table_col">
-                                        <div class="table_cell">SK ENERGY</div>
-                                        <div class="table_cell">10-Aug</div>
-                                        <div class="table_cell">Basrah</div>
-                                        <div class="table_cell">Ulsan</div>
-                                        <div class="table_cell">260,000</div>
-                                        <div class="table_cell cBlue">Ex D/D</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- //frash cargo -->
-                </div>
-                <!-- //ChartArea -->
+                <div class="TotalMapArea">
+                    <!-- 구글맵 영역 -->
+                    <div id="TotalMap" class="TotalMap">지도영역</div>
+					<!-- //구글맵 영역 -->
+					<div id="MapContent" class="MapContent">
+						<!-- MapButton -->
+						<div class="MapButton">
+							<div class="MapButton__item"><a href="javascript:;" onclick="window.uiGooglMap.state().open();"><span>vlcc status</span></a></div>
+							<div class="MapButton__item"><a href="javascript:;" onclick="window.uiGooglMap.menu().open();"><span>menu</span></a></div>
+						</div>
+						<!-- //MapButton -->
+						
+						<!-- MapState -->
+						<div class="MapState active" id="MapState">
+							<a href="javascript:;" onclick="window.uiGooglMap.state().close();" class="MapState__button_close" id="MapStateClose"><i class="material-icons">close</i></a>
+							<div class="MapState__inner">
+								<div class="MapState__title"><span>VLCC STATUS</span></div>
+								<ul class="clear clearix MapState__list">
+									<li>
+										<div class="MapState__item">
+											<span class="js-svg iconShip" data-icon="ship_1"></span>
+											<span class="txt">On Sub / Fixed / Project</span>
+										</div>
+									</li>
+									<li class="narrow">
+										<div class="MapState__item">
+											<span class="js-svg iconShip" data-icon="ship_2"></span>
+											<span class="txt">Laden</span>
+										</div>
+									</li>
+									<li>
+										<div class="MapState__item">
+											<span class="js-svg iconShip" data-icon="ship_3"></span>
+											<span class="txt">Open soon</span>
+										</div>
+									</li>
+									<li>
+										<div class="MapState__item">
+											<span class="js-svg iconShip" data-icon="ship_4"></span>
+											<span class="txt">Open (Handicaped)</span>
+										</div>
+									</li>
+									<li>
+										<div class="MapState__item">
+											<span class="js-svg iconShip" data-icon="ship_5"></span>
+											<span class="txt">Drydock / Others</span>
+										</div>
+									</li>
+									<li class="narrow">
+										<div class="MapState__item">
+											<span class="js-svg iconShip" data-icon="ship_6"></span>
+											<span class="txt">Open </span>
+										</div>
+									</li>
+									<li>
+										<div class="MapState__item">
+											<span class="js-svg iconShip" data-icon="ship_7"></span>
+											<span class="txt">Floating Storag</span>
+										</div>
+									</li>
+									<li>
+										<div class="MapState__item">
+											<span class="js-svg iconShip" data-icon="ship_8"></span>
+											<span class="txt">Open soon (handicapped)</span>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- //MapState -->
+						
+						<!-- MapMenu -->
+						<div class="MapMenu active" id="MapMenu">
+							<a href="javascript:;" onclick="window.uiGooglMap.menu().close();" class="MapMenu__button_close" id="MapMenuClose">
+								<i class="material-icons">keyboard_arrow_right</i>
+							</a>
+							<div class="MapMenu__inner">
+								<div class="MapMenu__list">
+									<div class="title"><span>All Vessels</span></div>
+									<ul class="clear MapMenu__sublist">
+										<li><a href="">Ballast+Laden</a></li>
+										<li><a href="">Ballast</a></li>
+										<li class="active"><a href="">Laden</a></li>
+									</ul>
+								</div>
+								<div class="MapMenu__list">
+									<div class="title"><span>Ballast Only</span></div>
+									<ul class="clear MapMenu__sublist">
+										<li><a href="">On Sub / Fixed</a></li>
+										<li><a href="">Project</a></li>
+										<li><a href="">Open</a></li>
+										<li><a href="">Open Soon</a></li>
+										<li><a href="">Drydock</a></li>
+										<li><a href="">Others</a></li>
+									</ul>
+								</div>								
+								<div class="MapMenu__list">
+									<div class="title"><span>Laden Only</span></div>
+									<ul class="clear MapMenu__sublist">
+										<li><a href="">Loading</a></li>
+										<li><a href="">In Transit</a></li>
+										<li><a href="">Floating Storafge</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- //MapMenu -->
+						
+						<!-- MapShipInfo 클릭했을때 -->
+						<div class="MapShipInfo" id="MapShipInfo">
+							<div class="MapShipInfo__inner">
+								<a href="javascript:;" onclick="window.uiGooglMap.infoShipMarker().close();" class="MapShipInfo__close"><i class="material-icons">close</i></a>
+								<div class="MapShipInfo__title">
+									<div class="mark"><a class="icon icon-start map_marker" href="javascript:;"></a></div>
+									<div class="name">Yuan Qiu Hu</div>
+									<div class="date">Canaport 21 Sep 19</div>
+									<div class="etc"><span>308.371</span><span>2015</span><span>23.0</span><span>Scrubber fitted</span></div>
+								</div>
+								<div class="MapShipInfo__content">
+									<ul class="clear MapShipInfo__list">
+										<li><span class="tit">Draft</span><span class="txt">11/ -9.4m(50% of max) 7d 58min ago</span></li>
+										<li><span class="tit">Speed</span><span class="txt">13.2 / +1.6 kts (9% of max) 15h 12min ago</span></li>
+										<li><span class="tit">Heading</span><span class="txt">83</span></li>
+										<li><span class="tit">Location</span><span class="txt">CAPE for 4d</span></li>
+										<li><span class="tit">Dest/ETA</span><span class="txt">Guangzhou / 03 Dec 19</span></li>
+										<li><span class="tit">Long/Lat</span><span class="txt">23,1888 / -34,9713</span></li>
+										<li class="signal"><span class="tit">Last signal</span><span class="txt">17min ago</span></li>
+										<li><span class="tit">Status</span><span class="txt">-</span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- //MapShipInfo 클릭했을때 -->
+
+						<!-- MapDetail -->
+						<div class="MapDetail" id="MapDetail">
+							<div class="MapDetail__list">
+								<a href="#MapDetailMap"><span>Map</span></a>
+								<a href="#MapDetailWeather"><span>Weather</span></a>
+							</div>
+							<div class="MapDetail__content">
+								<div class="MapDetail__inner" id="MapDetailMap">
+									<div class="MapDetail__layers">
+										<div class="MapDetail__title"><span>Layers</span></div>
+										<ul class="clear">
+											<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox" checked><span></span></label> <span class="label">ECA</span></li>
+											<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox"><span></span></label> <span class="label">PIRACY</span></li>
+											<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox"><span></span></label> <span class="label">JWC</span></li>
+											<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox"><span></span></label> <span class="label">HIGH RISK PIRACY</span></li>
+											<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox"><span></span></label> <span class="label">TSS</span></li>
+											<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox"><span></span></label> <span class="label">TSS2</span></li>
+										</ul>
+									</div>
+								</div>
+								<div class="MapDetail__inner" id="MapDetailWeather">
+									weather...
+								</div>
+							</div>
+						</div>
+						<!-- //MapDetail -->
+					</div>
+                </div>      
 			</div>
 			<!-- //Page__inner -->
+			<div class="Page__loading" id="loading"><span>loading...</span></div>
 		</div>
-	</div>
+    </div>
+    
 	<!-- javascript -->
 	<script src="../_public_m/js/jquery-1.12.4.js"></script>
-	<script src="../_public_m/js/slick.js"></script>
-	<script src="../_public_m/js/jquery-ui.js"></script>
+	<script src="../_public_m/js/moment-with-locales.js"></script>
+	<script src="../_public_m/js/bootstrap-material-datetimepicker.min.js"></script>
     <script src="../_public_m/js/ui.moblie.js"></script>
     <!-- //javascript -->
     
-	<!-- 차트js추가 -->
-	<script type="text/javascript" src="../_public/vendor/chartjs/moment.min.js"></script>
-	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.js"></script>
-	<script type="text/javascript" src="../_public/vendor/chartjs/chartjs-plugin-datalabels.js"></script>
-	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.utill.js"></script>
-	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.sampleData.js"></script> <!-- Chart.sampleData.js 여기에 샘플데이터있습니다. -->
-    <!-- //차트js추가 -->
+	<!-- 맵 js 추가 -->
+	<script type="text/javascript" src="../_public/js/ui.gooleMap.js"></script>
+	<script type="text/javascript" src="../_public/js/ui.googleMap.sampleData.js"></script>
+	<script type="text/javascript" src="../_public/js/sv.map.controller.min.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&region=KR&language=en&key=AIzaSyCQ8LK-VtL1tudKfKMUo-Br9bQNt5u7Cc0&callback=initMap" async defer></script>
+    <!-- //맵 js 추가 -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//마크 On/Off : className : on 으로 제어
+			$('.map_marker').on('click', function(){
+				$(this).toggleClass('on');
+			});
+			ui_mapDetail();
+		});
 
-    <script type="text/javascript">
-		$(window).load(function(){
+		var sampleData = {
+			"line_list":{
+				"coordinates": [
+					{lat: 15.933509, lng: 81.705314}, 
+					{lat : 19.160335, lng : 88.916407},
+					{lat: 15.091604, lng: 96.180620}, 
+					{lat: 0.704153, lng: 104.684426},
+					{lat : 12.834711, lng : 111.434909},
+					{lat: 21.280128, lng:  114.058712},
+					{lat : 22.665475, lng : 117.492517},
+					{lat: 27.201494, lng :122.496629},
+					{lat: 36.051769, lng: 120.342220},
+				]
+			},
+			"ship_list":[
+				{
+					"myfleet" : true,
+					"ship_type" : "ship_1",
+					"mmsi":205073000,
+					"vessel_name":"NEWTON",
+					"position_info":{
+						"lat":15.933509,
+						"lon":81.705314,
+						"turn":0.0,
+						"speed":0.1,
+						"course":281.4,
+						"true_heading":56,
+					}
+				}, {
+					"myfleet" : false,
+					"ship_type" : "ship_3",
+					"mmsi":205073001,
+					"vessel_name":"SIMONE",
+					"position_info":{
+						"lat":12.834711,
+						"lon":111.434909,
+						"turn":0.0,
+						"speed":0.0,
+						"course":62.7,
+						"true_heading":131,
+					}
+				}, {
+					"myfleet" : true,
+					"ship_type" : "ship_6",
+					"mmsi":205073003,
+					"vessel_name":"SIMONE_2222",
+					"position_info":{
+						"lat":27.201494,
+						"lon":122.496629,
+						"turn":0.0,
+						"speed":0.0,
+						"course":62.7,
+						"true_heading":50,
+					}
+				}, {
+					"myfleet" : true,
+					"ship_type" : "ship_6",
+					"mmsi":205073005,
+					"vessel_name":"SIMONE_4444",
+					"position_info":{
+						"lat":29.301594,
+						"lon":122.36429,
+						"turn":0.0,
+						"speed":0.0,
+						"course":1,
+						"true_heading":30,
+					}
+				},{
+					"myfleet" : false,
+					"ship_type" : "ship_5",
+					"mmsi":205073004,
+					"vessel_name":"SIMONE_3333",
+					"position_info":{
+						"lat":36.051769,
+						"lon":120.342220,
+						"turn":0.0,
+						"speed":0.0,
+						"course":62.7,
+						"true_heading":58,
+					}
+				}
+    		]
+		}
+		
+		//맵예시
+		var _map;
+		var _shipMarkers = []; //마커들 담은 리스트(필요)
+		var INFO_ZOOM_LEVEL = 6;
+
+		function initMap(){
+			_map = new google.maps.Map(document.getElementById('TotalMap'), {
+				center: {lat: 36.705106, lng: 127},
+				zoom: 5,
+				styles : window.uiGooglMap.googleMapStyle,
+				disableDefaultUI : true
+			});
+
+			//맵이동시 인포삭제, 인포위치이동
+			_map.addListener('center_changed', function() {
+				removeAllShipInfo();
+				var info = window.uiGooglMap.infoShipMarker();
+				info.close();
+
+				zoomInfoDisplay(_map);
+			});
+
+			_map.addListener("zoom_changed", function(){
+				zoomInfoDisplay(_map);
+			});
+
+			//마커, 배 표시함수
+			createLine(_map, sampleData.line_list.coordinates);
+			createShipMakers(_map, sampleData.ship_list);
+		}
+
+		//줌하면 인포표시하고 아웃하면 사라짐.
+		function zoomInfoDisplay(_map){
+			removeAllShipInfo();
+			var zoomLevel = _map.getZoom();
+			if( zoomLevel < INFO_ZOOM_LEVEL ) return;
+			
+			//현재 맵 바운드
+			var bounds = _map.getBounds();
+			var ne = bounds.getNorthEast(); // LatLng of the north-east corner
+			var sw = bounds.getSouthWest(); // LatLng of the south-west corner
+			var nw = new google.maps.LatLng(ne.lat(), sw.lng());
+			var se = new google.maps.LatLng(sw.lat(), ne.lng());
+
+			for (var i = 0; i < _shipMarkers.length; i++) {
+				var marker = _shipMarkers[i];
+				//바운드 안에 있는지 파악.- 바운드 안의 마크만 생성, 보여줌
+				var markerIsOrNotInBounds = _map.getBounds().contains(marker.getPosition());
+				if (markerIsOrNotInBounds) {
+					addShipInfo(marker);
+				}else{
+					//바운드 밖의 마크는 삭제
+					removeShipInfo(marker);
+				}
+			}
+		}
+
+		//getPixelOffset 알아내기
+		function getPixelOffset(_map, _marker){
+			var scale = Math.pow(2, _map.getZoom());
+			var nw = new google.maps.LatLng(
+				_map.getBounds().getNorthEast().lat(),
+				_map.getBounds().getSouthWest().lng()
+			);
+			var worldCoordinateNW = _map.getProjection().fromLatLngToPoint(nw);			
+			var worldCoordinate = _map.getProjection().fromLatLngToPoint(_marker.getPosition());
+			var pixelOffset = new google.maps.Point(
+				Math.floor((worldCoordinate.x - worldCoordinateNW.x) * scale),
+				Math.floor((worldCoordinate.y - worldCoordinateNW.y) * scale)
+			);
+
+			return pixelOffset;
+		}
+		
+		//ShipInfo 위치 변경
+		function infoOffset(_el, _marker){
+			var offset = getPixelOffset(_map, _marker);
+			var el = _el.css({
+				left: offset.x,
+				top : offset.y,
+				'marginTop' : "-17px",
+				'marginLeft' : "20px"
+			});
+			return el;
+		}
+
+		//ShipInfo삭제
+		function removeShipInfo(_marker){
+			var mapshipover_id = "MapShip_"+_marker.info.mmsi;
+			$("#"+mapshipover_id).remove();			
+		}
+		
+		//ShipInfo 생성
+		function addShipInfo(_marker){
+			var mapContent = $("#MapContent");
+			var info = $(createHTMLShipInfo(_marker.info));
+			mapContent.append(infoOffset(info, _marker));
+		}
+
+		//ShipInfo 전체 삭제
+		function removeAllShipInfo(){
+			var mapover_infos = document.querySelectorAll(".MapShipOver");
+			if( mapover_infos == null || mapover_infos.length == 0 ) return;
+			for( var i =0; i<mapover_infos.length;i++ ){
+				if( mapover_infos[i].parentNode ){
+					mapover_infos[i].parentNode.removeChild(mapover_infos[i]);
+				}
+			}
+		}
+
+		//ship info html 만들기
+		function createHTMLShipInfo(_shipData){
+			var html_id = "MapShip_"+_shipData.mmsi;
+			var html = "";
+			html +='<div class="MapShipOver active" id='+html_id+'>';
+			html +='	<div class="MapShipOver__inner">';
+			html +='		<div class="MapShipOver__title">';
+			html +='		<span class="name">'+_shipData.vessel_name+'</span>';
+			html +='		</div>';
+			html +='		<div class="MapShipOver__content">';
+			html +='		<span>2015 BLT / 308,371 MT / MAX 23.0 MTR</span>';
+			html +='		</div>';
+			html +='	</div>';
+			html +='</div>';
+			return html;
+		}
+
+		//배 마커 그리기
+		function createShipMakers(_map, _data){
+			var ship_on = {
+				url : '/_public_m/images/map/icon/icon_ship_on.png',
+				scaledSize: new google.maps.Size(42, 42),
+				size : new google.maps.Size(56, 56),
+				origin : new google.maps.Point(0, 0),
+				anchor: new google.maps.Point(25, 14),
+			}
+			_data.forEach(function(ship){
+				//myfleet 이 있을때 밑에 마커를 하나 더 넣음.
+				if( ship.myfleet ){
+					var makerOn = new google.maps.Marker({
+						position: {lat: ship.position_info.lat, lng: ship.position_info.lon},
+						map: _map,
+						zIndex : 1,
+						icon : ship_on
+					});
+				}
+				var marker = new google.maps.Marker({
+					info : ship,
+					position: {lat: ship.position_info.lat, lng: ship.position_info.lon},
+					map: _map,
+					zIndex : 2,
+					getIcon : function(){
+						var icon = window.uiGooglMap.findShipType(ship.ship_type).icon;
+						var heading = ship.position_info.true_heading;
+						var course = ship.position_info.course;
+						var rotation = heading != null ? Math.floor(heading / 10) : course != null && course != '3600' ? Math.floor(course / 10) : 0;
+						icon.rotation = rotation * 9;
+						icon.size = new google.maps.Point(12, 20);
+						icon.anchor = new google.maps.Point(7, 0);
+						icon.scale = 0.5;
+						return icon;
+					}
+				});
+				marker.addListener('click', function(event) {
+					var info = window.uiGooglMap.infoShipMarker();
+                    info.open(event.pixel);	
+				});	
+				marker.addListener('mouseover', function(event) {
+					addShipInfo(this);
+				});	
+				marker.addListener('mouseout', function(event) {
+					removeShipInfo(this);
+				});
+				_shipMarkers.push(marker);
+			}); 
+		}
 
 
-        });
+		//라인그리기
+		function createLine(_map, _data){
+			var path = new google.maps.Polyline({
+				path: _data,
+				geodesic: true,
+				strokeWidth : 0,
+				strokeOpacity : 0,
+				strokeColor : "#FFFFFF",
+				icons : [
+					{
+						icon: {
+							path: 'M 0,-.1 0,.1',
+							strokeOpacity: 1,
+							scale: 2
+						},
+						offset: '0',
+						repeat: '8px'
+					}
+				]
+			});
+			path.setMap(_map);
+		}
+		
+
+		//map 관련 UI 
+		function ui_mapDetail(){
+			var mapContent = $(".MapDetail__content");
+			var mapList = $(".MapDetail__list");
+			var onClassName = "active";
+			mapList.children("a").on('click', function(e){
+				e.preventDefault();
+				var href = $(this).attr('href');
+				if( $(this).hasClass(onClassName) ){
+					$(this).removeClass(onClassName);
+					$(href).removeClass(onClassName);			
+				}else{
+					$(this).addClass(onClassName);
+					$(href).addClass(onClassName);
+				}
+			});
+		}
     </script>
-    
+    <script type="text/javascript">
+        $(document).ready(function(){
+			ui_voyages();
+		})
+
+		function ui_voyages(){
+			var item = $(".Voyages__item");			
+			//Voyages 클릭
+			item.each(function(){
+				var path = $(this).find(".VoyagesPath__line");
+				
+				//latest 찾아서 top 얻기.
+				var latest = $(this).find(".VoyagesPath__item.latest");
+				$(this).children(".titleLink").on("click", function(e){
+					e.preventDefault();
+					if( !$(this).parent().hasClass("active") ){
+						item.removeClass("active");
+						$(this).parent().addClass("active");
+						if( latest.length > 0 ){
+							path.css('height', latest.position().top);
+						}	
+					}else{
+						$(this).parent().removeClass("active");
+						if( latest.length > 0 ){
+							path.css("height", 0);
+						}
+					}
+				})
+			});
+		}
+
+		//toolsInfo 관련함수
+		var toolsInfo = (function(){
+			var _el = $("#ToolsInfo");
+			return {
+				open : function(){
+					if( _el == null || _el.size() == 0 ) return;
+					_el.addClass('active');
+				},
+				close : function(){
+					if( _el == null || _el.size() == 0 ) return;
+					_el.removeClass('active');
+				}
+			}
+		})();		
+    </script>
 </body>
 </html>

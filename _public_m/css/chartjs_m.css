@@ -69,6 +69,7 @@
 }
 .chartjs-title{padding-top:.6em}
 .chartjs-title.center{text-align: center;}
+.chartjs-title.white span{color:#fff}
 .chartjs-title span{
     color:#667688;
     font-weight:bold;
@@ -80,14 +81,8 @@
     font-weight:bold;
     text-transform: uppercase;
 }
-.chartjs-title.middle{padding:.5em 0;letter-spacing: 1px;}
-.chartjs-title.middle span{
-    font-size:1.3em;
-}
-.chartjs-title.big span{
-    font-size:1.8em;
-    letter-spacing: 3px;
-}
+.chartjs-title.middle span{font-size:1.2em;}
+.chartjs-title.big span{font-size:1.8em;}
 .chartjs-etc{position: absolute;left:0;top:2.8em;}
 .chartjs-etc.white span{color:#fff}
 .chartjs-etc span{font-size:0.825em; color:#667688;}
@@ -97,6 +92,7 @@
 .chartjs-bottom{position: absolute;right:0;bottom:0}
 .chartjs-bottom span{font-size:1.2em;color:#fff;font-weight: bold;}
 .chartjs-canvas{margin-top:-.5em;padding-bottom:1.6em;}
+.chartjs-canvas.mt15{margin-top:-1.5em}
 
 .chartjs-tab{
     position: absolute;

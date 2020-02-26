@@ -2,10 +2,11 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<title>로그인 > VLCC LAB</title>
+	<title>DASHBOARD > VLCC LAB</title>
 	<link rel="stylesheet" href="../_public_m/css/style_m.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 	
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/x-icon" href="../_public_m/favicon/favicon.ico" /> <!-- Chrome, Safari, IE -->
@@ -36,14 +37,14 @@
 						<ul class="clear clearfix TotalMenu__list">
 							<li><a href="./1_setting_notice.html"><span>SETTING</span></a></li>
 							<li class="active"><a href="./2_dashboard.html"><span>Dashboard</span></a></li>
-							<li><a href="#"><span>fixture</span></a></li>
-							<li><a href="#"><span>Map</span></a></li>
-							<li><a href="#"><span>VESSEL</span></a></li>
-							<li><a href="#"><span>DISTANCE</span></a></li>
-							<li><a href="#"><span>TCE CALCULATOR</span></a></li>
-							<li><a href="#"><span>FLEET LIBRARY</span></a></li>
-							<li><a href="#"><span>RESEARCH</span></a></li>
-							<li><a href="#"><span>MY FLEET</span></a></li>
+							<li><a href="./3_fixtures.html"><span>fixture</span></a></li>
+							<li><a href="./4_map.html"><span>Map</span></a></li>
+							<li><a href="./5_vessel_live.html"><span>VESSEL</span></a></li>
+							<li><a href="./6_distance.html"><span>DISTANCE</span></a></li>
+							<li><a href="./7_tce_calulator.html"><span>TCE CALCULATOR</span></a></li>
+							<li><a href="./8_fleet.html"><span>FLEET LIBRARY</span></a></li>
+							<li><a href="./9_myfleet.html"><span>MY FLEET</span></a></li>
+							<li><a href="./10_research_weekly.html"><span>RESEARCH</span></a></li>
 						</ul>
 						<div class="DashClock">
 							<div class="DashClock__inner">
@@ -66,7 +67,7 @@
 			<!-- Page__header -->
 			<div class="Page__header">
 				<div class="PageHeader">
-                    <div class="PageHeader__logo">VLCCLAB</div>
+                    <a href="./0_login.html" class="PageHeader__logo">VLCCLAB</a>
 					<div class="PageHeader__btnLast">
 						<a href="#" class="icon icon-logout"><span class="skip">LOGOUT</span></a>
 						<a href="#" class="icon icon-menu TotalMenu__open"><span class="skip">MENU</span></a>
@@ -181,13 +182,16 @@
                 </div>
                 <!-- //ChartArea -->
 			</div>
-			<!-- //Page__inner -->
+            <!-- //Page__inner -->
+            <div class="Page__loading" id="loading"><span>loading...</span></div>
 		</div>
 	</div>
 	<!-- javascript -->
-	<script src="../_public_m/js/jquery-1.12.4.js"></script>
-	<script src="../_public_m/js/slick.js"></script>
-	<script src="../_public_m/js/jquery-ui.js"></script>
+    <script src="../_public_m/js/jquery-1.12.4.js"></script>
+    <script src="../_public_m/js/moment-with-locales.js"></script>
+	<script src="../_public_m/js/bootstrap-material-datetimepicker.min.js"></script>
+	
+	
     <script src="../_public_m/js/ui.moblie.js"></script>
     <!-- //javascript -->
     
@@ -203,9 +207,11 @@
 		$(window).load(function(){
 			//chart(canvas id, chart data, chart stepSize, tabCateogoryInit)
 			//tabCateogoryInit : 카테고리로 탭있는경우 해당 index 
-	
-			//Spot Freight
-            ChartUtil.initLineChartMulti('chart1', lineChartData_10, 20, 100, false, 1.5);
+
+            //Spot Freight
+			//데이터에 defaultFontSize : 9 값 넣으면 폰트사이즈조절 합니다.( PC 데이터와 같은걸 써서 따로 추가해주었습니다. )
+			lineChartData_10.defaultFontSize = 9;
+            ChartUtil.initLineChartMulti('chart1', lineChartData_10, 20, 100, false, 2);
 			var chart1 = ChartUtil.chartList['chart1'];
 			//y축 오른쪽 변경
 			var chart_ticks = chart1.options.scales.yAxes[1].ticks;
@@ -220,21 +226,28 @@
             chart1.update();
 
             //VLCC Average speed
+            lineChartData_11.defaultFontSize = 9;
 			ChartUtil.initLineChart('chart2', lineChartData_11, 0.5, false, 2);
 
             // BUNKER PRICE ( 마지막 매개변수 - 탭 index 번호 )
-            ChartUtil.initLineChart('chart3', lineChartData_12, 50, 0, 2);
+            lineChartData_12.defaultFontSize = 9;
+            ChartUtil.initLineChart('chart3', lineChartData_12_mobile, 50, 0, 2);
+           
 
             // EAST-MEG QUEUE
+            lineChartData_13.defaultFontSize = 9;
             ChartUtil.initLineChart('chart4', lineChartData_13, 20, false, 2);
 
             //Idling ship no. at Fujairah (Prompt) & MEG/ China WS
-            ChartUtil.initLineChart('chart5', lineChartData_14, 3, false, 1.5); 
+            lineChartData_14.defaultFontSize = 9;
+            ChartUtil.initLineChart('chart5', lineChartData_14, 3, false, 2); 
     
-			// AVERAGE PORT STAY DAYS IN CHINA 
-			ChartUtil.initVerticalBarChart('chart6', lineChartData_15, 1, false, 1.5);
+            // AVERAGE PORT STAY DAYS IN CHINA
+            lineChartData_15.defaultFontSize = 9;
+			ChartUtil.initVerticalBarChart('chart6', lineChartData_15, 1, false, 2);
 
-			//LIVE FLEET OVERVIEW (MMbbl)
+            //LIVE FLEET OVERVIEW (MMbbl)
+            lineChartData_16.defaultFontSize = 9;
 			ChartUtil.initDoughnutChart('chart7', lineChartData_16, false, 2);
 			//중앙값
 			var doughnutCenter = {
@@ -245,9 +258,9 @@
 			ChartUtil.chartList['chart7'].options.elements.center = doughnutCenter;
 			ChartUtil.chartList['chart7'].update();
 
-			// AVERAGE DISTANCE (NM)
+            // AVERAGE DISTANCE (NM)
+            lineChartData_17.defaultFontSize = 9;
 			ChartUtil.initLineChart('chart8', lineChartData_17, 500, false, 2);
-
         });
     </script>
     

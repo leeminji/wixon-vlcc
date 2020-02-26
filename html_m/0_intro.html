@@ -2,10 +2,11 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>VLCC LAB</title>
 	<link rel="stylesheet" href="../_public_m/css/style_m.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 	
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/x-icon" href="../_public_m/favicon/favicon.ico" /> <!-- Chrome, Safari, IE -->
@@ -20,15 +21,16 @@
 	<div id="app" class="App">
 		<div class="Page Intro no_header">
 			<div class="Page__inner no">
-				<h1 class="Intro__logo"><img src="../_public_m/images/intro_logo.png" alt="VLCC Vessel Total Information Platform Platform Version 1.0" /></h1>
+				<h1 class="Intro__logo"><img src="../_public_m/images/common/intro_logo.png" alt="VLCC Vessel Total Information Platform Platform Version 1.0" /></h1>
 			</div>
 		</div>
 		<div class="Page__copyright"><span>@ 2019 All Rights Reserved VLCC LAB</span></div>
+		<div class="Page__loading" id="loading"><span>loading...</span></div>
 	</div>
 	<!-- javascript -->
 	<script src="../_public_m/js/jquery-1.12.4.js"></script>
-	<script src="../_public_m/js/slick.js"></script>
-	<script src="../_public_m/js/jquery-ui.js"></script>
+	<script src="../_public_m/js/moment-with-locales.js"></script>
+	<script src="../_public_m/js/bootstrap-material-datetimepicker.min.js"></script>
 	<script src="../_public_m/js/ui.moblie.js"></script>
 	<!-- //javascript -->
 </body>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>FLEET LIBRARY > VLCC LAB</title>
+	<link rel="stylesheet" href="../_public_m/css/style_m.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+	
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="../_public_m/favicon/favicon.ico" /> <!-- Chrome, Safari, IE -->
+	<link rel="icon" href="../_public_m/favicon/favicon.png"><!-- Firefox, Opera (Chrome and Safari say thanks but no thanks) -->
+	<link rel="icon" href="../_public_m/favicon/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" href="../_public_m/favicon/favicon-64x64.png" sizes="64x64" />
+	<link rel="apple-touch-icon-precomposed" href="../_public_m/favicon/favicon-152x152.png" />  <!-- iOS와 Android -->
+	<meta name="msapplication-TileImage" content="../_public_m/favicon/favicon-144x144.png" />
+	<!-- //favicon -->
+</head>
+<body>
+	<div id="app" class="App">
+		<!-- TotalMenu 메뉴부분 -->
+		<div class="TotalMenu" id="TotalMenu">
+			<div class="TotalMenu__inner">
+				<div class="TotalMenu__top">
+					<div class="TotalMenu__btnStart">
+						<a href="" class="TotalMenu__button join"><span>MEMBER JOIN</span></a>
+						<a href="" class="TotalMenu__button login"><span>LOGIN</span></a>
+					</div>
+					<div class="TotalMenu__btnLast">
+						<a href="#" class="TotalMenu__button close TotalMenu__close"><span class="skip">close</span></a>
+					</div>
+				</div>
+				<div class="TotalMenu__content">
+					<nav class="TotalMenu__listArea">
+						<h2 class="TotalMenu__title"><span>VLCCLAB</span><span class="skip">MENU</span></h2>
+						<ul class="clear clearfix TotalMenu__list">
+							<li><a href="./1_setting_notice.html"><span>SETTING</span></a></li>
+							<li><a href="./2_dashboard.html"><span>Dashboard</span></a></li>
+							<li><a href="./3_fixtures.html"><span>fixture</span></a></li>
+							<li><a href="./4_map.html"><span>Map</span></a></li>
+							<li><a href="./5_vessel_live.html"><span>VESSEL</span></a></li>
+							<li><a href="./6_distance.html"><span>DISTANCE</span></a></li>
+							<li><a href="./7_tce_calulator.html"><span>TCE CALCULATOR</span></a></li>
+							<li class="active"><a href="./8_fleet.html"><span>FLEET LIBRARY</span></a></li>
+							<li><a href="./9_myfleet.html"><span>MY FLEET</span></a></li>
+							<li><a href="./10_research_weekly.html"><span>RESEARCH</span></a></li>
+						</ul>
+						<div class="DashClock">
+							<div class="DashClock__inner">
+								<div class="time"><span>04:07 UTC</span></div>
+								<div class="date"><span>13 May</span></div>
+							</div>
+						</div>
+					</nav>
+					<div class="TotalMenu__logo">
+						<div class="logo"><img src="../_public_m/images/common/bottom_logo.png" alt="vlcclab"></div>
+						<span class="text">VLCC Vessel Total Information Platform</span>
+						<span class="text">Platform Version 1.0</span>
+					</div>
+				</div>
+			</div>
+			<div class="blind TotalMenu__blind"></div>
+		</div>
+		<!-- //TotalMenu 메뉴부분 -->		
+		<div class="Page">
+			<!-- Page__header -->
+			<div class="Page__header">
+				<div class="PageHeader">
+                    <a href="./0_login.html" class="PageHeader__logo">VLCCLAB</a>
+					<div class="PageHeader__btnLast">
+						<a href="javascript:;" onclick="uiMobile.pageSearch.open();" class="icon icon-search"><span class="skip">Search</span></a>
+						<a href="#" class="icon icon-logout"><span class="skip">LOGOUT</span></a>
+						<a href="#" class="icon icon-menu TotalMenu__open"><span class="skip">MENU</span></a>
+					</div>
+					<!-- PageSearch -->
+					<div class="PageSearch" id="PageSearch">
+						<a href="javascript:;" onclick="uiMobile.pageSearch.close();" class="PageSearch__close"><i class="material-icons">clear</i></a>
+						<div class="PageSearch__inner">
+							<input type="text" class="PageSearch__input" placeholder="Search" />
+							<a href="#" class="PageSearch__search"><span>search</span></a>
+							<ul class="PageSearch__list">
+								<li><a href="">MAP SERECH RESULT - 1</a></li>
+								<li><a href="">MAP SERECH RESULT - 2</a></li>
+							</ul>	
+						</div>
+					</div>
+					<!-- PageSearch -->	
+				</div>
+			</div>
+			<!-- //Page__header -->
+			<!-- Page__inner -->
+			<div class="Page__inner">
+				<div class="Page__navigation">
+                    <!-- Navigation -->
+                    <div class="Navigation">
+                        <h1 class="Navigation__title"><span>FLEET LIBRARY</span></h1>
+                    </div>
+                    <!-- //Navigation -->
+				</div>
+				<div class="ToolsFleet">
+					<div class="ToolsFleet__inner">
+						<!-- SelectCategory -->
+						<div class="SelectCategory">
+							<div class="SelectCategory__list">
+								<a href="#" class="SelectCategory__item active"><span>Owner</span></a>
+								<a href="#" class="SelectCategory__item"><span>Operator</span></a>
+							</div>
+						</div>
+						<!-- //SelectCategory -->
+
+						<!-- SearchSelect -->
+						<div class="SearchSelectArea">
+							<div class="SearchSelect">
+								<a href="#" class="active"><span>A</span></a>
+								<a href="#"><span>B</span></a>
+								<a href="#"><span>C</span></a>
+								<a href="#"><span>D</span></a>
+								<a href="#"><span>E</span></a>
+								<a href="#"><span>F</span></a>
+								<a href="#"><span>G</span></a>
+								<a href="#"><span>H</span></a>
+								<a href="#"><span>I</span></a>
+								<a href="#"><span>J</span></a>
+								<a href="#"><span>K</span></a>
+								<a href="#"><span>L</span></a>
+								<a href="#"><span>M</span></a>
+								<a href="#"><span>N</span></a>
+								<a href="#"><span>O</span></a>
+								<a href="#"><span>P</span></a>
+								<a href="#"><span>Q</span></a>
+								<a href="#"><span>R</span></a>
+								<a href="#"><span>S</span></a>
+								<a href="#"><span>T</span></a>
+								<a href="#"><span>U</span></a>
+								<a href="#"><span>V</span></a>
+								<a href="#"><span>W</span></a>
+								<a href="#"><span>X</span></a>
+								<a href="#"><span>Y</span></a>
+								<a href="#"><span>Z</span></a>
+							</div>
+						</div>
+						<!-- //SearchSelect -->
+						<!-- SearchList01 -->
+						<div class="SearchList01">
+							<ul class="clear clearfix">
+								<li><a href="">ABC</a></li>
+								<li><a href="">ABLE</a></li>
+								<li class="active"><a href="">CHARTERING</a></li>
+								<li><a href="">ABRIL</a></li>
+								<li><a href="">ACE</a></li>
+								<li><a href="">QUANTUM</a></li>
+								<li><a href="">ACE</a></li>
+								<li><a href="">TANKERS</a></li>
+								<li><a href="">ADNATCO</a></li>
+								<li><a href="">ADNOC</a></li>
+								<li><a href="">L&amp;S</a></li>
+								<li><a href="">AEGEAN</a></li>
+								<li><a href="">AET</a></li>
+								<li><a href="">AGELE</a></li>
+								<li><a href="">AISSOT</a></li>
+								<li><a href="">AKAR</a></li>
+								<li><a href="">AKRON</a></li>
+								<li><a href="">AL</a></li>
+								<li><a href="">TAAWON</a></li>
+								<li><a href="">ALBA</a></li>
+								<li><a href="">ALBERTA</a></li>
+								<li><a href="">ALBIS</a></li>
+								<li><a href="">ALBOS</a></li>
+								<li><a href="">ALCO</a></li>
+								<li><a href="">ALFA</a></li>
+								<li><a href="">TANKER</a></li>
+								<li><a href="">ALLIANCE</a></li>
+								<li><a href="">ALLIANCE</a></li>
+								<li><a href="">MARITIME</a></li>
+								<li><a href="">ALMI</a></li>
+								<li><a href="">ALPHA</a></li>
+								<li><a href="">SM</a></li>
+								<li><a href="">ALTOMARE</a></li>
+								<li><a href="">AMA</a></li>
+								<li><a href="">MARINE</a></li>
+								<li><a href="">AMCL</a></li>
+								<li><a href="">AMFLAG</a></li>
+								<li><a href="">AMORETTI</a></li>
+								<li><a href="">AMPTC</a></li>
+								<li><a href="">ANCORA</a></li>
+								<li><a href="">ANDES</a></li>
+								<li><a href="">TANKERS</a></li>
+								<li><a href="">ANDROMEDA</a></li>
+								<li><a href="">ANDUS</a></li>
+								<li><a href="">MARINE</a></li>
+								<li><a href="">ANGEL</a></li>
+								<li><a href="">ANKACHART</a></li>
+								<li><a href="">ANSOL</a></li>
+								<li><a href="">ANSON</a></li>
+								<li><a href="">ANTARES</a></li>
+								<li><a href="">SM</a></li>
+								<li><a href="">ARAMO</a></li>
+								<li><a href="">ARCADIA</a></li>
+								<li><a href="">ARCADIA</a></li>
+								<li><a href="">MANAGT</a></li>
+								<li><a href="">ARDMORE</a></li>
+								<li><a href="">ARENA</a></li>
+								<li><a href="">ARES</a></li>
+								<li><a href="">ARGYLL</a></li>
+								<li><a href="">ARIES</a></li>
+								<li><a href="">ARKAS</a></li>
+								<li><a href="">ARMADOR</a></li>
+								<li><a href="">TANKERS</a></li>
+								<li><a href="">AROTEK</a></li>
+								<li><a href="">ARROW</a></li>
+								<li><a href="">STAR</a></li>
+								<li><a href="">ASAHI</a></li>
+								<li><a href="">MOL</a></li>
+								<li><a href="">ASAHI</a></li>
+								<li><a href="">SHOSEN</a></li>
+								<li><a href="">ASAHI</a></li>
+								<li><a href="">TANKERS</a></li>
+								<li><a href="">ASIAD</a></li>
+								<li><a href="">ASIAN</a></li>
+								<li><a href="">SHIPPING</a></li>
+								<li><a href="">ASTOMOS</a></li>
+								<li><a href="">ASTOR</a></li>
+								<li><a href="">ATC</a></li>
+								<li><a href="">ATHENIAN</a></li>
+								<li><a href="">ATLANTIC</a></li>
+								<li><a href="">METHANOL</a></li>
+								<li><a href="">ATLANTIS</a></li>
+								<li><a href="">ATLAS</a></li>
+								<li><a href="">ATLAS</a></li>
+								<li><a href="">MARITIME</a></li>
+								<li><a href="">ATS</a></li>
+								<li><a href="">AUGUSTA</a></li>
+								<li><a href="">DUE</a></li>
+								<li><a href="">AULAC</a></li>
+								<li><a href="">AURORA</a></li>
+								<li><a href="">AVANCE</a></li>
+								<li><a href="">GAS</a></li>
+								<li><a href="">AVIN</a></li>
+								<li><a href="">AWILCO</a></li>
+								<li><a href="">AYGAZ</a></li>
+							</ul>
+						</div>
+						<!-- //SearchList01 -->
+
+						<!-- ToolsFleet__chartArea -->
+						<div class="ToolsFleet__chartArea">
+							<!-- Top 20 Owners -->
+							<div class="ChartBox">
+								<div class="ChartBox__inner">
+									<div id="chart1_title" class="chartjs-title center white middle"><span>Top 20 Owners</span></div>
+									<canvas id="chart1" class="chartjs-canvas mt15"></canvas>
+									<div id="chart1_legend" class="chartjs-legend"></div>
+								</div>
+							</div>
+							<!-- //Top 20 Owners -->
+							<!-- Top 20 Operators -->
+							<div class="ChartBox">
+								<div class="ChartBox__inner">
+									<div id="chart2_title" class="chartjs-title center white middle"><span>Top 20 Operators</span></div>
+									<canvas id="chart2" class="chartjs-canvas mt15"></canvas>
+									<div id="chart2_legend" class="chartjs-legend"></div>
+								</div>
+							</div>
+							<!-- //Top 20 Operators -->
+						</div>
+						<!-- //ToolsFleet__chartArea -->
+					</div>
+				</div>
+
+			</div>
+			<!-- //Page__inner -->
+			<div class="Page__loading" id="loading"><span>loading...</span></div>
+		</div>
+    </div>
+    
+	<!-- javascript -->
+	<script src="../_public_m/js/jquery-1.12.4.js"></script>
+	<script src="../_public_m/js/moment-with-locales.js"></script>
+	<script src="../_public_m/js/bootstrap-material-datetimepicker.min.js"></script>
+    <script src="../_public_m/js/ui.moblie.js"></script>
+	<!-- //javascript -->
+
+	<!-- 차트js추가 -->
+	<script type="text/javascript" src="../_public/vendor/chartjs/moment.min.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/chartjs-plugin-datalabels.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.utill.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.sampleData.js"></script> <!-- Chart.sampleData.js 여기에 샘플데이터있습니다. -->
+	<!-- //차트js추가 -->
+	<script>
+		$(window).load(function(){
+			//chart(canvasid, data, stepSize, tabCateogoryInit, ratio)
+			// stepSize : y축간격
+			// tabCateogoryInit : 카테고리로 탭있는경우 해당 index 
+			// ratio : 크기조절
+
+			//데이터에 defaultFontSize : 9 값 넣으면 폰트사이즈조절 합니다.( PC 데이터와 같은걸 써서 따로 추가해주었습니다. )
+			lineChartData_50.defaultFontSize = 9;
+			ChartUtil.initHorizontalBarChart('chart1', lineChartData_50, 10, false, .4);
+
+			//데이터에 defaultFontSize : 9 값 넣으면 폰트사이즈조절 합니다.( PC 데이터와 같은걸 써서 따로 추가해주었습니다. )
+			lineChartData_51.defaultFontSize = 9;
+			ChartUtil.initHorizontalBarChart('chart2', lineChartData_51, 10, false, .4);
+		});
+	</script>
+</body>
+</html>

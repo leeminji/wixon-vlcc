@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>PARTICULARS > VESSEL > VLCC LAB</title>
+	<link rel="stylesheet" href="../_public_m/css/style_m.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+	
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="../_public_m/favicon/favicon.ico" /> <!-- Chrome, Safari, IE -->
+	<link rel="icon" href="../_public_m/favicon/favicon.png"><!-- Firefox, Opera (Chrome and Safari say thanks but no thanks) -->
+	<link rel="icon" href="../_public_m/favicon/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" href="../_public_m/favicon/favicon-64x64.png" sizes="64x64" />
+	<link rel="apple-touch-icon-precomposed" href="../_public_m/favicon/favicon-152x152.png" />  <!-- iOS와 Android -->
+	<meta name="msapplication-TileImage" content="../_public_m/favicon/favicon-144x144.png" />
+	<!-- //favicon -->
+</head>
+<body>
+	<div id="app" class="App">
+		<!-- TotalMenu 메뉴부분 -->
+		<div class="TotalMenu" id="TotalMenu">
+			<div class="TotalMenu__inner">
+				<div class="TotalMenu__top">
+					<div class="TotalMenu__btnStart">
+						<a href="" class="TotalMenu__button join"><span>MEMBER JOIN</span></a>
+						<a href="" class="TotalMenu__button login"><span>LOGIN</span></a>
+					</div>
+					<div class="TotalMenu__btnLast">
+						<a href="#" class="TotalMenu__button close TotalMenu__close"><span class="skip">close</span></a>
+					</div>
+				</div>
+				<div class="TotalMenu__content">
+					<nav class="TotalMenu__listArea">
+						<h2 class="TotalMenu__title"><span>VLCCLAB</span><span class="skip">MENU</span></h2>
+						<ul class="clear clearfix TotalMenu__list">
+							<li><a href="./1_setting_notice.html"><span>SETTING</span></a></li>
+							<li><a href="./2_dashboard.html"><span>Dashboard</span></a></li>
+							<li><a href="./3_fixtures.html"><span>fixture</span></a></li>
+							<li><a href="./4_map.html"><span>Map</span></a></li>
+							<li class="active"><a href="./5_vessel_live.html"><span>VESSEL</span></a></li>
+							<li><a href="./6_distance.html"><span>DISTANCE</span></a></li>
+							<li><a href="./7_tce_calulator.html"><span>TCE CALCULATOR</span></a></li>
+							<li><a href="./8_fleet.html"><span>FLEET LIBRARY</span></a></li>
+							<li><a href="./9_myfleet.html"><span>MY FLEET</span></a></li>
+							<li><a href="./10_research_weekly.html"><span>RESEARCH</span></a></li>
+						</ul>
+						<div class="DashClock">
+							<div class="DashClock__inner">
+								<div class="time"><span>04:07 UTC</span></div>
+								<div class="date"><span>13 May</span></div>
+							</div>
+						</div>
+					</nav>
+					<div class="TotalMenu__logo">
+						<div class="logo"><img src="../_public_m/images/common/bottom_logo.png" alt="vlcclab"></div>
+						<span class="text">VLCC Vessel Total Information Platform</span>
+						<span class="text">Platform Version 1.0</span>
+					</div>
+				</div>
+			</div>
+			<div class="blind TotalMenu__blind"></div>
+		</div>
+		<!-- //TotalMenu 메뉴부분 -->		
+		<div class="Page">			
+			<!-- Page__header -->
+			<div class="Page__header">
+				<div class="PageHeader">
+                    <a href="./0_login.html" class="PageHeader__logo">VLCCLAB</a>
+					<div class="PageHeader__btnLast">
+						<a href="javascript:;" onclick="uiMobile.pageSearch.open();" class="icon icon-search"><span class="skip">Search</span></a>
+						<a href="#" class="icon icon-logout"><span class="skip">LOGOUT</span></a>
+						<a href="#" class="icon icon-menu TotalMenu__open"><span class="skip">MENU</span></a>
+					</div>
+					<!-- PageSearch -->
+					<div class="PageSearch" id="PageSearch">
+						<a href="javascript:;" onclick="uiMobile.pageSearch.close();" class="PageSearch__close"><i class="material-icons">clear</i></a>
+						<div class="PageSearch__inner">
+							<input type="text" class="PageSearch__input" placeholder="Search" />
+							<a href="#" class="PageSearch__search"><span>search</span></a>
+							<ul class="PageSearch__list">
+								<li><a href="">MAP SERECH RESULT - 1</a></li>
+								<li><a href="">MAP SERECH RESULT - 2</a></li>
+							</ul>	
+						</div>
+					</div>
+					<!-- PageSearch -->	
+				</div>
+			</div>
+			<!-- //Page__header -->
+			<!-- Page__inner -->
+			<div class="Page__inner">
+                <div class="Page__navigation">
+                    <!-- Navigation -->
+                    <div class="Navigation">
+                        <h1 class="Navigation__title"><span>VESSEL</span></h1>
+                        <div class="Navigation__list">
+							<div class="Navigation__list__inner">
+								<div class="Navigation__item"><a href="./5_vessel_live.html" class="link"><span>LIVE POSITION</span></a></div>
+								<div class="Navigation__item"><a href="./5_vessel_voyages.html" class="link"><span>VOYAGES</span></a></div>
+								<div class="Navigation__item active"><a href="./5_vessel_parti.html" class="link"><span>PARTICULARS</span></a></div>
+							</div>
+                        </div> 
+                    </div>
+                    <!-- //Navigation -->
+				</div>
+
+				<div class="ChartArea">
+					<div class="ChartBox">
+						<div class="ChartData__title"><span>Particulars</span></div>
+						<div class="DataTable__4 line">
+							<table>
+								<colgroup>
+									<col style="width:10em">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th class="left">Name</th>
+										<td class="left">New Harmony</td>
+									</tr>
+									<tr>
+										<th class="left">Ex-Name</th>
+										<td class="left">9603207</td>
+									</tr>
+									<tr>
+										<th class="left">Flag</th>
+										<td class="left">VLCC</td>
+									</tr>
+									<tr>
+										<th class="left">Fleet</th>
+										<td class="left">Tanker</td>
+									</tr>
+									<tr>
+										<th class="left">Type</th>
+										<td class="left">Crude</td>
+									</tr>
+									<tr>
+										<th class="left">IMO no.</th>
+										<td class="left">VRNW6</td>
+									</tr>
+									<tr>
+										<th class="left">Call Sign</th>
+										<td class="left">Hyundai Oilbank</td>
+									</tr>
+									<tr>
+										<th class="left">Builder</th>
+										<td class="left">2014</td>
+									</tr>
+									<tr>
+										<th class="left">Built Date</th>
+										<td class="left">China</td>
+									</tr>
+									<tr>
+										<th class="left">Owner</th>
+										<td class="left">Guangdong Entrance Shipyard North</td>
+									</tr>
+									<tr>
+										<th class="left">Manager</th>
+										<td class="left">320,391 tons</td>
+									</tr>
+									<tr>
+										<th class="left">Operator</th>
+										<td class="left">333 meters</td>
+									</tr>
+									<tr>
+										<th class="left">LOA</th>
+										<td class="left">21,93 meters</td>
+									</tr>
+									<tr>
+										<th class="left">Beam</th>
+										<td class="left">30,5 meters</td>
+									</tr>
+									<tr>
+										<th class="left">Draft</th>
+										<td class="left">108,967 tons</td>
+									</tr>
+									<tr>
+										<th class="left">SDWT</th>
+										<td class="left">165,680 tons</td>
+									</tr>
+									<tr>
+										<th class="left">GRT</th>
+										<td class="left">128,481 tons</td>
+									</tr>
+									<tr>
+										<th class="left">Class Society</th>
+										<td class="left">60 metrs</td>
+									</tr>
+									<tr>
+										<th class="left">Main Engine</th>
+										<td class="left"></td>
+									</tr>
+									<tr>
+										<th class="left">Scrubber-fitted</th>
+										<td class="left"></td>
+									</tr>
+									<tr>
+										<th class="left">Last Hull Survey date</th>
+										<td class="left"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //Page__inner -->
+			<div class="Page__loading" id="loading"><span>loading...</span></div>
+		</div>
+    </div>
+    
+	<!-- javascript -->
+	<script src="../_public_m/js/jquery-1.12.4.js"></script>
+	<script src="../_public_m/js/moment-with-locales.js"></script>
+	<script src="../_public_m/js/bootstrap-material-datetimepicker.min.js"></script>
+	
+    <script src="../_public_m/js/ui.moblie.js"></script>
+    <!-- //javascript -->
+</body>
+</html>

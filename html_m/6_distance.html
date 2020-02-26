@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>DISTANCE > VLCC LAB</title>
+	<link rel="stylesheet" href="../_public_m/css/style_m.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+	
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="../_public_m/favicon/favicon.ico" /> <!-- Chrome, Safari, IE -->
+	<link rel="icon" href="../_public_m/favicon/favicon.png"><!-- Firefox, Opera (Chrome and Safari say thanks but no thanks) -->
+	<link rel="icon" href="../_public_m/favicon/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" href="../_public_m/favicon/favicon-64x64.png" sizes="64x64" />
+	<link rel="apple-touch-icon-precomposed" href="../_public_m/favicon/favicon-152x152.png" />  <!-- iOS와 Android -->
+	<meta name="msapplication-TileImage" content="../_public_m/favicon/favicon-144x144.png" />
+	<!-- //favicon -->
+</head>
+<body>
+	<div id="app" class="App">
+		<!-- TotalMenu 메뉴부분 -->
+		<div class="TotalMenu" id="TotalMenu">
+			<div class="TotalMenu__inner">
+				<div class="TotalMenu__top">
+					<div class="TotalMenu__btnStart">
+						<a href="" class="TotalMenu__button join"><span>MEMBER JOIN</span></a>
+						<a href="" class="TotalMenu__button login"><span>LOGIN</span></a>
+					</div>
+					<div class="TotalMenu__btnLast">
+						<a href="#" class="TotalMenu__button close TotalMenu__close"><span class="skip">close</span></a>
+					</div>
+				</div>
+				<div class="TotalMenu__content">
+					<nav class="TotalMenu__listArea">
+						<h2 class="TotalMenu__title"><span>VLCCLAB</span><span class="skip">MENU</span></h2>
+						<ul class="clear clearfix TotalMenu__list">
+							<li><a href="./1_setting_notice.html"><span>SETTING</span></a></li>
+							<li><a href="./2_dashboard.html"><span>Dashboard</span></a></li>
+							<li><a href="./3_fixtures.html"><span>fixture</span></a></li>
+							<li><a href="./4_map.html"><span>Map</span></a></li>
+							<li><a href="./5_vessel_live.html"><span>VESSEL</span></a></li>
+							<li class="active"><a href="./6_distance.html"><span>DISTANCE</span></a></li>
+							<li><a href="./7_tce_calulator.html"><span>TCE CALCULATOR</span></a></li>
+							<li><a href="./8_fleet.html"><span>FLEET LIBRARY</span></a></li>
+							<li><a href="./9_myfleet.html"><span>MY FLEET</span></a></li>
+							<li><a href="./10_research_weekly.html"><span>RESEARCH</span></a></li>
+						</ul>
+						<div class="DashClock">
+							<div class="DashClock__inner">
+								<div class="time"><span>04:07 UTC</span></div>
+								<div class="date"><span>13 May</span></div>
+							</div>
+						</div>
+					</nav>
+					<div class="TotalMenu__logo">
+						<div class="logo"><img src="../_public_m/images/common/bottom_logo.png" alt="vlcclab"></div>
+						<span class="text">VLCC Vessel Total Information Platform</span>
+						<span class="text">Platform Version 1.0</span>
+					</div>
+				</div>
+			</div>
+			<div class="blind TotalMenu__blind"></div>
+		</div>
+		<!-- //TotalMenu 메뉴부분 -->		
+		<div class="Page">
+			<!-- Page__header -->
+			<div class="Page__header">
+				<div class="PageHeader">
+                    <a href="./0_login.html" class="PageHeader__logo">VLCCLAB</a>
+					<div class="PageHeader__btnLast">
+						<a href="javascript:;" onclick="uiMobile.pageSearch.open();" class="icon icon-search"><span class="skip">Search</span></a>
+						<a href="#" class="icon icon-logout"><span class="skip">LOGOUT</span></a>
+						<a href="#" class="icon icon-menu TotalMenu__open"><span class="skip">MENU</span></a>
+					</div>
+					<!-- PageSearch -->
+					<div class="PageSearch" id="PageSearch">
+						<a href="javascript:;" onclick="uiMobile.pageSearch.close();" class="PageSearch__close"><i class="material-icons">clear</i></a>
+						<div class="PageSearch__inner">
+							<input type="text" class="PageSearch__input" placeholder="Search" />
+							<a href="#" class="PageSearch__search"><span>search</span></a>
+							<ul class="PageSearch__list">
+								<li><a href="">MAP SERECH RESULT - 1</a></li>
+								<li><a href="">MAP SERECH RESULT - 2</a></li>
+							</ul>	
+						</div>
+					</div>
+					<!-- PageSearch -->	
+				</div>
+			</div>
+			<!-- //Page__header -->
+			<!-- Page__inner -->
+			<div class="Page__inner">
+				<div class="PageSelectInfo">
+					<div class="PageSelectInfo__inner">
+						<span class="SelectBox">
+							<select name="" id="" width="8">
+								<option value="">Select</option>
+							</select>
+						</span>
+						<span class="SelectBox">
+							<select name="" id="" width="8">
+								<option value="">Select</option>
+							</select>
+						</span>
+						<span class="SelectBox">
+							<select name="" id="" width="8">
+								<option value="">Select</option>
+							</select>
+						</span>
+						<span class="SelectBox">
+							<select name="" id="" width="8">
+								<option value="">Select</option>
+							</select>
+						</span>
+						<span class="SelectBox">
+							<select name="" id="" width="8">
+								<option value="">Select</option>
+							</select>
+						</span>
+					</div>
+				</div>
+                <div class="TotalMapArea">
+                    <!-- 구글맵 영역 -->
+                    <div id="TotalMap" class="TotalMap">지도영역</div>
+					<!-- //구글맵 영역 -->
+					<div id="MapContent" class="MapContent">
+						<!-- MapShipInfo  -->
+						<div class="MapShipInfo" id="MapShipInfo">
+							<div class="MapShipInfo__inner">
+								<a href="javascript:;" onclick="window.uiGooglMap.infoShipMarker().close();" class="MapShipInfo__close"><i class="material-icons">close</i></a>
+								<div class="MapShipInfo__title noMark">
+									<div class="name noImg">New Harmony (2014, 320k)</div>
+									<div class="cate">Hyundai Oilbank</div>
+								</div>
+								<div class="MapShipInfo__data">
+									<span class="data left">24 May 09:58</span>
+									<span class="data right">3,511NM</span>
+								</div>
+								<div class="MapShipInfo__content">
+									<ul class="clear MapShipInfo__list">
+										<li><span class="tit">DRAFT</span><span class="txt">20.8m</span></li>
+										<li><span class="tit">SPEED</span><span class="txt">12.8kts</span></li>
+										<li><span class="tit">DIRECTION</span><span class="txt">90˚</span></li>
+										<li><span class="tit">DESTINATION</span><span class="txt">DAESAN^@CKOREA</span></li>
+										<li><span class="tit">LASTEST AIS</span><span class="txt">12 May 20:10</span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- //MapShipInfo  -->
+					</div>				                       
+                </div>
+                <!-- ToolsInfo -->
+                <div class="ToolsInfo" id="ToolsInfo">
+					<div class="ToolsInfo__button">
+						<a href="javascript:;" onclick="toolsInfo.open();" class="ToolsInfo__on"><i class="material-icons">chevron_left</i></a>
+						<a href="javascript:;" onclick="toolsInfo.close();" class="ToolsInfo__off"><i class="material-icons">chevron_right</i></a>
+					</div>
+                    <div class="ToolsInfo__inner">
+						<div class="ToolsInfo__logo"><span class="equals">Equals</span></div>
+						<!-- Distance : DURATION -->
+						<div class="Distance">
+							<h2 class="Distance__title"><span>DURATION</span></h2>
+							<div class="Distance__data"><span>11d 06h</span></div>
+						</div>
+						<!-- //Distance : DURATION  -->
+						<!-- Distance : DISTANCE-->
+						<div class="Distance">
+							<h2 class="Distance__title"><span>DISTANCE</span></h2>
+							<div class="Distance__data"><span>3,511NM</span></div>
+						</div>
+						<!-- //Distance : DISTANCE-->
+						<!-- Distance : SPEED -->
+						<div class="Distance">
+							<h2 class="Distance__title"><span>SPEED</span></h2>
+							<div class="Distance__speed">
+								<span class="CountInput">
+									<input type="text" value="13.0">
+									<span class="unit">kts</span>
+								</span>
+								<a href="#" class="CountButton cBlack"><span>+</span></a>
+								<a href="#" class="CountButton cBlack"><span>-</span></a>
+							</div>
+						</div>
+						<!-- //Distance : SPEED-->
+						<!-- Distance__schedule -->
+						<div class="Distance__schedule">
+							<h2 class="Distance__title"><span>SCHEDULE</span></h2>
+							<div class="Distance__path">
+								<!-- VoyagesPath -->
+								<div class="VoyagesPath simpleType">
+									<div class="clear VoyagesPath__list">
+										<!-- VoyagesPath__path : style="height:값" 스크립트로 제어 -->
+										<div class="VoyagesPath__line" style="height: 96px;"></div>
+										<!-- VoyagesPath__item : point -->
+										<div class="VoyagesPath__item">
+											<div class="icon icon_point"><span class="skip">point</span></div>
+											<div class="info">
+												<div class="title"><span>Kiire</span></div>
+												<div class="date"><span>13 May 03:55</span></div>
+											</div>
+											<div class="state">Start</div>
+										</div>
+										<!-- //VoyagesPath__item : point -->
+										<!-- VoyagesPath__item : point -->
+										<div class="VoyagesPath__item">
+											<div class="icon icon_port"><span class="skip">point</span></div>
+											<div class="info">
+												<div class="title"><span>Singapore</span></div>
+												<div class="date"><span>13 May 03:55</span></div>
+											</div>
+											<div class="state">1,511NM</div>
+										</div>
+										<!-- //VoyagesPath__item : point -->
+										<!-- VoyagesPath__item : latest -->
+										<div class="VoyagesPath__item latest">
+											<div class="icon icon_latest"></div>
+											<div class="info">
+												<div class="title"><span>New Harmony</span></div>
+												<div class="date"><span>24 May 09:58</span></div>
+											</div>
+											<div class="state">3,511NM</div>
+										</div>
+										<!-- //VoyagesPath__item : latest -->
+									</div>
+								</div>
+								<!-- //VoyagesPath -->
+							</div>
+						</div>
+						<!-- //Distance__schedule  -->
+                    </div>
+                </div>
+                <!-- //ToolsInfo -->  
+			</div>
+			<!-- //Page__inner -->
+			<div class="Page__loading" id="loading"><span>loading...</span></div>
+		</div>
+    </div>
+    
+	<!-- javascript -->
+	<script src="../_public_m/js/jquery-1.12.4.js"></script>
+	<script src="../_public_m/js/moment-with-locales.js"></script>
+	<script src="../_public_m/js/bootstrap-material-datetimepicker.min.js"></script>
+    <script src="../_public_m/js/ui.moblie.js"></script>
+	<!-- //javascript -->
+	
+	<!-- 맵 js 추가 -->
+	<script type="text/javascript" src="../_public/js/ui.gooleMap.js"></script>
+	<script type="text/javascript" src="../_public/js/ui.googleMap.sampleData.js"></script>
+	<script type="text/javascript" src="../_public/js/sv.map.controller.min.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&region=KR&language=en&key=AIzaSyCQ8LK-VtL1tudKfKMUo-Br9bQNt5u7Cc0&callback=initMap" async defer></script>
+    <!-- //맵 js 추가 -->
+	<script type="text/javascript">
+		var voyagesSampleData = {
+			"geometry":{
+				"coordinates": [
+					{lat : 8.181327, lng : 87.384032}, 
+					{lat : 4.863576, lng : 99.337157},
+					{lat : 1.705113, lng : 104.698485},
+					{lat : 20.336654, lng : 119.815673},
+					{lat : 32.671585, lng : 130.796522}
+				]
+			},
+			"markers" : [
+				{
+					"state" : "latest",
+					"position" : {lat : 8.181327, lng : 87.384032}
+				},
+				{
+					"state" : "port",
+					"port_name":"Singapore",
+					"position" : {lat : 1.705113, lng : 104.698485}
+				},
+				{
+					"state" : "point",
+					"port_name":"Kiire",
+					"position" : {lat : 32.671585, lng : 130.796522}
+				},
+			]
+		};
+
+		var _map;
+		function initMap(){
+			_map = new google.maps.Map(document.getElementById('TotalMap'), {
+				center: {lat: 36.705106, lng: 127},
+				zoom: 3,
+				styles : window.uiGooglMap.googleMapStyle,
+				disableDefaultUI: true
+			});
+			//맵이동시 인포삭제, 인포위치이동
+			_map.addListener('center_changed', function() {
+				var info = window.uiGooglMap.infoShipMarker();
+				info.close();
+			});	
+			var _lineData = voyagesSampleData.geometry.coordinates;
+			var _markerData = voyagesSampleData.markers;
+			createLine(_map, _lineData);
+			createMarker(_map, _markerData);
+		}
+
+		function createLine(_map, _data){
+			var path = new google.maps.Polyline({
+				path: _data,
+				geodesic: true,
+				strokeWidth : 0,
+				strokeOpacity : 1,
+				strokeColor : "#FFFFFF",
+			});
+			path.setMap(_map);
+		}
+		//마커셋팅
+		function getImageIcon(_data){
+			var imgPath = '/_public/images/map/icon/';
+			var imgExt = ".png";
+			switch(_data){
+				case "load" :
+					return  imgPath + "icon_path_load"+imgExt;
+					break;
+				case "stop" :
+					return  imgPath + "icon_path_stop"+imgExt;
+					break;
+				case "start" :
+					return  imgPath + "icon_path_start"+imgExt;
+					break;
+				case "discharge" :
+					return  imgPath + "icon_path_discharge"+imgExt;
+					break;
+				case "point" :
+					return  imgPath + "icon_path_point"+imgExt;
+					break;
+				case "latest" :
+					return  imgPath + "icon_path_latest"+imgExt;
+					break;
+				case "port" :
+					return  imgPath + "icon_path_port"+imgExt;
+					break;
+			}
+		}
+		function createMarker(_map, _data){
+			for (var i = 0; i < _data.length; i++) {
+				var data = _data[i];
+
+				var bounds = new google.maps.LatLngBounds();
+				var imageUrl = getImageIcon(data.state);
+				var image = {
+					url: imageUrl,
+					size: new google.maps.Size(38, 38),
+					scaledSize: new google.maps.Size(24, 24), // scaled size
+					origin: new google.maps.Point(0, 0),
+					anchor: new google.maps.Point(24/2, 24/2)
+				};
+				var marker = new google.maps.Marker({
+					position: data.position,
+					map: _map,
+					icon: image,
+					title: data.port_name ? data.port_name : "",
+					zIndex: (i+1)
+				});
+				bounds.extend(marker.position);
+				
+				if( data.state == 'latest' ){
+					var clickInfo = window.uiGooglMap.infoShipMarker();
+					marker.addListener('click', function(event) {
+						clickInfo.open(event.pixel);
+					});
+				}else{
+					var overInfo = window.uiGooglMap.overShipMarker();
+					marker.addListener('mouseover', function(event) {
+						overInfo.open(event.pixel);
+					});			
+					marker.addListener('mouseout', function(event) {
+						overInfo.close();
+					});			
+				}
+			}
+		}
+	</script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+			ui_voyagesPath();
+		})
+		function ui_voyagesPath(){
+			var path = $(".VoyagesPath__line");
+			//latest 찾아서 top 얻기.
+			var latest = $(".VoyagesPath__item.latest");
+			if( latest.length > 0 ){
+				path.css('height', latest.position().top);
+			}
+		}
+		//toolsInfo 관련함수
+		var toolsInfo = (function(){
+			var _el = $("#ToolsInfo");
+			return {
+				open : function(){
+					if( _el == null || _el.size() == 0 ) return;
+					_el.addClass('active');
+				},
+				close : function(){
+					if( _el == null || _el.size() == 0 ) return;
+					_el.removeClass('active');
+				}
+			}
+		})();		
+    </script>	
+</body>
+</html>

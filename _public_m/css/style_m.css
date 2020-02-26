@@ -233,8 +233,17 @@ body,html{position:relative;height:100%;width:100%}
 .PageHeader__info span{color:#9badbb;font-size:0.8em}
 
 /* PageSearch */
-.PageSearch{position: absolute;left:0;right:0;top:3em;padding:2em 1em 1em 1em;background:rgba(0,0,0,.4);transform: translateX(-30em);}
-.PageSearch.active{transform: translateY(0em);}
+.PageSearch{
+    position: absolute;left:0;right:0;top:3em;
+    padding:2em 1em 1em 1em;
+    background:rgba(0,0,0,.4);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+}
+.PageSearch.active{
+    -webkit-transform: translateY(0em);
+    transform: translateY(0em);
+}
 .PageSearch:after{content:'';display: block;height:1px;position: absolute;left:0;right:0;bottom:0;background:rgba(255,255,255,0.2)}
 .PageSearch .PageSearch__inner{padding-right:4em;position: relative;}
 .PageSearch .PageSearch__input{background:rgba(255,255,255,0.8);}

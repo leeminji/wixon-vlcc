@@ -157,6 +157,44 @@ input[class*=radioType]:checked+label{background:#74a8cf;color:#fff;transition:a
 }
 .SelectBox__text{color:#fff;display: inline-block;padding:0 .5em;}
 
+.DateInput{position: relative;display: inline-block;vertical-align: middle;}
+.DateInput input[type="text"] {
+    border: 0;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #eee;
+    background: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    height: 2em;
+    line-height: 1em;
+    border-radius: 3px;
+    padding: 0 .5em 0; 
+    font-size: 1em;
+}
+.DateInput input[type="text"].datepicker {
+    background-image: url(../images/common/bg_input_date.png);
+    background-position: 95% center;
+    background-repeat: no-repeat;
+    background-size: auto 1.25em;
+}
+.DataSetting__sbutton {
+    display: inline-block;
+    height: 2em;
+    line-height: 1em;
+    border-radius: 3px;
+    padding: .5em 1em;
+    color: #aeaeae;
+    box-sizing: border-box;
+    background: #2b4146;
+    border: 1px solid #4c757d;
+    min-width: 3em;
+    text-align: center;
+    font-size: inherit;
+}
+.DataSetting__sbutton span {
+    vertical-align: baseline;
+    position: relative;
+    top: -1px;
+}
 .CountButton{width:3em;line-height:2em;display:inline-block;border-radius: 3px;background:#272727;text-align:center;vertical-align: middle;}
 .CountButton > span{color:#fff;font-size:1em;vertical-align: baseline;line-height: 1em;}
 .CountButton:hover{background: #000;}
@@ -199,7 +237,7 @@ body,html{position:relative;height:100%;width:100%}
 
 /* Page__loading */
 .Page__loading{position:fixed;width:100%;height:100%;z-index:1000;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,0.3);font-size:0.8em}
-.Page__loading.inactive{opacity:0; z-index:1;-webkit-transition: all .5s ease-in;transition: all .5s ease-in;}
+.Page__loading.inactive{opacity:0; z-index:-1;-webkit-transition: all .3s ease-in;transition: all .3s ease-in;}
 .Page__loading .img {
     width:6em;
     height:6em;
@@ -363,6 +401,8 @@ body,html{position:relative;height:100%;width:100%}
 
 /* Navigation */
 .Navigation{position: relative;z-index:10}
+.Navigation.isArrow{padding-left:2em;}
+.Navigation.isArrow .Navigation__title{padding-left:.5em;padding-right:.5em}
 .Navigation__title{background:#212b36;padding:.4em 1em}
 .Navigation__title > span{color:#fff;}
 .Navigation__list{overflow-x:auto;border-top:1px solid #4b5d74;border-bottom:1px solid #4b5d74;background:#172a42}
@@ -372,6 +412,7 @@ body,html{position:relative;height:100%;width:100%}
 .Navigation__item{float:left;border-left:1px solid rgba(255, 255, 255, 0.1)}
 .Navigation__item .link{display: block;color:#a7a7b9;padding:.3em 1em;background:#172a42;text-align: center;}
 .Navigation__item.active .link{background:#0e729c;color:#fff}
+.Navigation__arrow.material-icons{position: absolute;left:0;top:0;font-size:1.5em;color:#fff;;width:2rem;text-align:center;line-height: 2rem;display: block;}
 
 /* TitleArea */
 .TitleArea{padding:1em 1em .5em}
@@ -636,6 +677,9 @@ body,html{position:relative;height:100%;width:100%}
 #ToolsDataFleet .col6{width: 2em;}
 #ToolsDataFleet .col7{width: .5em;}
 #ToolsDataFleet .col8{width: 1em;}
+
+
+
 
 /* TotalMapArea */
 .TotalMapArea{position: absolute;left:0;right:0;top:0;bottom:0;z-index:1}
@@ -1318,3 +1362,33 @@ body,html{position:relative;height:100%;width:100%}
 .MapDetail__content .SlideCheckbox{display: inline-block;vertical-align: middle;}
 .MapDetail__content .label{display: inline-block;vertical-align: middle;color:#ffffff;padding-left:.2em;font-size:0.7em;}
 .MapDetail__content .row{padding:.1em 0}
+
+/* LibFleet */
+#LibDataFleet .col1{width: 1em;}
+#LibDataFleet .col2{width: 1em;}
+#LibDataFleet .col3{width: 1em;}
+#LibDataFleet .col4{width: 2em;}
+#LibDataFleet .col5{width: 1.5em;}
+#LibDataFleet .col6{width: 1em;}
+#LibDataFleet .col7{width: 1.5em;}
+#LibDataFleet .col8{width: 1em;}
+#LibDataFleet .col9{width: 1em;}
+.LibFleetArea{position: absolute;left:0;right:0;bottom:0;top:2em}
+.LibFleetArea__map{height:19rem;position: relative;z-index:100}
+.LibFleetArea__toolsContent{position: absolute;top:25px;bottom:0;left:10em;right:0;overflow-x: auto;}
+.LibFleetArea.active .LibFleetArea__toolsContent{left:2em}
+.LibFleetArea.active_up .LibFleetArea__content{top:0;}
+.LibFleetArea__content{
+    position: absolute;top:19rem;margin-top:25px;bottom:0;left:0;right:0;font-size:0.8em;
+    transition: top .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);z-index:200
+}
+.LibFleetArea__open{position: absolute;left:0;right:0;top:-2em;text-align: center;}
+.LibFleetArea__open a{color:#fff}
+.LibFleetToolsData{
+    width: 100%;
+    min-width: 50em;
+    height: 100%;
+    position: relative;
+}
+.LibFleet__toolsSearch{width:48em;padding-left:.5em;box-sizing: border-box;}
+.LibFleet__toolsContent{position: absolute;top:2.5em;bottom:0;left:0;right:0;overflow-x: auto;}

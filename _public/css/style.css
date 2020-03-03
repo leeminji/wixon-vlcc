@@ -143,7 +143,7 @@ a[class*="Button__"].Button__basic > span, button[class*="Button__"].Button__bas
 a[class*="Button__"].Button__login, button[class*="Button__"].Button__login{height:4em;background: #fff;border-radius:.5em;position:relative;}
 a[class*="Button__"].Button__login > span, button[class*="Button__"].Button__login > span{color:#0081da;position: absolute;left:0;right:0;text-align: center;display: block;top:50%;margin-top:-1em;line-height:2em;padding:0;font-size:1.1em}
 a[class*="Button__"].Button__login.active, button[class*="Button__"].Button__login.active{background:#0081da}
-a[class*="Button__"].Button__login.active > span, button[class*="Button__"].Button__login.active > span{color:#fff;font-size:1.4em}
+a[class*="Button__"].Button__login.active > span, button[class*="Button__"].Button__login.active > span{color:#fff;font-weight: 200;}
 
 
 a[class*="ButtonIcon__"], button[class*="ButtonIcon__"]{position:relative;display: inline-block;-webkit-box-sizing: border-box;box-sizing: border-box;outline: 0;border:0;width:3.4em;text-align: center;margin:0 2px;opacity:0.8}
@@ -307,13 +307,19 @@ body.noWidth{min-width: inherit;overflow-y: auto;min-height: inherit;}
 
 /* HeaderArea */
 .HeaderArea__logo{position: absolute;left:3em;top:2em}
-.HeaderArea__logo .logo{display: block;width: 8em;height:5em;background:url(../images/member/login_logo.png) center no-repeat;}
+.HeaderArea__logo .logo{display: block;width: 8em;height:5em;background:url(../images/common/logo_top.png) center no-repeat;}
 
 /* FooterArea */
 .FooterArea{position: absolute;left:0;right:0;bottom:3em;}
 .FooterArea .logo{display: block;height:8em;background:url(../images/member/login_logo2.png) center no-repeat;}
 .FooterArea .copyright{text-align:center;padding-top:1em;opacity: 0.8;}
-.FooterArea .copyright span{color:#fff;letter-spacing: 0.1em}
+.FooterArea .copyright span{color:#fff;letter-spacing: 0.15em}
+.FooterArea .DownloadApp{padding-top:1em}
+
+.DownloadApp{text-align: center;}
+.DownloadApp .DownloadApp__button{display: inline-block;height:3em;background-repeat: no-repeat;background-size:auto 3em;background-position: center;}
+.DownloadApp .DownloadApp__button.Button__ios{width:9em;background-image: url(../images/member/app_ios.png);}
+.DownloadApp .DownloadApp__button.Button__android{width:8.2em;background-image: url(../images/member/app_android.png);}
 
 /* TopSearch */
 .TopSearch.left{padding-left:9em;position: relative;z-index: 100}
@@ -363,7 +369,7 @@ body.noWidth{min-width: inherit;overflow-y: auto;min-height: inherit;}
 .TopSectionTab__content.active{position: relative;left:0;height:auto;width:100%;box-sizing: border-box;padding:1em;overflow-y:auto}
 
 /* TotalMenu */
-.TotalMenu{position: absolute;left:0;top:0;bottom:0;width:3.5em;max-height:100%;background:#0081da;overflow-y:auto;}
+.TotalMenu{position: absolute;left:0;top:0;bottom:0;width:3.5em;max-height:100%;background:#0b1728;overflow-y:auto;}
 .active_submenu .TotalMenu{background:#0b1728}
 .TotalMenu.black{background:#0b1728}
 a[class*="__button_"].TotalMenu__button_close{position: absolute;display:none}
@@ -387,9 +393,9 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
     font-family: inherit;
     letter-spacing: -0.5px;
     text-transform: uppercase;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-	filter: alpha(opacity=60);
-    opacity: 0.6;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+    opacity: 0.5;
     -o-transition: all .5s;
     transition: all .5s; 
     -webkit-transition: all .5s; 
@@ -403,7 +409,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
     -webkit-transition: all .5s;  
 }
 .TotalMenu__list > li{position:relative;min-height:4em;}
-.TotalMenu .TotalMenu__list > li{border-top:1px solid rgba(255,255,255,.3);border-bottom:1px solid rgba(0,0,0,.3)}
+.TotalMenu .TotalMenu__list > li{border-top:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(0,0,0,.3)}
 .TotalMenu.black .TotalMenu__list > li{border-top:1px solid #000;border-bottom:1px solid #213d58}
 .TotalMenu .TotalMenu__list > li:last-child{border-bottom: none;}
 .TotalMenu .TotalMenu__list > li:first-child{border-top:0}
@@ -1128,8 +1134,8 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .LoginArea__content{position: absolute;z-index:15;left:0;top:0;bottom:0;right:0;min-width:50em}
 .LoginArea__title{line-height:5em;padding-bottom:3em;text-align: center;}
 .LoginArea__title span{font-size:3.75em;}
-.LoginArea__form{position:absolute;left:50%;width:26em;margin-left:-13em;top:50%;margin-top:-16em;color:#fff;z-index:18}
-.LoginArea .LoginArea__input{display: block;background: rgba(255,255,255,0.2);width:100%;height:4rem;border-radius: .5em;font-size:1.2em;color:#fff;text-align: center;}
+.LoginArea__form{position:absolute;left:50%;width:24em;margin-left:-12em;top:45%;margin-top:-16em;color:#fff;z-index:18}
+.LoginArea .LoginArea__input{display: block;background: rgba(255,255,255,0.3);width:100%;height:4rem;border-radius: .5em;font-size:1.2em;color:#fff;text-align: center;border: 1px solid rgba(255,255,255,0.3)}
 .LoginArea .LoginArea__input:focus{border-color: #368ee0;background: transparent;}
 .LoginArea .LoginArea__input::-webkit-input-placeholder{color:#fff}
 .LoginArea .LoginArea__input::-moz-placeholder{color:#fff}
@@ -1140,8 +1146,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 
 .LoginArea__button{text-align: center;padding-top:.5em}
 .LoginArea__button::after{content:'';display: block;clear: both;}
-.LoginArea__button .LoginArea__button_login{float:left;width:33%;}
-.LoginArea__button .LoginArea__button_otp{float:right;width:66%}
+.LoginArea__button .LoginArea__button_login{width:100%}
 
 .LoginArea__otp_form{position:absolute;left:50%;width:46em;margin-left:-23em;top:50%;margin-top:-16em;color:#fff;z-index:18}
 .LoginArea__otp_inner{position:relative;padding-right: 14em;}
@@ -1160,7 +1165,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .LoginArea__otp_inner .LoginArea__input::placeholder{color:#b8b8b8}
 .LoginArea__bg{position: absolute;z-index:10;left:0;top:0;bottom:0;right:0;overflow:hidden}
 .LoginArea__bg span{
-    position:absolute;display: block;width:1em;height:1em;background:rgba(0,129,218,0.1);border-radius: 1em;
+    position:absolute;display: block;width:1em;height:1em;background:rgba(75,108,131,0.1);border-radius: 1em;
     -webkit-animation : AniScale 5s, AniTrans1 2s;
             animation : AniScale 5s, AniTrans1 2s;
     -webkit-animation-timing-function: ease-in-out;
@@ -1173,13 +1178,13 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .LoginArea__bg .round-3{width:3em;height:3em;border-radius: 3em;}
 .LoginArea__bg .round-4{width:6em;height:6em;border-radius: 6em;}
 .LoginArea__bg .round-5{width:10em;height:10em;border-radius: 10em;}
-.LoginArea__bg .round-6{width:14em;height:14em;border-radius: 14em;}
-.LoginArea__bg #round-1{left:10%;top:60%;-webkit-animation: AniSacle 10s, AniTrans1 25s,AniOpacity 3s;animation: AniSacle 10s, AniTrans1 25s,AniOpacity 3s}
-.LoginArea__bg #round-2{left:68%;top:40%;-webkit-animation : AniScale 5s, AniTrans2 16s;animation : AniScale 5s, AniTrans2 16s;}
-.LoginArea__bg #round-3{left:35%;top:20%;-webkit-animation: AniSacle 10s, AniTrans2 20s, niOpacity 3s;animation: AniSacle 10s, AniTrans2 20s, niOpacity 3s}
-.LoginArea__bg #round-4{left:15%;top:30%;-webkit-animation : AniScale 2s, AniTrans1 24s;animation : AniScale 2s, AniTrans1 24s;}
-.LoginArea__bg #round-5{left:80%;top:50%;-webkit-animation : AniScale 5s, AniTrans1 18s;animation : AniScale 5s, AniTrans1 18s;}
-.LoginArea__bg #round-6{left:25%;bottom:10%;-webkit-animation : AniScale 3s, AniTrans2 28s, AniOpacity 3s;animation : AniScale 3s, AniTrans2 28s, AniOpacity 3s;}
+.LoginArea__bg .round-6{width:17em;height:17em;border-radius: 17em;}
+.LoginArea__bg #round-1{left:10%;top:60%;-webkit-animation: AniSacle 10s, AniTrans1 25s; animation: AniSacle 10s, AniTrans1 25s}
+.LoginArea__bg #round-2{left:68%;top:40%;-webkit-animation : AniScale 5s, AniTrans2 16s; animation : AniScale 5s, AniTrans2 16s;}
+.LoginArea__bg #round-3{left:35%;top:20%;-webkit-animation: AniSacle 10s, AniTrans2 20s, niOpacity 3s; animation: AniSacle 10s, AniTrans2 20s, niOpacity 3s}
+.LoginArea__bg #round-4{left:15%;top:30%;-webkit-animation : AniScale 2s, AniTrans1 24s; animation : AniScale 2s, AniTrans1 24s;}
+.LoginArea__bg #round-5{left:80%;top:50%;-webkit-animation : AniScale 5s, AniTrans1 18s; animation : AniScale 5s, AniTrans1 18s;}
+.LoginArea__bg #round-6{left:25%;bottom:10%;-webkit-animation : AniScale 3s, AniTrans2 28s; animation : AniScale 3s, AniTrans2 28s}
 
 /* DashboardArea */
 .BoxArea01{

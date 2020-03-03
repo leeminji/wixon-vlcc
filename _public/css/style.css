@@ -820,6 +820,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 
 /* ToolsView */
 .ToolsView{position: absolute;left:0;right:0;top:0;bottom:0;z-index:0;opacity: 0;height:0;}
+.ToolsView.noLayer .ToolsView__inner{left:0;top:0;bottom:0;width: 100%;margin-left:0;border:0;border-radius: 0;}
 .ToolsView.active{z-index:100;opacity: 1;height:auto}
 .ToolsView.active .ToolsView__blind{ opacity:1;}
 .ToolsView .ToolsView__blind{position: absolute;left:0;right:0;top:0;bottom:0;z-index:101;background:rgba(0,0,0,0.8);opacity:0; }

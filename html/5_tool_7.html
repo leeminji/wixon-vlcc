@@ -165,7 +165,7 @@
 												<a href="#" class="ResearchList__button prev"><span>Older posts</span></a>
 												<ul class="clear clearfix">
 													<li class="ResearchList__item">
-														<a href="#" class="link"><span class="skip">다운로드 링크</span></a>
+														<a href="javascript:;" onclick="window.ui.windowPopup('./5_tool_7_popup.html', 650, 500);" class="link"><span class="skip">다운로드 링크</span></a>
 														<div class="cate"><span>VLCC demand</span></div>
 														<div class="title ellipsis"><span>From whence the spike?</span><i class="icon icon_file_pdf"></i></div>
 														<div class="date"><span>October 18th 2019 - Tankers</span></div>
@@ -384,7 +384,7 @@
 		<!-- //Layout__container -->
 
 		<!-- ToolsView -->
-		<div class="ToolsView active" id="ToolsView">
+		<div class="ToolsView" id="ToolsView">
 			<div class="ToolsView__inner">
 				<a href="javascript:;" onclick="uiSettingPopup.close('ToolsView');" class="ToolsView__button_close js-popup-close"><span class="icon icon_close_black"></span><span class="skip">닫기</span></a>
 				<div class="ToolsView__top">
@@ -508,6 +508,10 @@
 	<script type="text/javascript" src="../_public/js/ui.js"></script>
 	<script>
 		$(document).ready(function(){
+			
+			//200303 팝업
+			window.ui.windowPopup('./5_tool_7_popup.html', 650, 500);
+
 			//임의설정
 			$(".js-popup-open").on("click", function(e){
 				e.preventDefault();

@@ -485,7 +485,7 @@
 			
 			//스크롤이 생길때 각 브라우저의 높이값이 달라서 체크후 마진값으로 조절.
 			_list.each(function(index){
-				var scrollbarHeight = browser.indexOf("ie") > -1 ? 17 : 10;
+				var scrollbarHeight = browser.indexOf("chrome") > -1 ? 10 : 17;
 				var innerList = $(this).children();
 				var items = innerList.children(".inner");
 				var charts = innerList.find('canvas');

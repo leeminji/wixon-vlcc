@@ -9141,7 +9141,6 @@ helpers$1.extend(Chart.prototype, /** @lends Chart */ {
 			listener = function() {
 				me.resize();
 			};
-
 			platform.addEventListener(me, 'resize', listener);
 			listeners.resize = listener;
 		}

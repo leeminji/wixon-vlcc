@@ -97,7 +97,7 @@
 .chartjs-arrow-up{display:block;background:url(../images/common/arrow_up.png) no-repeat center;background-size:1em auto;height:3em;}
 .chartjs-bottom{position: absolute;right:0;bottom:0}
 .chartjs-bottom span{font-size:1.2em;color:#fff;font-weight: bold;}
-.chartjs-canvas{margin-top:-1em;padding-bottom:1.6em;padding-top:1em}
+.chartjs-canvas{margin-top:-1em;padding-bottom:1.6em;padding-top:1em;}
 
 .chartjs-tab{
     position: absolute;

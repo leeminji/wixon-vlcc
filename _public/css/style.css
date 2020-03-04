@@ -4,10 +4,11 @@
 @import 'chartjs.css';
 
 /* scrollbar */
-::-webkit-scrollbar{height:.5em;width: .5em;background-color: rgba(255,255,255,0.2);}
-::-webkit-scrollbar-track {box-shadow: inset 0 0 6px rgba(0,0,0,0.3);background-color: rgba(0,0,0,0.2);}
-::-webkit-scrollbar-thumb {background-color: #000000;}
+::-webkit-scrollbar{height:10px;width: 10px;background-color: rgba(255,255,255,0.2);}
+::-webkit-scrollbar-track {background-color: #080e15;}
+::-webkit-scrollbar-thumb {background-color: #2d3b4a;}
 html {
+    scrollbar-width: 10px;
     scrollbar-3dLight-Color: #2d3b4a; 
     scrollbar-arrow-color: #172637; 
     scrollbar-base-color: #2d3b4a; 
@@ -239,7 +240,7 @@ a[class*="ButtonIcon__"]:hover:after, button[class*="ButtonIcon__"]:hover:after{
 
 /* loading */
 .loading{position:fixed;width:100%;height:100%;z-index:1000;background:rgba(0,0,0,0.3);font-size:0.8em}
-.loading.inactive{opacity:0; z-index:1;-webkit-transition: all .5s ease-in;transition: all .5s ease-in;}
+.loading.inactive{opacity:0; z-index:1;-webkit-transition: all .2s ease-in;transition: all .2s ease-in;}
 .loading .img {
     width:6em;
     height:6em;
@@ -1226,6 +1227,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
     position: relative;
     border:1px solid #233748;
     outline:1px solid #000;
+    z-index: 10;
 }
 .BoxArea01.sWidth .inner{width:39em}
 .BoxArea01.mWidth .inner{width:51em;}
@@ -1236,6 +1238,11 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .BoxArea01.fixed2 .inner{height:25em;margin-bottom:4.5em}
 
 .BoxArea01 .inner{position: relative; z-index:100;margin:1.5em 2.6em 2em;box-sizing: border-box;}
+.isChartList .BoxArea01 .inner{margin-left:0;margin-right:0;transform: scale(0.94);}
+.isChartList .BoxArea01 {overflow: hidden;}
+.chartList{overflow-x: auto;overflow-y: hidden;position: relative;z-index: 1}
+.chartList .chartList_inner{width:200%;display: flex;}
+
 @media (min-width: 1920px) { 
     .BoxArea01.fixed .inner{height:20em}
 }
@@ -1266,7 +1273,6 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .Layout_chartArea{float:left;width:33.333%;position: relative;}
 .Layout_chartArea.col12{width:100%}
 .Layout_chartArea.col6{width:50%}
-.Layout_chartArea.col6{width:50%}
 .Layout_chartArea.col3{width:25%}
 .Layout_chartArea.col3_5{width:29.25%}
 .Layout_chartArea.col4{width:33.5%}
@@ -1296,7 +1302,6 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .Layout_spotChartArea.w60{width:60%}
 .Layout_spotChartArea.w40{width:40%}
 .Layout_spotChartArea.w50{width:50%}
-
 @media (max-width: 1219px) { 
     /* .Layout_spotChartArea.left{width: auto;float:none;}
     .Layout_spotChartArea.right{width: auto;position: relative;height:100em;float:none;}
@@ -1308,12 +1313,12 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 /* SpotChartArea */
 .SpotChartArea__map{position: relative;height: 35em;}
 .SpotChartArea__map .MapTotalSize{border-radius: .3em;}
-.SpotChartArea__data .inner{height:100%;margin:0 1em}
+.SpotChartArea__data .inner{height:100%;margin:0;padding:0 1em;overflow:auto;box-sizing: border-box;}
 .SpotChartArea__data{height:100%}
 .SpotChartArea__data .BoxArea01{position: absolute;left:0;right:0;top:0;bottom:0}
 
 /* SpotTableData */
-.SpotTableData{min-width:55em;position: absolute;left:0em;right:0em;top:0em;bottom:0em;overflow:hidden}
+.SpotTableData{min-width:55em;position: absolute;left:0em;right:0em;top:0em;bottom:0em;overflow:hidden;}
 .SpotTableData.fluid{min-width: inherit;}
 .SpotTableData__top{padding-top:1em}
 .SpotTableData__info{padding-bottom: 1em;}
@@ -1329,7 +1334,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .SpotTableData__title span{font-weight: bold;color:#fff;font-size:13px}
 
 /* SpotTableData 테이블 넓이지정 */
-#SpotTableData01{min-width:56em}
+#SpotTableData01{min-width:56em;padding: 0 1em;}
 #SpotTableData01 .col1{width:20px}
 #SpotTableData01 .col2{width:120px}
 #SpotTableData01 .col3{width:80px}

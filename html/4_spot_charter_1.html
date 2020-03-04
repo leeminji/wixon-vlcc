@@ -180,15 +180,35 @@
 									</div>
 								</div>
 								<!-- //맵 -->
+								<!-- 
+									가로스크롤 생기고 차트가 옆으로 추가되는 경우 ::
+									옆에 차트가 있다면 다 포함하는 div에 isChartList 클래스 필요합니다. ( isChartList inner클래스의 마진값 없애는 클래스 - 마진값 존재시 살짝씩 간격이 틀어집니다.)
+									
+									추가되는 차트 부모 엘리먼트로 chartList,  chartList_inner 필요합니다.
+									<canvas> 속성 data-scale로 넓이 조절합니다.
+									data-scale=1 기본사이즈 1 일 경우 속성 넣어도 되고 빼도 됩니다.
+									가로가 길어질경우 scale로 조절합니다.
+								-->											
 								<!-- 차트01 -->
-								<div class="SpotChartArea__chart01">
+								<div class="SpotChartArea__chart01 isChartList">
 									<div class="BoxArea01">
 										<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
-										<div class="inner">
-											<div id="chart1_legend" class="chartjs-legend white"></div>
-											<div id="chart1_title" class="chartjs-title middle white center"><span>VLCC FLOW (BSS FUJAIRAH)</span></div>
-											<canvas id="chart1" class="chartjs-canvas"></canvas>
+										<!-- chartList -->
+										<div class="chartList">
+											<div class="chartList_inner">
+												<div class="inner">
+													<div id="chart1_legend" class="chartjs-legend white"></div>
+													<div id="chart1_title" class="chartjs-title middle white center"><span>VLCC FLOW (BSS FUJAIRAH)</span></div>
+													<canvas id="chart1" class="chartjs-canvas" data-scale=1.2></canvas>
+												</div>
+												<div class="inner">
+													<div id="chart1_1_legend" class="chartjs-legend white"></div>
+													<div id="chart1_1_title" class="chartjs-title middle white center"><span>VLCC FLOW (BSS FUJAIRAH)</span></div>
+													<canvas id="chart1_1" class="chartjs-canvas"></canvas>
+												</div>
+											</div>
 										</div>
+										<!-- //chartList -->
 									</div>
 								</div>
 								<!-- //차트01 -->
@@ -198,10 +218,9 @@
 								<div class="SpotChartArea__data">
 									<div class="BoxArea01">
 										<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
+										<!-- //js-scrollbar 제거했습니다. 확인해주세요. -->
 										<div class="inner">
-											<div class="js-scrollbar">
 											<div class="SpotTableData" id="SpotTableData01"></div>
-											</div>
 										</div>
 									</div>
 								</div>
@@ -209,18 +228,33 @@
 							</div>
 						</div>
 						<div class="Layout_spotChartRow">
-							<div class="Layout_spotChartArea">
+							<div class="Layout_spotChartArea isChartList">
 								<div class="BoxArea01">
 									<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
-									<div class="inner">
-										<div id="chart2_legend" class="chartjs-legend white"></div>
-										<div id="chart2_title" class="chartjs-title middle white center"><span>Freight assessment</span></div>
-										<div class="chartjs-tab middle" id="chart2_tab">
-											<a href="javascript:;" data-category='ws'>WS</a>
-											<a href="javascript:;" data-category='tce'>TCE</a>
-										</div>	
-										<canvas id="chart2" class="chartjs-canvas"></canvas>
+									<!-- chartList -->
+									<div class="chartList">
+										<div class="chartList_inner">
+											<div class="inner">
+												<div id="chart2_legend" class="chartjs-legend white"></div>
+												<div id="chart2_title" class="chartjs-title middle white center"><span>Freight assessment</span></div>
+												<div class="chartjs-tab middle" id="chart2_tab">
+													<a href="javascript:;" data-category='ws'>WS</a>
+													<a href="javascript:;" data-category='tce'>TCE</a>
+												</div>	
+												<canvas id="chart2" class="chartjs-canvas"></canvas>
+											</div>
+											<div class="inner">
+												<div id="chart2_1_legend" class="chartjs-legend white"></div>
+												<div id="chart2_1_title" class="chartjs-title middle white center"><span>Freight assessment</span></div>
+												<div id="chart2_1_tab" class="chartjs-tab middle" >
+													<a href="javascript:;" data-category='ws'>WS</a>
+													<a href="javascript:;" data-category='tce'>TCE</a>
+												</div>	
+												<canvas id="chart2_1" class="chartjs-canvas"></canvas>
+											</div>
+										</div>
 									</div>
+									<!-- //chartList -->
 								</div>
 							</div>
 							<div class="Layout_spotChartArea fluid_right">
@@ -993,21 +1027,93 @@
 
 			//VLCC FLOW (BSS FUJAIRAH)
 			ChartUtil.initStackedChart('chart1', lineChartData_7, 10, false, 2.5);
+			ChartUtil.initStackedChart('chart1_1', lineChartData_2, 10, false, 2.5);
 			
 			//FREIGHT ASSESSMENT
 			ChartUtil.initLineChart('chart2', lineChartData_20, false, 0, 2.5);
+			ChartUtil.initLineChart('chart2_1', lineChartData_20, false, 0, 2.5);
+
 			//마지막 꼬리 라벨 넣기( 데이터가 다른 곳이랑 다릅니다. 확인필요. )
 			var chart2 = ChartUtil.chartList['chart2'];
             chart2.options.showValue = true; 
             chart2.options.layout.padding.right = 120;
 			chart2.update();
+			var chart2_1 = ChartUtil.chartList['chart2_1'];
+            chart2_1.options.showValue = true; 
+            chart2_1.options.layout.padding.right = 120;
+			chart2_1.update();
 
 			//CARGO COUNTING - 차트세로수정
 			ChartUtil.initStackedChart('chart3', lineChartData_8, 10, false, 3);
 
 			//Fixture counting - 차트세로수정
 			ChartUtil.initStackedChart('chart4', lineChartData_19, 5, false, 2);
+
+			//차트 추가될 때 차트 크기조절 함수
+			charListSetting($(".chartList"));
+
 		});
+		//차트 추가될 때 차트 크기조절 함수
+		function charListSetting(_list){
+			if(_list == null || _list.size() == 0 ) return;
+			var browser = window.ui.checkBroswer();
+
+			//스크롤이 생길때 각 브라우저의 높이값이 달라서 체크후 마진값으로 조절.
+			_list.each(function(index){
+				var scrollbarHeight = browser.indexOf("ie") > -1 ? 17 : 10;
+				var innerList = $(this).children();
+				var items = innerList.children(".inner");
+				var charts = innerList.find('canvas');
+				if( items.size() <= 1 ){ scrollbarHeight = 0; }
+				$(this).css('margin-top', -scrollbarHeight+'px'); //스크롤높이 빼준다.
+				
+				//맨앞차트 비율만 가지고옴.
+				var basicRatio = window.ChartUtil.chartList[charts.eq(0).attr('id')].aspectRatio;
+				
+				//chart scale 판단 맟 width 값 조정.
+				var totalScale = items.size();
+				var t_totalScle = 0;
+				for(var i =0;i<charts.size();i++){
+					var chart = charts.eq(i);
+					var scale = chart.data('scale') ? parseFloat(chart.data('scale')) : 1;
+					t_totalScle += scale;
+					chart.parent(".inner").css({
+						'width' : 100*scale+"%"
+					})
+				}
+				totalScale = t_totalScle > totalScale ? t_totalScle : totalScale;
+				innerList.css({
+					'transform' :'translateY('+scrollbarHeight+'px)', //스크롤높이만큼 위로 올려준다.
+					'width' : (totalScale * 100 )+"%"
+				});
+				chartResize(charts, basicRatio);
+
+				$(window).on("resize", function(){
+					chartResize(charts, basicRatio);
+				});	
+			});
+
+			function chartResize(_charts, _basicRatio){
+				_charts.width(0);
+				_charts.height(0);
+				for(var i =0;i<_charts.size();i++){
+					var chart = _charts.eq(i);
+					var scale = chart.data('scale') ? parseFloat(chart.data('scale')) : 1;
+
+					var id = _charts.eq(i).attr('id');
+					//줄어들때 크기가 변하지 않아서 우선 제일 작게 둔 다음 다시 크기맞춤.
+					var chart = window.ChartUtil.chartList[id];
+					
+					if( scale == 2 ) scale = scale*1.0287;
+					if( scale == 3 ) scale = scale*1.0287;
+					chart.aspectRatio = (_basicRatio * scale);
+				
+					chart.resize();
+					_charts.eq(i).width(chart.width);
+					_charts.eq(i).height(chart.height); 
+				}
+			}
+		}
 	</script>
 	<script>
 		$(document).ready(function(){
@@ -1038,8 +1144,8 @@
 				var content = _el == null ? null : $("#"+_el);
 				if( content == null ) return;
 				content.removeClass("active");
-			}			
-		});
+			}	
+		});		
 	</script>	
 </body>
 </html>

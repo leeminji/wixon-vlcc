@@ -143,3 +143,7 @@
 .chartjs-yAxes-label span{color:#76828f;font-size: 0.8em;}
 .chartjs-yAxes-label.left{left:-1em;transform: rotate(270deg);}
 .chartjs-yAxes-label.right{right:-5em;transform: rotate(90deg);}
+
+.chartjs-inner{position: relative;}
+.chartjs-inner .chartjs-yAxes-label.left{left:0em;margin-top:-1em;transform: rotate(270deg);}
+.chartjs-inner .chartjs-yAxes-label.right{right:-2em;margin-top:-1em;transform: rotate(90deg);}

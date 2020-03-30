@@ -152,43 +152,55 @@
 			<section class="Layout__content SpotChartArea ">
 				<h1 class="skip">Spot Charter - ANALYSIS Contents</h1>	
 				<div class="js-scrollbar">
-					<!-- 
-						가로스크롤 생기고 차트가 옆으로 추가되는 경우 ::
-						옆에 차트가 있다면 다 포함하는 div에 isChartList 클래스 필요합니다. ( isChartList inner클래스의 마진값 없애는 클래스 - 마진값 존재시 살짝씩 간격이 틀어집니다.)
-						
-						추가되는 차트 부모 엘리먼트로 chartList,  chartList_inner 필요합니다.
-						<canvas> 속성 data-scale로 넓이 조절합니다.
-						data-scale=1 기본사이즈 1 일 경우 속성 넣어도 되고 빼도 됩니다.
-						가로가 길어질경우 scale로 조절합니다.
-					-->						
-					<div class="Layout__content__inner padding10 isChartList">
+
+					<div class="Layout__content__inner padding10 ">
+						<!-- 200330
+							구글차트예시 
+							기존 chartjs 에서 google chart 로 적용. 
+							반응형작업을 위해 옆의 차트도 같은 구글차트로 변경하였습니다. 
+						-->
+						<div class="Layout_row">
+							<div class="Layout_chartArea col6">
+								<div class="BoxArea01">
+									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+									<div class="inner">
+										<div class="chartjs-title center middle"><span>EAST-MEG QUEUE</span></div>
+										<!-- GooleChartArea -->
+										<div id="GooleChartArea1">
+											<div class="chartjs-inner">
+												<div id="GooleChartArea1_chart"></div>
+												<div class="chartjs-yAxes-label left"><span>WS</span></div>
+												<div class="chartjs-yAxes-label right"><span>Number of available VLCC</span></div>
+											</div><!-- 라인 차트 생성할 영역 -->
+											<div id="GooleChartArea1_control"></div><!-- 컨트롤바를 생성할 영역 -->
+										</div>
+										<!-- //GooleChartArea -->
+									</div>
+								</div>	
+							</div>
+							<div class="Layout_chartArea col6">
+								<div class="BoxArea01">
+									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+									<div class="inner">
+										<div class="chartjs-title center middle"><span>FLEET NO. IN TRADING</span></div>
+										<div id="GooleChartArea2_chart"></div><!-- 라인 차트 생성할 영역 -->
+									</div>
+								</div>	
+							</div>
+						</div>
+						<!-- //구글차트예시 -->
+
 						<div class="Layout_row">
 							<div class="Layout_chartArea col6">
 								<div class="BoxArea01">
 									<a href="javascript;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
-									<!-- chartList -->
-									<div class="chartList">
-										<div class="chartList_inner">
-											<div class="inner">
-												<div id="chart1_legend" class="chartjs-legend white"></div>
-												<div id="chart1_title" class="chartjs-title white middle center"><span>EAST-MEG Queue</span></div>
-												<canvas id="chart1" class="chartjs-canvas" data-scale=1></canvas>
-												<div class="chartjs-yAxes-label left"><span>WS</span></div>
-												<div class="chartjs-yAxes-label right"><span>Number of available VLCC</span></div>
-											</div>
-											<div class="inner">
-												<div id="chart1_1_legend" class="chartjs-legend white"></div>
-												<div id="chart1_1_title" class="chartjs-title white middle center"><span>EAST-MEG Queue</span></div>
-												<canvas id="chart1_1" class="chartjs-canvas" data-scale=1.3></canvas>
-											</div>
-											<div class="inner">
-												<div id="chart1_2_legend" class="chartjs-legend white"></div>
-												<div id="chart1_2_title" class="chartjs-title white middle center"><span>EAST-MEG Queue</span></div>
-												<canvas id="chart1_2" class="chartjs-canvas" data-scale=2></canvas>
-											</div>
-										</div>
+									<div class="inner">
+										<div id="chart1_legend" class="chartjs-legend white"></div>
+										<div id="chart1_title" class="chartjs-title white middle center"><span>EAST-MEG Queue</span></div>
+										<canvas id="chart1" class="chartjs-canvas" data-scale=1></canvas>
+										<div class="chartjs-yAxes-label left"><span>WS</span></div>
+										<div class="chartjs-yAxes-label right"><span>Number of available VLCC</span></div>
 									</div>
-									<!-- //chartList -->
 								</div>
 							</div>
 							<div class="Layout_chartArea col6">
@@ -202,47 +214,26 @@
 								</div>
 							</div>
 						</div>
+						
 						<div class="Layout_row">
 							<div class="BoxArea01 darker">
-								<a href="javascript;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
-								<!-- chartList -->
-								<div class="chartList">
-									<div class="chartList_inner">
-										<div class="inner">	
-											<div id="chart3_legend" class="chartjs-legend white"></div>
-											<div id="chart3_title" class="chartjs-title white middle center"><span>Fleet no. in non trading - Total</span></div>
-											<canvas id="chart3" class="chartjs-canvas"></canvas>
-										</div>
-										<div class="inner">	
-											<div id="chart3_1_legend" class="chartjs-legend white"></div>
-											<div id="chart3_1_title" class="chartjs-title white middle center"><span>Fleet no. in non trading - Total</span></div>
-											<canvas id="chart3_1" class="chartjs-canvas"></canvas>
-										</div>
-									</div>
+								<a href="javascript;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>	
+								<div class="inner">	
+									<div id="chart3_legend" class="chartjs-legend white"></div>
+									<div id="chart3_title" class="chartjs-title white middle center"><span>Fleet no. in non trading - Total</span></div>
+									<canvas id="chart3" class="chartjs-canvas"></canvas>
 								</div>
-								<!-- //chartList -->
 							</div>
 						</div>
 						<div class="Layout_row">
 							<div class="Layout_chartArea col6">
 								<div class="BoxArea01 darker">
 									<a href="javascript;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
-									<!-- chartList -->
-									<div class="chartList">
-										<div class="chartList_inner">
-											<div class="inner">
-												<div id="chart4_legend" class="chartjs-legend white"></div>
-												<div id="chart4_title" class="chartjs-title white"><span>FLEET NO. IN NON TRADING - Sanctioned</span></div>
-												<canvas id="chart4" class="chartjs-canvas"></canvas>
-											</div>
-											<div class="inner">
-												<div id="chart4_1_legend" class="chartjs-legend white"></div>
-												<div id="chart4_1_title" class="chartjs-title white"><span>FLEET NO. IN NON TRADING - Sanctioned</span></div>
-												<canvas id="chart4_1" class="chartjs-canvas" data-scale="1.5"></canvas>
-											</div>
-										</div>
+									<div class="inner">
+										<div id="chart4_legend" class="chartjs-legend white"></div>
+										<div id="chart4_title" class="chartjs-title white"><span>FLEET NO. IN NON TRADING - Sanctioned</span></div>
+										<canvas id="chart4" class="chartjs-canvas"></canvas>
 									</div>
-									<!-- //chartList -->
 								</div>
 							</div>
 							<div class="Layout_chartArea col6">
@@ -468,7 +459,12 @@
 	<script type="text/javascript" src="../_public/js/jquery-ui.js"></script>
 	<script type="text/javascript" src="../_public/vendor/scrollbar/jquery.scrollbar.js"></script>
 	<script type="text/javascript" src="../_public/js/ui.js"></script>
-	
+
+	<!-- 200330 구글차트추가 -->
+	<script type="text/javascript" src="../_public/vendor/chartjs/loader.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/GoogleChart.js"></script>
+	<!-- //200330 구글차트추가 -->
+
 	<!-- 차트js추가 -->
 	<script type="text/javascript" src="../_public/vendor/chartjs/moment.min.js"></script>
 	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.js"></script>
@@ -486,8 +482,6 @@
 
 			//EAST-MEG Queue
 			ChartUtil.initLineChart('chart1', lineChartData_32, 20, false, 2.5);
-			ChartUtil.initLineChartMulti('chart1_1', lineChartData_33,  10, 5000, false, 2.5);
-			ChartUtil.initLineChart('chart1_2', lineChartData_34, 20, false, 2.5);
 
 			//Fleet no. in trading
 			ChartUtil.initLineChartMulti('chart2', lineChartData_33, 10, 5000, false, 2.5);
@@ -506,11 +500,9 @@
 
 			//FLEET NO. IN NON TRADING - Total
 			ChartUtil.initLineChart('chart3', lineChartData_34, 35, false, 6);
-			ChartUtil.initLineChart('chart3_1', lineChartData_6, 35, false, 6);
 			
 			//FLEET NO. IN NON TRADING - Sanctioned
 			ChartUtil.initLineChart('chart4', lineChartData_36, 17.5, false, 4);
-			ChartUtil.initLineChart('chart4_1', lineChartData_37, 10, false, 4);
 
 			//FLEET NO. IN NON TRADING - Floating Storage
 			ChartUtil.initLineChart('chart5', lineChartData_35, 9, 0, 4);
@@ -557,72 +549,145 @@
 			//Average port stay days in WAF
 			ChartUtil.initVerticalBarChart('chart15', lineChartData_46, 1, false, 3);
 
-			//차트 추가될 때 차트 크기조절 함수
-			charListSetting($(".chartList"));
 		});
-		//차트 추가될 때 차트 크기조절 함수
-		function charListSetting(_list){
-			if(_list == null || _list.size() == 0 ) return;
-			var browser = window.ui.checkBroswer();
-
-			//스크롤이 생길때 각 브라우저의 높이값이 달라서 체크후 마진값으로 조절.
-			_list.each(function(index){
-				var scrollbarHeight = browser.indexOf("chrome") > -1 ? 10 : 17;
-				var innerList = $(this).children();
-				var items = innerList.children(".inner");
-				var charts = innerList.find('canvas');
-				if( items.size() <= 1 ){ scrollbarHeight = 0; }
-				$(this).css('margin-top', -scrollbarHeight+'px'); //스크롤높이 빼준다.
-				
-				//맨앞차트 비율만 가지고옴.
-				var basicRatio = window.ChartUtil.chartList[charts.eq(0).attr('id')].aspectRatio;
-				
-				//chart scale 판단 맟 width 값 조정.
-				var totalScale = items.size();
-				var t_totalScle = 0;
-				for(var i =0;i<charts.size();i++){
-					var chart = charts.eq(i);
-					var scale = chart.data('scale') ? parseFloat(chart.data('scale')) : 1;
-					t_totalScle += scale;
-					chart.parent(".inner").css({
-						'width' : 100*scale+"%"
-					})
-				}
-				totalScale = t_totalScle > totalScale ? t_totalScle : totalScale;
-				innerList.css({
-					'transform' :'translateY('+scrollbarHeight+'px)', //스크롤높이만큼 위로 올려준다.
-					'width' : (totalScale * 100 )+"%"
-				});
-				chartResize(charts, basicRatio);
-
-				$(window).on("resize", function(){
-					chartResize(charts, basicRatio);
-				});	
-			});
-
-			function chartResize(_charts, _basicRatio){
-				_charts.width(0);
-				_charts.height(0);
-				for(var i =0;i<_charts.size();i++){
-					var chart = _charts.eq(i);
-					var scale = chart.data('scale') ? parseFloat(chart.data('scale')) : 1;
-
-					var id = _charts.eq(i).attr('id');
-					//줄어들때 크기가 변하지 않아서 우선 제일 작게 둔 다음 다시 크기맞춤.
-					var chart = window.ChartUtil.chartList[id];
-					
-					if( scale == 2 ) scale = scale*1.0287;
-					if( scale == 3 ) scale = scale*1.0287;
-					chart.aspectRatio = (_basicRatio * scale);
-				
-					chart.resize();
-					_charts.eq(i).width(chart.width);
-					_charts.eq(i).height(chart.height); 
-				}
-			}
-		}		
 	</script>
 	<script>
+		var sampleData = {
+			chartOptions : {
+				height : 300,
+				series : {
+					0 : { color: 'rgb(255, 99, 132)', targetAxisIndex: 0 },
+					1 : { color: 'rgb(23,80,163)', targetAxisIndex: 0},
+				},		
+				hAxis : {
+					baselineColor: 'transparent',
+					gridlines : {
+						color : 'transparent',
+					},
+					format : 'dd-MMM',
+				},
+				vAxes : {
+					//0 : {title: 'WS'}
+				},
+			},
+			controlOptions : {
+				height : 80,
+				series : {
+					0 : { color: 'rgb(255, 99, 132)', targetAxisIndex: 0 },
+					1 : { color: 'rgb(23,80,163)', targetAxisIndex: 0},
+				},		
+				hAxis : {
+					format: 'YYYY MMM dd',
+					ticks : [
+						new Date(2015, 8), 
+						new Date(2015, 9), 
+						new Date(2015, 10),
+					],
+				}
+			},
+			datasets:[
+				['Date', 'Available VLCC - RHS', 'Freight MEG/China - LHS'],
+				[new Date('2015', '8', '1'), 120, 35],
+				[new Date('2015', '8', '10'), 110, 45],
+				[new Date('2015', '8', '15'), 100, 35],
+				[new Date('2015', '8', '20'), 120, 35],
+				[new Date('2015', '8', '25'), 120, 35],
+				[new Date('2015', '8', '30'), 130, 36],
+				[new Date('2015', '9', '1'), 120, 35],
+				[new Date('2015', '9', '10'), 150, 35],
+				[new Date('2015', '9', '15'), 120, 38],
+				[new Date('2015', '9', '20'), 120, 25],
+				[new Date('2015', '9', '25'), 140, 39],
+				[new Date('2015', '9', '30'), 140, 35],
+				[new Date('2015', '10', '1'), 120, 30],
+				[new Date('2015', '10', '10'), 130, 35],
+				[new Date('2015', '10', '15'), 120, 32],
+				[new Date('2015', '10', '20'), 120, 31],
+				[new Date('2015', '10', '25'), 121, 35],
+				[new Date('2015', '10', '30'), 125, 25],
+			]
+		};
+		var sampleData2 = {
+			chartOptions : {
+				dateFormat: 'dd MMM yy',
+				height : 380,
+				series : {
+					0 : { color: 'rgb(255,205,86)', targetAxisIndex: 0},
+					1 : { color: 'rgb(23, 186, 205)', targetAxisIndex: 1},
+				},		
+				hAxis : {
+					format: 'MMM',
+					baselineColor: 'transparent',
+					gridlines : {
+						color : 'transparent',
+					},
+					ticks : [
+						new Date(2018, 8), 
+						new Date(2018, 9), 
+						new Date(2018, 10),
+						new Date(2018, 11),
+						new Date(2018, 12),
+					],
+				}
+			},
+			datasets:[
+				['Date', 'Fleet no. in trading', 'Freight rate MEG/China -RHS'],
+				[new Date('2018', '7', '18'), 30, 30000],
+				[new Date('2018', '8', '18'), 30, 35000],
+				[new Date('2018', '9', '18'), 35, 15000],
+				[new Date('2018', '10', '18'), 110, 20000],
+				[new Date('2018', '11', '18'), 93, 25000],
+				[new Date('2018', '12', '18'), 95, 32000],
+			]
+		};
+		//차트로딩
+		$(document).ready(function(){
+			//라이브러리 가지고옴.
+			google.charts.load('current', {'packages':['line','controls','corechart']});
+			//로드끝난뒤 실행.
+			google.charts.setOnLoadCallback(function(){
+
+				var data = google.visualization.arrayToDataTable(sampleData.datasets);
+				var date_formatter = new google.visualization.DateFormat({ pattern: 'YYYY-MM-dd'});
+				date_formatter.format(data, 0);
+				
+				
+				//dashboard
+				var _dashboardId = 'GooleChartArea1';
+				var dashboard = new google.visualization.Dashboard(document.getElementById(_dashboardId));
+
+				//라인차트
+				var chart = GoogleChart.initLineChart('GooleChartArea1_chart', sampleData.chartOptions);
+
+				//컨트롤
+				var control = GoogleChart.controlLineChart('GooleChartArea1_control', sampleData.controlOptions);
+
+				dashboard.bind(control, chart); //대시보드에 두개 붙임
+				dashboard.draw(data); //대시보드 그리기
+
+				//두번째차트
+				var data2 = google.visualization.arrayToDataTable(sampleData2.datasets);
+				date_formatter.format(data2, 0);
+				
+				//라인차트
+				var chart_only = GoogleChart.initLineChart('GooleChartArea2_chart', sampleData2.chartOptions);
+				chart_only.setDataTable(data2);
+				chart_only.draw();
+
+				//조절
+				$(window).resize(function(){
+					if(this.resizeTo) { clearTimeout(this.resizeTo)}
+					this.resizeTo = setTimeout(function(){
+						$(this).trigger('resizeEnd');
+					},100);
+				});
+				$(window).on('resizeEnd', function(){
+					dashboard.draw(data); 
+					chart_only.draw();
+				});
+			});	
+		});
+		
 		$(document).ready(function(){
 			//임의설정
 			$(".js-popup-open").on("click", function(e){

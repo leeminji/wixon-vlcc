@@ -43,8 +43,7 @@ var GoogleChart = (function(){
                         format: 'dd-MMM YYYY',
                         baselineColor : thisObj.basicLineColor,
                         gridlines:{
-                            count : -1,
-                            color : thisObj.basicLineColor,
+                            color : 'transparent',
                             units: {
                                 years : {format: ['yyyy']},
                                 months: {format: ['MM']},
@@ -52,6 +51,7 @@ var GoogleChart = (function(){
                             }
                         },
                         minorGridlines : {
+                            count : 1,
                             color : thisObj.basicMinorLineColor,
                         },
                         textStyle: {
@@ -67,6 +67,12 @@ var GoogleChart = (function(){
                                 color : thisObj.basicFontColor,
                                 fontName : thisObj.basicFont
                             },
+                            titleTextStyle: {
+                                fontSize:12,
+                                color : thisObj.basicFontColor,
+                                fontName : thisObj.basicFont,
+                                italic : false,
+							},
                             gridlines: {
                                 count : 4,
                                 color : thisObj.basicLineColor
@@ -82,13 +88,19 @@ var GoogleChart = (function(){
                                 color : thisObj.basicFontColor,
                                 fontName : thisObj.basicFont
                             },
+                            titleTextStyle: {
+                                fontSize:12,
+                                color : thisObj.basicFontColor,
+                                fontName : thisObj.basicFont,
+                                italic : false,
+							},
                             gridlines: {
                                 count : 4,
-                                color : thisObj.basicLineColor
+                                color : 'transparent'
                             },
                             minorGridlines : {
                                 count : 1,
-                                color : thisObj.basicMinorLineColor,
+                                color : 'transparent'
                             },
                         }
                     },

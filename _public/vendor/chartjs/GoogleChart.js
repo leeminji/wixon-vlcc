@@ -19,10 +19,11 @@ var GoogleChart = (function(){
                     width : '100%',
                     chartArea : {
                         width : '85%',
-                        height : '80%'
+                        height : '80%',
+                        top:10,
                     },
                     legend : { 
-                        position: "top", 
+                        position: "bottom", 
                         alignment:'center',
                         textStyle: {
                             fontSize:11,
@@ -42,6 +43,7 @@ var GoogleChart = (function(){
                         format: 'dd-MMM YYYY',
                         baselineColor : thisObj.basicLineColor,
                         gridlines:{
+                            count : -1,
                             color : thisObj.basicLineColor,
                             units: {
                                 years : {format: ['yyyy']},
@@ -53,28 +55,44 @@ var GoogleChart = (function(){
                             color : thisObj.basicMinorLineColor,
                         },
                         textStyle: {
-                            fontSize:11,
+                            fontSize:12,
                             color : thisObj.basicFontColor,
                             fontName : thisObj.basicFont
                         }
                     },
-                    vAxis : {
-                        baselineColor : thisObj.basicLineColor,
-                        textStyle: {
-                            fontSize:11,
-                            color : thisObj.basicFontColor,
-                            fontName : thisObj.basicFont
+                    vAxes : {
+                        0 :{
+                            textStyle: {
+                                fontSize:12,
+                                color : thisObj.basicFontColor,
+                                fontName : thisObj.basicFont
+                            },
+                            gridlines: {
+                                count : 4,
+                                color : thisObj.basicLineColor
+                            },
+                            minorGridlines : {
+                                count : 1,
+                                color : thisObj.basicMinorLineColor,
+                            },
                         },
-                        gridlines: {
-                            count : -1,
-                            color : thisObj.basicLineColor
-                        },
-                        minorGridlines : {
-                            color : thisObj.basicMinorLineColor,
+                        1 :{
+                            textStyle: {
+                                fontSize:12,
+                                color : thisObj.basicFontColor,
+                                fontName : thisObj.basicFont
+                            },
+                            gridlines: {
+                                count : 4,
+                                color : thisObj.basicLineColor
+                            },
+                            minorGridlines : {
+                                count : 1,
+                                color : thisObj.basicMinorLineColor,
+                            },
                         }
                     },
- 
-                    animation : { startup: true, duration: 500, easing: 'in' },
+                    animation : { startup: true, duration: 200, easing: 'in' },
                     annotations : {
                         pattern: "dd-MMM YYYY",
                         textStyle: {
@@ -108,17 +126,18 @@ var GoogleChart = (function(){
                             chartArea: {
                                 width: '90%',
                                 height : '90%',
+                                top: '5%'
                             },
                             hAxis: {
                                 baselineColor: thisObj.basicLineColor, 
                                 format: 'yyyy/MM/dd', 
                                 textStyle: {
-                                    fontSize : 11,
+                                    fontSize : 12,
                                     color : thisObj.basicFontColor,
                                     fontName : thisObj.basicFont
                                 },
                                 gridlines:{
-                                    color : thisObj.basicLineColor,
+                                    color : 'transparent',
                                     units : {
                                         years : {format: ['yyyy']},
                                         months: {format: ['MM']},

@@ -149,7 +149,38 @@
 			<section class="Layout__content MarketArea">
 				<h1 class="skip">Market Contents</h1>	
 				<div class="js-scrollbar">				
-					<div class="Layout__content__inner pb10 isChartList">
+					<div class="Layout__content__inner pb10">
+						<!-- 200330
+							구글차트예시 
+							기존 chartjs 에서 google chart 로 적용. 
+							반응형작업을 위해 양옆의 차트도 같은 구글차트로 변경하였습니다. 
+						-->
+						<div class="Layout_row">
+							<div class="Layout_chartArea col6">
+								<div class="BoxArea01">
+									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+									<div class="inner">
+										<div class="chartjs-title center middle"><span>SPOT FREIGHT</span></div>
+										<!-- GooleChartArea -->
+										<div id="GooleChartArea1">
+											<div id="GooleChartArea1_chart"></div><!-- 라인 차트 생성할 영역 -->
+											<div id="GooleChartArea1_control"></div><!-- 컨트롤바를 생성할 영역 -->
+										</div>
+										<!-- //GooleChartArea -->
+									</div>
+								</div>	
+							</div>
+							<div class="Layout_chartArea col6">
+								<div class="BoxArea01">
+									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+									<div class="inner">
+										<div class="chartjs-title center middle"><span>VLCC - TD3 FFAS - $K/DAY</span></div>
+										<div id="GooleChartArea2_chart"></div><!-- 라인 차트 생성할 영역 -->
+									</div>
+								</div>	
+							</div>
+						</div>
+						<!-- //구글차트예시 -->
 						<div class="Layout_row">
 							<div class="Layout_chartArea col6">
 								<div class="BoxArea01">
@@ -329,6 +360,10 @@
 	<script type="text/javascript" src="../_public/js/jquery-1.12.4.js"></script>
 	<script type="text/javascript" src="../_public/js/jquery-ui.js"></script>
 	<script type="text/javascript" src="../_public/vendor/scrollbar/jquery.scrollbar.js"></script>
+	<!-- 200330 구글차트추가 -->
+	<script type="text/javascript" src="../_public/vendor/chartjs/loader.js"></script>
+	<script type="text/javascript" src="../_public/vendor/chartjs/GoogleChart.js"></script>
+	<!-- //200330 구글차트추가 -->
 	<!-- 차트js추가 -->
 	<script type="text/javascript" src="../_public/vendor/chartjs/moment.min.js"></script>
 	<script type="text/javascript" src="../_public/vendor/chartjs/Chart.js"></script>
@@ -403,79 +438,188 @@
 
 			// BUNKER PRICE ( 마지막 매개변수 - 탭 index 번호 )
 			ChartUtil.initLineChart('chart7', lineChartData_58, 50, 0, 2);
-
-
-			// 200304 스크롤 차트 예시
-			//ChartUtil.initLineChart('chart1_1', lineChartData_57, 50, false, 2.5);
-			//ChartUtil.initLineChart('chart1_2', lineChartData_57, 50, false, 2.5);
-			//ChartUtil.initLineChart('chart3_2', lineChartData_57, 50, false, 2.5);
-			//ChartUtil.initLineChart('chart6_1', lineChartData_56, 10, false, 2);
-
-			//charListSetting($(".chartList"));
 		
 		});
-		//차트 추가될 때 차트 크기조절 함수
-        function charListSetting(_list){
 
-			if(_list == null || _list.size() == 0 ) return;
-			var browser = window.ui.checkBroswer();
-			
-			//스크롤이 생길때 각 브라우저의 높이값이 달라서 체크후 마진값으로 조절.
-			_list.each(function(index){
-				var scrollbarHeight = browser.indexOf("chrome") > -1 ? 10 : 17;
-				var innerList = $(this).children();
-				var items = innerList.children(".inner");
-				var charts = innerList.find('canvas');
-				if( items.size() <= 1 ){ scrollbarHeight = 0; }
-				$(this).css('margin-top', -scrollbarHeight+'px'); //스크롤높이 빼준다.
-				
-				//맨앞차트 비율만 가지고옴.
-				var basicRatio = window.ChartUtil.chartList[charts.eq(0).attr('id')].aspectRatio;
-				
-				//chart scale 판단 맟 width 값 조정.
-				var totalScale = items.size();
-				var t_totalScle = 0;
-				for(var i =0;i<charts.size();i++){
-					var chart = charts.eq(i);
-					var scale = chart.data('scale') ? parseFloat(chart.data('scale')) : 1;
-					t_totalScle += scale;
-					chart.parent(".inner").css({
-						'width' : 100*scale+"%"
-					})
+		//200330 구글차트
+		//샘플데이터
+		// hAxis.ticks : X축 라벨
+		// series.targetAxisIndex : 왼쪽(0),오른쪽(1) vAxis 선 판단
+		var sampleData = {
+			chartOptions : {
+				height : 300,
+				series : {
+					0 : { color: 'rgb(23, 186, 205)', targetAxisIndex: 0 },
+					1 : { color: 'rgb(0, 98, 132)', targetAxisIndex: 0},
+					2 : { color: 'rgb(25, 167, 112)', targetAxisIndex: 0},
+					3 : { color: 'rgb(105,213,255)', targetAxisIndex: 0},
+					4 : { color: 'rgb(200,200,200)', targetAxisIndex: 1},
+				},		
+				hAxis : {
+					format : 'dd-MMM yyyy',
+					//ticks : []
+				},
+				vAxes : {
+					1 : {format: '#,###K'}
+				},
+			},
+			controlOptions : {
+				height : 80,
+				series : {
+					0 : { color: 'rgb(23, 186, 205)', targetAxisIndex: 0 },
+					1 : { color: 'rgb(0, 98, 132)', targetAxisIndex: 0},
+					2 : { color: 'rgb(25, 167, 112)', targetAxisIndex: 0},
+					3 : { color: 'rgb(105,213,255)', targetAxisIndex: 0},
+					4 : { color: 'rgb(200,200,200)', targetAxisIndex: 1},
+				},		
+				hAxis : {
+					format: 'MMM YYYY',
+					ticks : [
+						new Date(2015, 8), 
+						new Date(2015, 9), 
+						new Date(2015, 10),
+					],
 				}
-                totalScale = t_totalScle > totalScale ? t_totalScle : totalScale;
-                innerList.css({
-                    'transform' :'translateY('+scrollbarHeight+'px)', //스크롤높이만큼 위로 올려준다.
-                    'width' : (totalScale * 100 )+"%"
+			},
+			datasets:[
+				['Date', 'MEG-USG', 'MEG-SPORE', 'MEG-CHINA', 'WAF-CHINA', 'USG-CHINA'],
+				[new Date('2015', '8', '1'), 100, 90, 85, 10, 1580],
+				[new Date('2015', '8', '3'), 112, 80, 81, 20, 1400],
+				[new Date('2015', '8', '5'), 100, 90, 85, 10, 1510],
+				[new Date('2015', '8', '7'), 130, 80, 85, 15, 1350],
+				[new Date('2015', '8', '9'), 110, 80, 85, 15, 1302],
+				[new Date('2015', '8', '11'), 150, 80, 85, 15, 1310],
+				[new Date('2015', '8', '13'), 120, 93, 95, 20, 1200],
+				[new Date('2015', '8', '15'), 120, 93, 95, 20, 1201],
+				[new Date('2015', '8', '17'), 125, 95, 85, 21, 1300],
+				[new Date('2015', '8', '19'), 120, 96, 95, 20, 1400],
+				[new Date('2015', '8', '21'), 130, 91, 81, 22, 1250],
+				[new Date('2015', '8', '23'), 150, 93, 85, 20, 1210],
+				[new Date('2015', '8', '25'), 120, 93, 95, 25, 1380],
+				[new Date('2015', '8', '27'), 130, 99, 95, 20, 1500],
+				[new Date('2015', '8', '29'), 120, 90, 91, 20, 1300],
+				[new Date('2015', '8', '31'), 150, 93, 92, 28, 1100],
+				[new Date('2015', '9', '1'), 100, 90, 85, 10, 1580],
+				[new Date('2015', '9', '3'), 112, 80, 81, 20, 1400],
+				[new Date('2015', '9', '5'), 100, 90, 85, 10, 1510],
+				[new Date('2015', '9', '7'), 130, 80, 85, 15, 1350],
+				[new Date('2015', '9', '9'), 110, 80, 85, 15, 1302],
+				[new Date('2015', '9', '11'), 150, 80, 85, 15, 1310],
+				[new Date('2015', '9', '13'), 120, 93, 95, 20, 1200],
+				[new Date('2015', '9', '15'), 120, 93, 95, 20, 1201],
+				[new Date('2015', '9', '17'), 125, 95, 85, 21, 1300],
+				[new Date('2015', '9', '19'), 120, 96, 95, 20, 1400],
+				[new Date('2015', '9', '21'), 130, 91, 81, 22, 1250],
+				[new Date('2015', '9', '23'), 150, 93, 85, 20, 1210],
+				[new Date('2015', '9', '25'), 120, 93, 95, 25, 1380],
+				[new Date('2015', '9', '27'), 130, 99, 95, 20, 1500],
+				[new Date('2015', '9', '29'), 120, 90, 91, 20, 1300],
+				[new Date('2015', '9', '31'), 150, 93, 92, 28, 1100],
+				[new Date('2015', '10', '1'), 100, 90, 85, 10, 1580],
+				[new Date('2015', '10', '3'), 112, 80, 81, 20, 1400],
+				[new Date('2015', '10', '5'), 100, 90, 85, 10, 1510],
+				[new Date('2015', '10', '7'), 130, 80, 85, 15, 1350],
+				[new Date('2015', '10', '9'), 110, 80, 85, 15, 1302],
+				[new Date('2015', '10', '11'), 150, 80, 85, 15, 1310],
+				[new Date('2015', '10', '13'), 120, 93, 95, 20, 1200],
+				[new Date('2015', '10', '15'), 120, 93, 95, 20, 1201],
+				[new Date('2015', '10', '17'), 125, 95, 85, 21, 1300],
+				[new Date('2015', '10', '19'), 120, 96, 95, 20, 1400],
+				[new Date('2015', '10', '21'), 130, 91, 81, 22, 1250],
+				[new Date('2015', '10', '23'), 150, 93, 85, 20, 1210],
+				[new Date('2015', '10', '25'), 120, 93, 95, 25, 1380],
+				[new Date('2015', '10', '27'), 130, 99, 95, 20, 1500],
+				[new Date('2015', '10', '29'), 120, 90, 91, 20, 1300],
+				[new Date('2015', '10', '31'), 150, 93, 92, 28, 1100],
+			]
+		};
+
+		var sampleData2 = {
+			chartOptions : {
+				dateFormat: 'dd MMM yy',
+				height : 380,
+				series : {
+					0 : { color: 'rgb(255,205,86)', targetAxisIndex: 0},
+					1 : { color: 'rgb(23,80,163)', targetAxisIndex: 0},
+					2 : { color: 'rgb(108,111,54)', targetAxisIndex: 0},
+					3 : { color: 'rgb(255,99,132)', targetAxisIndex: 0},
+					4 : { color: 'rgb(105,213,255)', targetAxisIndex: 0},
+					5 : { color: 'rgb(23,186,205)', targetAxisIndex: 0}
+				},		
+				hAxis : {
+					baselineColor: 'transparent',
+					format: 'dd MMM yy',
+					gridlines : {
+						color : 'transparent',
+					},
+					ticks : [
+						new Date(2018, 8), 
+						new Date(2018, 9), 
+						new Date(2018, 10),
+						new Date(2018, 11),
+						new Date(2018, 12),
+					]
+				}
+			},
+			datasets:[
+				['Date', 'Q4-18', 'Q1-19', 'Q2-19', 'CAL 19', 'CAL 20', 'Spot'],
+				[new Date('2018', '7', '18'), 30, 90, 85, 10, 10, 5],
+				[new Date('2018', '8', '18'), 30, 80, 81, 20, 10, 6],
+				[new Date('2018', '9', '18'), 35, 90, 85, 10, 10, 5],
+				[new Date('2018', '10', '18'), 110, 80, 85, 15, 12, 3],
+				[new Date('2018', '11', '18'), , 93, 95, 20, 15,5],
+				[new Date('2018', '12', '18'), , 95, 85, 21, 17,8],
+			]
+		};
+		//차트로딩
+		$(document).ready(function(){
+			//라이브러리 가지고옴.
+			google.charts.load('current', {'packages':['line','controls']});
+			//로드끝난뒤 실행.
+			google.charts.setOnLoadCallback(function(){
+
+				var data = google.visualization.arrayToDataTable(sampleData.datasets);
+				
+				//포맷
+				var formatter = new google.visualization.NumberFormat({pattern:'#,###K'});
+				formatter.format(data, 5); 
+
+				//dashboard
+				var _dashboardId = 'GooleChartArea1';
+				var dashboard = new google.visualization.Dashboard(document.getElementById(_dashboardId));
+
+				//라인차트
+				var chart = GoogleChart.initLineChart('GooleChartArea1_chart', sampleData.chartOptions);
+
+				//컨트롤
+				var control = GoogleChart.controlLineChart('GooleChartArea1_control', sampleData.controlOptions);
+
+				dashboard.bind(control, chart); //대시보드에 두개 붙임
+				dashboard.draw(data); //대시보드 그리기
+
+				//두번째차트
+				var data2 = google.visualization.arrayToDataTable(sampleData2.datasets);
+
+
+				//라인차트
+				var chart_only = GoogleChart.initLineChart('GooleChartArea2_chart', sampleData2.chartOptions);
+				chart_only.setDataTable(data2);
+				chart_only.draw();
+
+				//조절
+				$(window).resize(function(){
+					if(this.resizeTo) { clearTimeout(this.resizeTo)}
+					this.resizeTo = setTimeout(function(){
+						$(this).trigger('resizeEnd');
+					},100);
 				});
-				chartResize(charts, basicRatio);
+				$(window).on('resizeEnd', function(){
+					dashboard.draw(data); 
+					chart_only.draw();
+				});
+			});	
+		});
 
-				$(window).on("resize", function(){
-					chartResize(charts, basicRatio);
-				});	
-			});
-
-			function chartResize(_charts, _basicRatio){
-				_charts.width(0);
-				_charts.height(0);
-				for(var i =0;i<_charts.size();i++){
-					var chart = _charts.eq(i);
-					var scale = chart.data('scale') ? parseFloat(chart.data('scale')) : 1;
-
-					var id = _charts.eq(i).attr('id');
-					//줄어들때 크기가 변하지 않아서 우선 제일 작게 둔 다음 다시 크기맞춤.
-					var chart = window.ChartUtil.chartList[id];
-					
-					if( scale == 2 ) scale = scale*1.0287;
-					if( scale == 3 ) scale = scale*1.0287;
-					chart.aspectRatio = (_basicRatio * scale);
-				
-					chart.resize();
-					_charts.eq(i).width(chart.width);
-					_charts.eq(i).height(chart.height); 
-				}
-			}
-        }		
 	</script>
 </body>
 </html>

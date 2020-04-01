@@ -147,444 +147,434 @@
 				<!-- //TopTitle -->				
 			</div>			
 			<!-- DashboardArea 대시보드 -->
-			<section class="Layout__content DashboardArea font_condensed">
+			<section class="Layout__content DashboardArea">
 				<h1 class="skip">Dashboard Contents</h1>	
 				<div class="js-scrollbar">
-					<div class="Layout__content__inner pb10">
-						<div class="Layout_row">
-							<div class="Layout_chartArea">
-								<div class="BoxArea01">
-									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
-									<div class="inner">
-									<div id="chart1_legend" class="chartjs-legend"></div>
-									<div id="chart1_title" class="chartjs-title"><span>Spot Freight</span></div>
-									<canvas id="chart1" class="chartjs-canvas"></canvas>
-									</div>
-								</div>
-							</div>
-							<div class="Layout_chartArea">
-								<div class="BoxArea01">
-									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
-									<div class="inner">
-									<div id="chart2_legend" class="chartjs-legend"></div>
-									<div id="chart2_title" class="chartjs-title"><span>VLCC Average speed</span></div>
-									<canvas id="chart2" class="chartjs-canvas"></canvas>	
-									</div>
-								</div>
-							</div>
-							<div class="Layout_chartArea">
-								<div class="BoxArea01">
-									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
-									<div class="inner">
-									<div class="chartjs-tab" id="chart3_tab">
-										<a href="javascript:;" data-category='LSFO'>LSFO</a>
-										<a href="javascript:;" data-category='HSFO'>HSFO</a>
-										<a href="javascript:;" data-category='SPREAD'>SPREAD</a>
-									</div>		
-									<div id="chart3_legend" class="chartjs-legend"></div>
-									<div id="chart3_title" class="chartjs-title"><span>Bunker Price</span></div>
-									<canvas id="chart3" class="chartjs-canvas"></canvas>
-									</div>
-								</div>
-							</div>
-							<div class="Layout_chartArea">
-								<div class="BoxArea01">
-									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
-									<div class="inner">
-									<div id="chart4_legend" class="chartjs-legend"></div>
-									<div id="chart4_title" class="chartjs-title"><span>EAST-MEG QUEUE</span></div>
-									<canvas id="chart4" class="chartjs-canvas"></canvas>
-									</div>
-								</div>
-							</div>
-							<div class="Layout_chartArea">
-								<div class="BoxArea01">
-									<a href="javascript:uiSettingPopup.open('DataSetting');" onclick="uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
-									<div class="inner">
-									<div id="chart5_legend" class="chartjs-legend"></div>
-									<div id="chart5_title" class="chartjs-title ellipsis"><span>Idling ship no. at Fujairah (Prompt) & MEG/ China WS</span></div>
-									<canvas id="chart5" class="chartjs-canvas"></canvas>
-									</div>
-								</div>
-							</div>
-							<div class="Layout_chartArea">
-								<div class="BoxArea01">
-									<a href="javascript:uiSettingPopup.open('DataSetting');" onclick="uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
-									<div class="inner">
-									<div id="chart6_legend" class="chartjs-legend"></div>
-									<div id="chart6_title" class="chartjs-title"><span>Average port stay days in China</span></div>
-									<canvas id="chart6" class="chartjs-canvas"></canvas>
-									</div>
-								</div>
-							</div>
+					<div class="Layout__content__inner padding10">
+						<!-- 200401 추가 TopSectionTab -->
+						<div class="TopSectionTab">
+							<a href="#dashboard1" class="TopSectionTab__item active"><span>DASHBOARD 1</span></a>
+							<a href="#dashboard2" class="TopSectionTab__item"><span>DASHBOARD 2</span></a>
 						</div>
-						<div class="Layout_row">
-							<div class="Layout_chartArea col6">
-								<div class="BoxArea01 dark">
-									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
-									<div class="inner">
-									<div id="chart7_legend" class="chartjs-legend"></div>
-									<div id="chart7_title" class="chartjs-title"><span>LIVE FLEET OVERVIEW (MMbbl)</span></div>
-									<canvas id="chart7" class="chartjs-canvas"></canvas>
-									<!-- 추가 데이터 -->
-									<div class="chartjs-info-legend left">
-										<dl>
-											<dt>Ballast</dt>
-											<dd>In ballast : 2,005</dd>
-											<dd>Construction : 246</dd>
-											<dd>Laid up : 0.00</dd>
-										</dl>
+						<!-- //TopSectionTab -->
+						<!-- 200401 추가 Layout_settingArea -->
+						<div class="Layout_settingArea">
+							<!-- dashboard1 -->
+							<div id="dashboard1">
+								<div class="Layout_row">
+									<div class="Layout_chartArea">
+										<div class="BoxArea01">
+											<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+											<div class="inner">
+											<div id="chart1_legend" class="chartjs-legend"></div>
+											<div id="chart1_title" class="chartjs-title"><span>Spot Freight</span></div>
+											<canvas id="chart1" class="chartjs-canvas"></canvas>
+											</div>
+										</div>
 									</div>
-									<div class="chartjs-info-legend right">
-										<dl>
-											<dt>Loaded</dt>
-											<dd>In transit : 955</dd>
-											<dd>In storage : 77.6</dd>
-										</dl>
+									<div class="Layout_chartArea">
+										<div class="BoxArea01">
+											<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+											<div class="inner">
+											<div id="chart2_legend" class="chartjs-legend"></div>
+											<div id="chart2_title" class="chartjs-title"><span>VLCC Average speed</span></div>
+											<canvas id="chart2" class="chartjs-canvas"></canvas>	
+											</div>
+										</div>
 									</div>
+									<div class="Layout_chartArea">
+										<div class="BoxArea01">
+											<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+											<div class="inner">
+											<div class="chartjs-tab" id="chart3_tab">
+												<a href="javascript:;" data-category='LSFO'>LSFO</a>
+												<a href="javascript:;" data-category='HSFO'>HSFO</a>
+												<a href="javascript:;" data-category='SPREAD'>SPREAD</a>
+											</div>		
+											<div id="chart3_legend" class="chartjs-legend"></div>
+											<div id="chart3_title" class="chartjs-title"><span>Bunker Price</span></div>
+											<canvas id="chart3" class="chartjs-canvas"></canvas>
+											</div>
+										</div>
 									</div>
-								</div>
-							</div>							
-							<div class="Layout_chartArea col6">
-								<div class="BoxArea01 dark">
-									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
-									<div class="inner">
-									<div id="chart8_legend" class="chartjs-legend"></div>
-									<div id="chart8_title" class="chartjs-title"><span>Average distance (NM)</span></div>
-									<canvas id="chart8" class="chartjs-canvas"></canvas>
+									<div class="Layout_chartArea">
+										<div class="BoxArea01">
+											<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+											<div class="inner">
+											<div id="chart4_legend" class="chartjs-legend"></div>
+											<div id="chart4_title" class="chartjs-title"><span>EAST-MEG QUEUE</span></div>
+											<canvas id="chart4" class="chartjs-canvas"></canvas>
+											</div>
+										</div>
+									</div>
+									<div class="Layout_chartArea">
+										<div class="BoxArea01">
+											<a href="javascript:uiSettingPopup.open('DataSetting');" onclick="uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+											<div class="inner">
+											<div id="chart5_legend" class="chartjs-legend"></div>
+											<div id="chart5_title" class="chartjs-title ellipsis"><span>Idling ship no. at Fujairah (Prompt) & MEG/ China WS</span></div>
+											<canvas id="chart5" class="chartjs-canvas"></canvas>
+											</div>
+										</div>
+									</div>
+									<div class="Layout_chartArea">
+										<div class="BoxArea01">
+											<a href="javascript:uiSettingPopup.open('DataSetting');" onclick="uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+											<div class="inner">
+											<div id="chart6_legend" class="chartjs-legend"></div>
+											<div id="chart6_title" class="chartjs-title"><span>Average port stay days in China</span></div>
+											<canvas id="chart6" class="chartjs-canvas"></canvas>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						
-						<div class="BoxArea01 dark">
-							<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
-							<div class="Layout_row">
-								<div class="Layout_chartArea col6">
-									<div class="inner">
-									<div id="chart9_legend" class="chartjs-legend"></div>
-									<div id="chart9_title" class="chartjs-title"><span>us culf laden vlcc traffic</span></div>
-									<canvas id="chart9" class="chartjs-canvas"></canvas>
+							<!-- //dashboard1 -->
+							<!-- dashboard2 -->
+							<div id="dashboard2">
+								<div class="Layout_row pos_relative">
+									<div class="Layout_chartArea col3">
+										<div class="BoxArea01 dark">
+											<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+											<div class="inner">
+											<div id="chart7_legend" class="chartjs-legend"></div>
+											<div id="chart7_title" class="chartjs-title"><span>LIVE FLEET OVERVIEW (MMbbl)</span></div>
+											<canvas id="chart7" class="chartjs-canvas"></canvas>
+											<!-- 추가 데이터 -->
+											<div class="chartjs-info-legend left">
+												<dl>
+													<dt>Ballast</dt>
+													<dd>In ballast : 2,005</dd>
+													<dd>Construction : 246</dd>
+													<dd>Laid up : 0.00</dd>
+												</dl>
+											</div>
+											<div class="chartjs-info-legend right">
+												<dl>
+													<dt>Loaded</dt>
+													<dd>In transit : 955</dd>
+													<dd>In storage : 77.6</dd>
+												</dl>
+											</div>
+											</div>
+										</div>
+									</div>							
+									<div class="Layout_chartArea col3">
+										<div class="BoxArea01 dark">
+											<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+											<div class="inner">
+											<div id="chart8_legend" class="chartjs-legend"></div>
+											<div id="chart8_title" class="chartjs-title"><span>Average distance (NM)</span></div>
+											<canvas id="chart8" class="chartjs-canvas"></canvas>
+											</div>
+										</div>
+									</div>
+									<div class="Layout_chartArea col3">
+										<div class="BoxArea01 dark">
+											<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+											<div class="inner">
+												<div id="chart9_legend" class="chartjs-legend"></div>
+												<div id="chart9_title" class="chartjs-title"><span>us culf laden vlcc traffic</span></div>
+												<canvas id="chart9" class="chartjs-canvas"></canvas>
+											</div>
+										</div>
+									</div>
+									<div class="Layout_chartArea__map">
+										<div class="mapArea">지도영역</div>
 									</div>
 								</div>
-								<div class="Layout_chartArea__map">
-									<div class="mapArea">지도영역</div>
-								</div>
-							</div>
-						</div>
 
-						<div class="Layout_row">
-							<div class="Layout_chartArea col6">
-								<div class="BoxArea01 darker sHeight ">
-									<div class="inner">
-										<div class="chartjs-title"><span>Fixture</span></div>
-										<div class="chartjs-tab" id="chart3_tab">
-											<a href="javascript:;" class="active">MEG</a>
-											<a href="javascript:;">WAF</a>
-											<a href="javascript:;">UKC/MED</a>
-											<a href="javascript:;">AMERICAS</a>
-										</div>
-										<div class="pt10"></div>
-										<div class="DataTable__4">
-											<div class="DataTable__top">
-											<table>
-												<colgroup>
-													<col style="width:100px">
-													<col>
-													<col style="width:100px">
-													<col>
-													<col>
-													<col style="width:90px">
-													<col style="width:90px">
-													<col>
-													<col>
-													<col>
-													<col>
-												</colgroup>
-												<thead>
-													<tr>
-														<th scope="col">VESSEL</th>
-														<th scope="col">FIXTURE DATE</th>
-														<th scope="col">STATUS</th>
-														<th scope="col">LAYCAN</th>
-														<th scope="col">LOAD</th>
-														<th scope="col">DISCHARGE</th>
-														<th scope="col">CHARTERER</th>
-														<th scope="col">RATE</th>
-														<th scope="col">QUANTITY</th>
-														<th scope="col">BUILD</th>
-														<th scope="col">REMARK</th>
-													</tr>
-												</thead>
-											</table>
+								<div class="Layout_row">
+									<div class="Layout_chartArea col6">
+										<!-- 200401 테이블 스크롤제거, 페이징추가 -->
+										<div class="BoxArea01 darker sHeight">
+											<div class="inner">
+												<div class="chartjs-title"><span>Fixture</span></div>
+												<div class="chartjs-tab" id="chart3_tab">
+													<a href="javascript:;" class="active">MEG</a>
+													<a href="javascript:;">WAF</a>
+													<a href="javascript:;">UKC/MED</a>
+													<a href="javascript:;">AMERICAS</a>
+												</div>
+												<div class="pt10"></div>
+												<div class="DataTable__4">
+													<table>
+														<colgroup>
+															<col style="width:90px">
+															<col style="width:50px">
+															<col style="width:90px">
+															<col>
+															<col>
+															<col style="width:60px">
+															<col style="width:80px">
+															<col>
+															<col>
+															<col>
+															<col>
+														</colgroup>
+														<thead>
+															<tr>
+																<th scope="col">VESSEL</th>
+																<th scope="col">FIXTURE DATE</th>
+																<th scope="col">STATUS</th>
+																<th scope="col">LAYCAN</th>
+																<th scope="col">LOAD</th>
+																<th scope="col">DISCHARGE</th>
+																<th scope="col">CHARTERER</th>
+																<th scope="col">RATE</th>
+																<th scope="col">QUANTITY</th>
+																<th scope="col">BUILD</th>
+																<th scope="col">REMARK</th>
+															</tr>
+														</thead>						
+														<tbody>
+															<tr>
+																<td>Eagle Varna</td>
+																<td>20-Jul</td>
+																<td>Fully Fixed</td>
+																<td>10-Aug</td>
+																<td>Barsrah</td>
+																<td>Ulsan</td>
+																<td>SK ENERGY</td>
+																<td>WS 33</td>
+																<td>260,000</td>
+																<td>15</td>
+																<td></td>
+															</tr>
+															<tr>
+																<td>Eagle Varna</td>
+																<td>20-Jul</td>
+																<td>Fully Fixed</td>
+																<td>10-Aug</td>
+																<td>Barsrah</td>
+																<td>Ulsan</td>
+																<td>SK ENERGY</td>
+																<td>WS 33</td>
+																<td>260,000</td>
+																<td>15</td>
+																<td></td>
+															</tr>
+															<tr>
+																<td>Eagle Varna</td>
+																<td>20-Jul</td>
+																<td>Fully Fixed</td>
+																<td>10-Aug</td>
+																<td>Barsrah</td>
+																<td>Ulsan</td>
+																<td>SK ENERGY</td>
+																<td>WS 33</td>
+																<td>260,000</td>
+																<td>15</td>
+																<td></td>
+															</tr>
+															<tr>
+																<td>Eagle Varna</td>
+																<td>20-Jul</td>
+																<td>Fully Fixed</td>
+																<td>10-Aug</td>
+																<td>Barsrah</td>
+																<td>Ulsan</td>
+																<td>SK ENERGY</td>
+																<td>WS 33</td>
+																<td>260,000</td>
+																<td>15</td>
+																<td></td>
+															</tr>
+															<tr>
+																<td>Eagle Varna</td>
+																<td>20-Jul</td>
+																<td>Fully Fixed</td>
+																<td>10-Aug</td>
+																<td>Barsrah</td>
+																<td>Ulsan</td>
+																<td>SK ENERGY</td>
+																<td>WS 33</td>
+																<td>260,000</td>
+																<td>15</td>
+																<td></td>
+															</tr>
+															<tr>
+																<td>Eagle Varna</td>
+																<td>20-Jul</td>
+																<td>Fully Fixed</td>
+																<td>10-Aug</td>
+																<td>Barsrah</td>
+																<td>Ulsan</td>
+																<td>SK ENERGY</td>
+																<td>WS 33</td>
+																<td>260,000</td>
+																<td>15</td>
+																<td></td>
+															</tr>
+															<tr>
+																<td>Eagle Varna</td>
+																<td>20-Jul</td>
+																<td>Fully Fixed</td>
+																<td>10-Aug</td>
+																<td>Barsrah</td>
+																<td>Ulsan</td>
+																<td>SK ENERGY</td>
+																<td>WS 33</td>
+																<td>260,000</td>
+																<td>15</td>
+																<td></td>
+															</tr>
+															<tr>
+																<td>Eagle Varna</td>
+																<td>20-Jul</td>
+																<td>Fully Fixed</td>
+																<td>10-Aug</td>
+																<td>Barsrah</td>
+																<td>Ulsan</td>
+																<td>SK ENERGY</td>
+																<td>WS 33</td>
+																<td>260,000</td>
+																<td>15</td>
+																<td></td>
+															</tr>
+														</tbody>	
+													</table>
+												</div>
+												<!-- 페이징추가 -->
+												<div class="DataTable__pagination">
+													<div class="Pagination black">
+														<a href="" class="Pagination__button start"><span>처음페이지</span></a>
+														<a href="" class="Pagination__button prev"><span>이전페이지</span></a>
+														<a href="" class="Pagination__num"><span>1</span></a>
+														<a href="" class="Pagination__num active"><span>2</span></a>
+														<a href="" class="Pagination__num"><span>3</span></a>
+														<a href="" class="Pagination__button next"><span>다음페이지</span></a>
+														<a href="" class="Pagination__button last"><span>마지막페이지</span></a>
+													</div>
+												</div>
+												<!-- //페이징추가 -->	
 											</div>
-											<div class="DataTable__content">
-												<div class="js-scrollbar">
-												<table>
-													<colgroup>
-														<col style="width:100px">
-														<col>
-														<col style="width:100px">
-														<col>
-														<col>
-														<col style="width:90px">
-														<col style="width:90px">
-														<col>
-														<col>
-														<col>
-														<col>
-													</colgroup>											
-													<tbody>
-														<tr>
-															<td>Eagle Varna</td>
-															<td>20-Jul</td>
-															<td>Fully Fixed</td>
-															<td>10-Aug</td>
-															<td>Barsrah</td>
-															<td>Ulsan</td>
-															<td>SK ENERGY</td>
-															<td>WS 33</td>
-															<td>260,000</td>
-															<td>15</td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>Eagle Varna</td>
-															<td>20-Jul</td>
-															<td>Fully Fixed</td>
-															<td>10-Aug</td>
-															<td>Barsrah</td>
-															<td>Ulsan</td>
-															<td>SK ENERGY</td>
-															<td>WS 33</td>
-															<td>260,000</td>
-															<td>15</td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>Eagle Varna</td>
-															<td>20-Jul</td>
-															<td>Fully Fixed</td>
-															<td>10-Aug</td>
-															<td>Barsrah</td>
-															<td>Ulsan</td>
-															<td>SK ENERGY</td>
-															<td>WS 33</td>
-															<td>260,000</td>
-															<td>15</td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>Eagle Varna</td>
-															<td>20-Jul</td>
-															<td>Fully Fixed</td>
-															<td>10-Aug</td>
-															<td>Barsrah</td>
-															<td>Ulsan</td>
-															<td>SK ENERGY</td>
-															<td>WS 33</td>
-															<td>260,000</td>
-															<td>15</td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>Eagle Varna</td>
-															<td>20-Jul</td>
-															<td>Fully Fixed</td>
-															<td>10-Aug</td>
-															<td>Barsrah</td>
-															<td>Ulsan</td>
-															<td>SK ENERGY</td>
-															<td>WS 33</td>
-															<td>260,000</td>
-															<td>15</td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>Eagle Varna</td>
-															<td>20-Jul</td>
-															<td>Fully Fixed</td>
-															<td>10-Aug</td>
-															<td>Barsrah</td>
-															<td>Ulsan</td>
-															<td>SK ENERGY</td>
-															<td>WS 33</td>
-															<td>260,000</td>
-															<td>15</td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>Eagle Varna</td>
-															<td>20-Jul</td>
-															<td>Fully Fixed</td>
-															<td>10-Aug</td>
-															<td>Barsrah</td>
-															<td>Ulsan</td>
-															<td>SK ENERGY</td>
-															<td>WS 33</td>
-															<td>260,000</td>
-															<td>15</td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>Eagle Varna</td>
-															<td>20-Jul</td>
-															<td>Fully Fixed</td>
-															<td>10-Aug</td>
-															<td>Barsrah</td>
-															<td>Ulsan</td>
-															<td>SK ENERGY</td>
-															<td>WS 33</td>
-															<td>260,000</td>
-															<td>15</td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>Eagle Varna</td>
-															<td>20-Jul</td>
-															<td>Fully Fixed</td>
-															<td>10-Aug</td>
-															<td>Barsrah</td>
-															<td>Ulsan</td>
-															<td>SK ENERGY</td>
-															<td>WS 33</td>
-															<td>260,000</td>
-															<td>15</td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>Eagle Varna</td>
-															<td>20-Jul</td>
-															<td>Fully Fixed</td>
-															<td>10-Aug</td>
-															<td>Barsrah</td>
-															<td>Ulsan</td>
-															<td>SK ENERGY</td>
-															<td>WS 33</td>
-															<td>260,000</td>
-															<td>15</td>
-															<td></td>
-														</tr>
-													</tbody>
-												</table>
+										</div>
+									</div>
+									<div class="Layout_chartArea col6">
+										<div class="BoxArea01 darker sHeight tThin">
+											<div class="inner">
+												<div class="chartjs-title"><span>frash cargo</span></div>
+												<div class="chartjs-tab" id="chart3_tab">
+													<a href="javascript:;" class="active">MEG</a>
+													<a href="javascript:;">WAF</a>
+													<a href="javascript:;">UKC/MED</a>
+													<a href="javascript:;">AMERICAS</a>
+												</div>
+												<div class="pt10"></div>
+												<div class="DataTable__4 cWhite">
+													<div class="DataTable__top">
+														<table>
+															<thead>
+																<tr>
+																	<th scope="col">CHARTERER</th>
+																	<th scope="col">LAYCAN</th>
+																	<th scope="col">LOAD</th>
+																	<th scope="col">DISCHARGE</th>
+																	<th scope="col">QUANTITY</th>
+																	<th scope="col">REMARK</th>
+																</tr>
+															</thead>
+														</table>
+													</div>
+													<div class="DataTable__content">
+														<div class="js-scrollbar">
+														<table>
+															<tbody>
+																<tr>
+																	<td>SK ENERGY</td>
+																	<td>10-Aug</td>
+																	<td>Basrah</td>
+																	<td>Ulsan</td>
+																	<td>260,000</td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td>SK ENERGY</td>
+																	<td>10-Aug</td>
+																	<td>Basrah</td>
+																	<td>Ulsan</td>
+																	<td>260,000</td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td>SK ENERGY</td>
+																	<td>10-Aug</td>
+																	<td>Basrah</td>
+																	<td>Ulsan</td>
+																	<td>260,000</td>
+																	<td class="c01">Ex D/D</td>
+																</tr>
+																<tr>
+																	<td>SK ENERGY</td>
+																	<td>10-Aug</td>
+																	<td>Basrah</td>
+																	<td>Ulsan</td>
+																	<td>260,000</td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td>SK ENERGY</td>
+																	<td>10-Aug</td>
+																	<td>Basrah</td>
+																	<td>Ulsan</td>
+																	<td>260,000</td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td>SK ENERGY</td>
+																	<td>10-Aug</td>
+																	<td>Basrah</td>
+																	<td>Ulsan</td>
+																	<td>260,000</td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td>SK ENERGY</td>
+																	<td>10-Aug</td>
+																	<td>Basrah</td>
+																	<td>Ulsan</td>
+																	<td>260,000</td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td>SK ENERGY</td>
+																	<td>10-Aug</td>
+																	<td>Basrah</td>
+																	<td>Ulsan</td>
+																	<td>260,000</td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td>SK ENERGY</td>
+																	<td>10-Aug</td>
+																	<td>Basrah</td>
+																	<td>Ulsan</td>
+																	<td>260,000</td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td>SK ENERGY</td>
+																	<td>10-Aug</td>
+																	<td>Basrah</td>
+																	<td>Ulsan</td>
+																	<td>260,000</td>
+																	<td></td>
+																</tr>
+															</tbody>
+														</table>
+														</div>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="Layout_chartArea col6">
-								<div class="BoxArea01 darker sHeight tThin">
-									<div class="inner">
-										<div class="chartjs-title"><span>frash cargo</span></div>
-										<div class="chartjs-tab" id="chart3_tab">
-											<a href="javascript:;" class="active">MEG</a>
-											<a href="javascript:;">WAF</a>
-											<a href="javascript:;">UKC/MED</a>
-											<a href="javascript:;">AMERICAS</a>
-										</div>
-										<div class="pt10"></div>
-										<div class="DataTable__4 cWhite">
-											<div class="DataTable__top">
-												<table>
-													<thead>
-														<tr>
-															<th scope="col">CHARTERER</th>
-															<th scope="col">LAYCAN</th>
-															<th scope="col">LOAD</th>
-															<th scope="col">DISCHARGE</th>
-															<th scope="col">QUANTITY</th>
-															<th scope="col">REMARK</th>
-														</tr>
-													</thead>
-												</table>
-											</div>
-											<div class="DataTable__content">
-												<div class="js-scrollbar">
-												<table>
-													<tbody>
-														<tr>
-															<td>SK ENERGY</td>
-															<td>10-Aug</td>
-															<td>Basrah</td>
-															<td>Ulsan</td>
-															<td>260,000</td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>SK ENERGY</td>
-															<td>10-Aug</td>
-															<td>Basrah</td>
-															<td>Ulsan</td>
-															<td>260,000</td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>SK ENERGY</td>
-															<td>10-Aug</td>
-															<td>Basrah</td>
-															<td>Ulsan</td>
-															<td>260,000</td>
-															<td class="c01">Ex D/D</td>
-														</tr>
-														<tr>
-															<td>SK ENERGY</td>
-															<td>10-Aug</td>
-															<td>Basrah</td>
-															<td>Ulsan</td>
-															<td>260,000</td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>SK ENERGY</td>
-															<td>10-Aug</td>
-															<td>Basrah</td>
-															<td>Ulsan</td>
-															<td>260,000</td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>SK ENERGY</td>
-															<td>10-Aug</td>
-															<td>Basrah</td>
-															<td>Ulsan</td>
-															<td>260,000</td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>SK ENERGY</td>
-															<td>10-Aug</td>
-															<td>Basrah</td>
-															<td>Ulsan</td>
-															<td>260,000</td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>SK ENERGY</td>
-															<td>10-Aug</td>
-															<td>Basrah</td>
-															<td>Ulsan</td>
-															<td>260,000</td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>SK ENERGY</td>
-															<td>10-Aug</td>
-															<td>Basrah</td>
-															<td>Ulsan</td>
-															<td>260,000</td>
-															<td></td>
-														</tr>
-													</tbody>
-												</table>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							<!-- //dashboard2 -->
+							<div class="pt5"></div>
 						</div>
-						<div class="pt5"></div>
+						<!-- //200401 추가 Layout_settingArea -->
 					</div>
 				</div>
 			</section>
@@ -716,7 +706,7 @@
 			
 			// ChartUtil 에 initDoughnutChart() 추가
 			// AVERAGE PORT STAY DAYS IN CHINA 
-			ChartUtil.initDoughnutChart('chart7', lineChartData_16, false, 2.5);
+			ChartUtil.initDoughnutChart('chart7', lineChartData_16, false, 1.8);
 			//중앙값
 			var doughnutCenter = {
 				text: '1,033',
@@ -727,10 +717,10 @@
 			ChartUtil.chartList['chart7'].update();
 
 			// AVERAGE DISTANCE (NM)
-			ChartUtil.initLineChart('chart8', lineChartData_17, 500, false, 2.5);
+			ChartUtil.initLineChart('chart8', lineChartData_17, 500, false, 1.8);
 
 			// US CULF LADEN VLCC TRAFFIC
-			ChartUtil.initVerticalBarChart('chart9', lineChartData_18, 5, false, 2.5);
+			ChartUtil.initVerticalBarChart('chart9', lineChartData_18, 5, false, 1.8);
 		});
 	</script>
 </body>

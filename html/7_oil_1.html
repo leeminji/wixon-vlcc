@@ -262,6 +262,27 @@
 								</div>
 							</div>
 						</div>
+						<!-- 200401 그래프추가 -->
+						<div class="Layout_row">
+							<div class="BoxArea01">
+								<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+								<div class="inner">
+									<div id="chart6_tab" class="chartjs-tab middle narrow" >
+										<a href="javascript:;" data-category="WORLD" class="active">WORLD</a>
+										<a href="javascript:;" data-category="NORTH AMERICA">NORTH AMERICA</a>
+										<a href="javascript:;" data-category="LATIN AMERICA">LATIN AMERICA</a>
+										<a href="javascript:;" data-category="MIDDLE EAST">MIDDLE EAST</a>
+										<a href="javascript:;" data-category="AFRICA">AFRICA</a>
+										<a href="javascript:;" data-category="EUROPE">EUROPE</a>
+										<a href="javascript:;" data-category="ASIA PACIFIC">ASIA PACIFIC</a>
+									</div>
+									<div id="chart6_legend" class="chartjs-legend"></div>
+									<div id="chart6_title" class="chartjs-title center middle"><span>RIG COUNT</span></div>
+									<canvas id="chart6" class="chartjs-canvas"></canvas>
+								</div>
+							</div>
+						</div>
+						<!-- //200401 그래프추가 -->
 						<!-- //IMPORT -->
 						<div class="pt5"></div>
 					</div>
@@ -439,7 +460,9 @@
 			}		
 			chart5.config.options.scales.yAxes[0].scaleLabel = chart5_scaleLabel;
 			chart5.update();
-
+			
+			//RIG COUNT
+			ChartUtil.initBarChartMulti('chart6', lineChartData_82, 50, false, 0, 4);
 		});
 	</script>
 </body>

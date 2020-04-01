@@ -500,12 +500,12 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 
 /* Pagination */
 .Pagination{text-align: center;padding:1em 0}
-.Pagination .Pagination__num{display: inline-block;height:2em;line-height: 2em;width:2em;overflow: hidden;border:1px solid #dedede;background:#fff;}
+.Pagination .Pagination__num{display: inline-block;height:2em;line-height: 2em;width:2em;overflow: hidden;border:1px solid #dedede;background:#fff;font-size:1em}
 .Pagination .Pagination__num span{display:block;font-size:0.9em}
 .Pagination .Pagination__num:hover{background-color: #efefef;}
 .Pagination .Pagination__num.active{background:#e6e6e6}
 .Pagination .Pagination__num.active span{color:#0d8cff;font-weight: bold;}
-.Pagination .Pagination__button{display: inline-block;height:2em;line-height: 2em;width:2em;border:1px solid #dedede;overflow: hidden;background-repeat: no-repeat;background-size: 1em auto;background-position: center;background-color: #fff;}
+.Pagination .Pagination__button{display: inline-block;height:2em;line-height: 2em;width:2em;border:1px solid #dedede;overflow: hidden;background-repeat: no-repeat;background-size: 1em auto;background-position: center;background-color: #fff;font-size:1em}
 .Pagination .Pagination__button span{text-indent:-9999px;display:block}
 .Pagination .Pagination__button:hover{background-color: #efefef;}
 .Pagination__button.prev{background-image: url(../images/icon/icon_page_prev.png);}
@@ -547,6 +547,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .PopupArea .PopupArea__content ol li{counter-increment: my-counter;position: relative;padding-left:1em;}
 .PopupArea .PopupArea__content ol li::before{content:counter(my-counter)". ";position: absolute;left:0;top:2px}
 
+.PopupArea__button{position: absolute;right:.5em;bottom:.5em;z-index: 100;font-size: 0.82em;}
 
 /* AdminState */
 .inactive .AdminState{text-align: center}
@@ -674,6 +675,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .DataTable__3 a{color:#fff;display: block;font-size:1em}
 
 /* chart에 있는 DB */
+.DataTable__pagination{font-size:0.8em}
 .DataTable__4{border-bottom:1px solid #163a4a}
 .DataTable__4 .DataTable__top{}
 .DataTable__4 .DataTable__content{height:14em;overflow:auto;width:100%}
@@ -688,6 +690,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
     padding:5px;
     background: rgba(0,0,0,.5);
     height:2em;
+    letter-spacing: -0.5px;
 }
 
 .DataTable__4 table thead th.lineTop1{border-top:1px solid #616469;}
@@ -868,6 +871,11 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .DataSetting__button{display:block;overflow:hidden;text-indent:-999px;width:2.2em;height:2.2em;border-bottom:1px solid #233748;border-left:1px solid #233748;position:absolute;right:0;top:0;background:url(../images/icon/icon_chart_setting.png) center no-repeat;background-size:2em auto;opacity: 0.4;transition: all .5s;z-index:500}
 .DataSetting__button:hover{opacity: 1;}
 .DataSetting__botton_area{font-size:0.86em}
+
+a.DataSetting__button_win{display:block;overflow:hidden;text-indent:-999px;width:2.2em;height:2.2em;position:absolute;background:url(../images/icon/icon_new_window.png) center no-repeat;background-size:2em auto;opacity: 0.4;transition: all .5s;z-index:500}
+a.DataSetting__button_win:hover{opacity: 1;}
+a.DataSetting__button_win.isRightBottom{right:0;bottom:0;border-left:1px solid #233748;border-top:1px solid #233748;}
+a.DataSetting__button_win.isLeftTop{left:0;top:0;border-bottom:1px solid #233748;border-right:1px solid #233748;}
 
 .DataSetting__title{padding:1.7em 3em 2em;border-bottom:1px solid #232b31;}
 .DataSetting__title.center{text-align: center;}
@@ -1270,6 +1278,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 /* layout_row */
 .Layout_row{padding:0;}
 .Layout_row:after{content:'';display:block;clear:both;}
+.Layout_row.pos_relative{position: relative;}
 .Layout_chartArea{float:left;width:33.333%;position: relative;}
 .Layout_chartArea.col12{width:100%}
 .Layout_chartArea.col6{width:50%}
@@ -1280,7 +1289,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .Layout_chartArea.col5{width:41.5%}
 .Layout_chartArea.col7{width:58.5%}
 .Layout_chartArea.col2{width:16.5%}
-.Layout_chartArea__map{position: absolute;right:3em;top:1em;bottom:1em;width:45%;background:#041725;}
+.Layout_chartArea__map{position: absolute;right:0em;top:0em;bottom:0em;width:25%;}
 .Layout_chartArea__map .mapArea{position: absolute;right:0;top:0;bottom:0;left:0;border:5px solid #000}
 @media (max-width: 1440px) { 
     .MapDataArea .Layout_chartArea{width:33.33%;}
@@ -1334,7 +1343,7 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .SpotTableData__title span{font-weight: bold;color:#fff;font-size:13px}
 
 /* SpotTableData 테이블 넓이지정 */
-#SpotTableData01{min-width:56em;padding: 0 1em;}
+#SpotTableData01{min-width:56em;padding: 1.5em 1em;}
 #SpotTableData01 .col1{width:20px}
 #SpotTableData01 .col2{width:120px}
 #SpotTableData01 .col3{width:80px}
@@ -1364,8 +1373,8 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 #SpotTableData03{width:100%}
 
 #SpotTableData04{min-width:40em}
-#SpotTableData04 .col1{width:120px}
-#SpotTableData04 .col2{width:120px}
+#SpotTableData04 .col1{width:90px}
+#SpotTableData04 .col2{width:80px}
 #SpotTableData04 .col3{width:120px}
 #SpotTableData04 .col4{width:50px}
 #SpotTableData04 .col5{width:50px}
@@ -1489,6 +1498,8 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .MapControl > a.camera{background-image: url(../images/map/icon/icon_map_camera.png);}
 .MapControl > a.marker{background-image: url(../images/map/icon/icon_map_marker.png);}
 .MapControl > a:hover{background-color:rgba(119,145,174,1);}
+
+
 
 .MapZoomButton{position: absolute;left:1em;bottom:1em}
 .MapZoomButton > a{text-indent:-999px;overflow:hidden;width:2em;height:2em;display: block;background-color:#1c202c;background-size: 2em auto;background-repeat: no-repeat;background-position: center;}

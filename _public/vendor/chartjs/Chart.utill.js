@@ -436,6 +436,9 @@ var ChartUtil = (function(){
 							ticks: {
 								fontColor : window.ChartUtil.colors.white,
 								fontFamily : window.ChartUtil.font,
+								beginAtZero : false,
+								max : thisObj.getMaxData(initData),
+								min : thisObj.getMinData(initData)
 							},	
 							gridLines : {
 								display : true,
@@ -448,35 +451,34 @@ var ChartUtil = (function(){
 							position: 'left',
 							id: 'y-axis-1',
 						}, 
-						{	
-							//글자
-							ticks: {
-								fontColor : window.ChartUtil.colors.white,
-								fontFamily : window.ChartUtil.font,
-								fontWeight : 600,
-								max:100,
-								min:0,
-							},																
-							type: 'linear', 
-							display: true,
-							position: 'right',
-							id: 'y-axis-2',
-
-							// grid line settings
-							gridLines: {
-								display: true,
-								drawOnChartArea: false, 
-								color : window.ChartUtil.colors.white_op2
-							},
-						}
 					],
 				}
 			}
+
+
 			if( _stepSizeLeft ){
 				_options.scales.yAxes[0].ticks.stepSize = _stepSizeLeft;
 			}			
 			if( _stepSizeRight ){
-				_options.scales.yAxes[1].ticks.stepSize = _stepSizeRight;
+				_options.scales.yAxes[1] = {
+					//글자
+					ticks: {
+						stepSize : _stepSizeRight,
+						fontColor : window.ChartUtil.colors.white,
+						fontFamily : window.ChartUtil.font,
+						fontWeight : 600,
+					},																
+					type: 'linear', 
+					display: true,
+					position: 'right',
+					id: 'y-axis-2',
+					// grid line settings
+					gridLines: {
+						display: true,
+						drawOnChartArea: false, 
+						color : window.ChartUtil.colors.white_op2
+					}
+				};
 			}
 			if( _ratio ){
 				_options.aspectRatio = _ratio;
@@ -784,6 +786,20 @@ var ChartUtil = (function(){
 
 			this.addCustomLegend(_canvasId);
 		},
+		getMaxData : function(_data){
+			var max = 0;
+			_data.datasets.forEach(function(x, i){   
+				max = Math.max(max, Math.max.apply(null, x.data));
+			});
+			return Math.ceil(max/100)*100;
+		},
+		getMinData : function(_data){
+			var min = 1000000;
+			_data.datasets.forEach(function(x, i){        
+				min = Math.min(min, Math.min.apply(null, x.data));
+			});
+			return Math.floor(min/100)*100;
+		},
 		resetDataset : function(e, chart){
 			//라벨 클릭 이벤트 전체리셋
 			var total = chart.data.datasets.length;
@@ -925,6 +941,12 @@ var ChartUtil = (function(){
 				$("#"+_canvasId+"_legend").empty().html(thisObj.drawCustomLegend(chart));
 
 				thisObj.addCustomLegend(_canvasId);
+				//multi bar min, max 데이터 자동으로 처리하는 코드 추가
+
+				if( chart.data.isAutoMinMax ){
+					chart.options.scales.yAxes[0].ticks.min = thisObj.getMinData(changeData);
+					chart.options.scales.yAxes[0].ticks.max = thisObj.getMaxData(changeData);
+				}
 				chart.update();
 			});
 		},		
@@ -1051,7 +1073,44 @@ Chart.plugins.register({
 			ctx.font = fontSize+"px " + fontStyle;
 			ctx.textAlign = chartText.textAlign || "right";
 			ctx.fillText(chartText.text, chart.width, fontSize);
-		}		
+		}
+
+		//percentData 보이기
+		if( chart.config.data.showPercentData ){
+			var showPercentData = chart.config.data.showPercentData;
+			var ctx = chart.chart.ctx;
+			var fontSize = showPercentData.fontSize || "12";
+			var fontStyle = showPercentData.fontStyle || "Arial";
+
+			ctx.font = fontSize + "px " + fontStyle;
+			ctx.textAlign = "center";
+			ctx.fillStyle = showPercentData.fillStyle || "#ffffff";
+
+
+			chart.config.data.datasets.forEach(function (dataset, i) {
+				if( dataset.label == showPercentData.label ){
+					var points = dataset._meta[chart.id].data;
+					
+					var total = 0;
+					for(var i =0;i<points.length;i++){
+						total += dataset.data[i];
+					}
+					
+					for(var i =0;i<points.length;i++){
+						var coordination = {
+							x : points[i]._model.x,
+							y : points[i]._model.y,
+						}
+						var datatext = Math.round( (dataset.data[i]/total*100)*10 )/10 + '%';
+						var corY = coordination.y+(points[i]._chart.height - coordination.y-parseInt(fontSize)-5)/2;
+						if( corY > points[i]._chart.height-35 ) corY = points[i]._chart.height-35;
+						ctx.fillText(datatext, coordination.x, corY);
+					}
+					return false;
+				}
+			});
+		}
+
 		//showDataLabel 가 있을시 해당 label data 보여줌.
 		if( chart.config.data.showData ){
 			var showData = chart.config.data.showData;
@@ -1076,7 +1135,8 @@ Chart.plugins.register({
 					}
 				}
 			});
-		}		
+		}
+
 		if (chart.config.data.showValue) {
 			var showValue = chart.config.data.showValue;
 			var width = showValue.valueWidth || 110 ;
@@ -1108,6 +1168,7 @@ Chart.plugins.register({
 				
 			});
 		}
+
 		//x축에 맞춘 라인그리기
 		if(chart.config.options.showPointLine){
 			var pointLine = chart.config.data.pointLine;

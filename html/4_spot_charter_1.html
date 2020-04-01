@@ -177,38 +177,20 @@
 										<!-- 구글맵 영역 -->
 										<div id="totalMap" class="MapTotalSize no_border">지도영역</div>
 										<!-- //구글맵 영역 -->
+										<a href="javascript:;" onclick="ui_window('./3_map_popup.html', 'full', 'full');" class="DataSetting__button_win isRightBottom"><span>새창</span></a>
 									</div>
 								</div>
 								<!-- //맵 -->
-								<!-- 
-									가로스크롤 생기고 차트가 옆으로 추가되는 경우 ::
-									옆에 차트가 있다면 다 포함하는 div에 isChartList 클래스 필요합니다. ( isChartList inner클래스의 마진값 없애는 클래스 - 마진값 존재시 살짝씩 간격이 틀어집니다.)
-									
-									추가되는 차트 부모 엘리먼트로 chartList,  chartList_inner 필요합니다.
-									<canvas> 속성 data-scale로 넓이 조절합니다.
-									data-scale=1 기본사이즈 1 일 경우 속성 넣어도 되고 빼도 됩니다.
-									가로가 길어질경우 scale로 조절합니다.
-								-->											
+								
 								<!-- 차트01 -->
-								<div class="SpotChartArea__chart01 isChartList">
+								<div class="SpotChartArea__chart01">
 									<div class="BoxArea01">
 										<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
-										<!-- chartList -->
-										<div class="chartList">
-											<div class="chartList_inner">
-												<div class="inner">
-													<div id="chart1_legend" class="chartjs-legend white"></div>
-													<div id="chart1_title" class="chartjs-title middle white center"><span>VLCC FLOW (BSS FUJAIRAH)</span></div>
-													<canvas id="chart1" class="chartjs-canvas" data-scale=1.2></canvas>
-												</div>
-												<div class="inner">
-													<div id="chart1_1_legend" class="chartjs-legend white"></div>
-													<div id="chart1_1_title" class="chartjs-title middle white center"><span>VLCC FLOW (BSS FUJAIRAH)</span></div>
-													<canvas id="chart1_1" class="chartjs-canvas"></canvas>
-												</div>
-											</div>
+										<div class="inner">
+											<div id="chart1_legend" class="chartjs-legend white"></div>
+											<div id="chart1_title" class="chartjs-title middle white center"><span>VLCC FLOW (BSS FUJAIRAH)</span></div>
+											<canvas id="chart1" class="chartjs-canvas"></canvas>
 										</div>
-										<!-- //chartList -->
 									</div>
 								</div>
 								<!-- //차트01 -->
@@ -217,6 +199,7 @@
 								<!-- 데이터 -->
 								<div class="SpotChartArea__data">
 									<div class="BoxArea01">
+										<a href="javascript:;" onclick="ui_window('./4_spot_charter_1_popup.html', 1000, 800, 1000);" class="DataSetting__button_win isLeftTop"><span>새창</span></a>
 										<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
 										<!-- //js-scrollbar 제거했습니다. 확인해주세요. -->
 										<div class="inner">
@@ -227,38 +210,136 @@
 								<!-- //데이터 -->
 							</div>
 						</div>
+
+						<!-- 1. 테이블데이터 -->
 						<div class="Layout_spotChartRow">
-							<div class="Layout_spotChartArea isChartList">
-								<div class="BoxArea01">
+							<div class="Layout_spotChartArea">
+								<div class="BoxArea01  sHeight">
 									<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
-									<!-- chartList -->
-									<div class="chartList">
-										<div class="chartList_inner">
-											<div class="inner">
-												<div id="chart2_legend" class="chartjs-legend white"></div>
-												<div id="chart2_title" class="chartjs-title middle white center"><span>Freight assessment</span></div>
-												<div class="chartjs-tab middle" id="chart2_tab">
-													<a href="javascript:;" data-category='ws'>WS</a>
-													<a href="javascript:;" data-category='tce'>TCE</a>
-												</div>	
-												<canvas id="chart2" class="chartjs-canvas"></canvas>
-											</div>
-											<div class="inner">
-												<div id="chart2_1_legend" class="chartjs-legend white"></div>
-												<div id="chart2_1_title" class="chartjs-title middle white center"><span>Freight assessment</span></div>
-												<div id="chart2_1_tab" class="chartjs-tab middle" >
-													<a href="javascript:;" data-category='ws'>WS</a>
-													<a href="javascript:;" data-category='tce'>TCE</a>
-												</div>	
-												<canvas id="chart2_1" class="chartjs-canvas"></canvas>
+									<div class="inner">
+										<div class="js-scrollbar">
+											<div class="SpotTableData fluid" id="SpotTableData03">
+												<div class="DataTable__4 c02_table">
+													<div class="DataTable__top">
+														<div class="chartjs-title center middle"><span>Frash cargo</span></div>
+														<div class="pt10"></div>	
+														<table>
+															<thead>
+																<tr>
+																	<th scope="col" class="col1">CHARTERER</th>
+																	<th scope="col" class="col2">LAYCAN</th>
+																	<th scope="col" class="col3">LOAD</th>
+																	<th scope="col" class="col4">DISCHARGE</th>
+																	<th scope="col" class="col5">QUANTITY</th>
+																	<th scope="col" class="col6">REMARK</th>
+																</tr>
+															</thead>
+														</table>
+													</div>
+													<div class="DataTable__content">
+														<div class="js-scrollbar">
+														<table>
+															<tbody>
+																<tr>
+																	<td class="col1">SK ENERGY</td>
+																	<td class="col2">10-Aug</td>
+																	<td class="col3">Basrah</td>
+																	<td class="col4">Ulsan</td>
+																	<td class="col5">260,000</td>
+																	<td class="col6 c01">Ex D/D</td>
+																</tr>
+																<tr>
+																	<td class="col1">SK ENERGY</td>
+																	<td class="col2">10-Aug</td>
+																	<td class="col3">Basrah</td>
+																	<td class="col4">Ulsan</td>
+																	<td class="col5">260,000</td>
+																	<td class="col6 c01">Ex D/D</td>
+																</tr>
+																<tr>
+																	<td class="col1">SK ENERGY</td>
+																	<td class="col2">10-Aug</td>
+																	<td class="col3">Basrah</td>
+																	<td class="col4">Ulsan</td>
+																	<td class="col5">260,000</td>
+																	<td class="col6 c01">Ex D/D</td>
+																</tr>
+																<tr>
+																	<td class="col1">SK ENERGY</td>
+																	<td class="col2">10-Aug</td>
+																	<td class="col3">Basrah</td>
+																	<td class="col4">Ulsan</td>
+																	<td class="col5">260,000</td>
+																	<td class="col6 c01">Ex D/D</td>
+																</tr>
+																<tr>
+																	<td class="col1">SK ENERGY</td>
+																	<td class="col2">10-Aug</td>
+																	<td class="col3">Basrah</td>
+																	<td class="col4">Ulsan</td>
+																	<td class="col5">260,000</td>
+																	<td class="col6 c01">Ex D/D</td>
+																</tr>
+																<tr>
+																	<td class="col1">SK ENERGY</td>
+																	<td class="col2">10-Aug</td>
+																	<td class="col3">Basrah</td>
+																	<td class="col4">Ulsan</td>
+																	<td class="col5">260,000</td>
+																	<td class="col6 c01">Ex D/D</td>
+																</tr>
+																<tr>
+																	<td class="col1">SK ENERGY</td>
+																	<td class="col2">10-Aug</td>
+																	<td class="col3">Basrah</td>
+																	<td class="col4">Ulsan</td>
+																	<td class="col5">260,000</td>
+																	<td class="col6 c01">Ex D/D</td>
+																</tr>
+																<tr>
+																	<td class="col1">SK ENERGY</td>
+																	<td class="col2">10-Aug</td>
+																	<td class="col3">Basrah</td>
+																	<td class="col4">Ulsan</td>
+																	<td class="col5">260,000</td>
+																	<td class="col6 c01">Ex D/D</td>
+																</tr>
+																<tr>
+																	<td class="col1">SK ENERGY</td>
+																	<td class="col2">10-Aug</td>
+																	<td class="col3">Basrah</td>
+																	<td class="col4">Ulsan</td>
+																	<td class="col5">260,000</td>
+																	<td class="col6 c01">Ex D/D</td>
+																</tr>
+																<tr>
+																	<td class="col1">SK ENERGY</td>
+																	<td class="col2">10-Aug</td>
+																	<td class="col3">Basrah</td>
+																	<td class="col4">Ulsan</td>
+																	<td class="col5">260,000</td>
+																	<td class="col6 c01">Ex D/D</td>
+																</tr>
+																<tr>
+																	<td class="col1">SK ENERGY</td>
+																	<td class="col2">10-Aug</td>
+																	<td class="col3">Basrah</td>
+																	<td class="col4">Ulsan</td>
+																	<td class="col5">260,000</td>
+																	<td class="col6 c01">Ex D/D</td>
+																</tr>
+															</tbody>
+														</table>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
-									<!-- //chartList -->
 								</div>
 							</div>
-							<div class="Layout_spotChartArea fluid_right">
-								<div class="BoxArea01 BoxFull">
+							<div class="Layout_spotChartArea">
+								<div class="BoxArea01  sHeight">
 									<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
 									<div class="inner">
 										<div class="js-scrollbar">
@@ -469,129 +550,29 @@
 								</div>
 							</div>
 						</div>
+						<!-- // 1.테이블데이터 -->
+
+						<!-- 2. 차트데이터 -->
 						<div class="Layout_spotChartRow">
-							<div class="Layout_spotChartArea fluid_left">
-								<div class="BoxArea01 BoxFull">
-									<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
-									<div class="inner">
-										<div class="js-scrollbar">
-											<div class="SpotTableData fluid" id="SpotTableData03">
-												<div class="DataTable__4 c02_table">
-													<div class="DataTable__top">
-														<div class="chartjs-title center middle"><span>Frash cargo</span></div>
-														<div class="pt10"></div>	
-														<table>
-															<thead>
-																<tr>
-																	<th scope="col" class="col1">CHARTERER</th>
-																	<th scope="col" class="col2">LAYCAN</th>
-																	<th scope="col" class="col3">LOAD</th>
-																	<th scope="col" class="col4">DISCHARGE</th>
-																	<th scope="col" class="col5">QUANTITY</th>
-																	<th scope="col" class="col6">REMARK</th>
-																</tr>
-															</thead>
-														</table>
-													</div>
-													<div class="DataTable__content">
-														<div class="js-scrollbar">
-														<table>
-															<tbody>
-																<tr>
-																	<td class="col1">SK ENERGY</td>
-																	<td class="col2">10-Aug</td>
-																	<td class="col3">Basrah</td>
-																	<td class="col4">Ulsan</td>
-																	<td class="col5">260,000</td>
-																	<td class="col6 c01">Ex D/D</td>
-																</tr>
-																<tr>
-																	<td class="col1">SK ENERGY</td>
-																	<td class="col2">10-Aug</td>
-																	<td class="col3">Basrah</td>
-																	<td class="col4">Ulsan</td>
-																	<td class="col5">260,000</td>
-																	<td class="col6 c01">Ex D/D</td>
-																</tr>
-																<tr>
-																	<td class="col1">SK ENERGY</td>
-																	<td class="col2">10-Aug</td>
-																	<td class="col3">Basrah</td>
-																	<td class="col4">Ulsan</td>
-																	<td class="col5">260,000</td>
-																	<td class="col6 c01">Ex D/D</td>
-																</tr>
-																<tr>
-																	<td class="col1">SK ENERGY</td>
-																	<td class="col2">10-Aug</td>
-																	<td class="col3">Basrah</td>
-																	<td class="col4">Ulsan</td>
-																	<td class="col5">260,000</td>
-																	<td class="col6 c01">Ex D/D</td>
-																</tr>
-																<tr>
-																	<td class="col1">SK ENERGY</td>
-																	<td class="col2">10-Aug</td>
-																	<td class="col3">Basrah</td>
-																	<td class="col4">Ulsan</td>
-																	<td class="col5">260,000</td>
-																	<td class="col6 c01">Ex D/D</td>
-																</tr>
-																<tr>
-																	<td class="col1">SK ENERGY</td>
-																	<td class="col2">10-Aug</td>
-																	<td class="col3">Basrah</td>
-																	<td class="col4">Ulsan</td>
-																	<td class="col5">260,000</td>
-																	<td class="col6 c01">Ex D/D</td>
-																</tr>
-																<tr>
-																	<td class="col1">SK ENERGY</td>
-																	<td class="col2">10-Aug</td>
-																	<td class="col3">Basrah</td>
-																	<td class="col4">Ulsan</td>
-																	<td class="col5">260,000</td>
-																	<td class="col6 c01">Ex D/D</td>
-																</tr>
-																<tr>
-																	<td class="col1">SK ENERGY</td>
-																	<td class="col2">10-Aug</td>
-																	<td class="col3">Basrah</td>
-																	<td class="col4">Ulsan</td>
-																	<td class="col5">260,000</td>
-																	<td class="col6 c01">Ex D/D</td>
-																</tr>
-																<tr>
-																	<td class="col1">SK ENERGY</td>
-																	<td class="col2">10-Aug</td>
-																	<td class="col3">Basrah</td>
-																	<td class="col4">Ulsan</td>
-																	<td class="col5">260,000</td>
-																	<td class="col6 c01">Ex D/D</td>
-																</tr>
-																<tr>
-																	<td class="col1">SK ENERGY</td>
-																	<td class="col2">10-Aug</td>
-																	<td class="col3">Basrah</td>
-																	<td class="col4">Ulsan</td>
-																	<td class="col5">260,000</td>
-																	<td class="col6 c01">Ex D/D</td>
-																</tr>
-															</tbody>
-														</table>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="Layout_spotChartArea right">
+							<div class="Layout_spotChartArea">
 								<div class="BoxArea01">
 									<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
 									<div class="inner">
-										<div id="chart3_search" class="chartjs-search">
+										<div id="chart2_legend" class="chartjs-legend white"></div>
+										<div id="chart2_title" class="chartjs-title middle white"><span>Freight assessment</span></div>
+										<div class="chartjs-tab middle" id="chart2_tab">
+											<a href="javascript:;" data-category='ws'>WS</a>
+											<a href="javascript:;" data-category='tce'>TCE</a>
+										</div>	
+										<canvas id="chart2" class="chartjs-canvas"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="Layout_spotChartArea">
+								<div class="BoxArea01">
+									<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
+									<div class="inner">
+										<div id="chart3_search" class="chartjs-search fixed">
 											<a href="#" class="DataSetting__sbutton cBlue"><span>TOTAL</span></a>
 											<span class="SelectBox">
 												<select name="" id="" width="10">
@@ -605,19 +586,22 @@
 											</span>
 										</div>
 										<div id="chart3_legend" class="chartjs-legend white"></div>
-										<div id="chart3_title" class="chartjs-title middle white center"><span>Cargo counting</span></div>
+										<div id="chart3_title" class="chartjs-title middle white"><span>Cargo counting</span></div>
 										<canvas id="chart3" class="chartjs-canvas"></canvas>
 									</div>
 								</div>
 							</div>
 						</div>
+						<!-- 2. 차트데이터 -->
+
+						<!-- 3. 차트, 테이블 데이터 -->
 						<div class="Layout_spotChartRow">
 							<div class="Layout_spotChartArea">
 								<div class="BoxArea01">
 									<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
 									<div class="inner">
 										<div id="chart4_legend" class="chartjs-legend white"></div>
-										<div id="chart4_title" class="chartjs-title middle white center"><span>Fixture counting</span></div>
+										<div id="chart4_title" class="chartjs-title middle white center"><span>FIXTURE COUNTING (BSS LAYCAN)</span></div>
 										<canvas id="chart4" class="chartjs-canvas"></canvas>
 									</div>
 								</div>
@@ -872,6 +856,7 @@
 								</div>
 							</div>
 						</div>
+						<!-- //3. 차트, 테이블 데이터 -->	
 						<div class="pt10"></div>	
 					</div>
 				</div>
@@ -1009,6 +994,17 @@
 				tableEl_content.height(content_h);
 			});
 		}
+		//윈도우팝업
+		function ui_window(_url, _width, _height, _left, _top){
+			var popupH = _height == 'full' ? screen.height*0.9 : _height;
+			var popupW = _width == 'full' ? screen.width : _width;
+			var popupX = _left != null ? _left : (window.screen.width / 2) - (popupW / 2);
+			var popupY = _top != null ? _top : (window.screen.height / 2) - (popupH / 2);
+			if( _width == 'full' ) popupX = 0;
+			if( _height == 'full' ) popupY = 0;
+			var option="resizable=no, scrollbas=yes,status=no,width="+popupW+",height="+popupH+",left="+popupX+",top="+popupY;
+			window.open(_url, 'portData', option);
+		}		
 	</script>
 	<!-- 차트js추가 -->
 	<script type="text/javascript" src="../_public/vendor/chartjs/moment.min.js"></script>
@@ -1027,30 +1023,25 @@
 
 			//VLCC FLOW (BSS FUJAIRAH)
 			ChartUtil.initStackedChart('chart1', lineChartData_7, 10, false, 2.5);
-			ChartUtil.initStackedChart('chart1_1', lineChartData_2, 10, false, 2.5);
 			
 			//FREIGHT ASSESSMENT
 			ChartUtil.initLineChart('chart2', lineChartData_20, false, 0, 2.5);
-			ChartUtil.initLineChart('chart2_1', lineChartData_20, false, 0, 2.5);
 
 			//마지막 꼬리 라벨 넣기( 데이터가 다른 곳이랑 다릅니다. 확인필요. )
 			var chart2 = ChartUtil.chartList['chart2'];
             chart2.options.showValue = true; 
             chart2.options.layout.padding.right = 120;
 			chart2.update();
-			var chart2_1 = ChartUtil.chartList['chart2_1'];
-            chart2_1.options.showValue = true; 
-            chart2_1.options.layout.padding.right = 120;
-			chart2_1.update();
+		
 
 			//CARGO COUNTING - 차트세로수정
-			ChartUtil.initStackedChart('chart3', lineChartData_8, 10, false, 3);
+			ChartUtil.initStackedChart('chart3', lineChartData_8, 10, false, 2.5);
 
 			//Fixture counting - 차트세로수정
 			ChartUtil.initStackedChart('chart4', lineChartData_19, 5, false, 2);
 
 			//차트 추가될 때 차트 크기조절 함수
-			charListSetting($(".chartList"));
+			//charListSetting($(".chartList"));
 
 		});
 		//차트 추가될 때 차트 크기조절 함수

@@ -92,8 +92,8 @@
 .chartjs-etc{position: absolute;left:0;top:2.8em;}
 .chartjs-etc.white span{color:#fff}
 .chartjs-etc span{font-size:0.825em; color:#667688;}
-.chartjs-etc.right{right:-2em;left:initial}
-.chartjs-etc.bottom{bottom:4em;top:initial;}
+.chartjs-etc.right{right:-2em;left:inherit}
+.chartjs-etc.bottom{bottom:4em;top:inherit;}
 .chartjs-arrow-up{display:block;background:url(../images/common/arrow_up.png) no-repeat center;background-size:1em auto;height:3em;}
 .chartjs-bottom{position: absolute;right:0;bottom:0}
 .chartjs-bottom span{font-size:1.2em;color:#fff;font-weight: bold;}
@@ -108,6 +108,7 @@
 .chartjs-tab.left{left:0;right:inherit}
 .chartjs-tab.middle{top:0.4em;}
 .chartjs-tab.middle a, .chartjs-tab .tab-item{line-height: 2em;padding:0 1.5em}
+.chartjs-tab.narrow a, .chartjs-tab.narrow .tab-item{padding:0 .8em}
 .chartjs-tab a, .chartjs-tab .tab-item{
     float:left;
     display: block;
@@ -127,11 +128,11 @@
 }
 
 .chartjs-info-legend{position: absolute;width:26%;top:35%}
-.chartjs-info-legend.left{left:0;text-align: right;}
-.chartjs-info-legend.right{right:0}
+.chartjs-info-legend.left{left:-10px;text-align: right;}
+.chartjs-info-legend.right{right:-10px}
 .chartjs-info-legend dl{margin:0;padding:0;color:#667688;}
 .chartjs-info-legend dl dt{font-weight: bold;padding-bottom:1em}
-.chartjs-info-legend dl dd{font-size:1em}
+.chartjs-info-legend dl dd{font-size:0.82em;letter-spacing: -0.5px;}
 
 .chartjs-search{font-size:0.825em;text-align:right;padding-bottom:1em}
 .chartjs-search.fixed{position: absolute;right:0;top:.2em;padding-bottom: 0;}

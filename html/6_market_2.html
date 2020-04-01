@@ -229,7 +229,18 @@
 								</div>	
 							</div>
 						</div>
-
+						<!-- 200331 차트추가 -->
+						<div class="Layout_row">
+							<div class="BoxArea01">
+								<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
+								<div class="inner">
+								<div id="chart8_legend" class="chartjs-legend"></div>
+								<div id="chart8_title" class="chartjs-title middle center"><span>VLCC BUNKERING PORT CALL COUNTING</span></div>
+								<canvas id="chart8" class="chartjs-canvas"></canvas>
+								</div>
+							</div>
+						</div>
+						<!-- //200331 차트추가 -->
 						<div class="pt5"></div>
 					</div>
 				</div>
@@ -337,12 +348,24 @@
 	<!-- //차트js추가 -->
 	<script type="text/javascript" src="../_public/js/ui.js"></script>
 	<script>
+		//툴팁 퍼센트
+		function getDataPercent(tooltipItem, data){
+			var item = data.datasets[tooltipItem.datasetIndex];
+			//console.log(data);
+			//console.log(tooltipItem);
+			var total = 0;
+			//tooltipItem.value : 값
+			for( var i =0;i<data.datasets.length;i++){
+				total += (data.datasets[i].data[tooltipItem.index]);
+			}
+			return item.label +" : "+ Math.round((tooltipItem.value/total*100)*10)/10+"%";
+		}
 		$(window).load(function(){
 			//chart(canvas id, chart data, chart stepSize, tabCateogoryInit)
 			//tabCateogoryInit : 카테고리로 탭있는경우 해당 index 
 
 			//VLCC FLEET GROWTH
-			ChartUtil.initBarChartMulti('chart1', lineChartData_59, 20, 50, false, 2.5);
+			ChartUtil.initBarChartMulti('chart1', lineChartData_59, 100, 50, false, 2.5);
 
 			var chart1 = window.ChartUtil.chartList['chart1'];
 			//y축 오른쪽 변경 (max, min 수동으로 변경필요) - json 데이터에서 받아서 처리하거나 수동으로설정.
@@ -363,15 +386,32 @@
 			//VLCC ORDERBOOK BY OWNER
 			ChartUtil.initHorizontalBarChart('chart4', lineChartData_62, 10, false, 1.2);
 
-			//EXISTING VLCC AGE
+			//EXISTING VLCC AGE - chartData json에 showPercentData 추가
 			ChartUtil.initStackedChart('chart5', lineChartData_63, 125, false, 1.2);
 	
 			//VLCC AGE ESTIMATION
 			ChartUtil.initStackedChart('chart6', lineChartData_64, 250, false, 2.5);
+			var chart6 = window.ChartUtil.chartList['chart6'];
+			//chart6.options.tooltips.intersect = true;
+			chart6.options.tooltips.mode = 'point';
+			chart6.options.tooltips.callbacks.label = getDataPercent;
+			chart6.update();
 
 			//ALTERNATIVE FUEL TYPE
 			ChartUtil.initLineChart('chart7', lineChartData_65, 50, false, 2.5);
 
+			//VLCC BUNKERING PORT CALL COUNTING
+			ChartUtil.initVerticalBarChart('chart8', lineChartData_81, 20, false, 5.5);
+			var chart8 = ChartUtil.chartList['chart8'];
+			var scaleLabel = {
+				display : true,
+				labelString : 'PORT CALL NO.',
+				fontColor : ChartUtil.colors.white,
+				fontFamily : ChartUtil.font,
+				fontSize : 15
+			}
+			chart8.config.options.scales.yAxes[0].scaleLabel = scaleLabel;
+			chart8.update();
 		});
 	</script>
 </body>

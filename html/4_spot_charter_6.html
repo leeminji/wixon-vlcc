@@ -361,6 +361,24 @@
 								</div>
 							</div>
 						</div>
+						<!-- 200331 추가 그래프-->
+						<div class="Layout_row">
+							<div class="BoxArea01">
+								<a href="javascript;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
+								<div class="inner">
+									<div id="chart16_legend" class="chartjs-legend white"></div>
+									<div id="chart16_title" class="chartjs-title white middle center"><span>AVERAGE FULL LADEN VLCC DRAFT</span></div>
+									<div id="chart16_tab" class="chartjs-tab middle" >
+										<a href="javascript:;" data-category="MEG" class="active">MEG</a>
+										<a href="javascript:;" data-category="WAF">WAF</a>
+										<a href="javascript:;" data-category="UKC">UKC</a>
+										<a href="javascript:;" data-category="AMERICAS">AMERICAS</a>
+									</div>
+									<canvas id="chart16" class="chartjs-canvas"></canvas>
+								</div>
+							</div>
+						</div>
+						<!-- 200331 추가 그래프-->
 						<div class="pt10"></div>
 					</div>
 				</div>
@@ -549,7 +567,35 @@
 			//Average port stay days in WAF
 			ChartUtil.initVerticalBarChart('chart15', lineChartData_46, 1, false, 3);
 
+			//AVERAGE FULL LADEN VLCC DRAFT
+			ChartUtil.initBarChartMulti('chart16', lineChartData_80, 0.5, 10, 0, 5.5);
+			var chart16 = ChartUtil.chartList['chart16'];
+			//y축 오른쪽 변경
+			var chart_ticks_1 = chart16.options.scales.yAxes[0].ticks;
+			chart_ticks_1.max = getMaxData(chart16.data, 0);
+			chart_ticks_1.min = getMinData(chart16.data, 0);
+			var scaleLabel = {
+				display : true,
+				labelString : 'MITERS',
+				fontColor : ChartUtil.colors.white_op5,
+				fontFamily : ChartUtil.font,
+				fontSize : 12
+			}
+			chart16.config.options.scales.yAxes[0].scaleLabel = scaleLabel;	
+			chart16.update();
 		});
+
+		function getMaxData(_data, _index){
+			var max = 0;
+			max = Math.max(max, Math.max.apply(null, _data.datasets[_index].data));
+			return max+1;
+		}
+
+		function getMinData(_data, _index){
+			var min = 1000000;
+			min = Math.min(min, Math.min.apply(null, _data.datasets[_index].data));
+			return min-1 < 0 ? 0: min-1;
+		}
 	</script>
 	<script>
 		var sampleData = {

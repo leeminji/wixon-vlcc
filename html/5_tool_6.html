@@ -445,32 +445,25 @@
 												<!-- DataSetting__searchform 왼쪽 검색폼 -->
 												<form action="" name="searchFrm">
 													<span class="SelectBox">
-														<select name="" id="" width="8">
-															<option value="">Category</option>
-														</select>
-													</span>
-													<span class="SelectBox">
-														<select name="" id="" width="5">
-															<option value="">All</option>
-														</select>
-													</span>
-													<span class="SelectBox">
-														<select name="" id="" width="10">
-															<option value="">Last cargo typ</option>
-														</select>
-													</span>
-													<span class="SelectBox">
 														<select name="" id="" width="5">
 															<option value="">DWT</option>
 														</select>
 													</span>
-													<span class="DateInput"><input type="text" value="" placeholder="From" size="8" class="datepicker" /></span>
-													<span class="DateInput"><input type="text" value="" placeholder="To" size="8" class="datepicker" /></span>
+													<input type="text" value="" placeholder="" size="8" />
+													<input type="text" value="" placeholder="" size="8" />
+													<span class="SelectBox">
+														<select name="" id="" width="5">
+															<option value="">Name</option>
+														</select>
+													</span>
+													<input type="text" value="" placeholder="" size="8" class="" />
 													<a href="#" class="DataSetting__sbutton"><span>RESET</span></a>
 												</form>
 												<!-- //DataSetting__searchform -->
 											</div>
-											<div class="DataTable__2 noFixed center cWhite pb0" id="FleetListTable">
+											<!-- 200403 수정 - 테이블 스크롤 적용 style="width:68em" 크기 사이즈조절 -->
+											<div class="DataTable__2 noFixed center cWhite pb0" id="FleetListTable" style="width:68em">
+												<div class="DataTable__top">
 												<table>
 													<thead>
 														<tr>
@@ -481,7 +474,7 @@
 															<th scope="col" style="width:100px">Built date</th>
 															<th scope="col">owner</th>
 															<th scope="col">manager</th>
-															<th scope="col">operator</th>
+															<th scope="col" style="width:100px">operator</th>
 															<th scope="col">LOA</th>
 															<th scope="col">Beam</th>
 															<th scope="col">Draft</th>
@@ -489,370 +482,438 @@
 															<th scope="col">Scrubber</th>
 														</tr>
 													</thead>
-													<tbody>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td class="no_line left">ABC</td>
-															<td>TO</td>
-															<td>299</td>
-															<td>2002</td>
-															<td>28 Nov 19 19:21</td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-															<td></td>
-														</tr>
-													</tbody>
 												</table>
+												</div>
+												<div class="DataTable__content">
+													<div class="js-scrollbar">
+														<table>
+															<tbody>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td style="width:100px">28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td style="width:100px"></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																<tr>
+																	<td class="no_line left">ABC</td>
+																	<td>TO</td>
+																	<td>299</td>
+																	<td>2002</td>
+																	<td>28 Nov 19 19:21</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
 											</div>
+											<!-- //200403 수정 - 테이블 스크롤 적용 -->
 										</div>
 										<div class="Layout__feetlist__box map">
 											<div class="BorderTitle w35">
@@ -893,12 +954,13 @@
 		$(document).ready(function(){
 			$("#MapContent").load("3_map_data.html", function(){
 				window.ui.init();
+				/* onload initGoogleMap */ 
+				window.onload = function(){
+					window.uiGooglMap.initGoogleMap("totalMap");
+					ui_mapDetail();
+				};	
 			});
 		});
-		/* onload initGoogleMap */ 
-		window.onload = function(){
-			window.uiGooglMap.initGoogleMap("totalMap");
-		};
 	</script>
 	<!-- //google map -->
 	<script type="text/javascript" src="../_public/vendor/chartjs/moment.min.js"></script>
@@ -949,6 +1011,24 @@
 				content.removeClass("active");
 			}			
 		});
+
+		//map 관련 UI 
+		function ui_mapDetail(){
+			var mapContent = $(".MapDetail__content");
+			var mapList = $(".MapDetail__list");
+			var onClassName = "active";
+			mapList.children("a").on('click', function(e){
+				e.preventDefault();
+				var href = $(this).attr('href');
+				if( $(this).hasClass(onClassName) ){
+					$(this).removeClass(onClassName);
+					$(href).removeClass(onClassName);			
+				}else{
+					$(this).addClass(onClassName);
+					$(href).addClass(onClassName);
+				}
+			});
+		}
 	</script>	
 </body>
 </html>

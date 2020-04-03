@@ -139,7 +139,7 @@
 					<div class="TopSearch__inner">
 						<input type="text" title="Search" id="top_stx" class="TopSearch__input" />
 						<label for="top_stx" class="TopSearch__label"><span>Search</span></label>
-						<ul class="TopSearch__list">
+						<ul class="TopSearch__list" style="display: none;">
 							<li><a href="">MAP SERECH RESULT - 1</a></li>
 							<li><a href="">MAP SERECH RESULT - 2</a></li>
 							<li><a href="">MAP SERECH RESULT - 3</a></li>
@@ -278,29 +278,49 @@
 								<div class="mark"><a class="icon icon_star" href="javascript:;"></a></div>
 								<div class="name">Yuan Qiu Hu</div>
 								<div class="date">Canaport 21 Sep 19</div>
-								<div class="etc"><span>308.371</span><span>2015</span><span>23.0</span><span>Scrubber fitted</span></div>
+								<div class="etc"><span>308.371</span><span>2015</span><span>Scrubber fitted</span></div>
 							</div>
 							<div class="MapShipInfo__content">
 								<ul class="clear MapShipInfo__list">
 									<li><span class="tit">Draft</span><span class="txt">11/ -9.4m(50% of max) 7d 58min ago</span></li>
 									<li><span class="tit">Speed</span><span class="txt">13.2 / +1.6 kts (9% of max) 15h 12min ago</span></li>
 									<li><span class="tit">Heading</span><span class="txt">83</span></li>
-									<li><span class="tit">Location</span><span class="txt">CAPE for 4d</span></li>
 									<li><span class="tit">Dest/ETA</span><span class="txt">Guangzhou / 03 Dec 19</span></li>
 									<li><span class="tit">Long/Lat</span><span class="txt">23,1888 / -34,9713</span></li>
 									<li class="signal"><span class="tit">Last signal</span><span class="txt">17min ago</span></li>
-									<li><span class="tit">Status</span><span class="txt">-</span></li>
+									<li><span class="tit">Status</span><span class="txt">Open</span></li>
+									<li><span class="tit">Last Port</span><span class="txt">CAPE for 4d</span></li>
+									<li><span class="tit">Operator</span><span class="txt">SK Shipping</span></li>
+									<li><span class="tit">Charterer</span><span class="txt">Unipec</span></li>
 								</ul>
 							</div>
 						</div>
 					</div>
 					<!-- //MapShipInfo 클릭했을때 -->
 
+					<!-- 200403 추가 MapPathLine 클릭했을때 -->
+					<div class="MapPathLineInfo" id="MapPathLineInfo">
+						<div class="MapPathLineInfo__inner">
+							<a href="javascript:;" onclick="showPathInfo.close();" class="MapPathLineInfo__close"><span>닫기</span></a>
+							<div class="MapPathLineInfo__content">
+								<ul class="clear MapPathLineInfo__list">
+									<li>Open</li>
+									<li>loading</li>
+									<li>intrasit</li>
+									<li>discharging</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- //200403 추가 MapPathLine 클릭했을때 -->
+
 					<!-- MapDetail -->
 					<div class="MapDetail" id="MapDetail">
 						<div class="MapDetail__list">
 							<a href="#MapDetailMap"><span>Map</span></a>
 							<a href="#MapDetailWeather"><span>Weather</span></a>
+							<a href="#MapDetailStorm"><span>Storm</span></a>
+							<a href="#MapDetailRoute"><span>Route</span></a>
 						</div>
 						<div class="MapDetail__content">
 							<div class="MapDetail__inner" id="MapDetailMap">
@@ -318,6 +338,18 @@
 							</div>
 							<div class="MapDetail__inner" id="MapDetailWeather">
 								weather...
+							</div>
+							<div class="MapDetail__inner" id="MapDetailStorm">
+								Storm...
+							</div>
+							<div class="MapDetail__inner" id="MapDetailRoute">
+								<div class="MapDetail__title"><span>Layers</span></div>
+								<ul class="clear">
+									<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox" checked><span></span></label> <span class="label">Suez Canal</span></li>
+									<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox"><span></span></label> <span class="label">Malacca Strait</span></li>
+									<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox"><span></span></label> <span class="label">Sunda Strait</span></li>
+									<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox"><span></span></label> <span class="label">Taiwan Strit</span></li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -339,7 +371,7 @@
 	<!-- 맵 js 추가 -->
 	<script type="text/javascript">
 		$(document).ready(function(){
-			window.ui.init();
+			//window.ui.init();
 			
 			//마크 On/Off : className : on 으로 제어
 			$('.icon_star').on('click', function(){
@@ -442,7 +474,8 @@
 			_map = new google.maps.Map(document.getElementById('totalMap'), {
 				center: {lat: 36.705106, lng: 127},
 				zoom: 5,
-				styles : window.uiGooglMap.googleMapStyle
+				styles : window.uiGooglMap.googleMapStyle,
+				disableDefaultUI: true
 			});
 
 			//맵이동시 인포삭제, 인포위치이동
@@ -450,7 +483,8 @@
 				removeAllShipInfo();
 				var info = window.uiGooglMap.infoShipMarker();
 				info.close();
-
+				//라인인포 삭제
+				showPathInfo.close();
 				zoomInfoDisplay(_map);
 			});
 
@@ -609,31 +643,66 @@
 			}); 
 		}
 
-
+		//200403 추가 라인클릭시 정보창 오픈
+		var showPathInfo = (function(){
+            var infoEl = $("#MapPathLineInfo");
+            return{
+                open : function(e){
+					this.close();
+                    infoEl.css({
+                        'marginTop' : -(infoEl.height()*2)+"px",
+						'left' : (e.x)+7-(infoEl.width()/2)+'px',
+						'top' : e.y-7+'px'
+                    });
+                    infoEl.addClass("active");
+                },
+                close : function(){
+                    infoEl.attr('style', '');
+                    infoEl.removeClass("active");
+                }
+            }
+		})();
+		
 		//라인그리기
 		function createLine(_map, _data){
 			var path = new google.maps.Polyline({
 				path: _data,
 				geodesic: true,
-				strokeWidth : 0,
+				strokeWidth : 10, //라인이 너무 좁으면 마우스 클릭이 잘안되서 넓이 넓혀줌
 				strokeOpacity : 0,
 				strokeColor : "#FFFFFF",
 				icons : [
 					{
 						icon: {
-							path: 'M 0,-.1 0,.1',
+							path: 'M 0,-1 0,1',
 							strokeOpacity: 1,
-							scale: 2
+							scale: 1.2
 						},
 						offset: '0',
 						repeat: '8px'
 					}
 				]
 			});
+
+			//200403 추가 라인클릭시 오픈
+			path.addListener('click', function(event){
+				showPathInfo.open(event.rb);
+			});
+
+			//마우스오버시 색상변경 - 필요 없을시 삭제
+			path.addListener("mouseover", function(){
+				this.setOptions({
+					strokeColor : '#cddc39',
+				});
+			});
+			path.addListener("mouseout", function(){
+				this.setOptions({
+					strokeColor : '#ffffff'
+				});
+			});
 			path.setMap(_map);
 		}
 		
-
 		//map 관련 UI 
 		function ui_mapDetail(){
 			var mapContent = $(".MapDetail__content");

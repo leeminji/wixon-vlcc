@@ -787,12 +787,15 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 .DataDivTable__2 .thead{position: absolute;left:0;right:0;top:0;border-bottom: 1px solid #2d4456;}
 .DataDivTable__2 .tbody_scroll{
     position: absolute;
-    left:0;right:0;top:32px;bottom:0;
+    left:0;right:0;top:1.2em;bottom:0;
     overflow-y: auto;
 }
+.DataDivTable__2 .empty{text-align: center;padding:.3em}
+.DataDivTable__2 .empty span{font-size:0.8em;color:#eee;}
 
 /* #ToolsDataFleet{position: absolute;left:0;right:0;bottom:0px;top:0} */
-#ToolsDataFleet .cell{width:30px}
+#ToolsDataFleet{position: absolute;left:0;right:0;top:0;bottom:0;}
+#ToolsDataFleet .cell{width:30px;line-height:1em;padding:.3em .4em;font-size:0.8em}
 #ToolsDataFleet .col1{}
 #ToolsDataFleet .col2{width:20px;}
 #ToolsDataFleet .col3{width:100px;}
@@ -801,7 +804,8 @@ a[class*="__button_"].TotalMenu__button_menu:hover{opacity:1;}
 #ToolsDataFleet .col6{width:50px;}
 #ToolsDataFleet .col7{width:30px;}
 #ToolsDataFleet .col8{width:50px;}
-
+#ToolsDataFleet .CheckBox > input{top:0px}
+#ToolsDataFleet .CheckBox .txt{vertical-align: middle;}
 
 .DataTable__move{position:absolute;right:0;top:1em;line-height:2em}
 .DataTable__move a{text-align:left;display:inline-block;width:1em;height:1em;text-indent:-9999999px;background-position: center;background-repeat: no-repeat;background-size: 1em auto;}
@@ -1513,14 +1517,14 @@ a.DataSetting__button_win.isLeftTop{left:0;top:0;border-bottom:1px solid #233748
     position:absolute;
     left:50%;
     top:50%;
-    margin-left:-12em;
     display: inline-block;
-    border-radius: .5em;
+    border-radius: .3em;
     border: 1px solid #484a4c;
-    background:#13191e;
+    background:rgba(0,0,0,0.4);
     text-decoration: none;
     box-shadow: 0 0 10px #222;
-    width:24em;
+    width:18em;
+    margin-left:-9em;
     opacity:0;
     z-index:-1;
 }
@@ -1534,14 +1538,14 @@ a.DataSetting__button_win.isLeftTop{left:0;top:0;border-bottom:1px solid #233748
 .MapShipInfo:before{content: '';display: block;position: absolute;left: 50%;margin-left:-10px;top: 100%;width: 0;height: 0;border: 10px solid transparent;border-top-color: #484a4c;}
 .MapShipInfo__inner{padding:1em;position: relative;}
 .MapShipInfo__close{display:block;overflow:hidden;z-index:1000;text-indent:-9999px;position: absolute;right:.5em;top:.5em;width:2em;height: 2em;background:url(../images/map/icon/icon_map_close.png) no-repeat center;}
-.MapShipInfo__title{padding-top:.5em;padding-left:2em;position:relative;color:#ffffff;border-bottom:1px solid #3d4a54;padding-bottom:.5em;}
+.MapShipInfo__title{position:relative;padding-top:.5em;padding-left:2em;position:relative;color:#ffffff;border-bottom:1px solid #3d4a54;padding-bottom:.5em;}
 .MapShipInfo__title.noMark{padding-left:0}
 .MapShipInfo__title .mark{position: absolute;left:0;top:0.3em}
-.MapShipInfo__title .name{font-size:1.5em;letter-spacing:-1px;background: url(../images/map/icon/img_ship.png) left center no-repeat;padding-left:1.2em;}
+.MapShipInfo__title .name{font-size:1.2em;letter-spacing:-1px;background: url(../images/map/icon/img_ship.png) left center no-repeat;padding-left:1em;background-size: 1.2em auto;}
 .MapShipInfo__title .name.noImg{background:none;padding-left:.3em}
-.MapShipInfo__title .date{padding-left:.5em;font-size:0.875em;padding-top:.5em}
-.MapShipInfo__title .cate{padding-left:.5em;font-size:0.875em;padding-top:.5em}
-.MapShipInfo__title .etc{position: absolute;right:3em;bottom:.5em;}
+.MapShipInfo__title .date{padding-left:.5em;font-size:0.8em;padding-top:0em}
+.MapShipInfo__title .cate{padding-left:.5em;font-size:0.8em;padding-top:.5em}
+.MapShipInfo__title .etc{position: absolute;right:0.5em;top:0}
 .MapShipInfo__title .etc span{display:block;text-align: left;font-size:0.825em;line-height:1.1em;letter-spacing:-1px;}
 
 .MapShipInfo__data{padding-top:.5em;padding-left:1em;padding-right:1em;position:relative;color:#ffffff;border-bottom:1px solid #3d4a54;padding-bottom:.5em;overflow:hidden;}
@@ -1551,12 +1555,46 @@ a.DataSetting__button_win.isLeftTop{left:0;top:0;border-bottom:1px solid #233748
 
 .MapShipInfo__list{padding-top:.5em}
 .MapShipInfo__list.big{font-size:1.1em}
-.MapShipInfo__list li{position:relative;padding-left:7em;font-size:0.8em}
-.MapShipInfo__list .tit{position: absolute;left:0;top:0;text-align: right;width:6em;color:#a9a9a9;font-weight: bold;}
-.MapShipInfo__list .txt{color:#fff}
+.MapShipInfo__list li{position:relative;padding-left:5em;font-size:0.8em;margin:.2em 0}
+.MapShipInfo__list .tit{display: block;width:4em;line-height: 1.1em;position: absolute;left:0;top:0;text-align: right;color:#a9a9a9;letter-spacing: -.5px;}
+.MapShipInfo__list .txt{display: block;color:#fff;line-height: 1.1em;}
 .MapShipInfo__list .txt.right{position: absolute;right:1.5em;top:0}
 .MapShipInfo__list .signal .txt{color:#b4ff00;font-size:1.2em}
 .MapShipInfo__list .signal.cWhite .txt{color:#fff}
+
+
+/* MapPathLineInfo */
+.MapPathLineInfo{
+    position:absolute;
+    left:50%;
+    top:50%;
+    display: inline-block;
+    border-radius: .3em;
+    border: 1px solid #2d4e72;
+    background:rgba(21,54,89,0.5);
+    text-decoration: none;
+    box-shadow: 0 0 10px #222;
+    width:8em;
+    margin-left:-4em;
+    opacity:0;
+    z-index:-1;
+}
+.MapPathLineInfo.active{
+    opacity:1;
+    z-index:100;
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s;
+}
+.MapPathLineInfo:after{
+    content: ''; display: block;
+    position: absolute; left: 50%; margin-left:-9px;top: 100%;width: 0;height: 0;border: 9px solid transparent;border-top-color: rgba(21,54,89,0.5);
+}
+.MapPathLineInfo:before{
+    content: '';display: block;
+    position: absolute;left: 50%;margin-left:-10px;top: 100%;width: 0;height: 0;border: 10px solid transparent;border-top-color: #2d4e72;}
+.MapPathLineInfo__inner{padding:.5em .8em;position: relative;}
+.MapPathLineInfo__close{display:block;overflow:hidden;z-index:1000;text-indent:-9999px;position: absolute;right:0em;top:0em;width:2em;height: 2em;background:url(../images/map/icon/icon_map_close.png) no-repeat center;opacity: 0.5;}
+.MapPathLineInfo__list li{color:#a9a9a9;margin:0.2em 0;font-size:0.8em;line-height:1.1em}
 
 /* MapShipOver */
 .MapShipOver{
@@ -1564,7 +1602,7 @@ a.DataSetting__button_win.isLeftTop{left:0;top:0;border-bottom:1px solid #233748
     left:50%;
     top:50%;
     display: inline-block;
-    border-radius: .5em;
+    border-radius: .3em;
     border: 1px solid #484a4c;
     background:#13191e;
     text-decoration: none;
@@ -1589,9 +1627,9 @@ a.DataSetting__button_win.isLeftTop{left:0;top:0;border-bottom:1px solid #233748
 .MapShipOver__content span.right{padding-left:2em}
 
 /* MapDetail */
-.MapDetail{position: absolute;width:10em;right:11.5em;top:1em;border-radius: 0.2em;background: rgba(255,255,255,0.2);border: 1px solid rgba(255, 255, 255, 0.3);}
+.MapDetail{position: absolute;width:16em;right:11.5em;top:1em;border-radius: 0.2em;background: rgba(255,255,255,0.2);border: 1px solid rgba(255, 255, 255, 0.3);}
 .MapDetail__list:after{content:'';display:block;clear: both;}
-.MapDetail__list a{display: block;float:left;width:50%;color:#ddd;text-align: center;opacity: 0.5;}
+.MapDetail__list a{display: block;float:left;width:25%;color:#ddd;text-align: center;opacity: 0.5;}
 .MapDetail__list a.active{color:#fff;background: rgba(255,255,255,0.4);opacity: 1;}
 .MapDetail__list a span{display: block;padding:.4em 0;font-size:0.875em;border-left:1px solid rgba(255, 255, 255, 0.3);}
 .MapDetail__list a:first-child span{border-left:0}
@@ -1650,8 +1688,8 @@ a.DataSetting__button_win.isLeftTop{left:0;top:0;border-bottom:1px solid #233748
 .Layout__tools.isLogo:after{content:'';display:block;width:6em;height:2em;background: url(../images/common/logo_eq.png) center no-repeat;background-size:auto 2em;position: absolute;right:0;top:-2.2em}
 .Layout__toolsMap{position: absolute;right:30em;left:0;top:0;bottom:0}
 .Layout__toolsInfo{position: absolute;width:30em;right:0;top:0;bottom:0;}
-.Layout__toolsMenu{position: absolute;width:20em;left:0;top:0;bottom:0;}
-.Layout__toolsContent{position: absolute;left:20em;right:0;top:0;bottom:0}
+.Layout__toolsMenu{position: absolute;width:16em;left:0;top:0;bottom:0;}
+.Layout__toolsContent{position: absolute;left:16em;right:0;top:0;bottom:0}
 .Layout__toolsPosition{position: absolute;width:25em;right:50%;left:0;top:51px;bottom:0;}
 .Layout__toolsNetIncome{position: absolute;width:30em;right:50%;left:25em;top:51px;bottom:0;}
 .Layout__toolsMapSchedule{position: absolute;right:0;left:55em;top:51px;bottom:0;}
@@ -1829,13 +1867,14 @@ a.DataSetting__button_win.isLeftTop{left:0;top:0;border-bottom:1px solid #233748
 .ToolsContent__link .link .close{overflow:hidden;text-indent:-999px;display:block;width:1em;height:1em;position: absolute;right:.3em;top:50%;margin-top:-.5em;background:url(../images/icon/icon_link_close.png) center no-repeat}
 
 .ToolsContent__content{position: absolute;left:0;right:0;bottom:0px;top:68px;background:url(../images/common/bg01.png) center no-repeat;background-size: cover;}
-.ToolsContent__content > .ToolsMap{position: absolute;left:50%;right:0;bottom:0px;top:0;}
+.ToolsContent__content > .ToolsMap{position: absolute;left:30%;right:0;bottom:0px;top:0;}
 .ToolsContent__content > .ToolsMap:after{content:'';position: absolute;left:0;bottom:0px;top:0;width:1px;background:#000}
 .ToolsContent__content > .ToolsMap:before{content:'';position: absolute;left:-1px;bottom:0px;top:0;width:1px;background:#2d3b4a}
-.ToolsContent__content > .ToolsData{position: absolute;width:50%;left:0;bottom:0px;top:0;}
+.ToolsContent__content > .ToolsData{position: absolute;width:30%;left:0;bottom:0px;top:0;overflow-y: hidden;overflow-x:auto}
+
 
 /* InputUnit */
-.InputUnit{position: relative;display: inline-block}
+.InputUnit{position: relative;display: inline-block;}
 .InputUnit .unit{position: absolute;right:.5em;top:0;color:#fff;line-height:2em;}
 
 /* Voyages */
@@ -2020,9 +2059,14 @@ a.DataSetting__button_win.isLeftTop{left:0;top:0;border-bottom:1px solid #233748
 .Layout__feetlist{position: absolute;left:0;top:0em;bottom:0;right:0}
 .Layout__feetlist__title{position: absolute;top:-2em;left:50%;right:0;text-align: center;width:20em;margin-left:-10em;}
 .Layout__feetlist__title span{color:#667688;font-size:1.8em;text-transform: uppercase;font-weight: bold;}
-.Layout__feetlist__box{position: relative;position: absolute;top:0;bottom:0;right:0;box-sizing: border-box;}
-.Layout__feetlist__box.map{width:45em;}
-.Layout__feetlist__box.data{right:46em;overflow-y: auto;padding-right: .5em;}
+.Layout__feetlist__box{position: relative;position: absolute;top:0;bottom:0;box-sizing: border-box;}
+.Layout__feetlist__box.map{width:60%;right:0;}
+.Layout__feetlist__box.data{width:39%;left:0;overflow-x:auto;overflow-y: hidden;}
+
+#FleetListTable{width:50em;position: absolute;left:0;right:0;top:2em;bottom:0;}
+#FleetListTable .DataTable__top{}
+#FleetListTable .DataTable__content{height:93%;width:100%}
+#FleetListTable table th{border-bottom-width:0}
 
 /* SearchList01 */
 .SearchList01 ul{overflow: hidden;margin-right:-1px}

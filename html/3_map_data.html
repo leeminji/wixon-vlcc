@@ -123,7 +123,7 @@
 					<div class="mark"><span class="icon icon_marker"></span></div>
 					<div class="name">Yuan Qiu Hu</div>
 					<div class="date">Canaport 21 Sep 19</div>
-					<div class="etc"><span>308.371</span><span>2015</span><span>23.0</span><span>Scrubber fitted</span></div>
+					<div class="etc"><span>308.371</span><span>2015</span><span>Scrubber fitted</span></div>
 				</div>
 				<div class="MapShipInfo__content">
 					<ul class="clear MapShipInfo__list">
@@ -155,8 +155,12 @@
 		<!-- MapDetail -->
 		<div class="MapDetail" id="MapDetail">
 			<div class="MapDetail__list">
-				<a href="#MapDetailMap"><span>Map</span></a>
-				<a href="#MapDetailWeather"><span>Weather</span></a>
+				<div class="MapDetail__list">
+					<a href="#MapDetailMap"><span>Map</span></a>
+					<a href="#MapDetailWeather"><span>Weather</span></a>
+					<a href="#MapDetailStorm"><span>Storm</span></a>
+					<a href="#MapDetailRoute"><span>Route</span></a>
+				</div>
 			</div>
 			<div class="MapDetail__content">
 				<div class="MapDetail__inner" id="MapDetailMap">
@@ -175,6 +179,18 @@
 				<div class="MapDetail__inner" id="MapDetailWeather">
 					weather...
 				</div>
+				<div class="MapDetail__inner" id="MapDetailStorm">
+					Storm...
+				</div>
+				<div class="MapDetail__inner" id="MapDetailRoute">
+					<div class="MapDetail__title"><span>Layers</span></div>
+					<ul class="clear">
+						<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox" checked><span></span></label> <span class="label">Suez Canal</span></li>
+						<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox"><span></span></label> <span class="label">Malacca Strait</span></li>
+						<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox"><span></span></label> <span class="label">Sunda Strait</span></li>
+						<li class="row"><label class="SlideCheckbox smaller"><input type="checkbox"><span></span></label> <span class="label">Taiwan Strit</span></li>
+					</ul>
+				</div>	
 			</div>
 		</div>
 		<!-- //MapDetail -->

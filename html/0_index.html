@@ -8,6 +8,12 @@
 	<meta name="author" content="">
 	<title>SELINE SIGN IN - VLCCLAB Dashboard</title>
 	<link rel="shortcut icon" type="image/x-icon" href="../_public/favicon.ico" />
+	<!-- 파비콘추가 -->
+	<link rel="icon" href="../_public/favicon/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" href="../_public/favicon/favicon-64x64.png" sizes="64x64" />
+	<link rel="icon" href="../_public/favicon/favicon-128x128.png" sizes="128x128" />
+	<link rel="icon" href="../_public/favicon/favicon-152x152.png" sizes="152x152" />
+	<!-- //파비콘추가 -->
 	<!-- stylesheet -->
 	<link href="../_public/vendor/scrollbar/scrollbar.css" rel="stylesheet" type="text/css" />
 	<link href="../_public/css/style.css" rel="stylesheet" type="text/css" />
@@ -54,6 +60,42 @@
 										<span class="txt">Map</span>
 									</a>
 								</li>
+								<li data-title="VESSEL">
+									<a href="3_map.html">
+										<span class="icon icon_anchor on"></span>
+										<span class="txt">VESSEL</span>
+									</a>
+								</li>
+								<li data-title="DISTANCE">
+									<a href="3_map.html">
+										<span class="icon icon_distance on"></span>
+										<span class="txt">DISTANCE</span>
+									</a>
+								</li>
+								<li data-title="TCE CALCULATOR">
+									<a href="3_map.html">
+										<span class="icon icon_calculator on"></span>
+										<span class="txt">TCE CALCULATOR</span>
+									</a>
+								</li>
+								<li data-title="FLEET LIBRARY">
+									<a href="#">
+										<span class="icon icon_ship on"></span>
+										<span class="txt">FLEET LIBRARY</span>
+									</a>	
+								</li>
+								<li data-title="RESEARCH">
+									<a href="#">
+										<span class="icon icon_board on"></span>
+										<span class="txt">RESEARCH</span>
+									</a>	
+								</li>
+								<li data-title="MY FLEET">
+									<a href="#">
+										<span class="icon icon_favor on"></span>
+										<span class="txt">MY FLEET</span>
+									</a>	
+								</li>
 								<li data-title="Spot Charter">
 									<a href="4_spot_charter.html">
 										<span class="icon icon_compass on"></span>
@@ -62,19 +104,10 @@
 									<ul class="clear TotalMenu__sublist">
 										<li><a href=""><span class="txt">Position list</span></a></li>
 										<li><a href=""><span class="txt">Nowcast</span></a></li>
+										<li><a href=""><span class="txt">TCE CALCULATOR</span></a></li>
 										<li><a href=""><span class="txt">Pattern</span></a></li>
 										<li><a href=""><span class="txt">Analysis</span></a></li>
 									</ul>
-								</li>
-								<li data-title="Tool">
-									<a href="#">
-										<span class="icon icon_ruler on"></span>
-										<span class="txt">Tool</span>
-									</a>
-									<ul class="clear TotalMenu__sublist">
-										<li><a href=""><span class="txt">TCE Estimation</span></a></li>
-										<li><a href=""><span class="txt">Distance</span></a></li>
-									</ul>					
 								</li>
 								<li data-title="Market Report">
 									<a href="#">
@@ -84,8 +117,7 @@
 									<ul class="clear TotalMenu__sublist">
 										<li><a href=""><span class="txt">Freight Assessment</span></a></li>
 										<li><a href=""><span class="txt">Tonne Miles</span></a></li>
-										<li><a href=""><span class="txt">Fleet Study</span></a></li>
-										<li><a href=""><span class="txt">Bunker</span></a></li>
+										<li><a href=""><span class="txt">FLEET STUDY</span></a></li>
 									</ul>					
 								</li>
 								<li data-title="OIL">
@@ -96,18 +128,10 @@
 									<ul class="clear TotalMenu__sublist">
 										<li><a href=""><span class="txt">Flow</span></a></li>
 										<li><a href=""><span class="txt">Inventory</span></a></li>
-										<li><a href=""><span class="txt">Weekly Report</span></a></li>
+										<li><a href=""><span class="txt">REFINERY</span></a></li>
 									</ul>					
 								</li>
-								<li data-title="My Fleet">
-									<a href="#">
-										<span class="icon icon_ship on"></span>
-										<span class="txt">My Fleet</span>
-									</a>
-									<ul class="clear TotalMenu__sublist">
-										<li><a href=""><span class="txt">Management</span></a></li>
-									</ul>		
-								</li>
+
 								<li data-title="Mailing">
 									<a href="9_mail.html">
 										<span class="icon icon_mail on"></span>
@@ -150,7 +174,8 @@
 						</section>
 						<!-- //LoginArea__form -->
 						<footer class="FooterArea">
-							<div class="copyright"><span>@ 2019 All Rights Reserved VLCC LAB</span></div>
+							<div class="copyright"><span>@ 2020 All Rights Reserved Seoul Line Corporation Ltd.</span></div>
+							<div class="terms"><a href="javascript:;" class="js-popup-open">VLCCLAB Terms of Use</a></div>
 							<!-- 200303추가 -->
 							<div class="DownloadApp">
 								<a href="#" class="DownloadApp__button Button__ios"><span class="skip">app store</span></a>
@@ -172,6 +197,38 @@
 			<!-- //LoginArea -->
 		</div>
 		<!-- //Layout__container -->
+		<!-- TermsView -->
+		<div class="TermsView" id="TermsView">
+			<div class="TermsView__inner">
+				<a href="javascript:;" class="TermsView__button_close js-popup-close"><span class="icon icon_close_black"></span><span class="skip">닫기</span></a>
+				<div class="TermsView__top">
+					<div class="title">VLCCLAB Terms of use </div>
+				</div>
+				<div class="TermsView__content">
+					<div class="TermsView__content__inner">
+						<p>Data provided in VLCCLAB is for your general information and is not intended to be relied upon by you in making, or not making any investment decisions.</p>
+						<p>Multiple sources of information and analysis should always be combined before making an investment decision. If in doubt it is best to seek independent financial advice before taking action.</p>
+						<p>The information provided her is for an overview of the shipping and financial markets and should not be combined with other sources to form an index. The data is not to be traded against in physical form or in a futures environment.</p>
+						<p>VLCCLAB and Seoul Line Corporation accept no liability for any losses experienced as a result of investments entered based on the information provided here.</p>
+						<p>VLCCLAB is developed in partnership with and provided by Wixon Associates inc.</p>
+						<p>By continuing to access or use this website, you expressly acknowledge and agree to these terms and conditions set out below (“Terms of Use“).</p>
+						<p>1. Seoul Line Corporation may update or change these Terms of Use at any time and without prior notice to you, so you should review these terms and conditions whenever accessing or using this website.</p>
+						<p>2. All information and material displayed on the VLCCLAB are the property of Seoul Line Corporation and Seoul Line Corporation is subject to copyright. You are entitled to view, copy and print any documents from this website but only for your own internal business purposes. You acquire absolutely no rights or licenses in or to the website or the materials contained within the website other than the limited right to use the website in accordance with these Terms of Use. Any sale, transmission or redistribution of this website or its content, and any copying, modification or other use of this website or its content for any purposes other than your own internal business purposes, are strictly prohibited.</p>
+						<p>3. You may not copy, reproduce, recompile, decompile, disassemble, reverse engineer, distribute, publish, display, perform, modify, upload to, create derivative works from, transmit or in any way exploit all or any part of the website, except as expressly provided in this website terms of use. The contents of the website may not be recirculated, redistributed, resold or published by you without prior written consent and the permission of Seoul Line Corporation. If you download any information or software from this website, you agree that you will not copy it or remove or obscure any copyright or other notices or legends contained in any such information. Modification of the website content would be a violation Seoul Line Corporation copyright and other proprietary rights. You may not use this website for any illegal purpose or in any manner inconsistent with applicable law or this website terms of use. You may not offer any part of the website for sale or distribute it over any other medium including but not limited to television or radio broadcast, a computer network or hyperlink framing on the internet without the prior written consent of Seoul Line Corporation. You may not use any of Seoul Line Corporation and VLCCLAB trademarks, trade names or service marks in a manner that suggests that such names and marks belong to or are associated with you or are used with our consent, and you acknowledge that you have no ownership rights in and to any of these names and marks.</p>
+						<p>4. You may not use the content to develop, support, create or provide: (i) any pricing or (ii) any index.</p>
+						<p>5. This website is provided solely for information purposes and, with the exception of these Terms of Use or as otherwise indicated, is not intended to, and shall not, constitute any offer or acceptance with the respect to any transactions or other matters. Except for these Terms of Use, this website shall not create any legal relationship between you and Seoul Line Corporation. This website and the information and material which it contains are subject to change at any time by Seoul Line Corporation without notice and Seoul Line Corporation reserves the right to suspend, terminate or restrict your access to or use of this website.</p>
+						<p>6. This website is provided “AS IS” without any warranty of any kind, express or implied, including, but not limited to, any implied warranty of merchantability, fitness for a particular purpose, accuracy or completeness of the information contained on this website or in respect of any materials or products referred to on this website, or non-infringement. Seoul Line Corporation does not warrant that the website is compatible with your equipment or that the website is free of errors, viruses or worms. In no event shall Seoul Line Corporation be liable for any damage you may suffer as a result of such destructive features. All warranties, whether express or implied, are hereby excluded to the extent permitted by law.</p>
+						<p>7. Seoul Line Corporation and its directors, officers, and employees shall, to the extent permitted by law, have no liability, contingent or otherwise, whether caused by the negligence of its employees, or otherwise, to you or to third parties for the accuracy, timeliness, completeness, reliability, performance or continued availability of this website or for delays or omissions therein, including, but not limited to, inaccuracies or errors in or omissions from quotes and financial data. Seoul Line Corporation shall have no responsibility to maintain the information or services made available on this website or to supply any corrections or updates in connection with such information or services. In no event will Seoul Line Corporation be liable to you for any direct, special, indirect, incidental, punitive or consequential damages (including, without limitation, loss of business, loss of profit, loss or corruption of data, loss of goodwill or reputation or wasted management time) which may be incurred or experienced on account of your using or relying on this website or any information or link on it, even if Seoul Line Corporation has been advised of the possibility of such damages. Any limitations or restrictions on liability in these Terms of Use shall only apply to the extent permitted by applicable law. In no event shall Seoul Line Corporation total liability to you for all damages, losses and causes of action (whether in contract or tort, including but not limited to, negligence) exceed the amount paid by you, if any, for accessing this website.</p>
+						<p>8. Nothing set forth in this website should be construed as a recommendation to purchase or sell any product or instrument or to enter into any transaction, or as a representation that any particular product or instrument is suitable or appropriate for you. Many of the products described in this website involve significant risks and you should not enter into any transactions unless you fully understand all of these risks and have independently determined that the risks are acceptable to you and that the transactions are appropriate for you in light of your objectives, experience, financial and operational resources and other relevant circumstances. Any discussion of risks contained in this website, however, should not be considered to be a disclosure of the risks of particular transactions, or a complete discussion of the risks which are mentioned. You should not construe any of the material contained in this website as business, financial, investment, hedging, trading, legal, regulatory, tax or accounting advice and you should not make this website the primary basis for any trading decisions.</p>
+						<p>9 .You agree, at your own expense, to indemnify, defend and hold harmless Seoul Line Corporation and its employees, against any claim, suit, action or other proceeding against Seoul Line Corporation and its employees, by a third party, to the extent that such claim, suit, action or other proceeding is based on or arises in connection with your use of the website, or any links on the website. You agree to pay any and all costs, damages and expenses, including, but not limited to, reasonable attorneys’ fees and costs awarded against or otherwise incurred by or in connection with or arising from any such claim, suit, action or proceeding attributable to any such claim. These Terms of Use shall be governed by, and construed in accordance with, the laws of Norway. The user of this website agrees that by using this web they submit to the jurisdiction Norway for the enforcement of the terms of this Website Terms of Use and any disputes related to same and agrees to service of process by mail.</p>
+						<p>10. Seoul Line Corporation does not intend the information provided on this site to be distributed to, or used by, any person or entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation or which would subject Seoul Line Corporation or its affiliates to any registration requirement within such jurisdiction or country. Neither the information, nor any opinion contained in this site constitutes a solicitation or offer by Seoul Line Corporation or its affiliates to buy or sell any securities, futures, options or other financial instruments or provide any investment advice or service.</p>
+						<p>11. Although the information provided to you on this site is obtained or compiled from sources, we believe to be reliable, Seoul Line Corporation cannot and does not guarantee the accuracy, validity, timeliness or completeness of any information or data made available to you for any particular purpose. Neither Seoul Line Corporation, nor any of its directors, officers, employees will be liable or have any responsibility of any kind for any loss or damage that you incur in the event of any failure or interruption of this site, or resulting from the act or omission of any other party involved in making this site or the data contained therein available to you, or from any other cause relating to your access to, inability to access, or use of the site or these materials, whether or not the circumstances giving rise to such cause may have been within the control of Seoul Line Corporation or of any vendor providing software or services support.</p>
+					</div>
+				</div>
+			</div>
+			<div class="TermsView__blind"></div>
+		</div>
+		<!-- //TermsView -->
 		<!-- footer -->
 		<footer class="Layout__footer"></footer>
 		<!-- //footer -->
@@ -181,5 +238,18 @@
 	<script type="text/javascript" src="../_public/js/jquery-ui.js"></script>
 	<script type="text/javascript" src="../_public/vendor/scrollbar/jquery.scrollbar.js"></script>
 	<script type="text/javascript" src="../_public/js/ui.js"></script>
+	<script>
+		$(document).ready(function(){
+			//임의설정
+			$(".js-popup-open").on("click", function(e){
+				e.preventDefault();
+				uiSettingPopup.open("TermsView");
+			});
+			$(".js-popup-close").on("click", function(e){
+				e.preventDefault();
+				uiSettingPopup.close("TermsView");
+			});
+		});
+	</script>
 </body>
 </html>

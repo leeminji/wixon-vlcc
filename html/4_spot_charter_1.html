@@ -168,8 +168,37 @@
 							<a href="4_spot_charter_3.html" class="TopSectionTab__item"><span>UKC/MED</span></a>
 							<a href="4_spot_charter_4.html" class="TopSectionTab__item"><span>AMERICA</span></a>
 						</div>
-						<!-- //TopSectionTab -->				
-						<div class="Layout_spotChartRow">
+						<!-- //TopSectionTab -->
+						<!-- 2004020 컨텐츠 풀 사이즈 보이기 -->
+						<div class="spotChartArea__full" id="SpotChartAreaFull">
+							<div class="spotChartArea__full_map">
+								<div class="BoxArea01 BoxFull">
+									<a href="javascript:;" onclick="uxDataWinPopup(false);" class="DataSetting__button_win isLeftTop"><span>새창</span></a>
+									<div id="totalMapFull" class="MapTotalSize no_border"></div>
+								</div>
+							</div>
+							<div class="spotChartArea__full_data">
+								<div class="BoxArea01 BoxFull">
+									<a href="javascript:;" onclick="uxMapWinPopup(false);" class="DataSetting__button_win isLeftTop"><span>새창</span></a>
+									<div class="inner">
+										<div id="DataAreaFull"></div>
+									</div>
+								</div>
+							</div>
+							<div class="spotChartArea__full_chart" id="chartAreaFull">
+								<div class="BoxArea01">
+									<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
+									<div class="inner">
+										<div id="chart1_full_legend" class="chartjs-legend white"></div>
+										<div id="chart1_full_title" class="chartjs-title middle white center"><span>VLCC FLOW (BSS FUJAIRAH)</span></div>
+										<canvas id="chart1_full" class="chartjs-canvas"></canvas>
+									</div>
+								</div>
+							</div>					
+						</div>
+						<!-- //2004020 컨텐츠 풀 사이즈 보이기 -->
+						
+						<div class="Layout_spotChartRow" id="SpotChartAreaNormal">
 							<div class="Layout_spotChartArea fixed_left">
 								<!-- 맵 -->
 								<div class="SpotChartArea__map">
@@ -177,7 +206,7 @@
 										<!-- 구글맵 영역 -->
 										<div id="totalMap" class="MapTotalSize no_border">지도영역</div>
 										<!-- //구글맵 영역 -->
-										<a href="javascript:;" onclick="ui_window('./3_map_popup.html', 'full', 'full');" class="DataSetting__button_win isRightBottom"><span>새창</span></a>
+										<a href="javascript:;" onclick="uxMapWinPopup(true);" class="DataSetting__button_win isRightBottom"><span>새창</span></a>
 									</div>
 								</div>
 								<!-- //맵 -->
@@ -197,9 +226,9 @@
 							</div>
 							<div class="Layout_spotChartArea fixed_right">
 								<!-- 데이터 -->
-								<div class="SpotChartArea__data">
+								<div class="SpotChartArea__data" id="SpotChartAreaData">
 									<div class="BoxArea01">
-										<a href="javascript:;" onclick="ui_window('./4_spot_charter_1_popup.html', 1000, 800, 1000);" class="DataSetting__button_win isLeftTop"><span>새창</span></a>
+										<a href="javascript:;" onclick="uxDataWinPopup(true);" class="DataSetting__button_win isLeftTop"><span>새창</span></a>
 										<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
 										<!-- //js-scrollbar 제거했습니다. 확인해주세요. -->
 										<div class="inner">
@@ -994,6 +1023,10 @@
 				tableEl_content.height(content_h);
 			});
 		}
+
+		//팝업창제어
+		var childPopup = null;
+		
 		//윈도우팝업
 		function ui_window(_url, _width, _height, _left, _top){
 			var popupH = _height == 'full' ? screen.height*0.9 : _height;
@@ -1003,8 +1036,82 @@
 			if( _width == 'full' ) popupX = 0;
 			if( _height == 'full' ) popupY = 0;
 			var option="resizable=no, scrollbas=yes,status=no,width="+popupW+",height="+popupH+",left="+popupX+",top="+popupY;
-			window.open(_url, 'portData', option);
-		}		
+
+			return window.open(_url, 'portData', option);
+		}
+
+		//맵 팝업
+		function uxMapWinPopup(isActive){
+			var el = $("#SpotChartAreaFull");
+			if(isActive){
+				el.addClass("active");
+				//팝업띄우기
+				childPopup = ui_window('./3_map_popup.html', 'full', 'full');
+				childPopup.onload = function(){
+					var cancleButton = childPopup.document.querySelector(".PopupArea__button > a");
+					cancleButton.addEventListener("click", function(e){
+						resetWinPop();
+					});
+				};
+				//기존 데이터 안보이게 설정.
+				$("#SpotChartAreaNormal").css('display', 'none');
+
+				//차트 영역 활성화
+				el.find(".spotChartArea__full_data").addClass("active");
+				
+				//차트데이터 불러오기
+				$("#DataAreaFull").load("4_spot_charter_datatable.html", function(){
+					$(".js-scrollbar").scrollbar();
+					uxTableScroll($(".SpotTableData"));
+				});	
+			}else{ 
+				resetWinPop() 
+			}
+		}
+
+		//데이터 팝업
+		function uxDataWinPopup(isActive){
+			var el = $("#SpotChartAreaFull");
+			if(isActive){
+				el.addClass("active");
+
+				//기존 데이터 안보이게 설정.
+				$("#SpotChartAreaNormal").css('display', 'none');
+
+				//맵 불러오기
+				el.find(".spotChartArea__full_map").addClass("active");
+				
+				window.uiGooglMap.initGoogleMap("totalMapFull");
+
+				//팝업띄우기
+				childPopup = ui_window('./4_spot_charter_1_popup.html', 1000, 800, 1000);
+				childPopup.onload = function(){
+					var cancleButton = childPopup.document.querySelector(".PopupArea__button > a");
+					cancleButton.addEventListener("click", function(e){
+						resetWinPop();
+					});
+				};
+			}else{ 
+				resetWinPop();
+			}
+		}
+
+		//리셋
+		function resetWinPop(){
+			var el = $("#SpotChartAreaFull");
+			if( childPopup != null ) {
+				childPopup.window.close();
+			}	
+			el.removeClass("active");
+			$("#SpotChartAreaNormal").css('display', 'block');
+			el.find(".spotChartArea__full_data").removeClass("active");
+			el.find(".spotChartArea__full_map").removeClass("active");
+			$("#DataAreaFull").empty();
+			$("#totalMapFull").empty();
+
+			$(".js-scrollbar").scrollbar();
+			uxTableScroll($(".SpotTableData"));		
+		}
 	</script>
 	<!-- 차트js추가 -->
 	<script type="text/javascript" src="../_public/vendor/chartjs/moment.min.js"></script>
@@ -1022,7 +1129,8 @@
 			// ratio : 크기조절
 
 			//VLCC FLOW (BSS FUJAIRAH)
-			ChartUtil.initStackedChart('chart1', lineChartData_7, 10, false, 2.5);
+			ChartUtil.initStackedChart('chart1', lineChartData_7, 10, false, 3.5);
+			ChartUtil.initStackedChart('chart1_full', lineChartData_7, 10, false, 6.5);
 			
 			//FREIGHT ASSESSMENT
 			ChartUtil.initLineChart('chart2', lineChartData_20, false, 0, 2.5);

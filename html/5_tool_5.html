@@ -149,27 +149,11 @@
 				<!-- //TopClock -->				
 			</div>	
 			<!-- Tools 대시보드 -->
-			<section class="Layout__content ToolsArea">
+			<section class="Layout__content TceCalculator">
 				<h1 class="skip">tools Contents</h1>
 				<div class="js-scrollbar">
 					<div class="Layout__content__inner padding10">
-						<!-- VesselNotice -->
-						<div class="VesselNotice noFixed" id="VesselNotice">
-							<div class="VesselNotice__item">
-								<div class="VesselNotice__info">
-									<input type="text" value="Dragon (2002, 300k)  /  VLCC  /  Dynacom Tankers" />
-									<ul class="VesselNotice__list" style="display: none;">
-										<li><a href="">Dragon (2002, 300k)  /  VLCC  /  Dynacom Tankers</a></li>
-										<li><a href="">2002</a></li>
-										<li><a href="">2003</a></li>
-										<li><a href="">2004</a></li>
-										<li><a href="">2005</a></li>
-									</ul>
-								</div>
-								<a href="#" class="VesselNotice__close"><span class="skip">close</span></a>
-							</div>
-						</div>
-						<!-- //VesselNotice -->
+
 						<div class="Layout__tools noTab">
 							<!-- ToolsPosition -->
 							<div class="Layout__toolsPosition ToolsPosition" id="ToolsPosition">
@@ -180,7 +164,7 @@
 										<div class="inner p10 m0">
 											<h2 class="ToolsTitle"><span>POSITION</span></h2>
 											<div class="ToolsRow">
-												<label for="txt1" class="ToolsLabel"><span>Open Port</span></label>
+												<label for="txt1" class="ToolsLabel"><span>Open Terminal(Port)</span></label>
 												<span class="ToolsSearch">
 													<input type="text" name="txt1" id="txt1" value="SINGAPORE" />
 													<a href="#" class="button"><span>search</span></a>
@@ -194,7 +178,7 @@
 									</div>
 									<!-- //POSITION -->
 									<!-- ENQUIRY -->
-									<div class="Enquiry ToolsBox line">
+									<div class="Enquiry ToolsBox">
 										<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
 										<div class="inner p10 m0">
 											<h2 class="ToolsTitle"><span>ENQUIRY</span></h2>
@@ -208,136 +192,327 @@
 													<input type="text" name="txt5" id="txt5" value="" class="datepicker" placeholder="mm/dd/yy" size="8" />
 												</div>
 											</div>
+
+											<!-- Load Port -->
+											<div class="pt5 pb5">
+												<div class="ToolsRow">
+													<label class="ToolsLabel"><span>Load Port</span></label>
+													<span class="SelectBox small mb5">
+														<select name="" id="" width="10">
+															<option value="">2</option>
+														</select>
+													</span>
+												</div>
+												<div class="ToolsRow ToolsRow__label4">
+													<span class="ToolsSearch">
+														<input type="text" name="txt4" id="txt4" value="Ras Tanura" />
+														<a href="#" class="button"><span>search</span></a>
+													</span>
+													<span class="ToolsTerminal">
+														<label for="">Terminal</label>
+														<span class="SelectBox small">
+															<select name="" id="" width="10">
+																<option value="">SBM No.1</option>
+															</select>
+														</span>
+													</span>
+												</div>
+												<div class="ToolsRow ToolsRow__label4">
+													<span class="ToolsSearch">
+														<input type="text" name="txt4" id="txt4" value="Mina Al Ahma" />
+														<a href="#" class="button"><span>search</span></a>
+													</span>
+													<span class="ToolsTerminal">
+														<label for="">Terminal</label>
+														<span class="SelectBox small">
+															<select name="" id="" width="10">
+																<option value="">KOTC No.2</option>
+															</select>
+														</span>
+													</span>
+												</div>
+												<div class="ToolsRow ToolsRow__label4">
+													<span class="ToolsSearch">
+														<input type="text" name="txt4" id="txt4" value="Mina Al Ahma" />
+														<a href="#" class="button"><span>search</span></a>
+													</span>
+													<span class="ToolsTerminal">
+														<label for="">Terminal</label>
+														<span class="SelectBox small">
+															<select name="" id="" width="10">
+																<option value="">SBM No.1</option>
+															</select>
+														</span>
+													</span>
+												</div>
+											</div>
+											<!-- //Load Port -->
+
+											<!-- Discharge Terminal(Port)-->
+											<div class="pt5 pb5">
+												<div class="ToolsRow">
+													<label class="ToolsLabel"><span>Discharge Terminal(Port)</span></label>
+													<span class="SelectBox small mb5">
+														<select name="" id="" width="10">
+															<option value="">2</option>
+														</select>
+													</span>
+												</div>
+												<div class="ToolsRow ToolsRow__label4">
+													<span class="ToolsSearch">
+														<input type="text" name="txt4" id="txt4" value="Ras Tanura" />
+														<a href="#" class="button"><span>search</span></a>
+													</span>
+													<span class="ToolsTerminal">
+														<label for="">Terminal</label>
+														<span class="SelectBox small">
+															<select name="" id="" width="10">
+																<option value="">SBM No.1</option>
+															</select>
+														</span>
+													</span>
+												</div>
+												<div class="ToolsRow ToolsRow__label4">
+													<span class="ToolsSearch">
+														<input type="text" name="txt4" id="txt4" value="Mina Al Ahma" />
+														<a href="#" class="button"><span>search</span></a>
+													</span>
+													<span class="ToolsTerminal">
+														<label for="">Terminal</label>
+														<span class="SelectBox small">
+															<select name="" id="" width="10">
+																<option value="">KOTC No.2</option>
+															</select>
+														</span>
+													</span>
+												</div>
+												<div class="ToolsRow ToolsRow__label4">
+													<span class="ToolsSearch">
+														<input type="text" name="txt4" id="txt4" value="Mina Al Ahma" />
+														<a href="#" class="button"><span>search</span></a>
+													</span>
+													<span class="ToolsTerminal">
+														<label for="">Terminal</label>
+														<span class="SelectBox small">
+															<select name="" id="" width="10">
+																<option value="">SBM No.1</option>
+															</select>
+														</span>
+													</span>
+												</div>
+											</div>
+											<!-- //Discharge Terminal(Port)-->
+											<!-- Bunkering Port -->
 											<div class="ToolsRow">
+												<label for="txt4" class="ToolsLabel"><span>Bunkering Port</span></label>
 												<span class="SelectBox small mb5">
 													<select name="" id="" width="10">
-														<option value="">Load Port</option>
+														<option value="">2</option>
+													</select>
+												</span>
+												<span class="SelectBox small mb5">
+													<select name="" id="" width="10">
+														<option value="">2</option>
 													</select>
 												</span>
 												<span class="ToolsSearch">
-													<input type="text" name="txt4" id="txt4" value="" />
-													<a href="#" class="button"><span>search</span></a>
-												</span>	
-											</div>
-											<div class="ToolsRow">
-												<span class="SelectBox small mb5">
-													<select name="" id="" width="10">
-														<option value="">Discharge Port</option>
-													</select>
-												</span>
-												<span class="ToolsSearch">
-													<input type="text" value="" />
-													<a href="#" class="button"><span>search</span></a>
-												</span>	
-											</div>
-											<div class="ToolsRow">
-												<label for="txt4" class="ToolsLabel"><span>Ballast to</span></label>
-												<span class="ToolsSearch">
-													<input type="text" value="" />
+													<input type="text" value="Singapore" />
 													<a href="#" class="button"><span>search</span></a>
 												</span>
 											</div>
+											<!-- //Bunkering Port -->
 										</div>
 									</div>
 									<!-- //ENQUIRY -->
+								</div>
+							</div>
+							<!-- //ToolsPosition -->
+							<!-- ToolsBunker -->
+							<div class="Layout__toolsBunker ToolsBunker" id="ToolsBunker">
+								<div class="BoxArea01 BoxFull dark isScroll">
 									<!-- BUNKER -->
-									<div class="Bunker ToolsBox">
+									<div class="Bunker ToolsBox line">
 										<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
 										<div class="inner p10 m0">
 											<h2 class="ToolsTitle"><span>BUNKER</span></h2>
 											<div class="ToolsRow">
-												<span class="SelectBox block cBlue">
-													<select name="" id="" width="100">
-														<option value="">HSFO</option>
-													</select>
+												<div class="text2 pt5">PRICE</div>
+											</div>
+											<div class="ToolsRow ToolsRow__label5">
+												<label for="bunker1"><span>LSFO</span></label>
+												<span class="inputArea unitArea front">
+													<span class="unit">$</span>
+													<input type="text" id="bunker1" value="80,000" />
 												</span>
-												<div class="text">(HSFO OR LSFO OR  VLSGO)</div>
 											</div>
-											<h2 class="ToolsTitle pt20"><span>Bunker</span></h2>
-											<div class="ToolsRow">
-												<div class="text2">Price</div>
-												<div class="text">HSFO 431 $/ton I LSFO 570 $/ton I VLSGO 600 $/ton I MGO 645 $/ton</div>
+											<div class="ToolsRow ToolsRow__label5">
+												<label for="bunker2"><span>HSFO </span></label>
+												<span class="inputArea unitArea front">
+													<span class="unit">$</span>
+													<input type="text" id="bunker2" value="248,000" />
+												</span>
 											</div>
-											<div class="ToolsRow ToolsRow__label">
-												<label for="bunker1"><span>Ballast</span></label>
-												<input type="text" id="bunker1" value="$ 80,000" />
-											</div>
-											<div class="ToolsRow ToolsRow__label">
-												<label for="bunker2"><span>Laden </span></label>
-												<input type="text" id="bunker2" value="$ 248,000" />
-											</div>
-											<div class="ToolsRow ToolsRow__label">
-												<label for="bunker3"><span>Idle </span></label>
-												<input type="text" id="bunker3" value="$ 22,000" />
-											</div>
-											<div class="ToolsRow ToolsRow__label">
-												<label for="bunker4"><span>Load Port (HSFO or  LSFO or</span></label>
-												<input type="text" id="bunker4" value="$ 8,600" />
-											</div>
-											<div class="ToolsRow ToolsRow__label">
-												<label for="bunker5"><span>Dischare Port (MGO)</span></label>
-												<input type="text" id="bunker5" value="$ 51,000" />
-											</div>
-											<div class="ToolsRow ToolsRow__label">
-												<label for="bunker6"><span>Others (HSFO)</span></label>
-												<input type="text" id="bunker6" value="$ 0" />
-											</div>
-											<div class="ToolsRow ToolsRow__label">
-												<label for="bunker7"><span>Others (LSFO)</span></label>
-												<input type="text" id="bunker7" value="$ 0" />
-											</div>
-											<div class="ToolsRow ToolsRow__label">
-												<label for="bunker8"><span>Others (VLSGO)</span></label>
-												<input type="text" id="bunker8" value="$ 0" />
-											</div>
-											<div class="ToolsRow ToolsRow__label">
-												<label for="bunker9"><span>Others (MGO)</span></label>
-												<input type="text" id="bunker9" value="$ 0" />
-											</div>
-											<div class="pt20 pb20">
-												<div class="DataTable__3 data dark">
-													<table>
-														<thead>
-															<tr>
-																<th scope="col" style="width:55px">Fuel</th>
-																<th scope="col">Singapore</th>
-																<th scope="col">Fujairah</th>
-																<th scope="col">Rotterdam</th>
-																<th scope="col">Houston</th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td>LSFO</td>
-																<td>579</td>
-																<td>579</td>
-																<td>579</td>
-																<td>579</td>
-															</tr>
-															<tr>
-																<td>HSFO</td>
-																<td>579</td>
-																<td>579</td>
-																<td>579</td>
-																<td>579</td>
-															</tr>
-															<tr>
-																<td>VLMGO</td>
-																<td>579</td>
-																<td>579</td>
-																<td>579</td>
-																<td>579</td>
-															</tr>
-														</tbody>
-													</table>
-												</div>
+											<div class="ToolsRow ToolsRow__label5">
+												<label for="bunker3"><span>VLMGO </span></label>
+												<span class="inputArea unitArea front">
+													<span class="unit">$</span>
+													<input type="text" id="bunker3" value="22,000" />
+												</span>
 											</div>
 										</div>
 									</div>
 									<!-- //BUNKER -->
+									<!-- COST -->
+									<div class="ToolsBox line Cost">
+										<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
+										<div class="inner p10 m0">
+											<h2 class="ToolsTitle"><span>COST</span></h2>
+											<div class="ToolsRow ToolsRow__label5">
+												<label><span>Main Bunker</span></label>
+												<span class="SelectBox small">
+													<select width="10">
+														<option value="LSFO">LSFO</option>
+													</select>
+												</span>
+											</div>
+											<div class="ToolsRow__cost">
+												<div class="thead">
+													<div class="row">
+														<div class="col col1 tit left">Ballast</div>
+														<div class="col">LSFO</div>
+														<div class="col">HSFO</div>
+														<div class="col">VLMGO</div>
+														<div class="col">Cost</div>
+													</div>
+												</div>
+												<div class="tbody">
+													<div class="row">
+														<div class="col col1 left">Streaming</div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col txt1">$ 540,400</div>
+													</div>
+													<div class="row">
+														<div class="col col1 left">Bunkering</div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col txt1">$ 540,400</div>
+													</div>
+												</div>
+											</div>
+											<div class="ToolsRow__cost">
+												<div class="thead">
+													<div class="row">
+														<div class="col col1 tit left">Laden</div>
+													</div>
+												</div>
+												<div class="tbody">
+													<div class="row">
+														<div class="col col1 left">Idle</div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col txt1">$ 540,400</div>
+													</div>
+													<div class="row">
+														<div class="col col1 left">Load Port</div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col txt1">$ 540,400</div>
+													</div>
+													<div class="row">
+														<div class="col col1 left">Discharge Port</div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col txt1">$ 540,400</div>
+													</div>
+													<div class="row">
+														<div class="col col1 left">Steaming</div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col txt1">$ 540,400</div>
+													</div>
+													<div class="row">
+														<div class="col col1 left">Bunkering</div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col txt1">$ 540,400</div>
+													</div>
+													<div class="row">
+														<div class="col col1 left">Others</div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col"><input type="text" value="" /></div>
+														<div class="col txt1">$ 540,400</div>
+													</div>
+												</div>
+												<div class="ToolsRow__line2 mt5"></div>
+												<div class="tfoot">
+													<div class="row">
+														<div class="col1 col txt2">TOTAL</div>
+														<div class="col">3,456mt</div>
+														<div class="col">556mt</div>
+														<div class="col">37mt</div>
+														<div class="col">$1540,400</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- //COST -->
+									<!-- MARKET -->
+									<div class="ToolsBox Market">
+										<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
+										<div class="inner p10 m0">
+											<h2 class="ToolsTitle"><span>MARKET</span></h2>
+											<div class="DataTable__3 data dark">
+												<table>
+													<thead>
+														<tr>
+															<th scope="col" style="width:55px">Fuel</th>
+															<th scope="col">Singapore</th>
+															<th scope="col">Fujairah</th>
+															<th scope="col">Rotterdam</th>
+															<th scope="col">Houston</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>LSFO</td>
+															<td>579</td>
+															<td>579</td>
+															<td>579</td>
+															<td>579</td>
+														</tr>
+														<tr>
+															<td>HSFO</td>
+															<td>579</td>
+															<td>579</td>
+															<td>579</td>
+															<td>579</td>
+														</tr>
+														<tr>
+															<td>VLMGO</td>
+															<td>579</td>
+															<td>579</td>
+															<td>579</td>
+															<td>579</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<!-- //MARKET -->
 								</div>
 							</div>
-							<!-- //ToolsPosition -->	
+							<!-- //ToolsBunker -->
 							<!-- ToolsNetIncome -->
 							<div class="Layout__toolsNetIncome" id="ToolsNetIncome">
 								<div class="BoxArea01 BoxFull isScroll dark">
@@ -346,68 +521,82 @@
 										<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
 										<div class="inner p10 m0">
 											<h2 class="ToolsTitle pb5"><span>NET INCOME</span></h2>
-											<br class="ToolsRow__line" />
+											
 											<div class="ToolsRow ToolsRow__division">
 												<div class="data data_left"><span>FREIGHT</span></div>
 												<div class="data data_right"><span>$ 754,260</span></div>
 											</div>
-											<div class="ToolsRow">
+											<div class="ToolsRow ToolsRow__label6">
 												<label for="net1" class="ToolsLabel"><span>Cargo Quantiry</span></label>
-												<span class="InputUnit">
+												<span class="inputArea unitArea back">
 													<input type="text" id="net1" value="260,000" size="15" />
 													<span class="unit">mt</span>
 												</span>
 											</div>
-											<div class="ToolsRow">
+											
+											<div class="ToolsRow ToolsRow__label6">
 												<label for="net2" class="ToolsLabel"><span>Flat Rate</span></label>
-												<span class="InputUnit">
+												<span class="inputArea unitArea back">
 													<input type="text" id="net2" value="" size="15" />
 													<span class="unit">$/ton</span>
 												</span>
 											</div>
-											<br class="ToolsRow__line" />
+											<div class="pt5"></div>
 											<div class="ToolsRow">
 												<div class="text2"><span>Freight Rate </span></div>
 											</div>
-											<div class="ToolsRow">
+											<div class="ToolsRow ToolsRow__label6">
 												<span class="SelectBox small">
 													<select name="" id="" width="10">
 														<option value="">WS</option>
 													</select>
 												</span>
 												<span class="text">(WS OR LUMPSUM)</span>
-												<div class="pt5">
+												<div class="pt5 inputArea">
 													<input type="text"  value="45" size="15" />
 												</div>											
 											</div>
-											<br class="ToolsRow__line" />
+											<div class="pt5"></div>
 											<div class="ToolsRow ToolsRow__division">
-												<div class="data data_left"><span>+ Canal demurrage</span></div>
+												<div class="data data_left"><span>DEMURRAGE</span></div>
 												<div class="data data_right"><span>$ 40,000</span></div>
 											</div>
 											<div class="pt10"></div>
 											<div class="ToolsRow ToolsRow__label2">
-												<label for="net3"><span>Demurrage rate</span></label>
-												<input type="text" id="net3" value="$ 20,000" />
+												<label><span>Demurrage rate($)</span></label>
+												<span class="middle">
+													<input type="text" value="40,000" />
+												</span>
 												<div class="last"></div>
-											</div>												
+											</div>				
 											<div class="ToolsRow ToolsRow__label2">
-												<label><span>Canal days (charterer’s account)</span></label>
-												<div class="middle"><span>2 days</span></div>
-											</div>												
+												<label><span>Laytime (Hour)</span></label>
+												<span class="middle">
+													<input type="text" value="120" />
+												</span>
+												<div class="last"></div>
+											</div>				
 											<div class="ToolsRow ToolsRow__label2">
-												<label><span>Others</span></label>
-											</div>												
-											<div class="ToolsRow ToolsRow__label2">
-												<label for="net4"><span>Commission</span></label>
-												<input type="text" id="net4" value="3.75%" />
-												<div class="last"><span>$ 28,284</span></div>
+												<label><span>Estimated (Hour)</span></label>
+												<span class="middle unitArea">
+													<input type="text" value="0" />
+												</span>
+												<div class="last"></div>
 											</div>
-											<br class="ToolsRow__line mt10" />
-											<div class="ToolsRow__cost">
+											<div class="pt5"></div>
+											<div class="ToolsRow ToolsRow__label2">
+												<label class="txt1"><span>Commission</span></label>
+												<span class="middle unitArea front">
+													<spna class="unit">%</spna>
+													<input type="text" id="net3" value="0" />
+												</span>
+												<div class="last"><span>$28,284</span></div>
+											</div>
+											<div class="ToolsRow__line2 mt5"></div>
+											<div class="ToolsRow__result">
 												<span class="title">NET INCOME</span>
-												<span class="data">$ 725,975</span>
-											</div>											
+												<span class="data">$ 550,975</span>
+											</div>									
 										</div>
 									</div>
 									<!-- //NETINCOME -->
@@ -417,27 +606,45 @@
 										<div class="inner p10 m0">
 											<h2 class="ToolsTitle pb5"><span>COSTS</span></h2>
 											<div class="ToolsRow ToolsRow__label">
-												<label for="cost1"><span>Loading Port</span></label>
-												<input type="text" id="cost1" value="$ 25,000">
+												<label for="cost1"><span>LOAD PORT</span></label>
+												<span class="unitArea last front">
+													<span class="unit">$</span>
+													<input type="text" id="cost1" value="25,000">
+												</span>
 											</div>
 											<div class="ToolsRow ToolsRow__label">
-												<label for="cost2"><span>Discharge Port </span></label>
-												<input type="text" id="cost2" value="$ 65,000">
+												<label for="cost2"><span>DISCHARGE PORT</span></label>
+												<span class="unitArea last front">
+													<span class="unit">$</span>
+													<input type="text" id="cost2" value="65,000">
+												</span>
 											</div>
 											<div class="ToolsRow ToolsRow__label">
-												<label for="cost3"><span>Canal </span></label>
-												<input type="text" id="cost3" value="$ 0">
+												<label for="cost3"><span>BUNKER</span></label>
+												<span class="unitArea last front">
+													<span class="unit">$</span>
+													<input type="text" id="cost3" value="0">
+												</span>
+											</div>
+											<div class="ToolsRow ToolsRow__label noLine">
+												<label class="txt1"><span>OTHER</span></label>
 											</div>
 											<div class="ToolsRow ToolsRow__label">
-												<label for="cost4"><span>Bunker </span></label>
-												<input type="text" id="cost4" value="$ 415,000">
+												<label for="cost5"><span>Owner’s account</span></label>
+												<span class="unitArea last front">
+													<span class="unit">$</span>
+													<input type="text" id="cost5" value="0">
+												</span>
 											</div>
 											<div class="ToolsRow ToolsRow__label">
-												<label for="cost5"><span>Others </span></label>
-												<input type="text" id="cost5" value="$ 0">
+												<label for="cost6"><span>Charterer’s account</span></label>
+												<span class="unitArea last front">
+													<span class="unit">$</span>
+													<input type="text" id="cost6" value="0">
+												</span>
 											</div>
-											<br class="ToolsRow__line mt10" />
-											<div class="ToolsRow__cost ">
+											<div class="ToolsRow__line2 mt5"></div>
+											<div class="ToolsRow__result">
 												<span class="title">COST - </span>
 												<span class="data">$ 550,975</span>
 											</div>											
@@ -449,80 +656,184 @@
 										<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
 										<div class="inner p10 m0">
 											<h2 class="ToolsTitle pb5"><span>DURATION</span></h2>
-											<div class="ToolsRow ToolsRow__division">
-												<div class="data data_left"><span>+ Ballast days</span></div>
-												<div class="data data_right"><span>6d 19h</span></div>
-											</div>											
-											<div class="ToolsRow ToolsRow__label2">
-												<label for="duration1"><span>Speed</span></label>
-												<input type="text" id="duration1" value="$ 25,000">
-											</div>
-											<div class="ToolsRow ToolsRow__label2">
-												<label for="duration2"><span>Distance </span></label>
-												<input type="text" id="duration2" value="1,952 NM">
-											</div>
-											<br class="ToolsRow__line mt10" />
-											<div class="ToolsRow ToolsRow__division">
-												<div class="data data_left"><span>+ Laden days </span></div>
-												<div class="data data_right"><span>20d 10h</span></div>
-											</div>											
-											<div class="ToolsRow ToolsRow__label2">
-												<label for="duration7"><span>Speed</span></label>
-												<input type="text" id="duration7" value="13 its">
-											</div>
-											<div class="ToolsRow ToolsRow__label2">
-												<label for="duration8"><span>Distance </span></label>
-												<input type="text" id="duration8" value="3,435 NM">
-											</div>
-											<div class="ToolsRow ToolsRow__label2">
-												<label for="duration9"><span>Idle days</span></label>
-												<input type="text" id="duration9" value="">
-											</div>
-											<div class="ToolsRow ToolsRow__label2">
-												<label for="duration10"><span>Port days</span></label>
-												<input type="text" id="duration10" value="2 days">
-												<div class="last"><span>- $ 415,000</span></div>
-											</div>
-											<br class="ToolsRow__line mt10" />
-											<div class="ToolsRow ToolsRow__division">
-												<div class="data data_left"><span>+ Others </span></div>
-											</div>											
-											<div class="ToolsRow ToolsRow__label2">
-												<label for="duration3"><span>Weather Allowance (Laden) 10%</span></label>
-												<input type="text" id="duration3" value="05d 04h">
-											</div>
-											<div class="ToolsRow ToolsRow__label2">
-												<label for="duration4"><span>CANAL DAYS</span></label>
-												<input type="text" id="duration4" value="">
-											</div>
-											<div class="ToolsRow ToolsRow__label2">
-												<label for="duration5"><span>Owner's account</span></label>
-												<input type="text" id="duration5" value="1d 04h">
-											</div>
-											<div class="ToolsRow ToolsRow__label2">
-												<label for="duration6"><span>Chartere’s account</span></label>
-												<input type="text" id="duration6" value="4d 00h">
-											</div>
-											<br class="ToolsRow__line mt10" />
-											<div class="ToolsRow__cost">
-												<div class="data_left">
-													<span class="title">Duration : </span>
-													<span class="data">30d 00h</span>
+											<div class="pt5"></div>
+											<div class="ToolsRow ToolsRow__label noLine">
+												<label class="tit"><span>BALLAST DAYS</span></label>
+												<div class="right">
+													<span class="inputArea tit"><span>6 D</span></span>
+													<span class="inputArea tit"><span>19 H</span></span>
 												</div>
-												<div class="data_right">
-													<span class="title">TCE : </span>
-													<span class="data">$ 26,975</span>
+											</div>
+											
+											<div class="ToolsRow ToolsRow__label">
+												<label><span>Steaming</span></label>
+												<div class="right">
+													<span class="unitArea back inputArea">
+														<span class="unit">D</span>
+														<input type="text" value="05">
+													</span>
+													<span class="unitArea back inputArea">
+														<span class="unit">H</span>
+														<input type="text" value="19">
+													</span>
 												</div>
-											</div>											
+											</div>
+											<div class="ToolsRow ToolsRow__label">
+												<label><span>Bunkering</span></label>
+												<div class="right">
+													<span class="unitArea back inputArea">
+														<span class="unit">D</span>
+														<input type="text" value="05">
+													</span>
+													<span class="unitArea back inputArea">
+														<span class="unit">H</span>
+														<input type="text" value="19">
+													</span>
+												</div>
+											</div>
+											<div class="pt5"></div>
+											<div class="ToolsRow ToolsRow__label noLine">
+												<label class="tit"><span>LADEN DAYS</span></label>
+												<div class="right">
+													<span class="inputArea tit"><span>6 D</span></span>
+													<span class="inputArea tit"><span>19 H</span></span>
+												</div>
+											</div>
+											<div class="ToolsRow ToolsRow__label">
+												<label><span>Steaming</span></label>
+												<div class="right">
+													<span class="unitArea back inputArea">
+														<span class="unit">D</span>
+														<input type="text" value="05">
+													</span>
+													<span class="unitArea back inputArea">
+														<span class="unit">H</span>
+														<input type="text" value="19">
+													</span>
+												</div>
+											</div>
+											<div class="ToolsRow ToolsRow__label">
+												<label><span>Idle</span></label>
+												<div class="right">
+													<span class="unitArea back inputArea">
+														<span class="unit">D</span>
+														<input type="text" value="05">
+													</span>
+													<span class="unitArea back inputArea">
+														<span class="unit">H</span>
+														<input type="text" value="19">
+													</span>
+												</div>
+											</div>
+											<div class="ToolsRow ToolsRow__label">
+												<label><span>Load Port</span></label>
+												<div class="right">
+													<span class="unitArea back inputArea">
+														<span class="unit">D</span>
+														<input type="text" value="05">
+													</span>
+													<span class="unitArea back inputArea">
+														<span class="unit">H</span>
+														<input type="text" value="19">
+													</span>
+												</div>
+											</div>
+											<div class="ToolsRow ToolsRow__label">
+												<label><span>Discharge Port</span></label>
+												<div class="right">
+													<span class="unitArea back inputArea">
+														<span class="unit">D</span>
+														<input type="text" value="05">
+													</span>
+													<span class="unitArea back inputArea">
+														<span class="unit">H</span>
+														<input type="text" value="19">
+													</span>
+												</div>
+											</div>
+											<div class="ToolsRow ToolsRow__label">
+												<label><span>Bunkering</span></label>
+												<div class="right">
+													<span class="unitArea back inputArea">
+														<span class="unit">D</span>
+														<input type="text" value="05">
+													</span>
+													<span class="unitArea back inputArea">
+														<span class="unit">H</span>
+														<input type="text" value="19">
+													</span>
+												</div>
+											</div>
+											<div class="pt5"></div>
+											<div class="ToolsRow ToolsRow__label noLine">
+												<label class="tit"><span>Others</span></label>
+											</div>
+											<div class="ToolsRow ToolsRow__label">
+												<label><span>Weather Allowance(Laden) 10%</span></label>
+												<div class="right">
+													<span class="unitArea back inputArea">
+														<span class="unit">D</span>
+														<input type="text" value="05">
+													</span>
+													<span class="unitArea back inputArea">
+														<span class="unit">H</span>
+														<input type="text" value="19">
+													</span>
+												</div>
+											</div>
+											<div class="ToolsRow ToolsRow__label">
+												<label><span>Others</span></label>
+												<div class="right">
+													<span class="unitArea back inputArea">
+														<span class="unit">D</span>
+														<input type="text" value="05">
+													</span>
+													<span class="unitArea back inputArea">
+														<span class="unit">H</span>
+														<input type="text" value="19">
+													</span>
+												</div>
+											</div>
+											<div class="pt30"></div>										
 										</div>
 									</div>
-									<!-- //COSTS -->
+									<!-- //DURATION -->
 								</div>
+								<!-- ToolsResult -->
+								<div class="ToolsResult fixed">
+									<div class="data_left">
+										<span class="title">Duration : </span>
+										<span class="data">30d 00h</span>
+									</div>
+									<div class="data_right">
+										<span class="title">TCE : </span>
+										<span class="data">$ 26,975</span>
+									</div>
+								</div>
+								<!-- //ToolsResult -->	
 							</div>
 							<!-- //ToolsNetIncome -->
 							<!-- ToolsMapSchedule -->
 							<div class="Layout__toolsMapSchedule" id="ToolsMapSchedule">
+	
 								<div class="BoxArea01 BoxFull isScroll">
+									<!-- VesselNotice -->
+									<div class="VesselNotice noFixed noBorder" id="VesselNotice">
+										<div class="VesselNotice__item">
+											<div class="VesselNotice__info">
+												<input type="text" value="Dragon (2002, 300k)  /  VLCC  /  Dynacom Tankers" />
+												<ul class="VesselNotice__list" style="display: none;">
+													<li><a href="">Dragon (2002, 300k)  /  VLCC  /  Dynacom Tankers</a></li>
+													<li><a href="">2002</a></li>
+													<li><a href="">2003</a></li>
+													<li><a href="">2004</a></li>
+													<li><a href="">2005</a></li>
+												</ul>
+											</div>
+											<a href="#" class="VesselNotice__close"><span class="skip">close</span></a>
+										</div>
+									</div>
+									<!-- //VesselNotice -->
 									<div class="ToolsBox line">
 										<a href="javascript:;" class="DataSetting__button js-popup-open"><span>관리자수정</span></a>
 										<div class="inner m0 p10">

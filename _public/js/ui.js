@@ -63,7 +63,7 @@ var ui = (function(){
             var svgElem = document.createElementNS(xmlns, "svg");
             var boxWidth = icon.width ? icon.width : 25;
             var boxHeight = icon.height  ? icon.height : 30;
-            svgElem.setAttributeNS(null, "viewBox","0 0 " + boxWidth + " " + boxHeight);
+            svgElem.setAttributeNS(null, "viewBox","-3 -5 " + boxWidth + " " + boxHeight);
             svgElem.setAttributeNS(null, "width", boxWidth);
             svgElem.setAttributeNS(null, "height", boxHeight); 
             var g = document.createElementNS(xmlns, "g");
@@ -113,12 +113,14 @@ var ui = (function(){
             var btn_totalMenuClose = $("#totalMenuClose");
             var btn_totalMenuOpen = $("#totalMenuOpen");
             return {
+                currentActive : -1,
+                isActive : false,
                 init : function(){
                     var thisObj = this;
-                    btn_totalMenuOpen.on("click", function(){
+                    btn_totalMenuOpen.off("click").on("click", function(){
                         thisObj.open();
                     });
-                    btn_totalMenuClose.on("click", function(){
+                    btn_totalMenuClose.off("click").on("click", function(){
                         thisObj.close();
                     });
                     //툴팁
@@ -133,25 +135,54 @@ var ui = (function(){
                     window.ui.scrollbar.scrollbar('destroy').scrollbar("init"); 
                 },
                 tooltip : function(){
+                    var that = this;
                     //툴팁
                     var totalMenuTooltip = $("#totalMenuTooltip");
                     var totalMenuList = $("#totalMenuList");
-                    totalMenuList.children("li").each(function(){
+                    
+                    totalMenuList.children("li").each(function(i){
                         var item = $(this);
                         var item_offset = item.offset();
-                        item.on("mouseenter", function(event){
+                        var itemIndex = i;
+                        item.children("a").on("mouseenter", function(event){
                             if( totalMenu.hasClass("active") ) return;
-                            var str_title = item.attr("data-title");
-                            var str_width = str_title.length * 6.5;
-                            totalMenuTooltip.empty().append("<span style='width:"+str_width+"px'>"+str_title+"</span>").css({                        
-                                left : item_offset.left + $(this).width()-12,
-                                top : item_offset.top-20
-                            })
+                            
+                            if( that.currentActive != itemIndex || that.isActive == false){
+                                totalMenuTooltip.empty().attr('style', '');
+                          
+                                var subList = $(this).parent().children(".TotalMenu__sublist");
+                                if( subList.length > 0 ){
+                                    var clone = subList.clone();
+                                    clone.attr("class", "clear  TotalMenu__tooltip__sublist");
+                                    totalMenuTooltip.addClass("isSubList").append(clone);
+                                }else{
+                                    totalMenuTooltip.removeClass("isSubList");
+                                }
+                                var str_title = item.attr("data-title");                
+                                
+                                var title = $("<span></span>").addClass("title").text(str_title);
+                                totalMenuTooltip.prepend(title);
+
+                                totalMenuTooltip.css({                        
+                                    left : item_offset.left + $(this).parent().width()-12,
+                                    top :  subList.length > 0 ? item_offset.top-(totalMenuTooltip.height()-20) : item_offset.top-10
+                                });
+
+                                that.isActive = true;
+                                that.currentActive = itemIndex;
+                            }
                         });
-                    });
-                    totalMenuList.on("mouseleave", function(){
-                        totalMenuTooltip.empty().attr('style', '');
-                    });
+                    })
+
+                    $(".Layout__menu").on("mouseleave", tooltipReset);
+                    totalMenuList.children("li").eq(0).on("mouseleave",tooltipReset);
+                    function tooltipReset(){
+                        if(that.isActive){
+                            totalMenuTooltip.empty().attr('style', '');
+                            that.isActive = false;
+                            that.currentActive = -1;
+                        }
+                    }
                 }
             }
         },

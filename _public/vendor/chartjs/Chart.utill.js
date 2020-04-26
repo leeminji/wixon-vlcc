@@ -927,6 +927,7 @@ var ChartUtil = (function(){
 		addDataTab : function(_canvasId, _data){
 			var thisObj = this;
 			var tabList = $("#"+_canvasId+"_tab a");
+			var tabName = $("#"+_canvasId+"_tabName");
 			tabList.on('click', function(e){
 				e.preventDefault();
 				var category = $(this).data('category');
@@ -939,7 +940,8 @@ var ChartUtil = (function(){
 				//변환시 라벨클릭 안되는것, 제대로 변환 안되는것 수정.
 				var chart = thisObj.chartList[_canvasId];
 				$("#"+_canvasId+"_legend").empty().html(thisObj.drawCustomLegend(chart));
-
+				if( tabName.length > 0){ tabName.text(category); } //탭네임 존재시 변환
+				
 				thisObj.addCustomLegend(_canvasId);
 				//multi bar min, max 데이터 자동으로 처리하는 코드 추가
 
@@ -949,7 +951,7 @@ var ChartUtil = (function(){
 				}
 				chart.update();
 			});
-		},		
+		},
 	}
 })();
 

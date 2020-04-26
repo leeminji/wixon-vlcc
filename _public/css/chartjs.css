@@ -5,7 +5,7 @@
     position: absolute;
     right: 0;
     left:0;
-    bottom:-0.2em;
+    bottom:-0.6em;
 }
 .chartjs-legend ul.doughnut{padding-top:1em}
 .chartjs-legend ul.doughnut li{cursor:default;}

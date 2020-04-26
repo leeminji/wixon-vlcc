@@ -396,7 +396,7 @@ body.noWidth{min-width: inherit;overflow-y: auto;min-height: inherit;}
 
 /* TopTitle */
 .TopTitle{position: absolute;left:0;right:0;top:1em;text-align: center;line-height:4em;z-index:1}
-.TopTitle span{font-size:2.2em;color:rgba(140,193,231,0.4);text-transform: uppercase;}
+.TopTitle span{font-size:1.5em;color:rgba(140,193,231,0.4);text-transform: uppercase;}
 .TopTitle strong{font-size:2.2em;color:#425458;vertical-align: middle;}
 .TopTitle .line{padding:0 .2em}
 

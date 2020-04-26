@@ -209,7 +209,7 @@
 									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>	
 									<div class="inner">
 										<div id="chart3_legend" class="chartjs-legend"></div>
-										<div id="chart3_title" class="chartjs-title center middle"><span>Bunker Price</span></div>
+										<div id="chart3_title" class="chartjs-title center middle"><span>VLCC TIMECHARTER RATES</span></div>
 										<canvas id="chart3" class="chartjs-canvas" data-scale=1.2></canvas>
 									</div>
 								</div>
@@ -219,7 +219,7 @@
 									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
 									<div class="inner">
 									<div id="chart4_legend" class="chartjs-legend"></div>
-									<div id="chart4_title" class="chartjs-title center middle"><span>Asset price</span></div>
+									<div id="chart4_title" class="chartjs-title center middle"><span>VLCC PRICE</span></div>
 									<canvas id="chart4" class="chartjs-canvas"></canvas>
 									</div>
 								</div>
@@ -231,7 +231,7 @@
 									<a href="javascript:uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
 									<div class="inner">
 									<div id="chart5_legend" class="chartjs-legend"></div>
-									<div id="chart5_title" class="chartjs-title center middle"><span>Asset price</span></div>
+									<div id="chart5_title" class="chartjs-title center middle"><span>TANKER SCRAP PRICE</span></div>
 									<canvas id="chart5" class="chartjs-canvas"></canvas>
 									</div>
 								</div>
@@ -240,7 +240,7 @@
 								<div class="BoxArea01">
 									<a href="javascript:uiSettingPopup.open('DataSetting');" onclick="uiSettingPopup.open('DataSetting');" class="DataSetting__button"><span>관리자수정</span></a>
 									<div class="inner">
-										<div id="chart6_legend" class="chartjs-legend"></div>
+										<!-- 라벨 필요없을시 삭제 <div id="chart6_legend" class="chartjs-legend"></div> -->
 										<div id="chart6_title" class="chartjs-title center"><span>vlcc premium over suezmax</span><br><span class="small">quarterly average</span></div>
 										<canvas id="chart6" class="chartjs-canvas"></canvas>
 									</div>
@@ -257,6 +257,7 @@
 									</div>		
 									<div id="chart7_legend" class="chartjs-legend"></div>
 									<div id="chart7_title" class="chartjs-title middle"><span>Bunker Price</span></div>
+									<div id="chart7_tabName" class="chartjs-text" style="bottom:1.4em">LSFO</div>
 									<canvas id="chart7" class="chartjs-canvas"></canvas>
 									</div>
 								</div>	
@@ -374,7 +375,6 @@
 	<script type="text/javascript" src="../_public/js/ui.js"></script>
 	<script>
 		$(window).load(function(){
-
 			//chart(canvas id, chart data, chart stepSize, tabCateogoryInit)
 			//tabCateogoryInit : 카테고리로 탭있는경우 해당 index 
 
@@ -390,24 +390,45 @@
 			};
 			chart1.update();
 
-
 			//TD3 FFA
 			ChartUtil.initLineChart('chart2', lineChartData_53, 10, false, 2.5);
 
-			//BUNKER PRICE
-			ChartUtil.initLineChart('chart3', lineChartData_54, 2500, false, 2.5);
+
+
+			//3. VLCC TIMECHARTER RATES
+			//데이터에 년도 포함하여 출력해야합니다. -> new Date() 로 변경. 여기서 변경하거나 데이터 넘겨줄때 new Date()적용시켜서 넘겨주세요.
+			for( var i=0;i<lineChartData_54.labels.length;i++){
+				lineChartData_54.labels[i] = new Date(lineChartData_54.labels[i]);
+			}	
+			ChartUtil.initLineChartMulti('chart3', lineChartData_54, 6000, 20, false, 2.5);
 			var chart3 = ChartUtil.chartList['chart3'];
 			var chart3_scaleLabel = {
 				display : true,
-				labelString : '$/day',
+				labelString : '$/TON',
 				fontColor : ChartUtil.colors.white_op5,
 				fontFamily : ChartUtil.font,
 				fontSize : 16
 			}
 			chart3.config.options.scales.yAxes[0].scaleLabel = chart3_scaleLabel;
+			//y축 오른쪽 변경 (max, min 수동으로 변경필요) - json 데이터에서 받아서 처리하거나 수동으로설정.
+			var chart_ticks = chart3.options.scales.yAxes[1].ticks;
+			chart_ticks.max = lineChartData_54.datasets[4].yAxisMinMax.max;
+			chart_ticks.min = lineChartData_54.datasets[4].yAxisMinMax.min;
+			var chart_xAxes = chart3.options.scales.xAxes[0];
+			chart_xAxes.type = "time";
+			chart_xAxes.time = {
+				unit: 'month',
+				tooltipFormat: "DD-MMM YYYY",
+				displayFormats: {
+					month : 'MMM-YYYY' //월만 표시할경우 MMM 으로 변경.
+				}
+			}
 			chart3.update();
 
-			//Asset price
+			//4.VLCC PRICE
+			for( var i=0;i<lineChartData_55.labels.length;i++){
+				lineChartData_55.labels[i] = new Date(lineChartData_55.labels[i]);
+			}			
 			ChartUtil.initLineChart('chart4', lineChartData_55, 10, false, 2.5);
 			var chart4 = ChartUtil.chartList['chart4'];
 			var chart4_scaleLabel = {
@@ -417,10 +438,23 @@
 				fontFamily : ChartUtil.font,
 				fontSize : 16
 			}
+			var chart_xAxes = chart4.options.scales.xAxes[0];
+			chart_xAxes.type = "time";
+			chart_xAxes.time = {
+				unit: 'month',
+				tooltipFormat: "DD-MMM YYYY",
+				displayFormats: {
+					month : 'MMM-YYYY', //월만 표시할경우 MMM 으로 변경.
+				}
+			}
+			chart_xAxes.ticks.callback = function(value, index, values){
+				return "111"; 
+			}
 			chart4.config.options.scales.yAxes[0].scaleLabel = chart4_scaleLabel;
 			chart4.update();
 
-			//Tanker scrap price
+			//5. TANKER SCRAP PRICE
+
 			ChartUtil.initLineChart('chart5', lineChartData_56, 10, false, 2);
 			var chart5 = ChartUtil.chartList['chart5'];
 			var chart5_scaleLabel = {
@@ -430,14 +464,15 @@
 				fontFamily : ChartUtil.font,
 				fontSize : 16
 			}
+
 			chart5.config.options.scales.yAxes[0].scaleLabel = chart5_scaleLabel;
 			chart5.update();
 
-			// VLCC PREMIUM OVER SUEZMAX QUARTERLY AVERAGE
+			// 6.VLCC PREMIUM OVER SUEZMAX QUARTERLY AVERAGE
 			ChartUtil.initLineChart('chart6', lineChartData_57, 10, false, 2);
 
-			// BUNKER PRICE ( 마지막 매개변수 - 탭 index 번호 )
-			ChartUtil.initLineChart('chart7', lineChartData_58, 50, 0, 2);
+			// 7.BUNKER PRICE ( 마지막 매개변수 - 탭 index 번호 )
+			ChartUtil.initLineChart('chart7', lineChartData_12, 50, 0, 2);
 		
 		});
 
@@ -571,6 +606,7 @@
 				[new Date('2018', '12', '18'), , 95, 85, 21, 17,8],
 			]
 		};
+		
 		//차트로딩
 		$(document).ready(function(){
 			//라이브러리 가지고옴.
